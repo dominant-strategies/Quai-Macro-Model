@@ -1,0 +1,10 @@
+- First meeting to pitch BSCI x [[Quai Network]] project
+- The [[controller]] should be robust over 6-9 orders of magnitude for things like supply
+- What are we [[Stability Metrics|stabilizing]] and over what horizons?
+- If there is a potential for the [[controller]] to be changing in the future, it should be projected out to ensure that users understand this may happen in the future (instead of it happening ad hoc)
+- Need to have [[Stability Metrics|stability targets]]
+- There are two tokens in play:
+	- **[[Qi Type|Qi]]**
+		- [[Endogenous Stablecoin]] 
+	- **[[Quai Type|Quai]]**
+		- Traditional Deflationary Token

@@ -1,0 +1,1 @@
+[[Stablecoin]] where the collateral is embedded within the protocol

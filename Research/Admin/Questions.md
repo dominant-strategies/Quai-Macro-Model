@@ -1,0 +1,1 @@
+1. Is [[Quai Type|Quai]] supposed to always be deflationary or just in aggregate? During first meeting it was said that it was supposed to be a classic deflationary token.
