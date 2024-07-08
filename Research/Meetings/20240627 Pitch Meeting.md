@@ -5,6 +5,14 @@
 - Need to have [[Stability Metrics|stability targets]]
 - There are two tokens in play:
 	- **[[Qi Type|Qi]]**
-		- [[Endogenous Stablecoin]] 
+		- [[Endogenous Stablecoin]]
+		- Should be proportional to [[Hashrate Type|hashrate]]
+		- Through the [[Hashrate Type|hashrate]] relation is how the [[Qi Type|Qi]] is meant to be correlated to energy prices
 	- **[[Quai Type|Quai]]**
 		- Traditional Deflationary Token
+		- The log of the [[Hashrate Type|hashrate]] is used for [[Quai Minting Wiring|minting]]
+- The [[Controller Exchange Rate Wiring]] can exchange between the two tokens
+- There should be a [[Schelling Point]] that is approached through [[Trade Tokens Wiring|arbitrage]]
+- If the aggregate flows are balanced than the [[controller]] is working
+- Function representing energy
+	- Choice of [[Mining Wiring|mining]] or [[Trade Tokens Wiring|arbitrage]]

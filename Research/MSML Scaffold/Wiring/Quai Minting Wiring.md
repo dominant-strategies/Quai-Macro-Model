@@ -1,0 +1,1 @@
+- The log of the [[Hashrate Type|hashrate]] is used for [[Quai Minting Wiring|minting]]
