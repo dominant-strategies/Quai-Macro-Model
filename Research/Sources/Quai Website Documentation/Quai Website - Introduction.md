@@ -19,7 +19,7 @@ Energy is the single largest input to both human activity and artificial intelli
 
 ## Infinite Scalability[​](https://qu.ai/docs/learn/intro/#infinite-scalability "Direct link to Infinite Scalability")
 
-Through the use of a new [[Proof-of-Work Fork-choice]] rule named [[Proof-of-Entropy-Minima|Proof-of-Entropy-Minima (PoEM)]], [[Quai Network]] is able to remain in [[Consensus]] while coordinating an infinitely growing number of [[Execution Shard|execution shards]]. This property allows [[Quai Network]] to **add [[Execution Shard|shards]] to the network as needed** in order to meet perpetually growing demand. The only tradeoff to adding [[Execution Shard|shards]] to Quai (and thus increasing [[Throughput Metric|throughput]]) is an increased time to [[cross-shard settlement]].
+Through the use of a new [[Proof-of-Work Fork-choice]] rule named [[Proof-of-Entropy-Minima|Proof-of-Entropy-Minima (PoEM)]], [[Quai Network]] is able to remain in [[Consensus]] while coordinating an infinitely growing number of [[Execution Shard|execution shards]]. This property allows [[Quai Network]] to **add [[Execution Shard|shards]] to the network as needed** in order to meet perpetually growing demand. The only tradeoff to adding [[Execution Shard|shards]] to Quai (and thus increasing [[Throughput Metric|throughput]]) is an increased time to [[Cross-shard Settlement]].
 
 [[Trustless Bridge|Trustless bridging]] between all [[Execution Shard|shards]] in the network is achieved by [[Coincident Block|using miners to create objective links between shards]].
 
