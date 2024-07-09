@@ -95,18 +95,6 @@
 	        
 	    def quaiPerQi(self): #quai per qi
 	        self.quaiPerQiVal = self.quaiPriceVal/self.qiPriceVal
-	
-	    def currentFEV(self, supply):
-	        # create the sign for a triangle wave
-	        if (supply.blockNum  // 1000)%2 == 1:
-	            sign = 1
-	        else:
-	            sign = -1
-	
-	        # create the triangle wave
-	        self.currentFEVval += sign * 10/(1000 * 100) 
-	        #print("fev:", fev)
-	        return self.currentFEVval
 	    
 	    def spotBuyQi(self, quantity, price ,speculators, num, supply): #price is qi per quai
 	
