@@ -9,3 +9,5 @@ aliases:
 	- [[Global State - Historical Mined Ratio]]
 	- [[Global State - Historical Qi Hash]]
 	- [[Global State - Historical Quai Hash]]
+	- [[Global State - Historical Converted Qi]]
+	- [[Global State - Historical Converted Quai]]

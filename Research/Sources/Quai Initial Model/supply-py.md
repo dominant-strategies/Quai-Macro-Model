@@ -8,6 +8,8 @@
 	- [[Global State - Block Number]]
 	- [[Global State - Historical Qi Hash]]
 	- [[Global State - Historical Quai Hash]]
+	- [[Global State - Historical Converted Qi]]
+	- [[Global State - Historical Converted Quai]]
 - [[Update Simulation History Log Wiring]]
 - [[Treasury State]]
 	- [[Treasury State - Qi Holdings]]
@@ -16,49 +18,23 @@
 - [[Update Historical Mined Ratio Mechanism]]
 - [[Update Historical Qi Hash Mechanism]]
 - [[Update Historical Quai Hash Mechanism]]
+- [[Update Historical Converted Qi Mechanism]]
+- [[Update Historical Converted Quai Mechanism]]
+- [[Minimum Quai Conversion Amount Parameter]]
+- [[Minimum Qi Conversion Amount Parameter]]
+- [[Delta Time Type]]
 
 ## To Process
-	
 	class TokenSupply:
 	    def __init__(self,initDiff, initQuai,initKQuai,initQi,initKQi,duration,amtMin):
 	        self.initDiff = initDiff
 	        self.diff = initDiff
 	        self.intErr = deque(maxlen=100)
-	        self.duration = duration
-	        self.convertedQi = deque(maxlen=duration)
-	        self.convertedQuai = deque(maxlen=duration)
-	        self.amtMin = amtMin
-	        self.blockNum = 0
-	        self.qiHash = deque(maxlen=duration)
-	        self.quaiHash = deque(maxlen=duration)
 	        self.hashRatio = 0
 	        self.err = 0
 	        self.diffPeriod = 10
-	
 
-	        self.qiHash.append(1)
-	        self.quaiHash.append(1)
-	        self.mined_ratio.append(0)
 	        self.ratio = 0
-	
-	    def propose(self, market):
-	        initQuai = self.quai
-	        initQi = self.qi
-	        #calculate new price params
-	        self.diff = self.difficulty(market)
-	        self.qiLocked = 0
-	        self.quaiLocked = 0
-	        self.qiRewardVal = self.qiReward()
-	        self.quaiRewardVal = self.quaiReward()
-	        self.quai += self.convertedQuai[-self.duration] if len(self.convertedQuai) >= self.duration else 0
-	        self.qi += self.convertedQi[-self.duration] if len(self.convertedQi) >= self.duration else 0  
-	        self.convertedQi.append(0)
-	        self.convertedQuai.append(0)
-	        self.mined_ratio.append(0)
-	        self.qiHash.append(0)
-	        self.quaiHash.append(0)
-	        # if initQi - self.qi != 0 or initQuai - self.quai != 0:
-	        #     print("propose:", "block", self.blockNum, "qiDiff", self.qi - initQi, "quaiDiff", self.quai - initQuai)
 	    
 
 	

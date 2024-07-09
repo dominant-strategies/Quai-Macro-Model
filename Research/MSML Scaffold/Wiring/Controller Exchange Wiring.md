@@ -1,5 +1,6 @@
 [[Quai to Qi Conversion Policy]]
 [[Qi to Quai Conversion Policy]]
+[[Controller Exchange Mechanisms]]
 ## Old Code
 
 	    def convertQuaiToQi(self, quaiAmount):
