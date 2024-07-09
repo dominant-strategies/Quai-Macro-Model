@@ -15,3 +15,5 @@ Only for internal brainstorming right now
 8. The controller doesn't control anything related to the issuance constant right? I assume it is a constant but if it was a flexible variable then it might be in the purview of the controller.
 9. Is Current Block Reward Ratio Metric the same thing as Block Mining Rewards Ratio Metric
 10. Do we need to model vesting as part of our process?
+11. Do we need to track locked vs. unlocked tokens?
+12. 
