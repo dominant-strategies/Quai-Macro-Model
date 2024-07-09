@@ -14,3 +14,17 @@ The same flow works in the reverse as well, when less than expected [[miner]] [[
 Changes in [[Hashrate Type|hashrate]] are driven by market demand. Simply put, [[Miner|miners]] will deploy more when they’re paid more. With this framing, we can see that mining processes and the [[Block Difficulty|difficulty]] adjustment are best understood as a reactive market supply and demand matching function.
 
 **[[Quai Network]] makes [[Block Difficulty|difficulty]] adjustments on a rolling basis over a previous set of blocks (instead of in sequential periods), to best match the supply of [[Hashrate Type|hashrate]] and demand for network security.
+
+
+## Scaffolding
+
+Should rely on: 
+[[Global State - Current Block Difficulty]]
+[[Difficulty Period Parameter]]
+[[Global State - Current Hash Difference]]
+
+## Old Code
+
+	    def difficulty(self,market):
+	        self.diff = (self.diff * (self.diffPeriod - 1) + market.hashDiff)/self.diffPeriod
+	        return self.diff

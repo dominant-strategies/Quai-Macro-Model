@@ -29,3 +29,18 @@ $$
 This logarithmic versus linear relationship produces the significant difference between [[Quai Type|Quai]] scarcity and [[Qi Type|Qi]] expansion. For every doubling ( $2 \mathrm{x})$ in [[Block Difficulty|difficulty]] or [[Hash Type|hashes]], there is only one added unit ( +1 ) in bits. Over time, this ensures [[Quai Type|Quai]]'s scarcity, while [[Qi Type|Qi]] is naturally connected to the [[Miner]] cost of production and thus functions as a loose measure of energy or electricity pricing.
 
 Importantly, these block reward functions only define how many Quai/Qi tokens can potentially be emitted. Actual, realized supply emissions from block rewards are determined by the choices miners must make to receive only either Quai or Qi, a selection they may change going forward at any time.
+
+## Old Code - Quai/Qi Reward Functions
+
+- From supply.py
+
+    def quaiReward(self):
+               
+        self.hashController()
+        #self.linearController()
+        self.quaiRewardVal = 2 ** -(1 + self.kquai) * np.log2(self.diff)
+        return self.quaiRewardVal
+
+    def qiReward(self):
+        self.qiRewardVal = self.diff/self.kqi
+        return self.qiRewardVal
