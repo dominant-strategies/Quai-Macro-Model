@@ -9,3 +9,4 @@
 	- The timescale of the simulation likely will depend on the actuation frequency of the [[controller]]
 6. Is the controller going to be called when certain thresholds are breached or will the controller be called at some given frequency of time?
 7. "Quai is a digitally scarce asset designed to function as a programmable store-of-value within Quai Network. Quai has an effectively fixed supply in the sense that inflation trends toward zero and there will be a terminal supply amount -- however, [this terminal supply amount will be determined by market dynamics, and is not predefined](https://qu.ai/docs/learn/tokenomics/token-dynamics/supply-growth/)." -> Is there any situation in which inflation can pick up again leading to this not being true?
+	1. I believe it should be true with it becoming harder and harder for hashes to be found, but does the reward size going up outpace it?
