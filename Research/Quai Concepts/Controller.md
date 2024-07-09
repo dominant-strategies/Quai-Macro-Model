@@ -25,6 +25,10 @@ This is currently in as a question for the client and more clarity will be glean
 
 - This is possibly not correct, but it looks like in the old code the reward value was proportional to the base2 log of difficulty times $2^{-(1+kquai)}$ where kquai was set by the controller
 
+## TBD Spec Updates
+
+- Errors can be tracked and added to the system but holding off on it until we get more clarity on controller shape
+- Hash ratio and ratio as in the supply.py file can be added in as needed for tracking
 
 ## Old Code Implementations of Controllers
 
@@ -57,3 +61,33 @@ This is currently in as a question for the client and more clarity will be glean
 	        self.hashRatio = (self.quaiToHash(sum(self.quaiHash)) - self.qiToHash(sum(self.qiHash)))/(self.quaiToHash(sum(self.quaiHash)) + self.qiToHash(sum(self.qiHash)))#(self.duration * self.diff)# * (sum(self.quaiHash) + sum(self.qiHash))/(80000*100)
 	
 	        self.kquai += self.kquai * (np.log2(self.diff)/np.log2(self.initDiff) * P * self.proportionalGain(self.hashRatio) * self.hashRatio)# + self.integratedHashRatio()*I)
+
+## Old Code Utility Functions
+
+	    def proportionalGain(self, x):
+	        return 1 + 4 * x ** 2
+
+
+
+	    def derivativeHashRatio(self):
+	        deltaErr = 0
+	        for i in range(1, 20):
+	            if len(self.history) > i + 40:
+	                quaiSumNew = sum(item["convertedQuai"] for item in self.history[-i:])
+	                qiSumNew = sum(item["convertedQi"] for item in self.history[-i:])
+	                
+	                quaiSumOld = sum(item["convertedQuai"] for item in self.history[-(i + 20):-i])
+
+
+	    def integratedHashRatio(self):
+	        intHashErr = 0
+	        for i in range(1, self.duration):
+	                if len(self.history) > i + self.duration:
+	                    quaiSum = sum(item["convertedQuai"] for item in self.history[-(i + self.duration):-i])
+	                    qiSum = sum(item["convertedQi"] for item in self.history[-(i + self.duration):-i])
+	
+	                    quaiHash = self.quaiToHash(quaiSum)
+	                    qiHash = self.qiToHash(qiSum)
+	                    if (quaiHash + qiHash) != 0:
+	                        intHashErr += (quaiHash - qiHash) / (quaiHash + qiHash)
+	        return intHashErr

@@ -5,7 +5,7 @@
 	- [ ] [[market-py]]
 	- [ ] [[miner-py]]
 	- [ ] [[speculator-py]]
-	- [ ] [[supply-py]]
+	- [x] [[supply-py]]
 - [x] [Website Documentation](https://qu.ai/docs)
 	- [x] Introduction
 		- [ ] [[Website-PoEM]]
@@ -23,7 +23,7 @@
 	- [ ] [[market-py]]
 	- [ ] [[miner-py]]
 	- [ ] [[speculator-py]]
-	- [ ] [[supply-py]]
+	- [x] [[supply-py]]
 - [ ] [[Quai Website Documentation]]
 	- [ ] [[Quai Website - Introduction|Introduction]]
 	- [x] [[Quai Tokenomics]]

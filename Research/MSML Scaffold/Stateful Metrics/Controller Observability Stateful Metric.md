@@ -11,3 +11,10 @@ aliases:
 	- [[Global State - Historical Quai Hash]]
 	- [[Global State - Historical Converted Qi]]
 	- [[Global State - Historical Converted Quai]]
+	- [[Global State - Current Block Difficulty]]
+	- [[Global State-Current Qi Block Reward]]
+	- [[Global State-Current Quai Block Reward]]
+	- [[Global State - Current Hash Difference]]
+- Metrics that might be relevant:
+	- [[Current Block Reward Ratio Metric]]
+	- [[Block Mining Rewards Ratio Metric]]

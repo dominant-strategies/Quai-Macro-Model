@@ -10,6 +10,7 @@
 	- [[Global State - Historical Quai Hash]]
 	- [[Global State - Historical Converted Qi]]
 	- [[Global State - Historical Converted Quai]]
+	- [[Global State - Current Block Difficulty]]
 - [[Update Simulation History Log Wiring]]
 - [[Treasury State]]
 	- [[Treasury State - Qi Holdings]]
@@ -23,49 +24,10 @@
 - [[Minimum Quai Conversion Amount Parameter]]
 - [[Minimum Qi Conversion Amount Parameter]]
 - [[Delta Time Type]]
+- [[Initial Block Difficulty Parameter]]
+- [[Update Current Block Difficulty Mechanism]]
+- [[Difficulty Period Parameter]]
 
-## To Process
-	class TokenSupply:
-	    def __init__(self,initDiff, initQuai,initKQuai,initQi,initKQi,duration,amtMin):
-	        self.initDiff = initDiff
-	        self.diff = initDiff
-	        self.intErr = deque(maxlen=100)
-	        self.hashRatio = 0
-	        self.err = 0
-	        self.diffPeriod = 10
-
-	        self.ratio = 0
-	    
-
-	
-	    def integratedHashRatio(self):
-	        intHashErr = 0
-	        for i in range(1, self.duration):
-	                if len(self.history) > i + self.duration:
-	                    quaiSum = sum(item["convertedQuai"] for item in self.history[-(i + self.duration):-i])
-	                    qiSum = sum(item["convertedQi"] for item in self.history[-(i + self.duration):-i])
-	
-	                    quaiHash = self.quaiToHash(quaiSum)
-	                    qiHash = self.qiToHash(qiSum)
-	                    if (quaiHash + qiHash) != 0:
-	                        intHashErr += (quaiHash - qiHash) / (quaiHash + qiHash)
-	        return intHashErr
-	    
-	    def derivativeHashRatio(self):
-	        deltaErr = 0
-	        for i in range(1, 20):
-	            if len(self.history) > i + 40:
-	                quaiSumNew = sum(item["convertedQuai"] for item in self.history[-i:])
-	                qiSumNew = sum(item["convertedQi"] for item in self.history[-i:])
-	                
-	                quaiSumOld = sum(item["convertedQuai"] for item in self.history[-(i + 20):-i])
-	    
-	    def proportionalGain(self, x):
-	        return 1 + 4 * x ** 2
-	
-	    def difficulty(self,market):
-	        self.diff = (self.diff * (self.diffPeriod - 1) + market.hashDiff)/self.diffPeriod
-	        return self.diff
 ## Code
 	import numpy as np
 	import random as random
