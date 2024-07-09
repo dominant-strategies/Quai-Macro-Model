@@ -1,0 +1,1 @@
+Demand will have behavioral aspects while supply should be algorithmic

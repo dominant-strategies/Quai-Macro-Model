@@ -1,6 +1,7 @@
 ---
 aliases:
   - Qi Supply
+  - supply of Qi
 ---
 The supply of [[Qi Type|Qi]] is determined by the following formula:
 
