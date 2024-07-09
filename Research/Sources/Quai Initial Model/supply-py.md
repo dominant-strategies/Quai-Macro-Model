@@ -5,6 +5,9 @@
 	- [[Global State-Current Quai Block Reward]]
 	- [[Global State-Simulation History Log]]
 - [[Update Simulation History Log Wiring]]
+- [[Treasury State]]
+	- [[Treasury State - Qi Holdings]]
+	- [[Treasury State - Quai Holdings]]
 
 ## To Process
 	
@@ -12,8 +15,6 @@
 	    def __init__(self,initDiff, initQuai,initKQuai,initQi,initKQi,duration,amtMin):
 	        self.quai = initQuai
 	        self.qi = initQi
-	        self.kqi = initKQi
-	        self.kquai = initKQuai
 	        self.initDiff = initDiff
 	        self.diff = initDiff
 	        self.mined_ratio = deque(maxlen=100)
@@ -154,25 +155,6 @@
 	        self.diff = (self.diff * (self.diffPeriod - 1) + market.hashDiff)/self.diffPeriod
 	        return self.diff
 	    
-	    def convertQiToQuai(self, qiAmount):
-	        if qiAmount < self.amtMin or qiAmount > self.qi:
-	            return 0
-	        self.qi -= qiAmount
-	        quaiAmt = self.quaiRewardVal/self.qiRewardVal * qiAmount
-	        self.convertedQuai[-1] += quaiAmt
-	        self.quaiHash[-1] += quaiAmt
-	        #print("convertQiToQuai:", "qi", self.qi, "quai", self.quai, "block", self.blockNum, "qiAmount", qiAmount, "quaiAmount", quaiAmt)
-	        return quaiAmt
-	    
-	    def convertQuaiToQi(self, quaiAmount):
-	        if quaiAmount < self.amtMin or quaiAmount > self.quai:
-	            return 0
-	        self.quai -= quaiAmount
-	        qiAmt = self.qiRewardVal/self.quaiRewardVal * quaiAmount
-	        self.convertedQi[-1] += qiAmt
-	        self.qiHash[-1] += qiAmt
-	        #print("convertQuaiToQi:", "qi", self.qi, "quai", self.quai, "block", self.blockNum, "qiAmount", qiAmt, "quaiAmount", quaiAmount)
-	        return qiAmt
 	    
 	    def qiPriceVal(self): #Do we need this function?
 	        return 1/self.kqi

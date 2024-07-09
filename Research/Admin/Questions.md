@@ -15,7 +15,21 @@ The following are the questions related to this:
 1. Is this the final form for block rewards?
 2. Should the controller only be setting $k_{Quai}$? If so is $k_{Qi}$ a constant or how else is it set?
 
+### Controller Interventions
 
+- It sounds like the primary intervention for the controller is setting an exchange rate between Qi and Quai that can be acted upon
+- The working mental model of how this happens is the following:
+1. The controller is modifying $k_{Quai}$ and possibly $k_{Qi}$
+2. As these values get modified so do the current block rewards
+3. The exchange rate is set to be a the proportion between the latest block reward (or moving average or similar) for the Qi + Quai
+4. As long as it is above a minimum amount, a user can convert Qi to Quai or vice versa, and the treasury will burn/mint based on that?
+
+Questions:
+1. Is the working model above correct?
+2. Does the treasury ever hold balances or is everything passed straight through to minting/burning mechanisms?
+3. For the exchange rate, is there any smoothing that we need to use on it or is last block reward fine because controller should have some smoothing?
+4. Are there any other interventions besides this exchange rate pricing that the controller will be able to take on?
+5. Are there any limitations on when a user would be able to exchange?
 
 ## Internal
 
