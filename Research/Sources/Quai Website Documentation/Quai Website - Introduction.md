@@ -33,3 +33,10 @@ Currently, Quai Network is in the **testnet and development phase**. The roadma
 2. Silicon Age Testnet
 
 For each of these Testnets, our team at [Dominant Strategies](https://dominantstrategies.io/) expects to run both a Testnet and Devnet, in addition to providing tools such as [block explorers](https://qu.ai/docs/participate/use-quai/block-explorers/), [network statistics pages](https://stats.quai.network/), and [faucets](https://qu.ai/docs/participate/use-quai/testnet-faucet/).
+
+
+![[Website-PoEM]]
+![[Website-Merged Mining]]
+![[Website-Multithreaded Execution]]
+![[Website-Interoperability]]
+![[Website-Hierarchical Structure]]
