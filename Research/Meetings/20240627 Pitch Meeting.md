@@ -11,7 +11,7 @@
 	- **[[Quai Type|Quai]]**
 		- Traditional Deflationary Token
 		- The log of the [[Hashrate Type|hashrate]] is used for [[Quai Minting Wiring|minting]]
-- The [[Controller Exchange Rate Wiring]] can exchange between the two tokens
+- The [[Controller Exchange Wiring]] can exchange between the two tokens
 - There should be a [[Schelling Point]] that is approached through [[Trade Tokens Wiring|arbitrage]]
 - If the aggregate flows are balanced than the [[controller]] is working
 - Function representing energy

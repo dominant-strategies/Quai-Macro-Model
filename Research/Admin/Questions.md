@@ -1,7 +1,7 @@
 Only for internal brainstorming right now
 
 1. Is [[Quai Type|Quai]] supposed to always be deflationary or just in aggregate? During first meeting it was said that it was supposed to be a classic deflationary token.
-2. Are there any other interventions besides [[Controller Exchange Rate Wiring]] for the [[Controller]]?
+2. Are there any other interventions besides [[Controller Exchange Wiring]] for the [[Controller]]?
 3. What are we [[Stability Metrics|stabilizing]] and over what horizons?
 4. What are the priorities between:
 	- Having the exchange between [[Quai Type|Quai]] and [[Qi Type|Qi]] be stable / close to the theoretical "no arbitrage price"
@@ -16,4 +16,4 @@ Only for internal brainstorming right now
 9. Is Current Block Reward Ratio Metric the same thing as Block Mining Rewards Ratio Metric
 10. Do we need to model vesting as part of our process?
 11. Do we need to track locked vs. unlocked tokens?
-12. 
+12. To what extent should we model speculators

@@ -3,7 +3,8 @@
 - [[Global State]]
 	- [[Global State-Current Qi Block Reward]]
 	- [[Global State-Current Quai Block Reward]]
-
+	- [[Global State-Simulation History Log]]
+- [[Update Simulation History Log Wiring]]
 
 ## To Process
 	
@@ -28,9 +29,7 @@
 	        self.err = 0
 	        self.diffPeriod = 10
 	
-	        self.P = 0.01
-	        self.I = self.P*0#.05#.02
-	        self.D = self.P*0.2
+
 	        self.qiHash.append(1)
 	        self.quaiHash.append(1)
 	        self.mined_ratio.append(0)
@@ -74,37 +73,6 @@
 	        self.quaiHash[-1] += self.quaiToHash(miner.quai)
 	
 	        #print("update_end:", "quai", self.quai, "qi", self.qi, "block", self.blockNum)
-	        #record history
-	        self.history.append({
-	            "block": self.blockNum,
-	            "mined_token": mined_token,
-	            "difficulty": self.diff,
-	            "quai": self.quai,
-	            "qi": self.qi,
-	            "hashDiff": market.hashDiff,
-	            "mined_ratio": self.ratio,
-	            "kqaui": self.kquai,
-	            "quaiPrice": market.quaiPriceVal,
-	            "qiPrice": market.qiPriceVal,
-	            "quaiPerQi": market.quaiPerQiVal,
-	            "miners": mining,
-	            "qiLocked": self.qiLocked,
-	            "quaiLocked": self.quaiLocked,
-	            "deltaQi": blockDeltaQi,
-	            "deltaQuai": blockDeltaQuai,
-	            "tradedQuai": blockDeltaQuai + self.history[-1]["tradedQuai"] if len(self.history) > 0 else blockDeltaQuai,
-	            "convertedQi": sum(self.convertedQi),
-	            "convertedQuai": sum(self.convertedQuai),
-	            "marketFEV": market.currentFEVval,
-	            "quaiHash": self.quaiHash[-1],
-	            "qiHash": self.qiHash[-1],
-	            "hashRatio": self.hashRatio,
-	            "quaiHashSum": sum(self.quaiHash),
-	            "qiHashSum": sum(self.qiHash),
-	            "error": self.err,
-	            "quaiRewardVal": self.quaiRewardVal/self.diff,
-	            "qiRewardVal": self.qiRewardVal/self.diff,
-	        })
 	
 	    def qiToHash(self, qiAmount):
 	        if qiAmount <= 0:
