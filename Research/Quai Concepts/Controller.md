@@ -10,3 +10,11 @@
 
 - What are we [[Stability Metrics|stabilizing]] and over what horizons?
 - What is the desired [[Controller Equilibrium|equilibrium]]?
+
+## Interventions Available
+
+### Quai - Qi Exchange Rate
+
+### Quai Reward Scaler
+
+- This is possibly not correct, but it looks like in the old code the reward value was proportional to the base2 log of difficulty times $2^{-(1+kquai)}$ where kquai was set by the controller

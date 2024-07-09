@@ -1,7 +1,30 @@
+## For Client
+
+### Block Rewards 
+
+For Quai and Qi block rewards, there is only proportionally right now given, which is:
+$$\text { BlockReward }{ }_{Q u a i} \propto \log _2(\text { Difficulty })$$
+$$\text { BlockReward }_{Q i} \propto(\text { Difficulty })$$
+From the old code, the following relations are used:
+
+$$\text { BlockReward }{ }_{Q u a i} = 2^{-(1+k_{Quai})} \log _2(\text { Difficulty })$$
+$$\text { BlockReward }_{Q i} = \frac{\text { Difficulty }}{k_{Qi}}$$
+And $k_{Quai}$ is set/modified by the controller
+
+The following are the questions related to this:
+1. Is this the final form for block rewards?
+2. Should the controller only be setting $k_{Quai}$? If so is $k_{Qi}$ a constant or how else is it set?
+
+
+
+## Internal
+
 Only for internal brainstorming right now
 
 1. Is [[Quai Type|Quai]] supposed to always be deflationary or just in aggregate? During first meeting it was said that it was supposed to be a classic deflationary token.
 2. Are there any other interventions besides [[Controller Exchange Wiring]] for the [[Controller]]?
+	1. Or is it just the constants for block rewards that get toggled
+	2. Or is it both and the controller toggles block rewards + exchange rates?
 3. What are we [[Stability Metrics|stabilizing]] and over what horizons?
 4. What are the priorities between:
 	- Having the exchange between [[Quai Type|Quai]] and [[Qi Type|Qi]] be stable / close to the theoretical "no arbitrage price"
