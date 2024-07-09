@@ -1,5 +1,12 @@
 ## Model Additions
 
+- [[Global State]]
+	- [[Global State - Qi Price]]
+	- [[Global State - Quai Price]]
+- [[Network Participant State]]
+	- [[Network Participant State - Qi Holdings]]
+	- [[Network Participant State - Quai Holdings]]
+
 ## To Process
 	
 	class Miner:
@@ -7,8 +14,7 @@
 	        self.marginalCost = marginalCost
 	        self.costOfMoney = costOfMoney
 	        self.hashDiff = 0
-	        self.qi = 0
-	        self.quai = 0
+
 	    
 	    def mine(self,tokenSupply,market):
 
