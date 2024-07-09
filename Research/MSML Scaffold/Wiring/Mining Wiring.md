@@ -1,0 +1,4 @@
+---
+aliases:
+  - mine a block
+---

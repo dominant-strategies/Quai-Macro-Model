@@ -1,0 +1,1 @@
+The ratio of the current block reward of both Quai and Qi.
