@@ -1,0 +1,16 @@
+{
+	"nodes":[
+		{"id":"43639bcce99cb23b","type":"file","file":"MSML Scaffold/Wiring/Mining Wiring.md","x":-235,"y":-221,"width":400,"height":400},
+		{"id":"a0081ea279e9d75b","type":"file","file":"MSML Scaffold/Wiring/Block Reward Wiring.md","x":-235,"y":360,"width":400,"height":400},
+		{"id":"c7806eddc09dd6ed","type":"file","file":"MSML Scaffold/Wiring/Controller Exchange Wiring.md","x":760,"y":360,"width":400,"height":400},
+		{"id":"ee4e6ffd1dc96d4b","type":"file","file":"MSML Scaffold/Wiring/Peer to Peer Trades Wiring.md","x":320,"y":360,"width":400,"height":400},
+		{"id":"1818002ee415d717","type":"file","file":"MSML Scaffold/Wiring/Trade Tokens Wiring.md","x":520,"y":-221,"width":400,"height":400},
+		{"id":"aa30153f90e6fa6c","x":1200,"y":-221,"width":400,"height":400,"type":"file","file":"MSML Scaffold/Wiring/Quai Price Movement Wiring.md"},
+		{"id":"444cece2584a0757","x":1760,"y":-221,"width":400,"height":400,"type":"file","file":"MSML Scaffold/Wiring/Qi Price Movement Wiring.md"}
+	],
+	"edges":[
+		{"id":"bf278c0b0332769c","fromNode":"43639bcce99cb23b","fromSide":"bottom","toNode":"a0081ea279e9d75b","toSide":"top"},
+		{"id":"2f78897722bef564","fromNode":"1818002ee415d717","fromSide":"bottom","toNode":"ee4e6ffd1dc96d4b","toSide":"top"},
+		{"id":"b0b75d0ab9c9074c","fromNode":"1818002ee415d717","fromSide":"bottom","toNode":"c7806eddc09dd6ed","toSide":"top"}
+	]
+}
