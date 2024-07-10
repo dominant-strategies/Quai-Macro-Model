@@ -29,7 +29,7 @@ x can in our model contain information that we treat as private actors of physic
 
 ## Observation Process
 
-this is the modeled relationship between the phenomena of interest and the obervables
+this is the modeled relationship between the phenomena of interest and the observables
 $h: X \rightarrow Y$
 it derives observations $y = h(x)$ from the current state
 
