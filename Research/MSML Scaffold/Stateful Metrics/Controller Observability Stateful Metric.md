@@ -12,8 +12,8 @@ aliases:
 	- [[Global State - Historical Converted Qi]]
 	- [[Global State - Historical Converted Quai]]
 	- [[Global State - Current Block Difficulty]]
-	- [[Global State-Current Qi Block Reward]]
-	- [[Global State-Current Quai Block Reward]]
+	- [[Current Qi Block Reward Stateful Metric]]
+	- [[Current Quai Block Reward Stateful Metric]]
 	- [[Global State - Current Hash Difference]]
 - Metrics that might be relevant:
 	- [[Current Block Reward Ratio Metric]]

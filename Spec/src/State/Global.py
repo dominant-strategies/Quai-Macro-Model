@@ -65,13 +65,40 @@ global_state = {
             "symbol": None,
             "domain": None,
         },
+        {
+            "type": "Coeffecient Type",
+            "name": "K Qi",
+            "description": "The controller coeffecient for Qi.",
+            "symbol": None,
+            "domain": None,
+        },
+        {
+            "type": "Coeffecient Type",
+            "name": "K Quai",
+            "description": "The controller coeffecient for Quai.",
+            "symbol": None,
+            "domain": None,
+        },
+        {
+            "type": "USD Type",
+            "name": "Quai Price",
+            "description": "The current price of Quai.",
+            "symbol": None,
+            "domain": None,
+        },
+        {
+            "type": "USD Type",
+            "name": "Qi Price",
+            "description": "The current price of Qi.",
+            "symbol": None,
+            "domain": None,
+        },
+        {
+            "type": "Simulation History Log Type",
+            "name": "Simulation History Log",
+            "description": "The logged data from simulation history.",
+            "symbol": None,
+            "domain": None,
+        },
     ],
 }
-
-
-"Block Number Type",
-"Block Difficulty Type"  # Dimensionless comparitive measure, i.e. 10 means 10X more difficult
-"Hash Type",
-"Conversions Array Type"  # Qi Value, Quai Value, Time, negative for which one the user offers up for exchange that is burned
-"Mined Ratio Array Type"  # Ratio, Block Number
-"Hash Array Type"  # Hash amount, block number
