@@ -1,8 +1,8 @@
 ## Model Additions
 
 - [[Global State]]
-	- [[Global State-Current Qi Block Reward]]
-	- [[Global State-Current Quai Block Reward]]
+	- [[Current Qi Block Reward Stateful Metric]]
+	- [[Current Quai Block Reward Stateful Metric]]
 	- [[Global State-Simulation History Log]]
 	- [[Global State - Historical Mined Ratio]]
 	- [[Global State - Block Number]]
