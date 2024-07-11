@@ -1,0 +1,15 @@
+{
+	"nodes":[
+		{"id":"164eb1932c653b96","type":"group","x":-440,"y":-400,"width":320,"height":440,"label":"Behavioral Model"},
+		{"id":"691cbda44f43c782","type":"text","text":"# Mining","x":-420,"y":-380,"width":280,"height":60},
+		{"id":"ae42d82cc218bc68","type":"text","text":"","x":-420,"y":-280,"width":280,"height":60},
+		{"id":"27b9f7bdae08846b","type":"file","file":"MSML Scaffold/State/Global State.md","x":60,"y":-400,"width":320,"height":440},
+		{"id":"96042cd55bb1d1b8","type":"file","file":"MSML Scaffold/Stateful Metrics/Controller Observability Stateful Metric.md","x":660,"y":-400,"width":400,"height":440},
+		{"id":"5c2b20787c7f6f32","x":1240,"y":-400,"width":400,"height":440,"type":"file","file":"MSML Scaffold/Policies/Controller Sensor Policy.md"}
+	],
+	"edges":[
+		{"id":"134afc1df173d3bc","fromNode":"164eb1932c653b96","fromSide":"right","toNode":"27b9f7bdae08846b","toSide":"left","label":"Updates"},
+		{"id":"e2c7d5f4361f7184","fromNode":"27b9f7bdae08846b","fromSide":"right","toNode":"96042cd55bb1d1b8","toSide":"left","label":"Filtered by Observability"},
+		{"id":"38d106d1facd3599","fromNode":"96042cd55bb1d1b8","fromSide":"right","toNode":"5c2b20787c7f6f32","toSide":"left","label":"Input To"}
+	]
+}
