@@ -6,15 +6,15 @@ aliases:
 - What the controller is able to see as part of its decision process
 - Defined as a stateful metric as it essentially is a filter on the entire global state for what the controller has access to
 - State variables that are possibly relevant:
-	- [[Global State - Historical Mined Ratio]]
-	- [[Global State - Historical Qi Hash]]
-	- [[Global State - Historical Quai Hash]]
-	- [[Global State - Historical Converted Qi]]
-	- [[Global State - Historical Converted Quai]]
-	- [[Global State - Current Block Difficulty]]
+	- [[MSML Scaffold/State/Global State-Historical Mined Ratio]]
+	- [[MSML Scaffold/State/Global State-Historical Qi Hash]]
+	- [[MSML Scaffold/State/Global State-Historical Quai Hash]]
+	- [[MSML Scaffold/State/Global State-Historical Converted Qi]]
+	- [[MSML Scaffold/State/Global State-Historical Converted Quai]]
+	- [[Global State-Current Block Difficulty]]
 	- [[Current Qi Block Reward Stateful Metric]]
 	- [[Current Quai Block Reward Stateful Metric]]
-	- [[Global State - Current Hash Difference]]
+	- [[MSML Scaffold/State/Global State-Current Hash Difference]]
 - Metrics that might be relevant:
 	- [[Current Block Reward Ratio Metric]]
 	- [[Block Mining Rewards Ratio Metric]]

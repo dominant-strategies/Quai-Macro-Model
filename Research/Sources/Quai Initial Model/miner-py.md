@@ -1,11 +1,11 @@
 ## Model Additions
 
 - [[Global State]]
-	- [[Global State - Qi Price]]
-	- [[Global State - Quai Price]]
+	- [[MSML Scaffold/State/Global State-Qi Price]]
+	- [[MSML Scaffold/State/Global State-Quai Price]]
 - [[Network Participant State]]
-	- [[Network Participant State - Qi Holdings]]
-	- [[Network Participant State - Quai Holdings]]
+	- [[Network Participant State-Qi Holdings]]
+	- [[Network Participant State-Quai Holdings]]
 
 ## To Process
 	
