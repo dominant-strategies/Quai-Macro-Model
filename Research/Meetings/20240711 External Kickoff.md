@@ -1,0 +1,56 @@
+- High Level System Architecture
+	- Rules of the blockchain would be the plant model
+	- Behavioral -> Miners, Speculators, etc.
+	- Might start with everyone following the rules but then have cases of actors not following the rules
+		- But could possibly start with open loop drivers
+		- Need to start with what can versus what will happen
+		- Reachability is important in this case
+	- Example of observable state
+		- Greater than just the things that are measurable
+		- May also have private information that is not in fact observable
+- Control Surface Control Surface
+	- Controller sets exchange rate between Qi and Quai. Hash might make the most sense which by reference is Qi.
+	- Unit of value in the system is Hash
+	- We have "loosely coupled system where there is a dynamic hook"
+	- The whole concept with Qi is creating a Schelling point, if the miner is mining and Qi is an option, they will only look at Qi as making sense if the market price is above their production price
+		- Demand for Qi > Supplier
+		- Profitable opportunity until market price approaches at which point amount of Qi is at equilibrium because the market price matches the production price
+	- Miners are a subset of speculators
+	- Endogenous exchange mechanism makes the other side of the bargain
+	- Because Qi is always issued relative to hash, price should be stable
+		- Closer to cash
+	- Quai has EVM and programability features
+	- More a unit of account versus store of value because it is designed to be stable
+	- The whole problem is 70% of value in stablecoins and they are not decentralized
+		- The idea is to make a stablecoin that in endogenous and does not need fiat currencies
+	- There is another use case for Qi - Speculating on the hash rate and the future endogenous conversion rate, and potential future uses beyond just medium of account
+	- Which of the use cases is dominant?
+		- Speculative at first to speculate on hash rate
+		- Unit of exchange use case grows into being the primary use over time
+	- Potentially shocks such as Qi being called a national currency -> shock in demand or negative shock like banning it -> demand goes down
+		- Eventually it re-equilibrates
+	- Non-equilibrium behavior
+		- Always way to mess with the system, but what is the cost?
+		- Economic security is one of the important parts of it
+		- Take the failure surface and ask, what is the cheapest way to get to this surface
+			- **That output in dollars is the most important**
+- Time Scale
+	- Does controller go every event or over an epoch etc?
+	- Hierarchy diagram
+	- Zone is where state gets updated
+	- Create a dominant block meaning it is in region applicable and maybe prime
+	- Then prime is top one
+	- More demand -> more shards
+	- Only updated on prime with data that is only updated with data available to
+	- Our model will be prime blocks are the blocks
+	- Subordinate blocks are the sample maybe like 500 samples
+	- The controller itself is computing summary statistics based on the lower level systems
+	- All of the data is getting rolled up into prime and then computing the next step
+	- Need to do a clearer documentation of Y, the derivative 
+	- Stability metrics
+	- Get tight boundary over what we can compute
+	- We do it on prime block tick
+- Looking for classic stability as a controller
+	- Don't want something with a lot of steady state error
+	- Output metrics are needed for this
+	- Which variable are we measuring the steady state error in?
