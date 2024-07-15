@@ -56,6 +56,7 @@ cssclasses:
 │   ├──[[Dummy Boundary Action 2]]
 ├──**Control Actions**
 │   ├──[[Dummy Control Action]]
+│   ├──[[Placeholder]]
 ├──**Policies**
 │   ├──[[DUMMY Letter Count Policy]]
 ├──**Mechanisms**
