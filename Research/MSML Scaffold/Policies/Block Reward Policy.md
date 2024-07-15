@@ -19,7 +19,7 @@ Importantly, these block reward functions only define how many Quai/Qi tokens ca
 1. [[Empty Space]]
 ## Followed By
 ## Codomain Spaces
-1. [[Empty Space]]
+1. [[Block Reward Options Space]]
 ## Constraints
 ## Parameters Used
 ## Metrics Used

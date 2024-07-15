@@ -28,10 +28,11 @@ The wiring for mining a block
 1. [[Empty Space]]
 
 ## Codomain Spaces
-1. [[Empty Space]]
+1. [[Block Reward Options Space]]
 
 ## All Spaces Used
-1. [[Empty Space]]
+1. [[Block Reward Options Space]]
+2. [[Empty Space]]
 
 ## Parameters Used
 

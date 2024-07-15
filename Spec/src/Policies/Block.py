@@ -22,7 +22,7 @@ Importantly, these block reward functions only define how many Quai/Qi tokens ca
     "constraints": [],
     "policy_options": [block_reward_policy_option1],
     "domain": [],
-    "codomain": [],
+    "codomain": ["Block Reward Options Space"],
     "parameters_used": [],
     "metrics_used": [],
 }

@@ -41,12 +41,15 @@ cssclasses:
 │   ├──[[Hash Array Type]]
 │   ├──[[Coeffecient Type]]
 │   ├──[[USD Type]]
+│   ├──[[Quai Type]]
+│   ├──[[Qi Type]]
 │   ├──[[Simulation History Log Type]]
 ├──**Spaces**
 │   ├──[[Terminating Space]]
 │   ├──[[Empty Space]]
 │   ├──[[Dummy Space 1]]
 │   ├──[[Dummy Space 2]]
+│   ├──[[Block Reward Options Space]]
 ├──**Parameters**
 │   ├──Dummy Parameter Set
 │   │   ├──[[DUMMY D Probability]]
