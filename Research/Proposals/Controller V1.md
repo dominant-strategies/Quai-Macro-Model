@@ -6,10 +6,10 @@ $u \in U$
 
 Actions:
 1. [[Update K Quai Mechanism|Setting]] $k_{quai}$ 
-	1. The variable of [[MSML Scaffold/State/Global State-K Quai|kquai]] is set
+	1. The variable of [[Global State-K Quai|kquai]] is set
 	2. Timeframe of setting is TBD
 2. [[Update K Qi Mechanism|Setting]] $k_{qi}$ 
-	1. The variable of [[MSML Scaffold/State/Global State-K Qi|kqi]] is set
+	1. The variable of [[Global State-K Qi|kqi]] is set
 	2. Timeframe of setting is TBD
 
 Codomain:

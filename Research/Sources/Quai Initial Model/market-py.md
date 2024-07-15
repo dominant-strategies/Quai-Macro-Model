@@ -2,7 +2,7 @@
 
 - [[Quai Price Movement Wiring]]
 - [[Qi Price Movement Wiring]]
-- [[MSML Scaffold/State/Global State-Current Hash Difference]]
+- [[Global State-Current Hash Difference]]
 - [[Calculate Hash Difference Policy]]
 
 

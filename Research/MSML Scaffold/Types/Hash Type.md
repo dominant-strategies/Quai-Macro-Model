@@ -1,5 +1,4 @@
----
-aliases:
-  - Hashes
-  - Hash
----
+## Type
+
+## Notes
+

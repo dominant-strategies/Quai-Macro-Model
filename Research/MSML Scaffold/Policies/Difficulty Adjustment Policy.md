@@ -21,7 +21,7 @@ Changes in [[Hashrate Type|hashrate]] are driven by market demand. Simply put, [
 Should rely on: 
 [[Global State-Current Block Difficulty]]
 [[Difficulty Period Parameter]]
-[[MSML Scaffold/State/Global State-Current Hash Difference]]
+[[Global State-Current Hash Difference]]
 
 ## Old Code
 
