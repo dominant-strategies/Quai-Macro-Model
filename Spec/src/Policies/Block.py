@@ -33,11 +33,17 @@ Importantly, these block reward functions only define how many Quai/Qi tokens ca
     "metrics_used": [],
 }
 
+mining_payment_policy_option1 = {
+    "name": "Deterministic Mining Payment Policy",
+    "description": "User chooses either all Qi or all Quai based on which is more valuable.",
+    "logic": "Compare the price of Qi times Qi amount to price of Quai times Quai amount and pick the larger sum.",
+}
+
 mining_payment_policy = {
     "name": "Mining Payment Policy",
     "description": "Policy which determines what amount of Quai vs. Qi is taken as payment.",
     "constraints": [],
-    "policy_options": [],
+    "policy_options": [mining_payment_policy_option1],
     "domain": ["Block Reward Options Space"],
     "codomain": [],  # ["Block Reward Space"],
     "parameters_used": [],
