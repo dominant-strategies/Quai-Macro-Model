@@ -18,7 +18,7 @@ X3["Placeholder"]
 end
 subgraph X6["Mine Block Wiring"]
 direction TB
-X5["Placeholder"]
+X5["Block Reward Policy"]
 end
 subgraph X8["Controller Update Wiring"]
 direction TB
@@ -47,7 +47,8 @@ The wiring of the entire simulation
 5. [[Log Simulation Wiring]]
 
 ## All Blocks
-1. [[Placeholder]]
+1. [[Block Reward Policy]]
+2. [[Placeholder]]
 
 ## Constraints
 

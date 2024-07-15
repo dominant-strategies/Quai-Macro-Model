@@ -6,21 +6,26 @@ graph TB
 subgraph SVS["State Variables"]
 end
 
-subgraph X2["Mine Block Wiring"]
+subgraph X4["Mining Mechanisms"]
 direction TB
-X1["Block Reward Policy"]
+X1["Placeholder"]
+X2[Domain]
+
+direction LR
+direction TB
+X2 --> X1
 end
 ```
 
 ## Description
 
-Block Type: Stack Block
-The wiring for mining a block
+Block Type: Parallel Block
+The mechanisms associated with mining a block
 ## Components
-1. [[Block Reward Policy]]
+1. [[Placeholder]]
 
 ## All Blocks
-1. [[Block Reward Policy]]
+1. [[Placeholder]]
 
 ## Constraints
 

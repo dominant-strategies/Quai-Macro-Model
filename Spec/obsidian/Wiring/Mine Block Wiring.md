@@ -8,7 +8,7 @@ end
 
 subgraph X2["Mine Block Wiring"]
 direction TB
-X1["Placeholder"]
+X1["Block Reward Policy"]
 end
 ```
 
@@ -17,14 +17,15 @@ end
 Block Type: Stack Block
 The wiring for mining a block
 ## Components
-1. [[Placeholder]]
+1. [[Block Reward Policy]]
 
 ## All Blocks
-1. [[Placeholder]]
+1. [[Block Reward Policy]]
 
 ## Constraints
 
 ## Domain Spaces
+1. [[Empty Space]]
 
 ## Codomain Spaces
 1. [[Empty Space]]

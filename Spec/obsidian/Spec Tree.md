@@ -59,5 +59,6 @@ cssclasses:
 │   ├──[[Placeholder]]
 ├──**Policies**
 │   ├──[[DUMMY Letter Count Policy]]
+│   ├──[[Block Reward Policy]]
 ├──**Mechanisms**
 │   ├──[[DUMMY Log Results Mechanism]]
