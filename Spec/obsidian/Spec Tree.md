@@ -51,6 +51,7 @@ cssclasses:
 │   ├──[[Dummy Space 2]]
 │   ├──[[Block Reward Options Space]]
 │   ├──[[Block Difficulty Space]]
+│   ├──[[Block Reward Space]]
 ├──**Parameters**
 │   ├──Dummy Parameter Set
 │   │   ├──[[DUMMY D Probability]]
@@ -65,5 +66,6 @@ cssclasses:
 ├──**Policies**
 │   ├──[[DUMMY Letter Count Policy]]
 │   ├──[[Block Reward Policy]]
+│   ├──[[Mining Payment Policy]]
 ├──**Mechanisms**
 │   ├──[[DUMMY Log Results Mechanism]]

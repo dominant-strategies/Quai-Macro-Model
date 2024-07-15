@@ -33,4 +33,16 @@ Importantly, these block reward functions only define how many Quai/Qi tokens ca
     "metrics_used": [],
 }
 
-block_policies = [block_reward_policy]
+mining_payment_policy = {
+    "name": "Mining Payment Policy",
+    "description": "Policy which determines what amount of Quai vs. Qi is taken as payment.",
+    "constraints": [],
+    "policy_options": [],
+    "domain": ["Block Reward Options Space"],
+    "codomain": [],  # ["Block Reward Space"],
+    "parameters_used": [],
+    "metrics_used": [],
+}
+
+
+block_policies = [block_reward_policy, mining_payment_policy]
