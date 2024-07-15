@@ -10,4 +10,16 @@ USDType = {
     "notes": "US dollars",
 }
 
-primitive_types = [CoeffecientType, USDType]
+QuaiType = {
+    "name": "Quai Type",
+    "type": "QuaiType",
+    "notes": "",
+}
+
+QiType = {
+    "name": "Qi Type",
+    "type": "QiType",
+    "notes": "",
+}
+
+primitive_types = [CoeffecientType, USDType, QuaiType, QiType]

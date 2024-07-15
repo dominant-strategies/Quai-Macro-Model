@@ -19,9 +19,9 @@ Changes in [[Hashrate Type|hashrate]] are driven by market demand. Simply put, [
 ## Scaffolding
 
 Should rely on: 
-[[Global State - Current Block Difficulty]]
+[[Global State-Current Block Difficulty]]
 [[Difficulty Period Parameter]]
-[[Global State - Current Hash Difference]]
+[[Global State-Current Hash Difference]]
 
 ## Old Code
 

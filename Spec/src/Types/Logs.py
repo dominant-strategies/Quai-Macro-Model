@@ -11,7 +11,26 @@ The negaive values on Qi or Quai value denote amounts that were sent in by a use
 """,
 }
 
-simulation_types = [ConversionsArrayType]
+MinedRatioArrayType = {
+    "name": "Mined Ratio Array Type",
+    "type": "MinedRatioArrayType",
+    "notes": r"""An array of the form:
 
-"Mined Ratio Array Type"  # Ratio, Block Number
-"Hash Array Type"  # Hash amount, block number
+List[{"Ratio": "Ratio Type",
+"Block Number": "Block Number Type"}]
+
+0 corresponds to 100% Qi, 1 corresponds to 100% Quai, number in between are the increments between those balances.""",
+}
+
+HashArrayType = {
+    "name": "Hash Array Type",
+    "type": "HashArrayType",
+    "notes": r"""An array of the form:
+
+List[{"Hash Value": "Hash Type",
+"Block Number": "Block Number Type"}]
+
+""",
+}
+
+log_types = [ConversionsArrayType, MinedRatioArrayType, HashArrayType]

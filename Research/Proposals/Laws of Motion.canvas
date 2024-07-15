@@ -4,17 +4,17 @@
 		{"id":"5c2b20787c7f6f32","type":"file","file":"MSML Scaffold/Policies/Controller Sensor Policy.md","x":220,"y":460,"width":400,"height":720},
 		{"id":"f8bb66671e796b11","type":"file","file":"MSML Scaffold/Policies/Controller Update Policy.md","x":-380,"y":480,"width":400,"height":680},
 		{"id":"691cbda44f43c782","type":"text","text":"# Mining\n\n- $K_{Quai}$ and $K_{Qi}$ are inputs into the block rewards offered to users in both Quai and Qi. They will choose whether to mine or not and which one to have as a reward based on pricing in open market.\n- Rewards are based on formulas using the hash amount and then scaling by the K value; linear relationship\n","x":-520,"y":-1240,"width":280,"height":400},
-		{"id":"27b9f7bdae08846b","type":"file","file":"MSML Scaffold/State/Global State.md","x":60,"y":-1080,"width":320,"height":720},
-		{"id":"96042cd55bb1d1b8","type":"file","file":"MSML Scaffold/Stateful Metrics/Controller Observability Stateful Metric.md","x":720,"y":-400,"width":400,"height":720},
 		{"id":"ae42d82cc218bc68","type":"text","text":"# Exchanges Between Qi/Quai\n\n- Current block rewards $R_{Qi}$ and $R_{Quai}$ offered is set by $K_{Quai}$ and $K_{Qi}$ as scalers. \n- The Quai/Qi exchange rate is equal to\n$$\\frac{R_{Qi}}{R_{Quai}}$$","x":-520,"y":-800,"width":280,"height":340},
 		{"id":"6b799245db5e212f","type":"text","text":"# Token Vesting (Likely abstracted out)","x":-520,"y":-60,"width":280,"height":120},
-		{"id":"7dffce61a397cf51","type":"text","text":"# Trading/Price Movements (Likely Abstracted Out)","x":-520,"y":-340,"width":280,"height":160}
+		{"id":"7dffce61a397cf51","type":"text","text":"# Trading/Price Movements (Likely Abstracted Out)","x":-520,"y":-340,"width":280,"height":160},
+		{"id":"d9292fa3f6f04093","type":"file","file":"MSML Scaffold/States/Global State.md","x":80,"y":-1280,"width":400,"height":1160},
+		{"id":"96042cd55bb1d1b8","type":"file","file":"MSML Scaffold/Stateful Metrics/Controller Observability Stateful Metric.md","x":880,"y":-360,"width":400,"height":720}
 	],
 	"edges":[
-		{"id":"134afc1df173d3bc","fromNode":"164eb1932c653b96","fromSide":"right","toNode":"27b9f7bdae08846b","toSide":"left","label":"Updates"},
-		{"id":"e2c7d5f4361f7184","fromNode":"27b9f7bdae08846b","fromSide":"right","toNode":"96042cd55bb1d1b8","toSide":"left","label":"Filtered by Observability"},
 		{"id":"38d106d1facd3599","fromNode":"96042cd55bb1d1b8","fromSide":"left","toNode":"5c2b20787c7f6f32","toSide":"top","label":"Input To"},
 		{"id":"c86d912aa57b76c6","fromNode":"5c2b20787c7f6f32","fromSide":"left","toNode":"f8bb66671e796b11","toSide":"right","label":"Input to"},
-		{"id":"f5797267406295f5","fromNode":"f8bb66671e796b11","fromSide":"top","toNode":"164eb1932c653b96","toSide":"bottom","label":"kquai, kqi"}
+		{"id":"f5797267406295f5","fromNode":"f8bb66671e796b11","fromSide":"top","toNode":"164eb1932c653b96","toSide":"bottom","label":"kquai, kqi"},
+		{"id":"134afc1df173d3bc","fromNode":"164eb1932c653b96","fromSide":"right","toNode":"d9292fa3f6f04093","toSide":"left","label":"Updates"},
+		{"id":"e2c7d5f4361f7184","fromNode":"d9292fa3f6f04093","fromSide":"right","toNode":"96042cd55bb1d1b8","toSide":"left","label":"Filtered by Observability"}
 	]
 }
