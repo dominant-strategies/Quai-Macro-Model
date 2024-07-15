@@ -26,7 +26,13 @@ Importantly, these block reward functions only define how many Quai/Qi tokens ca
 ## Policy Options
 ### 1. Block Reward Policy V1
 #### Description
-
+Basic policy option which uses the $k_{Quai}$ and $k_{Qi}$
 #### Logic
-
+The following are the computations for the offered rewards in Quai and Qi:
+1. d = DOMAIN[0]["Block Difficulty"]
+2. $Qi = \frac{d}{k_{Qi}}$
+3. $Quai = 2^{-(1+k_{Quai})} \cdot \log_2(d)$
+4. Return spaces of [{"Quai Reward Offered": Quai,
+        "Qi Reward Offered": Qi,
+        "Block Difficulty": d}]
 

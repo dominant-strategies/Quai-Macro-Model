@@ -50,6 +50,7 @@ cssclasses:
 │   ├──[[Dummy Space 1]]
 │   ├──[[Dummy Space 2]]
 │   ├──[[Block Reward Options Space]]
+│   ├──[[Block Difficulty Space]]
 ├──**Parameters**
 │   ├──Dummy Parameter Set
 │   │   ├──[[DUMMY D Probability]]

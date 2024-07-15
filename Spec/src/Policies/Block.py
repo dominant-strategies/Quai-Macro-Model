@@ -1,7 +1,13 @@
 block_reward_policy_option1 = {
     "name": "Block Reward Policy V1",
-    "description": "",
-    "logic": """""",
+    "description": r"Basic policy option which uses the $k_{Quai}$ and $k_{Qi}$",
+    "logic": r"""The following are the computations for the offered rewards in Quai and Qi:
+1. d = DOMAIN[0]["Block Difficulty"]
+2. $Qi = \frac{d}{k_{Qi}}$
+3. $Quai = 2^{-(1+k_{Quai})} \cdot \log_2(d)$
+4. Return spaces of [{"Quai Reward Offered": Quai,
+        "Qi Reward Offered": Qi,
+        "Block Difficulty": d}]""",
 }
 
 block_reward_policy = {
@@ -21,7 +27,7 @@ This logarithmic versus linear relationship produces the significant difference 
 Importantly, these block reward functions only define how many Quai/Qi tokens can potentially be emitted. Actual, realized supply emissions from block rewards are determined by the choices miners must make to receive only either Quai or Qi, a selection they may change going forward at any time.""",
     "constraints": [],
     "policy_options": [block_reward_policy_option1],
-    "domain": [],
+    "domain": [],  # ["Block Difficulty Space"],
     "codomain": ["Block Reward Options Space"],
     "parameters_used": [],
     "metrics_used": [],
