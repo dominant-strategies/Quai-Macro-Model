@@ -6,7 +6,7 @@ graph TB
 subgraph SVS["State Variables"]
 end
 
-subgraph X2["Advance Block Wiring"]
+subgraph X2["Exchanges Wiring"]
 direction TB
 X1["Placeholder"]
 end
@@ -15,7 +15,7 @@ end
 ## Description
 
 Block Type: Stack Block
-The wiring for moving forward by one block
+The wiring for exchanges that take place in the simulation
 ## Components
 1. [[Placeholder]]
 

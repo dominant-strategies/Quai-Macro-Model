@@ -4,7 +4,8 @@ simulation_wiring.append(
     {
         "name": "Simulation Wiring",
         "components": [
-            "Advance Block Wiring",
+            "Exchanges Wiring",
+            "Mine Block Wiring",
             "Controller Update Wiring",
             "Log Simulation Wiring",
         ],
