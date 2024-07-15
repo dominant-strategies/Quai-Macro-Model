@@ -14,9 +14,9 @@ This logarithmic versus linear relationship produces the significant difference 
 
 Importantly, these block reward functions only define how many Quai/Qi tokens can potentially be emitted. Actual, realized supply emissions from block rewards are determined by the choices miners must make to receive only either Quai or Qi, a selection they may change going forward at any time.
 ## Called By
-1. [[Placeholder]]
+1. [[Mine Block Boundary Action]]
 ## Domain Spaces
-1. [[Empty Space]]
+1. [[Block Difficulty Space]]
 ## Followed By
 ## Codomain Spaces
 1. [[Block Reward Options Space]]

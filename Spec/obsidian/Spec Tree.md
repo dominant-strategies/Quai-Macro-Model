@@ -58,6 +58,7 @@ cssclasses:
 ├──**Boundary Actions**
 │   ├──[[Dummy Boundary Action]]
 │   ├──[[Dummy Boundary Action 2]]
+│   ├──[[Mine Block Boundary Action]]
 ├──**Control Actions**
 │   ├──[[Dummy Control Action]]
 │   ├──[[Placeholder]]
