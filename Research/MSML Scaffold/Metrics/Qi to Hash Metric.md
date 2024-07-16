@@ -1,4 +1,4 @@
-Description: Metric which converts an amount of Qi to an amount of hash
+Description: Metric which converts an amount of Qi to an amount of hash. This may change in the future depending on parameterization.
 
 Type: [[Hash Type]]
 
@@ -11,7 +11,7 @@ Symbol: None
 1. [[DUMMY Length Multiplier]]
 
 ## Variables Used
-1. [[Dummy State]].[[Dummy State-Total Length|Total Length]]
+1. [[Global State]].[[Global State-Block Difficulty|Block Difficulty]]
 
 ## Domain Spaces
 1. [[Dummy Space 1]]

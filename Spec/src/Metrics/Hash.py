@@ -5,8 +5,10 @@ metrics_hash.append(
     {
         "type": "Hash Type",
         "name": "Qi to Hash Metric",
-        "description": "Metric which converts an amount of Qi to an amount of hash",
-        "variables_used": [["Dummy State", "Total Length"]],
+        "description": "Metric which converts an amount of Qi to an amount of hash. This may change in the future depending on parameterization.",
+        "variables_used": [
+            ["Global State", "Block Difficulty"],
+        ],
         "parameters_used": ["DUMMY Length Multiplier"],
         "metrics_used": [],
         "domain": ["Dummy Space 1"],
