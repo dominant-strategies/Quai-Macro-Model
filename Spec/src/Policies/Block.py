@@ -58,7 +58,7 @@ mining_payment_policy = {
         "Quai Hash Space",
     ],
     "parameters_used": [],
-    "metrics_used": [],
+    "metrics_used": ["Qi to Hash Metric", "Quai to Hash Metric"],
 }
 
 
