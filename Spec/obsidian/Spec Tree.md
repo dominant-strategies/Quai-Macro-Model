@@ -30,6 +30,9 @@ cssclasses:
 ├──**Stateful Metrics**
 │   ├──Dummy Stateful Metrics
 │   │   ├──[[dummy_metric]]
+│   ├──Block Reward Stateful Metrics
+│   │   ├──[[Current Quai Block Reward Stateful Metric]]
+│   │   ├──[[Current Qi Block Reward Stateful Metric]]
 ├──**Types**
 │   ├──[[Dummy Type 1]]
 │   ├──[[Dummy Type 2]]
