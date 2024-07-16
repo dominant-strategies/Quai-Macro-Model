@@ -36,7 +36,12 @@ Importantly, these block reward functions only define how many Quai/Qi tokens ca
 mining_payment_policy_option1 = {
     "name": "Deterministic Mining Payment Policy",
     "description": "User chooses either all Qi or all Quai based on which is more valuable.",
-    "logic": "Compare the price of Qi times Qi amount to price of Quai times Quai amount and pick the larger sum.",
+    "logic": """Compare the price of Qi times Qi amount to price of Quai times Quai amount and pick the larger sum. Then the spaces are as follows:
+1. Qi Space is equal to 0 or the Qi amount
+2. Quai Space is equal to 0 or the Quai amount
+3. Mined Ratio Space has 0 if Qi was chosen, 1 if Quai was chosen
+4. Qi Hash Space has 0 if Quai was chosen, otherwise $QiToHashMetric(Qi)$
+5. Quai Hash Space has 0 if Qi was chosen, otherwise $QuaiToHashMetric(Quai)$""",
 }
 
 mining_payment_policy = {
