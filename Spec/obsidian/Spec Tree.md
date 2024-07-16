@@ -12,6 +12,8 @@ cssclasses:
 │   │   ├──[[Dummy State-Total Length\|Total Length]]
 │   ├──[[Global State]]
 │   │   ├──[[Global State-Dummy\|Dummy]]
+│   │   ├──[[Global State-Qi Supply\|Qi Supply]]
+│   │   ├──[[Global State-Quai Supply\|Quai Supply]]
 │   │   ├──[[Global State-Block Number\|Block Number]]
 │   │   ├──[[Global State-Block Difficulty\|Block Difficulty]]
 │   │   ├──[[Global State-Current Hash Difference\|Current Hash Difference]]
@@ -39,6 +41,7 @@ cssclasses:
 │   ├──[[Conversions Array Type]]
 │   ├──[[Mined Ratio Array Type]]
 │   ├──[[Hash Array Type]]
+│   ├──[[Mined Ratio Type]]
 │   ├──[[Coeffecient Type]]
 │   ├──[[USD Type]]
 │   ├──[[Quai Type]]
@@ -52,6 +55,11 @@ cssclasses:
 │   ├──[[Block Reward Options Space]]
 │   ├──[[Block Difficulty Space]]
 │   ├──[[Block Reward Space]]
+│   ├──[[Mined Ratio Space]]
+│   ├──[[Qi Hash Space]]
+│   ├──[[Quai Hash Space]]
+│   ├──[[Quai Space]]
+│   ├──[[Qi Space]]
 ├──**Parameters**
 │   ├──Dummy Parameter Set
 │   │   ├──[[DUMMY D Probability]]
@@ -69,3 +77,9 @@ cssclasses:
 │   ├──[[Mining Payment Policy]]
 ├──**Mechanisms**
 │   ├──[[DUMMY Log Results Mechanism]]
+│   ├──[[Increment Block Number Mechanism]]
+│   ├──[[Update Historical Mined Ratio Mechanism]]
+│   ├──[[Update Historical Qi Hash Mechanism]]
+│   ├──[[Update Historical Quai Hash Mechanism]]
+│   ├──[[Mint Qi Tokens Mechanism]]
+│   ├──[[Mint Quai Tokens Mechanism]]

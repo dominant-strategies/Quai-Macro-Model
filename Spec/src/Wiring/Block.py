@@ -18,7 +18,14 @@ block_wiring.append(
 block_wiring.append(
     {
         "name": "Mining Mechanisms",
-        "components": ["Placeholder"],
+        "components": [
+            "Increment Block Number Mechanism",
+            "Mint Qi Tokens Mechanism",
+            "Mint Quai Tokens Mechanism",
+            "Update Historical Mined Ratio Mechanism",
+            "Update Historical Qi Hash Mechanism",
+            "Update Historical Quai Hash Mechanism",
+        ],
         "description": "The mechanisms associated with mining a block",
         "constraints": [],
         "type": "Parallel",
