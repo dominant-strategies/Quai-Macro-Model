@@ -5,14 +5,13 @@ Type: [[Hash Type]]
 Symbol: None
 
 ## Logic
-
+$$qiToHash(Qi) ->  Qi \cdot k_{qi}$$
 
 ## Parameters Used
-1. [[DUMMY Length Multiplier]]
 
 ## Variables Used
-1. [[Global State]].[[Global State-Block Difficulty|Block Difficulty]]
+1. [[Global State]].[[Global State-K Qi|K Qi]]
 
 ## Domain Spaces
-1. [[Dummy Space 1]]
+1. [[Qi Space]]
 ## Metrics Used
