@@ -24,4 +24,9 @@
 
 ## Boundary Actions
 ## Mechanisms Impacting the Entity
+### [[Increment Block Number Mechanism]]
+### [[Update Historical Mined Ratio Mechanism]]
+### [[Update Historical Qi Hash Mechanism]]
+### [[Update Historical Quai Hash Mechanism]]
 ## Actions Impacting the Entity
+### [[Mine Block Boundary Action]]

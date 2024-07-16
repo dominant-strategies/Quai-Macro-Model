@@ -11,5 +11,4 @@ A mechanism which appends the word just added and also increments the total leng
 
 ## Updates
 
-1. [[Dummy]].[[Dummy State-Words|Words]]
-2. [[Dummy]].[[Dummy State-Total Length|Total Length]]
+1. [[Global]].[[Global State-Historical Mined Ratio|Historical Mined Ratio]]

@@ -5,10 +5,17 @@ graph TB
 
 subgraph SVS["State Variables"]
 EE0[("Dummy")]
+EE1[("Global")]
 EES0(["Total Length"])
 EES0 --- EE0
 EES1(["Words"])
 EES1 --- EE0
+EES2(["Block Number"])
+EES2 --- EE1
+EES3(["Historical Mined Ratio"])
+EES3 --- EE1
+EES4(["Historical Qi Hash"])
+EES4 --- EE1
 end
 
 subgraph X22["Simulation Wiring"]
@@ -29,8 +36,7 @@ X7["Mining Payment Policy"]
 subgraph X16["Mining Mechanisms"]
 direction TB
 X8["Increment Block Number Mechanism"]
-X8 --> EES1
-X8 --> EES0
+X8 --> EES2
 X9["Mint Qi Tokens Mechanism"]
 X9 --> EES1
 X9 --> EES0
@@ -38,14 +44,11 @@ X10["Mint Quai Tokens Mechanism"]
 X10 --> EES1
 X10 --> EES0
 X11["Update Historical Mined Ratio Mechanism"]
-X11 --> EES1
-X11 --> EES0
+X11 --> EES3
 X12["Update Historical Qi Hash Mechanism"]
-X12 --> EES1
-X12 --> EES0
+X12 --> EES4
 X13["Update Historical Quai Hash Mechanism"]
-X13 --> EES1
-X13 --> EES0
+X13 --> EES4
 X14[Domain]
 
 direction LR
@@ -121,4 +124,7 @@ The wiring of the entire simulation
 ## All State Updates
 1. [[Dummy]].[[Dummy State-Total Length|Total Length]]
 2. [[Dummy]].[[Dummy State-Words|Words]]
+3. [[Global]].[[Global State-Block Number|Block Number]]
+4. [[Global]].[[Global State-Historical Mined Ratio|Historical Mined Ratio]]
+5. [[Global]].[[Global State-Historical Qi Hash|Historical Qi Hash]]
 

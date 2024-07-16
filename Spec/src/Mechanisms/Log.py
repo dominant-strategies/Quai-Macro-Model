@@ -5,7 +5,7 @@ update_historical_mined_ration_mechanism = {
     "logic": "",
     "domain": [],
     "parameters_used": [],
-    "updates": [("Dummy", "Words", False), ("Dummy", "Total Length", False)],
+    "updates": [("Global", "Historical Mined Ratio", False)],
 }
 
 update_historical_qi_hash_mechanism = {
@@ -15,7 +15,7 @@ update_historical_qi_hash_mechanism = {
     "logic": "",
     "domain": [],
     "parameters_used": [],
-    "updates": [("Dummy", "Words", False), ("Dummy", "Total Length", False)],
+    "updates": [("Global", "Historical Qi Hash", False)],
 }
 
 update_historical_quai_hash_mechanism = {
@@ -25,7 +25,7 @@ update_historical_quai_hash_mechanism = {
     "logic": "",
     "domain": [],
     "parameters_used": [],
-    "updates": [("Dummy", "Words", False), ("Dummy", "Total Length", False)],
+    "updates": [("Global", "Historical Qi Hash", False)],
 }
 
 log_mechanisms = [
