@@ -45,7 +45,13 @@ mining_payment_policy = {
     "constraints": [],
     "policy_options": [mining_payment_policy_option1],
     "domain": ["Block Reward Options Space"],
-    "codomain": ["Mined Ratio Space", "Qi Hash Space", "Quai Hash Space"],
+    "codomain": [
+        "Qi Space",
+        "Quai Space",
+        "Mined Ratio Space",
+        "Qi Hash Space",
+        "Quai Hash Space",
+    ],
     "parameters_used": [],
     "metrics_used": [],
 }

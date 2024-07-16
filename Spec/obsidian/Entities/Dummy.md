@@ -16,10 +16,6 @@ A dummy state
 ## Mechanisms Impacting the Entity
 ### [[DUMMY Log Results Mechanism]]
 ### [[DUMMY Log Results Mechanism]]
-### [[Mint Qi Tokens Mechanism]]
-### [[Mint Qi Tokens Mechanism]]
-### [[Mint Quai Tokens Mechanism]]
-### [[Mint Quai Tokens Mechanism]]
 ## Actions Impacting the Entity
 ### [[Dummy Boundary Action 2]]
 ### [[Dummy Control Action]]

@@ -4,18 +4,17 @@
 graph TB
 
 subgraph SVS["State Variables"]
-EE0[("Dummy")]
-EE1[("Global")]
-EES0(["Total Length"])
+EE0[("Global")]
+EES0(["Block Number"])
 EES0 --- EE0
-EES1(["Words"])
+EES1(["Historical Mined Ratio"])
 EES1 --- EE0
-EES2(["Block Number"])
-EES2 --- EE1
-EES3(["Historical Mined Ratio"])
-EES3 --- EE1
-EES4(["Historical Qi Hash"])
-EES4 --- EE1
+EES2(["Historical Qi Hash"])
+EES2 --- EE0
+EES3(["Qi Supply"])
+EES3 --- EE0
+EES4(["Quai Supply"])
+EES4 --- EE0
 end
 
 subgraph X22["Simulation Wiring"]
@@ -36,35 +35,35 @@ X7["Mining Payment Policy"]
 subgraph X16["Mining Mechanisms"]
 direction TB
 X8["Increment Block Number Mechanism"]
-X8 --> EES2
+X8 --> EES0
 X9["Mint Qi Tokens Mechanism"]
-X9 --> EES1
-X9 --> EES0
+X9 --> EES3
 X10["Mint Quai Tokens Mechanism"]
-X10 --> EES1
-X10 --> EES0
+X10 --> EES4
 X11["Update Historical Mined Ratio Mechanism"]
-X11 --> EES3
+X11 --> EES1
 X12["Update Historical Qi Hash Mechanism"]
-X12 --> EES4
+X12 --> EES2
 X13["Update Historical Quai Hash Mechanism"]
-X13 --> EES4
+X13 --> EES2
 X14[Domain]
 
 direction LR
 direction TB
 X14 --> X8
-X14 --> X9
-X14 --> X10
+X14 --"Qi Space"--> X9
+X14 --"Quai Space"--> X10
 X14 --"Mined Ratio Space"--> X11
 X14 --"Qi Hash Space"--> X12
 X14 --"Quai Hash Space"--> X13
 end
 X5--"Block Difficulty Space"--->X6
 X6--"Block Reward Options Space"--->X7
-X7--"Mined Ratio Space
+X7--"Qi Space
+Quai Space
+Mined Ratio Space
 Qi Hash Space
-Quai Hash Space"----->X16
+Quai Hash Space"------->X16
 end
 subgraph X19["Controller Update Wiring"]
 direction TB
@@ -117,8 +116,10 @@ The wiring of the entire simulation
 3. [[Empty Space]]
 4. [[Mined Ratio Space]]
 5. [[Qi Hash Space]]
-6. [[Quai Hash Space]]
-7. [[Terminating Space]]
+6. [[Qi Space]]
+7. [[Quai Hash Space]]
+8. [[Quai Space]]
+9. [[Terminating Space]]
 
 ## Parameters Used
 
@@ -127,9 +128,9 @@ The wiring of the entire simulation
 ## Calls
 
 ## All State Updates
-1. [[Dummy]].[[Dummy State-Total Length|Total Length]]
-2. [[Dummy]].[[Dummy State-Words|Words]]
-3. [[Global]].[[Global State-Block Number|Block Number]]
-4. [[Global]].[[Global State-Historical Mined Ratio|Historical Mined Ratio]]
-5. [[Global]].[[Global State-Historical Qi Hash|Historical Qi Hash]]
+1. [[Global]].[[Global State-Block Number|Block Number]]
+2. [[Global]].[[Global State-Historical Mined Ratio|Historical Mined Ratio]]
+3. [[Global]].[[Global State-Historical Qi Hash|Historical Qi Hash]]
+4. [[Global]].[[Global State-Qi Supply|Qi Supply]]
+5. [[Global]].[[Global State-Quai Supply|Quai Supply]]
 

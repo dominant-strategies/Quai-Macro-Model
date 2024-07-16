@@ -6,13 +6,17 @@ Policy which determines what amount of Quai vs. Qi is taken as payment.
 ## Domain Spaces
 1. [[Block Reward Options Space]]
 ## Followed By
-1. [[Update Historical Mined Ratio Mechanism]]
-2. [[Update Historical Qi Hash Mechanism]]
-3. [[Update Historical Quai Hash Mechanism]]
+1. [[Mint Qi Tokens Mechanism]]
+2. [[Mint Quai Tokens Mechanism]]
+3. [[Update Historical Mined Ratio Mechanism]]
+4. [[Update Historical Qi Hash Mechanism]]
+5. [[Update Historical Quai Hash Mechanism]]
 ## Codomain Spaces
-1. [[Mined Ratio Space]]
-2. [[Qi Hash Space]]
-3. [[Quai Hash Space]]
+1. [[Qi Space]]
+2. [[Quai Space]]
+3. [[Mined Ratio Space]]
+4. [[Qi Hash Space]]
+5. [[Quai Hash Space]]
 ## Constraints
 ## Parameters Used
 ## Metrics Used

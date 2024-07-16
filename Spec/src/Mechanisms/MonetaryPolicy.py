@@ -1,21 +1,21 @@
 mint_qi_mechanism = {
     "name": "Mint Qi Tokens Mechanism",
-    "description": "A mechanism which appends the word just added and also increments the total length",
+    "description": "A mechanism which deals with minting Qi",
     "constraints": [],
-    "logic": "",
-    "domain": [],
+    "logic": "Update total supply by DOMAIN[0]['Qi']",
+    "domain": ["Qi Space"],
     "parameters_used": [],
-    "updates": [("Dummy", "Words", False), ("Dummy", "Total Length", False)],
+    "updates": [("Global", "Qi Supply", False)],
 }
 
 mint_quai_mechanism = {
     "name": "Mint Quai Tokens Mechanism",
-    "description": "A mechanism which appends the word just added and also increments the total length",
+    "description": "A mechanism which deals with minting Quai",
     "constraints": [],
-    "logic": "",
-    "domain": [],
+    "logic": "Update total supply by DOMAIN[0]['Quai']",
+    "domain": ["Quai Space"],
     "parameters_used": [],
-    "updates": [("Dummy", "Words", False), ("Dummy", "Total Length", False)],
+    "updates": [("Global", "Quai Supply", False)],
 }
 
 monetary_policy_mechanisms = [mint_qi_mechanism, mint_quai_mechanism]

@@ -7,6 +7,8 @@
 | Name | Description | Type | Symbol | Domain |
 | --- | --- | --- | --- | --- |
 |[[Global State-Dummy\|Dummy]]|The dummy entity|[[Entity Type]]|||
+|[[Global State-Qi Supply\|Qi Supply]]|The total supply of Qi|[[Qi Type]]|||
+|[[Global State-Quai Supply\|Quai Supply]]|The total supply of Quai|[[Quai Type]]|||
 |[[Global State-Block Number\|Block Number]]|The current block that the system is on|[[Block Number Type]]|||
 |[[Global State-Block Difficulty\|Block Difficulty]]|The latest difficulty for blocks|[[Block Difficulty Type]]|||
 |[[Global State-Current Hash Difference\|Current Hash Difference]]||[[Hash Type]]|||
@@ -28,5 +30,7 @@
 ### [[Update Historical Mined Ratio Mechanism]]
 ### [[Update Historical Qi Hash Mechanism]]
 ### [[Update Historical Quai Hash Mechanism]]
+### [[Mint Qi Tokens Mechanism]]
+### [[Mint Quai Tokens Mechanism]]
 ## Actions Impacting the Entity
 ### [[Mine Block Boundary Action]]

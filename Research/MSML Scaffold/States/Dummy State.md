@@ -10,7 +10,3 @@ A dummy state
 ## Updated By
 ### [[DUMMY Log Results Mechanism]]
 ### [[DUMMY Log Results Mechanism]]
-### [[Mint Qi Tokens Mechanism]]
-### [[Mint Qi Tokens Mechanism]]
-### [[Mint Quai Tokens Mechanism]]
-### [[Mint Quai Tokens Mechanism]]

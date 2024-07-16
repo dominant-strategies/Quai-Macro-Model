@@ -12,6 +12,8 @@ cssclasses:
 │   │   ├──[[Dummy State-Total Length\|Total Length]]
 │   ├──[[Global State]]
 │   │   ├──[[Global State-Dummy\|Dummy]]
+│   │   ├──[[Global State-Qi Supply\|Qi Supply]]
+│   │   ├──[[Global State-Quai Supply\|Quai Supply]]
 │   │   ├──[[Global State-Block Number\|Block Number]]
 │   │   ├──[[Global State-Block Difficulty\|Block Difficulty]]
 │   │   ├──[[Global State-Current Hash Difference\|Current Hash Difference]]
@@ -56,6 +58,8 @@ cssclasses:
 │   ├──[[Mined Ratio Space]]
 │   ├──[[Qi Hash Space]]
 │   ├──[[Quai Hash Space]]
+│   ├──[[Quai Space]]
+│   ├──[[Qi Space]]
 ├──**Parameters**
 │   ├──Dummy Parameter Set
 │   │   ├──[[DUMMY D Probability]]
