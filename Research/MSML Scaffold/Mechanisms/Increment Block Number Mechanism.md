@@ -2,7 +2,6 @@
 
 A mechanism which increments the current block number
 ## Called By
-1. [[Mining Payment Policy]]
 ## Domain Spaces
 1. [[Empty Space]]
 ## Constraints

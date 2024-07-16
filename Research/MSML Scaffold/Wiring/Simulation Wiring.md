@@ -56,13 +56,15 @@ direction TB
 X14 --> X8
 X14 --> X9
 X14 --> X10
-X14 --> X11
-X14 --> X12
-X14 --> X13
+X14 --"Mined Ratio Space"--> X11
+X14 --"Qi Hash Space"--> X12
+X14 --"Quai Hash Space"--> X13
 end
 X5--"Block Difficulty Space"--->X6
 X6--"Block Reward Options Space"--->X7
-X7--->X16
+X7--"Mined Ratio Space
+Qi Hash Space
+Quai Hash Space"----->X16
 end
 subgraph X19["Controller Update Wiring"]
 direction TB
@@ -113,7 +115,10 @@ The wiring of the entire simulation
 1. [[Block Difficulty Space]]
 2. [[Block Reward Options Space]]
 3. [[Empty Space]]
-4. [[Terminating Space]]
+4. [[Mined Ratio Space]]
+5. [[Qi Hash Space]]
+6. [[Quai Hash Space]]
+7. [[Terminating Space]]
 
 ## Parameters Used
 

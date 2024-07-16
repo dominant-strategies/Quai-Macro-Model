@@ -41,9 +41,9 @@ direction TB
 X7 --> X1
 X7 --> X2
 X7 --> X3
-X7 --> X4
-X7 --> X5
-X7 --> X6
+X7 --"Mined Ratio Space"--> X4
+X7 --"Qi Hash Space"--> X5
+X7 --"Quai Hash Space"--> X6
 end
 ```
 
@@ -70,14 +70,19 @@ The mechanisms associated with mining a block
 ## Constraints
 
 ## Domain Spaces
-1. [[Empty Space]]
+1. [[Mined Ratio Space]]
+2. [[Qi Hash Space]]
+3. [[Quai Hash Space]]
 
 ## Codomain Spaces
 1. [[Empty Space]]
 
 ## All Spaces Used
 1. [[Empty Space]]
-2. [[Terminating Space]]
+2. [[Mined Ratio Space]]
+3. [[Qi Hash Space]]
+4. [[Quai Hash Space]]
+5. [[Terminating Space]]
 
 ## Parameters Used
 

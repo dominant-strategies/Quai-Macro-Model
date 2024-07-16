@@ -24,4 +24,3 @@ A dummy state
 ### [[Dummy Boundary Action 2]]
 ### [[Dummy Control Action]]
 ### [[Dummy Boundary Action]]
-### [[Mine Block Boundary Action]]

@@ -16,7 +16,7 @@ MinedRatioArrayType = {
     "type": "MinedRatioArrayType",
     "notes": r"""An array of the form:
 
-List[{"Ratio": "Ratio Type",
+List[{"Ratio": "Mined Ratio Type",
 "Block Number": "Block Number Type"}]
 
 0 corresponds to 100% Qi, 1 corresponds to 100% Quai, number in between are the increments between those balances.""",
@@ -33,4 +33,11 @@ List[{"Hash Value": "Hash Type",
 """,
 }
 
-log_types = [ConversionsArrayType, MinedRatioArrayType, HashArrayType]
+MinedRatioType = {
+    "name": "Mined Ratio Type",
+    "type": "MinedRatioType",
+    "notes": "0 corresponds to 100% Qi, 1 corresponds to 100% Quai, number in between are the increments between those balances.",
+}
+
+
+log_types = [ConversionsArrayType, MinedRatioArrayType, HashArrayType, MinedRatioType]

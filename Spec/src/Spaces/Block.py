@@ -23,5 +23,27 @@ block_reward_space = {
     },
 }
 
+mined_ratio_space = {
+    "name": "Mined Ratio Space",
+    "schema": {"Block Number": "Block Number Type", "Ratio": "Mined Ratio Type"},
+}
 
-block_spaces = [block_reward_options_space, block_difficulty_space, block_reward_space]
+qi_hash_space = {
+    "name": "Qi Hash Space",
+    "schema": {"Block Number": "Block Number Type", "Hash Value": "Hash Type"},
+}
+
+quai_hash_space = {
+    "name": "Quai Hash Space",
+    "schema": {"Block Number": "Block Number Type", "Hash Value": "Hash Type"},
+}
+
+
+block_spaces = [
+    block_reward_options_space,
+    block_difficulty_space,
+    block_reward_space,
+    mined_ratio_space,
+    qi_hash_space,
+    quai_hash_space,
+]

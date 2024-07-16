@@ -39,6 +39,7 @@ cssclasses:
 │   ├──[[Conversions Array Type]]
 │   ├──[[Mined Ratio Array Type]]
 │   ├──[[Hash Array Type]]
+│   ├──[[Mined Ratio Type]]
 │   ├──[[Coeffecient Type]]
 │   ├──[[USD Type]]
 │   ├──[[Quai Type]]
@@ -52,6 +53,9 @@ cssclasses:
 │   ├──[[Block Reward Options Space]]
 │   ├──[[Block Difficulty Space]]
 │   ├──[[Block Reward Space]]
+│   ├──[[Mined Ratio Space]]
+│   ├──[[Qi Hash Space]]
+│   ├──[[Quai Hash Space]]
 ├──**Parameters**
 │   ├──Dummy Parameter Set
 │   │   ├──[[DUMMY D Probability]]

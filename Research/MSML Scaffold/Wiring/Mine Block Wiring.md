@@ -46,13 +46,15 @@ direction TB
 X10 --> X4
 X10 --> X5
 X10 --> X6
-X10 --> X7
-X10 --> X8
-X10 --> X9
+X10 --"Mined Ratio Space"--> X7
+X10 --"Qi Hash Space"--> X8
+X10 --"Quai Hash Space"--> X9
 end
 X1--"Block Difficulty Space"--->X2
 X2--"Block Reward Options Space"--->X3
-X3--->X12
+X3--"Mined Ratio Space
+Qi Hash Space
+Quai Hash Space"----->X12
 end
 ```
 
@@ -88,7 +90,10 @@ The wiring for mining a block
 1. [[Block Difficulty Space]]
 2. [[Block Reward Options Space]]
 3. [[Empty Space]]
-4. [[Terminating Space]]
+4. [[Mined Ratio Space]]
+5. [[Qi Hash Space]]
+6. [[Quai Hash Space]]
+7. [[Terminating Space]]
 
 ## Parameters Used
 

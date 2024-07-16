@@ -1,13 +1,13 @@
 ## Description
 
-A mechanism which appends the word just added and also increments the total length
+A mechanism which appends the latest qi has to historical qi hash
 ## Called By
 1. [[Mining Payment Policy]]
 ## Domain Spaces
-1. [[Empty Space]]
+1. [[Qi Hash Space]]
 ## Constraints
 ## Logic
-
+Append the first space to the historical array
 
 ## Updates
 
