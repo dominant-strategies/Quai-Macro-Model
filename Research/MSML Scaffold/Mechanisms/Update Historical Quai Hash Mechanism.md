@@ -1,9 +1,15 @@
-- Coming out of quai mined in terms of hash
+## Description
 
-## Old Code
+A mechanism which appends the word just added and also increments the total length
+## Called By
+1. [[Mining Payment Policy]]
+## Domain Spaces
+1. [[Empty Space]]
+## Constraints
+## Logic
 
-    def quaiToHash(self, quaiAmount):
-        if quaiAmount <= 0:
-            return 0
-        return self.qiRewardVal/self.quaiRewardVal * quaiAmount * self.kqi
-        #return 2**(2**(self.kquai) * quaiAmount)
+
+## Updates
+
+1. [[Dummy]].[[Dummy State-Words|Words]]
+2. [[Dummy]].[[Dummy State-Total Length|Total Length]]

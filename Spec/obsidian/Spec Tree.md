@@ -69,3 +69,9 @@ cssclasses:
 │   ├──[[Mining Payment Policy]]
 ├──**Mechanisms**
 │   ├──[[DUMMY Log Results Mechanism]]
+│   ├──[[Increment Block Number Mechanism]]
+│   ├──[[Update Historical Mined Ratio Mechanism]]
+│   ├──[[Update Historical Qi Hash Mechanism]]
+│   ├──[[Update Historical Quai Hash Mechanism]]
+│   ├──[[Mint Qi Tokens Mechanism]]
+│   ├──[[Mint Quai Tokens Mechanism]]

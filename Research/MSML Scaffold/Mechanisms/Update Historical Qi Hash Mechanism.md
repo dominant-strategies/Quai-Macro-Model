@@ -1,8 +1,15 @@
-- Coming out of the Qi mined in terms of amount of hash
+## Description
 
-## Old Code
+A mechanism which appends the word just added and also increments the total length
+## Called By
+1. [[Mining Payment Policy]]
+## Domain Spaces
+1. [[Empty Space]]
+## Constraints
+## Logic
 
-    def qiToHash(self, qiAmount):
-        if qiAmount <= 0:
-            return 0
-        return qiAmount*self.kqi
+
+## Updates
+
+1. [[Dummy]].[[Dummy State-Words|Words]]
+2. [[Dummy]].[[Dummy State-Total Length|Total Length]]
