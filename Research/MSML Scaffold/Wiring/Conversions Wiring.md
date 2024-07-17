@@ -8,7 +8,7 @@ end
 
 subgraph X2["Conversions Wiring"]
 direction TB
-X1["Placeholder"]
+X1["Conversions Boundary Action"]
 end
 ```
 
@@ -21,10 +21,10 @@ For example, if the current Quai block reward is 1 and the current Qi block rewa
 
 This mechanism allows for greater responsiveness in the [[Qi Supply Metric|supply of Qi]], allowing all [[Network Participant|network participants]], not just [[Miner|miners]], to participate in the ongoing [[Trade Tokens Wiring|arbitrage]] between [[Qi Demand]] and [[Qi Supply Metric|Qi supply]].
 ## Components
-1. [[Placeholder]]
+1. [[Conversions Boundary Action]]
 
 ## All Blocks
-1. [[Placeholder]]
+1. [[Conversions Boundary Action]]
 
 ## Constraints
 
