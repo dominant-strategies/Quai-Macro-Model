@@ -86,6 +86,7 @@ cssclasses:
 │   ├──[[DUMMY Letter Count Policy]]
 │   ├──[[Block Reward Policy]]
 │   ├──[[Mining Payment Policy]]
+│   ├──[[Conversions Policy]]
 ├──**Mechanisms**
 │   ├──[[DUMMY Log Results Mechanism]]
 │   ├──[[Increment Block Number Mechanism]]

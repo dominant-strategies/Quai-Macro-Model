@@ -3,6 +3,7 @@
 A mechanism which deals with minting Quai
 ## Called By
 1. [[Mining Payment Policy]]
+2. [[Conversions Policy]]
 ## Domain Spaces
 1. [[Quai Space]]
 ## Constraints
