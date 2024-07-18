@@ -5,7 +5,7 @@ simulation_wiring.append(
         "name": "Simulation Wiring",
         "components": [
             "Price Movements Wiring",
-            "Exchanges Wiring",
+            "Conversions Wiring",
             "Mine Block Wiring",
             "Controller Update Wiring",
             "Log Simulation Wiring",
