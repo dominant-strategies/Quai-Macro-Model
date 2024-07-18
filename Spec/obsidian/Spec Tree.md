@@ -49,6 +49,7 @@ cssclasses:
 │   ├──[[USD Type]]
 │   ├──[[Quai Type]]
 │   ├──[[Qi Type]]
+│   ├──[[Ratio Type]]
 │   ├──[[Simulation History Log Type]]
 │   ├──[[Token Name Type]]
 │   ├──[[Token Amount Type]]

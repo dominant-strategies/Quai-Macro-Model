@@ -22,4 +22,11 @@ QiType = {
     "notes": "",
 }
 
-primitive_types = [CoeffecientType, USDType, QuaiType, QiType]
+
+RatioType = {
+    "name": "Ratio Type",
+    "type": "RatioType",
+    "notes": "",
+}
+
+primitive_types = [CoeffecientType, USDType, QuaiType, QiType, RatioType]
