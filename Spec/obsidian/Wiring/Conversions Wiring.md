@@ -31,10 +31,10 @@ This mechanism allows for greater responsiveness in the [[Qi Supply Metric|suppl
 ## Domain Spaces
 
 ## Codomain Spaces
-1. [[Empty Space]]
+1. [[Conversion Space]]
 
 ## All Spaces Used
-1. [[Empty Space]]
+1. [[Conversion Space]]
 
 ## Parameters Used
 

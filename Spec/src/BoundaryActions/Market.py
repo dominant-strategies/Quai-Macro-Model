@@ -4,7 +4,7 @@ conversions_boundary_action = {
     "constraints": [],
     "boundary_action_options": [],
     "called_by": [],
-    "codomain": [],
+    "codomain": ["Conversion Space"],
     "parameters_used": [],
 }
 

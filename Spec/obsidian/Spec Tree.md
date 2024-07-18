@@ -50,6 +50,8 @@ cssclasses:
 │   ├──[[Quai Type]]
 │   ├──[[Qi Type]]
 │   ├──[[Simulation History Log Type]]
+│   ├──[[Token Name Type]]
+│   ├──[[Token Amount Type]]
 ├──**Spaces**
 │   ├──[[Terminating Space]]
 │   ├──[[Empty Space]]
@@ -63,10 +65,14 @@ cssclasses:
 │   ├──[[Quai Hash Space]]
 │   ├──[[Quai Space]]
 │   ├──[[Qi Space]]
+│   ├──[[Conversion Space]]
 ├──**Parameters**
 │   ├──Dummy Parameter Set
 │   │   ├──[[DUMMY D Probability]]
 │   │   ├──[[DUMMY Length Multiplier]]
+│   ├──Market Parameter Set
+│   │   ├──[[Minimum Quai Conversion Amount]]
+│   │   ├──[[Minimum Qi Conversion Amount]]
 ├──**Boundary Actions**
 │   ├──[[Dummy Boundary Action]]
 │   ├──[[Dummy Boundary Action 2]]

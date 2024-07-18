@@ -8,5 +8,5 @@ Boundary action which determines amount of potentially converted Qi or Quai.
 ## Constraints
 
 ## Codomain Spaces
-1. [[Empty Space]]
+1. [[Conversion Space]]
 
