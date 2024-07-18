@@ -32,6 +32,8 @@
 ### [[Update Historical Quai Hash Mechanism]]
 ### [[Mint Qi Tokens Mechanism]]
 ### [[Mint Quai Tokens Mechanism]]
+### [[Burn Qi Tokens Mechanism]]
+### [[Burn Quai Tokens Mechanism]]
 ## Actions Impacting the Entity
 ### [[Mine Block Boundary Action]]
 ### [[Conversions Boundary Action]]

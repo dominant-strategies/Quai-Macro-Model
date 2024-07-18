@@ -34,6 +34,8 @@ market_wiring.append(
         "components": [
             "Mint Qi Tokens Mechanism",
             "Mint Quai Tokens Mechanism",
+            "Burn Qi Tokens Mechanism",
+            "Burn Quai Tokens Mechanism",
         ],
         "description": """""",
         "constraints": [],

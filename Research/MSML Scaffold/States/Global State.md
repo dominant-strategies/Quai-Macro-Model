@@ -28,3 +28,5 @@
 ### [[Update Historical Quai Hash Mechanism]]
 ### [[Mint Qi Tokens Mechanism]]
 ### [[Mint Quai Tokens Mechanism]]
+### [[Burn Qi Tokens Mechanism]]
+### [[Burn Quai Tokens Mechanism]]

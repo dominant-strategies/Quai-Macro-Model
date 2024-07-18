@@ -11,26 +11,34 @@ EES1(["Quai Supply"])
 EES1 --- EE0
 end
 
-subgraph X8["Conversions Wiring"]
+subgraph X10["Conversions Wiring"]
 direction TB
 X1["Conversions Boundary Action"]
 X2["Conversions Policy"]
-subgraph X7["Conversions Mechanisms Wiring"]
+subgraph X9["Conversions Mechanisms Wiring"]
 direction TB
 X3["Mint Qi Tokens Mechanism"]
 X3 --> EES0
 X4["Mint Quai Tokens Mechanism"]
 X4 --> EES1
-X5[Domain]
+X5["Burn Qi Tokens Mechanism"]
+X5 --> EES0
+X6["Burn Quai Tokens Mechanism"]
+X6 --> EES1
+X7[Domain]
 
 direction LR
 direction TB
-X5 --"Qi Space"--> X3
-X5 --"Quai Space"--> X4
+X7 --"Qi Space"--> X3
+X7 --"Quai Space"--> X4
+X7 --"Qi Space"--> X5
+X7 --"Quai Space"--> X6
 end
 X1--"Conversion Space"--->X2
 X2--"Qi Space
-Quai Space"---->X7
+Quai Space
+Qi Space
+Quai Space"------>X9
 end
 ```
 
@@ -48,10 +56,12 @@ This mechanism allows for greater responsiveness in the [[Qi Supply Metric|suppl
 3. [[Conversions Mechanisms Wiring]]
 
 ## All Blocks
-1. [[Conversions Boundary Action]]
-2. [[Conversions Policy]]
-3. [[Mint Qi Tokens Mechanism]]
-4. [[Mint Quai Tokens Mechanism]]
+1. [[Burn Qi Tokens Mechanism]]
+2. [[Burn Quai Tokens Mechanism]]
+3. [[Conversions Boundary Action]]
+4. [[Conversions Policy]]
+5. [[Mint Qi Tokens Mechanism]]
+6. [[Mint Quai Tokens Mechanism]]
 
 ## Constraints
 

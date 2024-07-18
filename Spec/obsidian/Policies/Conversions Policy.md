@@ -8,9 +8,13 @@ The policy which determines the amount of Quai or Qi exchanged.
 ## Followed By
 1. [[Mint Qi Tokens Mechanism]]
 2. [[Mint Quai Tokens Mechanism]]
+3. [[Burn Qi Tokens Mechanism]]
+4. [[Burn Quai Tokens Mechanism]]
 ## Codomain Spaces
 1. [[Qi Space]]
 2. [[Quai Space]]
+3. [[Qi Space]]
+4. [[Quai Space]]
 ## Constraints
 ## Parameters Used
 1. [[Minimum Qi Conversion Amount]]

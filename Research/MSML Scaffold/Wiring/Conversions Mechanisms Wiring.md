@@ -11,18 +11,24 @@ EES1(["Quai Supply"])
 EES1 --- EE0
 end
 
-subgraph X5["Conversions Mechanisms Wiring"]
+subgraph X7["Conversions Mechanisms Wiring"]
 direction TB
 X1["Mint Qi Tokens Mechanism"]
 X1 --> EES0
 X2["Mint Quai Tokens Mechanism"]
 X2 --> EES1
-X3[Domain]
+X3["Burn Qi Tokens Mechanism"]
+X3 --> EES0
+X4["Burn Quai Tokens Mechanism"]
+X4 --> EES1
+X5[Domain]
 
 direction LR
 direction TB
-X3 --"Qi Space"--> X1
-X3 --"Quai Space"--> X2
+X5 --"Qi Space"--> X1
+X5 --"Quai Space"--> X2
+X5 --"Qi Space"--> X3
+X5 --"Quai Space"--> X4
 end
 ```
 
@@ -33,16 +39,22 @@ Block Type: Parallel Block
 ## Components
 1. [[Mint Qi Tokens Mechanism]]
 2. [[Mint Quai Tokens Mechanism]]
+3. [[Burn Qi Tokens Mechanism]]
+4. [[Burn Quai Tokens Mechanism]]
 
 ## All Blocks
-1. [[Mint Qi Tokens Mechanism]]
-2. [[Mint Quai Tokens Mechanism]]
+1. [[Burn Qi Tokens Mechanism]]
+2. [[Burn Quai Tokens Mechanism]]
+3. [[Mint Qi Tokens Mechanism]]
+4. [[Mint Quai Tokens Mechanism]]
 
 ## Constraints
 
 ## Domain Spaces
 1. [[Qi Space]]
 2. [[Quai Space]]
+3. [[Qi Space]]
+4. [[Quai Space]]
 
 ## Codomain Spaces
 1. [[Empty Space]]
