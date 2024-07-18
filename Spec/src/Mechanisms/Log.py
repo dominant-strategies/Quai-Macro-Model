@@ -28,8 +28,31 @@ update_historical_quai_hash_mechanism = {
     "updates": [("Global", "Historical Qi Hash", False)],
 }
 
+update_historical_converted_qi_mechanism = {
+    "name": "Update Historical Converted Qi Mechanism",
+    "description": "A mechanism which appends the latest qi conversion",
+    "constraints": [],
+    "logic": "Append the first space to the historical array",
+    "domain": ["Conversion Log Space"],
+    "parameters_used": [],
+    "updates": [("Global", "Historical Converted Qi", True)],
+}
+
+update_historical_converted_quai_mechanism = {
+    "name": "Update Historical Converted Quai Mechanism",
+    "description": "A mechanism which appends the latest quai conversion",
+    "constraints": [],
+    "logic": "Append the first space to the historical array",
+    "domain": ["Conversion Log Space"],
+    "parameters_used": [],
+    "updates": [("Global", "Historical Converted Quai", True)],
+}
+
+
 log_mechanisms = [
     update_historical_mined_ration_mechanism,
     update_historical_qi_hash_mechanism,
     update_historical_quai_hash_mechanism,
+    update_historical_converted_qi_mechanism,
+    update_historical_converted_quai_mechanism,
 ]

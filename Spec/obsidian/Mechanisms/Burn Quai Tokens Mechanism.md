@@ -1,14 +1,13 @@
 ## Description
 
-A mechanism which deals with minting Quai
+A mechanism which deals with burning Quai
 ## Called By
-1. [[Mining Payment Policy]]
-2. [[Conversions Policy]]
+1. [[Conversions Policy]]
 ## Domain Spaces
 1. [[Quai Space]]
 ## Constraints
 ## Logic
-Update total supply by DOMAIN[0]['Quai']
+Reduce total supply by DOMAIN[0]['Quai']
 
 ## Updates
 

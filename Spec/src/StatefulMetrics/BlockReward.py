@@ -35,4 +35,5 @@ where d is the current difficulty""",
     ],
 }
 
+
 block_reward_stateful_metrics = [block_reward_stateful_metric]
