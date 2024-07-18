@@ -13,7 +13,14 @@ conversions_policy = {
     "domain": [
         "Conversion Space",
     ],
-    "codomain": ["Qi Space", "Quai Space", "Qi Space", "Quai Space"],
+    "codomain": [
+        "Qi Space",
+        "Quai Space",
+        "Qi Space",
+        "Quai Space",
+        "Conversion Log Space",
+        "Conversion Log Space",
+    ],
     "parameters_used": [
         "Minimum Quai Conversion Amount",
         "Minimum Qi Conversion Amount",

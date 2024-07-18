@@ -5,40 +5,52 @@ graph TB
 
 subgraph SVS["State Variables"]
 EE0[("Global")]
-EES0(["Qi Supply"])
+EES0(["Historical Converted Qi"])
 EES0 --- EE0
-EES1(["Quai Supply"])
+EES1(["Historical Converted Quai"])
 EES1 --- EE0
+EES2(["Qi Supply"])
+EES2 --- EE0
+EES3(["Quai Supply"])
+EES3 --- EE0
 end
 
-subgraph X10["Conversions Wiring"]
+subgraph X12["Conversions Wiring"]
 direction TB
 X1["Conversions Boundary Action"]
 X2["Conversions Policy"]
-subgraph X9["Conversions Mechanisms Wiring"]
+subgraph X11["Conversions Mechanisms Wiring"]
 direction TB
 X3["Mint Qi Tokens Mechanism"]
-X3 --> EES0
+X3 --> EES2
 X4["Mint Quai Tokens Mechanism"]
-X4 --> EES1
+X4 --> EES3
 X5["Burn Qi Tokens Mechanism"]
-X5 --> EES0
+X5 --> EES2
 X6["Burn Quai Tokens Mechanism"]
-X6 --> EES1
-X7[Domain]
+X6 --> EES3
+X7["Update Historical Converted Qi Mechanism"]
+X7 --> EES0
+X8["Update Historical Converted Quai Mechanism"]
+X8 --> EES1
+X9[Domain]
 
 direction LR
 direction TB
-X7 --"Qi Space"--> X3
-X7 --"Quai Space"--> X4
-X7 --"Qi Space"--> X5
-X7 --"Quai Space"--> X6
+X9 --"Qi Space"--> X3
+X9 --"Quai Space"--> X4
+X9 --"Qi Space"--> X5
+X9 --"Quai Space"--> X6
+X9 --"Conversion Log Space"--> X7
+X9 --"Conversion Log Space"--> X8
 end
 X1--"Conversion Space"--->X2
 X2--"Qi Space
 Quai Space
 Qi Space
-Quai Space"------>X9
+Quai Space
+Conversion Log Space
+Conversion Log Space"-------->X11
 end
 ```
 
@@ -62,6 +74,8 @@ This mechanism allows for greater responsiveness in the [[Qi Supply Metric|suppl
 4. [[Conversions Policy]]
 5. [[Mint Qi Tokens Mechanism]]
 6. [[Mint Quai Tokens Mechanism]]
+7. [[Update Historical Converted Qi Mechanism]]
+8. [[Update Historical Converted Quai Mechanism]]
 
 ## Constraints
 
@@ -71,11 +85,12 @@ This mechanism allows for greater responsiveness in the [[Qi Supply Metric|suppl
 1. [[Empty Space]]
 
 ## All Spaces Used
-1. [[Conversion Space]]
-2. [[Empty Space]]
-3. [[Qi Space]]
-4. [[Quai Space]]
-5. [[Terminating Space]]
+1. [[Conversion Log Space]]
+2. [[Conversion Space]]
+3. [[Empty Space]]
+4. [[Qi Space]]
+5. [[Quai Space]]
+6. [[Terminating Space]]
 
 ## Parameters Used
 1. [[Minimum Qi Conversion Amount]]
@@ -86,6 +101,8 @@ This mechanism allows for greater responsiveness in the [[Qi Supply Metric|suppl
 ## Calls
 
 ## All State Updates
-1. [[Global]].[[Global State-Qi Supply|Qi Supply]]
-2. [[Global]].[[Global State-Quai Supply|Quai Supply]]
+1. [[Global]].[[Global State-Historical Converted Qi|Historical Converted Qi]]
+2. [[Global]].[[Global State-Historical Converted Quai|Historical Converted Quai]]
+3. [[Global]].[[Global State-Qi Supply|Qi Supply]]
+4. [[Global]].[[Global State-Quai Supply|Quai Supply]]
 

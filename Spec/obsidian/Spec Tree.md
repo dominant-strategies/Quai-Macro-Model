@@ -50,6 +50,7 @@ cssclasses:
 │   ├──[[Quai Type]]
 │   ├──[[Qi Type]]
 │   ├──[[Ratio Type]]
+│   ├──[[Datetime Type]]
 │   ├──[[Simulation History Log Type]]
 │   ├──[[Token Name Type]]
 │   ├──[[Token Amount Type]]
@@ -67,6 +68,7 @@ cssclasses:
 │   ├──[[Quai Space]]
 │   ├──[[Qi Space]]
 │   ├──[[Conversion Space]]
+│   ├──[[Conversion Log Space]]
 ├──**Parameters**
 │   ├──Dummy Parameter Set
 │   │   ├──[[DUMMY D Probability]]
@@ -93,6 +95,8 @@ cssclasses:
 │   ├──[[Update Historical Mined Ratio Mechanism]]
 │   ├──[[Update Historical Qi Hash Mechanism]]
 │   ├──[[Update Historical Quai Hash Mechanism]]
+│   ├──[[Update Historical Converted Qi Mechanism]]
+│   ├──[[Update Historical Converted Quai Mechanism]]
 │   ├──[[Mint Qi Tokens Mechanism]]
 │   ├──[[Mint Quai Tokens Mechanism]]
 │   ├──[[Burn Qi Tokens Mechanism]]

@@ -36,6 +36,8 @@ market_wiring.append(
             "Mint Quai Tokens Mechanism",
             "Burn Qi Tokens Mechanism",
             "Burn Quai Tokens Mechanism",
+            "Update Historical Converted Qi Mechanism",
+            "Update Historical Converted Quai Mechanism",
         ],
         "description": """""",
         "constraints": [],

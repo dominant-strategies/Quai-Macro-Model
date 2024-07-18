@@ -26,6 +26,8 @@
 ### [[Update Historical Mined Ratio Mechanism]]
 ### [[Update Historical Qi Hash Mechanism]]
 ### [[Update Historical Quai Hash Mechanism]]
+### [[Update Historical Converted Qi Mechanism]]
+### [[Update Historical Converted Quai Mechanism]]
 ### [[Mint Qi Tokens Mechanism]]
 ### [[Mint Quai Tokens Mechanism]]
 ### [[Burn Qi Tokens Mechanism]]

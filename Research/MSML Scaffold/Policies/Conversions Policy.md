@@ -10,11 +10,15 @@ The policy which determines the amount of Quai or Qi exchanged.
 2. [[Mint Quai Tokens Mechanism]]
 3. [[Burn Qi Tokens Mechanism]]
 4. [[Burn Quai Tokens Mechanism]]
+5. [[Update Historical Converted Qi Mechanism]]
+6. [[Update Historical Converted Quai Mechanism]]
 ## Codomain Spaces
 1. [[Qi Space]]
 2. [[Quai Space]]
 3. [[Qi Space]]
 4. [[Quai Space]]
+5. [[Conversion Log Space]]
+6. [[Conversion Log Space]]
 ## Constraints
 ## Parameters Used
 1. [[Minimum Qi Conversion Amount]]

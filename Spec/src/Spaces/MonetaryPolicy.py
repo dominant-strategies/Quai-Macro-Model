@@ -15,5 +15,14 @@ conversion_space = {
     "schema": {"Token": "Token Name Type", "Amount": "Token Amount Type"},
 }
 
+conversion_log_space = {
+    "name": "Conversion Log Space",
+    "schema": {
+        "Qi Value": "Qi Type",
+        "Quai Value": "Quai Type",
+        "Time": "Datetime Type",
+    },
+}
 
-monetary_policy_spaces = [quai_space, qi_space, conversion_space]
+
+monetary_policy_spaces = [quai_space, qi_space, conversion_space, conversion_log_space]

@@ -29,4 +29,11 @@ RatioType = {
     "notes": "",
 }
 
-primitive_types = [CoeffecientType, USDType, QuaiType, QiType, RatioType]
+DatetimeType = {
+    "name": "Datetime Type",
+    "type": "DatetimeType",
+    "notes": "",
+}
+
+
+primitive_types = [CoeffecientType, USDType, QuaiType, QiType, RatioType, DatetimeType]
