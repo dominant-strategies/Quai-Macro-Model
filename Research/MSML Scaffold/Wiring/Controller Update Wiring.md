@@ -6,9 +6,11 @@ graph TB
 subgraph SVS["State Variables"]
 end
 
-subgraph X2["Controller Update Wiring"]
+subgraph X3["Controller Update Wiring"]
 direction TB
-X1["Placeholder"]
+X1["Controller Update Control Action"]
+X2["Controller Update Policy"]
+X1--"Observable State Space"--->X2
 end
 ```
 
@@ -17,10 +19,12 @@ end
 Block Type: Stack Block
 The wiring for the controller actions
 ## Components
-1. [[Placeholder]]
+1. [[Controller Update Control Action]]
+2. [[Controller Update Policy]]
 
 ## All Blocks
-1. [[Placeholder]]
+1. [[Controller Update Control Action]]
+2. [[Controller Update Policy]]
 
 ## Constraints
 
@@ -31,6 +35,7 @@ The wiring for the controller actions
 
 ## All Spaces Used
 1. [[Empty Space]]
+2. [[Observable State Space]]
 
 ## Parameters Used
 

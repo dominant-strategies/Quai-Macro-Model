@@ -21,7 +21,7 @@ EES6(["Quai Supply"])
 EES6 --- EE0
 end
 
-subgraph X32["Simulation Wiring"]
+subgraph X33["Simulation Wiring"]
 direction TB
 subgraph X2["Price Movements Wiring"]
 direction TB
@@ -102,18 +102,20 @@ Mined Ratio Space
 Qi Hash Space
 Quai Hash Space"------->X26
 end
-subgraph X29["Controller Update Wiring"]
+subgraph X30["Controller Update Wiring"]
 direction TB
-X28["Placeholder"]
+X28["Controller Update Control Action"]
+X29["Controller Update Policy"]
+X28--"Observable State Space"--->X29
 end
-subgraph X31["Log Simulation Wiring"]
+subgraph X32["Log Simulation Wiring"]
 direction TB
-X30["Placeholder"]
+X31["Placeholder"]
 end
 X2--->X14
 X14--->X27
-X27--->X29
-X29--->X31
+X27--->X30
+X30--->X32
 end
 ```
 
@@ -132,19 +134,21 @@ The wiring of the entire simulation
 1. [[Block Reward Policy]]
 2. [[Burn Qi Tokens Mechanism]]
 3. [[Burn Quai Tokens Mechanism]]
-4. [[Conversions Boundary Action]]
-5. [[Conversions Policy]]
-6. [[Increment Block Number Mechanism]]
-7. [[Mine Block Boundary Action]]
-8. [[Mining Payment Policy]]
-9. [[Mint Qi Tokens Mechanism]]
-10. [[Mint Quai Tokens Mechanism]]
-11. [[Placeholder]]
-12. [[Update Historical Converted Qi Mechanism]]
-13. [[Update Historical Converted Quai Mechanism]]
-14. [[Update Historical Mined Ratio Mechanism]]
-15. [[Update Historical Qi Hash Mechanism]]
-16. [[Update Historical Quai Hash Mechanism]]
+4. [[Controller Update Control Action]]
+5. [[Controller Update Policy]]
+6. [[Conversions Boundary Action]]
+7. [[Conversions Policy]]
+8. [[Increment Block Number Mechanism]]
+9. [[Mine Block Boundary Action]]
+10. [[Mining Payment Policy]]
+11. [[Mint Qi Tokens Mechanism]]
+12. [[Mint Quai Tokens Mechanism]]
+13. [[Placeholder]]
+14. [[Update Historical Converted Qi Mechanism]]
+15. [[Update Historical Converted Quai Mechanism]]
+16. [[Update Historical Mined Ratio Mechanism]]
+17. [[Update Historical Qi Hash Mechanism]]
+18. [[Update Historical Quai Hash Mechanism]]
 
 ## Constraints
 
@@ -160,11 +164,12 @@ The wiring of the entire simulation
 4. [[Conversion Space]]
 5. [[Empty Space]]
 6. [[Mined Ratio Space]]
-7. [[Qi Hash Space]]
-8. [[Qi Space]]
-9. [[Quai Hash Space]]
-10. [[Quai Space]]
-11. [[Terminating Space]]
+7. [[Observable State Space]]
+8. [[Qi Hash Space]]
+9. [[Qi Space]]
+10. [[Quai Hash Space]]
+11. [[Quai Space]]
+12. [[Terminating Space]]
 
 ## Parameters Used
 1. [[Minimum Qi Conversion Amount]]

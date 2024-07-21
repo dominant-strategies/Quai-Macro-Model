@@ -69,6 +69,7 @@ cssclasses:
 │   ├──[[Qi Space]]
 │   ├──[[Conversion Space]]
 │   ├──[[Conversion Log Space]]
+│   ├──[[Observable State Space]]
 ├──**Parameters**
 │   ├──Dummy Parameter Set
 │   │   ├──[[DUMMY D Probability]]
@@ -84,11 +85,13 @@ cssclasses:
 ├──**Control Actions**
 │   ├──[[Dummy Control Action]]
 │   ├──[[Placeholder]]
+│   ├──[[Controller Update Control Action]]
 ├──**Policies**
 │   ├──[[DUMMY Letter Count Policy]]
 │   ├──[[Block Reward Policy]]
 │   ├──[[Mining Payment Policy]]
 │   ├──[[Conversions Policy]]
+│   ├──[[Controller Update Policy]]
 ├──**Mechanisms**
 │   ├──[[DUMMY Log Results Mechanism]]
 │   ├──[[Increment Block Number Mechanism]]
