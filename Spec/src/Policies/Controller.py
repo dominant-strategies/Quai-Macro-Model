@@ -7,7 +7,7 @@ controller_update_policy = {
         "Observable State Space",
     ],
     "codomain": ["K Space"],
-    "parameters_used": [],
+    "parameters_used": ["PID Parameterization"],
     "metrics_used": [],
 }
 

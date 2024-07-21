@@ -54,6 +54,7 @@ cssclasses:
 │   ├──[[Simulation History Log Type]]
 │   ├──[[Token Name Type]]
 │   ├──[[Token Amount Type]]
+│   ├──[[PID Parameters Type]]
 ├──**Spaces**
 │   ├──[[Terminating Space]]
 │   ├──[[Empty Space]]
@@ -78,6 +79,8 @@ cssclasses:
 │   ├──Market Parameter Set
 │   │   ├──[[Minimum Quai Conversion Amount]]
 │   │   ├──[[Minimum Qi Conversion Amount]]
+│   ├──Controller Parameter Set
+│   │   ├──[[PID Parameterization]]
 ├──**Boundary Actions**
 │   ├──[[Dummy Boundary Action]]
 │   ├──[[Dummy Boundary Action 2]]

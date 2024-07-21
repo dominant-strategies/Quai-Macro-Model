@@ -1,6 +1,6 @@
 observable_state_space = {
     "name": "Observable State Space",
-    "schema": {},
+    "schema": {"Historical Mined Ratio": "Mined Ratio Array Type"},
 }
 
 k_space = {
