@@ -3,4 +3,9 @@ observable_state_space = {
     "schema": {},
 }
 
-controller_spaces = [observable_state_space]
+k_space = {
+    "name": "K Space",
+    "schema": {"K Quai": "Coeffecient Type", "K Qi": "Coeffecient Type"},
+}
+
+controller_spaces = [observable_state_space, k_space]

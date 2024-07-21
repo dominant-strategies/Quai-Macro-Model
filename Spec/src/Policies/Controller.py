@@ -6,7 +6,7 @@ controller_update_policy = {
     "domain": [
         "Observable State Space",
     ],
-    "codomain": [],
+    "codomain": ["K Space"],
     "parameters_used": [],
     "metrics_used": [],
 }

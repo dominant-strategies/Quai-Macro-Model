@@ -36,6 +36,9 @@
 ### [[Mint Quai Tokens Mechanism]]
 ### [[Burn Qi Tokens Mechanism]]
 ### [[Burn Quai Tokens Mechanism]]
+### [[Set K Mechanism]]
+### [[Set K Mechanism]]
 ## Actions Impacting the Entity
 ### [[Mine Block Boundary Action]]
 ### [[Conversions Boundary Action]]
+### [[Controller Update Control Action]]

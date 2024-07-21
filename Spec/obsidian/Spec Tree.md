@@ -70,6 +70,7 @@ cssclasses:
 │   ├──[[Conversion Space]]
 │   ├──[[Conversion Log Space]]
 │   ├──[[Observable State Space]]
+│   ├──[[K Space]]
 ├──**Parameters**
 │   ├──Dummy Parameter Set
 │   │   ├──[[DUMMY D Probability]]
@@ -104,3 +105,4 @@ cssclasses:
 │   ├──[[Mint Quai Tokens Mechanism]]
 │   ├──[[Burn Qi Tokens Mechanism]]
 │   ├──[[Burn Quai Tokens Mechanism]]
+│   ├──[[Set K Mechanism]]
