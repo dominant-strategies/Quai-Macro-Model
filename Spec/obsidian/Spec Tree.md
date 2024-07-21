@@ -81,6 +81,7 @@ cssclasses:
 │   │   ├──[[Minimum Qi Conversion Amount]]
 │   ├──Controller Parameter Set
 │   │   ├──[[PID Parameterization]]
+│   │   ├──[[Initial Block Difficulty]]
 ├──**Boundary Actions**
 │   ├──[[Dummy Boundary Action]]
 │   ├──[[Dummy Boundary Action 2]]

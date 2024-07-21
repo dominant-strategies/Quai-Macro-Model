@@ -50,7 +50,8 @@ The wiring for the controller actions
 3. [[Terminating Space]]
 
 ## Parameters Used
-1. [[PID Parameterization]]
+1. [[Initial Block Difficulty]]
+2. [[PID Parameterization]]
 
 ## Called By
 

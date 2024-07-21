@@ -10,6 +10,14 @@ controller_parameter_set = {
             "domain": None,
             "parameter_class": "System",
         },
+        {
+            "variable_type": "Block Difficulty Type",
+            "name": "Initial Block Difficulty",
+            "description": "The starting block difficulty",
+            "symbol": None,
+            "domain": None,
+            "parameter_class": "System",
+        },
     ],
 }
 

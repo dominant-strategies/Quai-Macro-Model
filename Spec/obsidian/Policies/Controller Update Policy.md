@@ -11,7 +11,8 @@ The policy which determines the update to the K Values.
 1. [[K Space]]
 ## Constraints
 ## Parameters Used
-1. [[PID Parameterization]]
+1. [[Initial Block Difficulty]]
+2. [[PID Parameterization]]
 ## Metrics Used
 1. [[Qi to Hash Metric]]
 2. [[Quai to Hash Metric]]

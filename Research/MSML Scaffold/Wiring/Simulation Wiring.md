@@ -182,9 +182,10 @@ The wiring of the entire simulation
 13. [[Terminating Space]]
 
 ## Parameters Used
-1. [[Minimum Qi Conversion Amount]]
-2. [[Minimum Quai Conversion Amount]]
-3. [[PID Parameterization]]
+1. [[Initial Block Difficulty]]
+2. [[Minimum Qi Conversion Amount]]
+3. [[Minimum Quai Conversion Amount]]
+4. [[PID Parameterization]]
 
 ## Called By
 

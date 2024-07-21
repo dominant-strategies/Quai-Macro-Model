@@ -55,7 +55,7 @@ controller_update_policy = {
         "Observable State Space",
     ],
     "codomain": ["K Space"],
-    "parameters_used": ["PID Parameterization"],
+    "parameters_used": ["PID Parameterization", "Initial Block Difficulty"],
     "metrics_used": ["Qi to Hash Metric", "Quai to Hash Metric"],
 }
 
