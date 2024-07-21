@@ -32,3 +32,5 @@
 ### [[Mint Quai Tokens Mechanism]]
 ### [[Burn Qi Tokens Mechanism]]
 ### [[Burn Quai Tokens Mechanism]]
+### [[Set K Mechanism]]
+### [[Set K Mechanism]]

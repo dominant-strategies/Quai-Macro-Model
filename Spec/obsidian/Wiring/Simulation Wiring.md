@@ -15,13 +15,17 @@ EES3(["Historical Mined Ratio"])
 EES3 --- EE0
 EES4(["Historical Qi Hash"])
 EES4 --- EE0
-EES5(["Qi Supply"])
+EES5(["K Qi"])
 EES5 --- EE0
-EES6(["Quai Supply"])
+EES6(["K Quai"])
 EES6 --- EE0
+EES7(["Qi Supply"])
+EES7 --- EE0
+EES8(["Quai Supply"])
+EES8 --- EE0
 end
 
-subgraph X32["Simulation Wiring"]
+subgraph X34["Simulation Wiring"]
 direction TB
 subgraph X2["Price Movements Wiring"]
 direction TB
@@ -34,13 +38,13 @@ X4["Conversions Policy"]
 subgraph X13["Conversions Mechanisms Wiring"]
 direction TB
 X5["Mint Qi Tokens Mechanism"]
-X5 --> EES5
+X5 --> EES7
 X6["Mint Quai Tokens Mechanism"]
-X6 --> EES6
+X6 --> EES8
 X7["Burn Qi Tokens Mechanism"]
-X7 --> EES5
+X7 --> EES7
 X8["Burn Quai Tokens Mechanism"]
-X8 --> EES6
+X8 --> EES8
 X9["Update Historical Converted Qi Mechanism"]
 X9 --> EES1
 X10["Update Historical Converted Quai Mechanism"]
@@ -74,9 +78,9 @@ direction TB
 X18["Increment Block Number Mechanism"]
 X18 --> EES0
 X19["Mint Qi Tokens Mechanism"]
-X19 --> EES5
+X19 --> EES7
 X20["Mint Quai Tokens Mechanism"]
-X20 --> EES6
+X20 --> EES8
 X21["Update Historical Mined Ratio Mechanism"]
 X21 --> EES3
 X22["Update Historical Qi Hash Mechanism"]
@@ -102,18 +106,24 @@ Mined Ratio Space
 Qi Hash Space
 Quai Hash Space"------->X26
 end
-subgraph X29["Controller Update Wiring"]
+subgraph X31["Controller Update Wiring"]
 direction TB
-X28["Placeholder"]
+X28["Controller Update Control Action"]
+X29["Controller Update Policy"]
+X30["Set K Mechanism"]
+X30 --> EES6
+X30 --> EES5
+X28--"Observable State Space"--->X29
+X29--"K Space"--->X30
 end
-subgraph X31["Log Simulation Wiring"]
+subgraph X33["Log Simulation Wiring"]
 direction TB
-X30["Placeholder"]
+X32["Placeholder"]
 end
 X2--->X14
 X14--->X27
-X27--->X29
-X29--->X31
+X27--->X31
+X31--->X33
 end
 ```
 
@@ -132,19 +142,22 @@ The wiring of the entire simulation
 1. [[Block Reward Policy]]
 2. [[Burn Qi Tokens Mechanism]]
 3. [[Burn Quai Tokens Mechanism]]
-4. [[Conversions Boundary Action]]
-5. [[Conversions Policy]]
-6. [[Increment Block Number Mechanism]]
-7. [[Mine Block Boundary Action]]
-8. [[Mining Payment Policy]]
-9. [[Mint Qi Tokens Mechanism]]
-10. [[Mint Quai Tokens Mechanism]]
-11. [[Placeholder]]
-12. [[Update Historical Converted Qi Mechanism]]
-13. [[Update Historical Converted Quai Mechanism]]
-14. [[Update Historical Mined Ratio Mechanism]]
-15. [[Update Historical Qi Hash Mechanism]]
-16. [[Update Historical Quai Hash Mechanism]]
+4. [[Controller Update Control Action]]
+5. [[Controller Update Policy]]
+6. [[Conversions Boundary Action]]
+7. [[Conversions Policy]]
+8. [[Increment Block Number Mechanism]]
+9. [[Mine Block Boundary Action]]
+10. [[Mining Payment Policy]]
+11. [[Mint Qi Tokens Mechanism]]
+12. [[Mint Quai Tokens Mechanism]]
+13. [[Placeholder]]
+14. [[Set K Mechanism]]
+15. [[Update Historical Converted Qi Mechanism]]
+16. [[Update Historical Converted Quai Mechanism]]
+17. [[Update Historical Mined Ratio Mechanism]]
+18. [[Update Historical Qi Hash Mechanism]]
+19. [[Update Historical Quai Hash Mechanism]]
 
 ## Constraints
 
@@ -159,16 +172,20 @@ The wiring of the entire simulation
 3. [[Conversion Log Space]]
 4. [[Conversion Space]]
 5. [[Empty Space]]
-6. [[Mined Ratio Space]]
-7. [[Qi Hash Space]]
-8. [[Qi Space]]
-9. [[Quai Hash Space]]
-10. [[Quai Space]]
-11. [[Terminating Space]]
+6. [[K Space]]
+7. [[Mined Ratio Space]]
+8. [[Observable State Space]]
+9. [[Qi Hash Space]]
+10. [[Qi Space]]
+11. [[Quai Hash Space]]
+12. [[Quai Space]]
+13. [[Terminating Space]]
 
 ## Parameters Used
-1. [[Minimum Qi Conversion Amount]]
-2. [[Minimum Quai Conversion Amount]]
+1. [[Initial Block Difficulty]]
+2. [[Minimum Qi Conversion Amount]]
+3. [[Minimum Quai Conversion Amount]]
+4. [[PID Parameterization]]
 
 ## Called By
 
@@ -180,6 +197,8 @@ The wiring of the entire simulation
 3. [[Global]].[[Global State-Historical Converted Quai|Historical Converted Quai]]
 4. [[Global]].[[Global State-Historical Mined Ratio|Historical Mined Ratio]]
 5. [[Global]].[[Global State-Historical Qi Hash|Historical Qi Hash]]
-6. [[Global]].[[Global State-Qi Supply|Qi Supply]]
-7. [[Global]].[[Global State-Quai Supply|Quai Supply]]
+6. [[Global]].[[Global State-K Qi|K Qi]]
+7. [[Global]].[[Global State-K Quai|K Quai]]
+8. [[Global]].[[Global State-Qi Supply|Qi Supply]]
+9. [[Global]].[[Global State-Quai Supply|Quai Supply]]
 

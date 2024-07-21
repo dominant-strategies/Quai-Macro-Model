@@ -54,6 +54,7 @@ cssclasses:
 │   ├──[[Simulation History Log Type]]
 │   ├──[[Token Name Type]]
 │   ├──[[Token Amount Type]]
+│   ├──[[PID Parameters Type]]
 ├──**Spaces**
 │   ├──[[Terminating Space]]
 │   ├──[[Empty Space]]
@@ -69,6 +70,8 @@ cssclasses:
 │   ├──[[Qi Space]]
 │   ├──[[Conversion Space]]
 │   ├──[[Conversion Log Space]]
+│   ├──[[Observable State Space]]
+│   ├──[[K Space]]
 ├──**Parameters**
 │   ├──Dummy Parameter Set
 │   │   ├──[[DUMMY D Probability]]
@@ -76,6 +79,9 @@ cssclasses:
 │   ├──Market Parameter Set
 │   │   ├──[[Minimum Quai Conversion Amount]]
 │   │   ├──[[Minimum Qi Conversion Amount]]
+│   ├──Controller Parameter Set
+│   │   ├──[[PID Parameterization]]
+│   │   ├──[[Initial Block Difficulty]]
 ├──**Boundary Actions**
 │   ├──[[Dummy Boundary Action]]
 │   ├──[[Dummy Boundary Action 2]]
@@ -84,11 +90,13 @@ cssclasses:
 ├──**Control Actions**
 │   ├──[[Dummy Control Action]]
 │   ├──[[Placeholder]]
+│   ├──[[Controller Update Control Action]]
 ├──**Policies**
 │   ├──[[DUMMY Letter Count Policy]]
 │   ├──[[Block Reward Policy]]
 │   ├──[[Mining Payment Policy]]
 │   ├──[[Conversions Policy]]
+│   ├──[[Controller Update Policy]]
 ├──**Mechanisms**
 │   ├──[[DUMMY Log Results Mechanism]]
 │   ├──[[Increment Block Number Mechanism]]
@@ -101,3 +109,4 @@ cssclasses:
 │   ├──[[Mint Quai Tokens Mechanism]]
 │   ├──[[Burn Qi Tokens Mechanism]]
 │   ├──[[Burn Quai Tokens Mechanism]]
+│   ├──[[Set K Mechanism]]

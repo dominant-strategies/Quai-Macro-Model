@@ -1,27 +1,7 @@
-## Description
-
-The policy which determines the update to the K Values.
-## Called By
-1. [[Controller Update Control Action]]
-## Domain Spaces
-1. [[Observable State Space]]
-## Followed By
-1. [[Set K Mechanism]]
-## Codomain Spaces
-1. [[K Space]]
-## Constraints
-## Parameters Used
-1. [[Initial Block Difficulty]]
-2. [[PID Parameterization]]
-## Metrics Used
-1. [[Qi to Hash Metric]]
-2. [[Quai to Hash Metric]]
-## Policy Options
-### 1. Linear Controller Policy
-#### Description
-A controller that works in a linear fashion based upon the mined ratio.
-#### Logic
-Inputs are:
+controller_update_policy_option1 = {
+    "name": "Linear Controller Policy",
+    "description": "A controller that works in a linear fashion based upon the mined ratio.",
+    "logic": r"""Inputs are:
 - $\bar{M}$,Average for [[Global State-Historical Mined Ratio]].
 - $\Sigma M$,Sum of [[Global State-Historical Mined Ratio]].
 - PID values set with constants of P = 0.00000005, I = P\*0.0001, D = 0 (but commented out .05 value)
@@ -33,13 +13,13 @@ Calculations are:
 
 Updates are:
 
-$$\Delta k_{Quai} = -k_{Quai} \cdot (P*[.5-\bar{M}] + I\cdot \Sigma M + D \cdot \Delta_e)$$
+$$\Delta k_{Quai} = -k_{Quai} \cdot (P*[.5-\bar{M}] + I\cdot \Sigma M + D \cdot \Delta_e)$$""",
+}
 
-### 2. Hash Controller Policy
-#### Description
-A controller that works based off of hash.
-#### Logic
-Inputs are:
+controller_update_policy_option2 = {
+    "name": "Hash Controller Policy",
+    "description": "A controller that works based off of hash.",
+    "logic": r"""Inputs are:
 - $\bar{M}$,Average for [[Global State-Historical Mined Ratio]].
 - $\Sigma H_{Quai}$, the sum of [[Global State-Historical Quai Hash]]
 - $\Sigma H_{Qi}$, the sum of [[Global State-Historical Qi Hash]]
@@ -60,5 +40,23 @@ Calculations are:
 
 Updates are:
 $$\Delta k_{Quai} = k_{Quai} \cdot (\frac{log_2(B)}{log_2(B_I)} \cdot P \cdot proportionalGain(h)\cdot h)$$
+""",
+}
 
+controller_update_policy = {
+    "name": "Controller Update Policy",
+    "description": "The policy which determines the update to the K Values.",
+    "constraints": [],
+    "policy_options": [
+        controller_update_policy_option1,
+        controller_update_policy_option2,
+    ],
+    "domain": [
+        "Observable State Space",
+    ],
+    "codomain": ["K Space"],
+    "parameters_used": ["PID Parameterization", "Initial Block Difficulty"],
+    "metrics_used": ["Qi to Hash Metric", "Quai to Hash Metric"],
+}
 
+controller_policies = [controller_update_policy]
