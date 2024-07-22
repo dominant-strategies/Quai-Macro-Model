@@ -17,4 +17,4 @@ aliases:
 	- [[Global State-Current Hash Difference]]
 - Metrics that might be relevant:
 	- [[Current Block Reward Ratio Metric]]
-	- [[Block Mining Rewards Ratio Metric]]
+	- [[Current Block Reward Ratio Metric]]

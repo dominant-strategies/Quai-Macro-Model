@@ -35,5 +35,26 @@ DatetimeType = {
     "notes": "",
 }
 
+DecimalType = {
+    "name": "Decimal Type",
+    "type": "DecimalType",
+    "notes": "A percentage represented as a decimal",
+}
 
-primitive_types = [CoeffecientType, USDType, QuaiType, QiType, RatioType, DatetimeType]
+DeltaTimeType = {
+    "name": "Delta Time Type",
+    "type": "DeltaTimeType",
+    "notes": "In days",
+}
+
+
+primitive_types = [
+    CoeffecientType,
+    USDType,
+    QuaiType,
+    QiType,
+    RatioType,
+    DatetimeType,
+    DecimalType,
+    DeltaTimeType,
+]
