@@ -48,6 +48,15 @@ update_historical_converted_quai_mechanism = {
     "updates": [("Global", "Historical Converted Quai", True)],
 }
 
+log_simulation_data_mechanism = {
+    "name": "Log Simulation Data Mechanism",
+    "description": "A mechanism which logs the relevant simulation data",
+    "constraints": [],
+    "logic": "Log the simulation data",
+    "domain": [],
+    "parameters_used": [],
+    "updates": [("Global", "Simulation History Log", True)],
+}
 
 log_mechanisms = [
     update_historical_mined_ration_mechanism,
@@ -55,4 +64,5 @@ log_mechanisms = [
     update_historical_quai_hash_mechanism,
     update_historical_converted_qi_mechanism,
     update_historical_converted_quai_mechanism,
+    log_simulation_data_mechanism,
 ]

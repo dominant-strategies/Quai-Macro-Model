@@ -32,6 +32,7 @@
 ### [[Update Historical Quai Hash Mechanism]]
 ### [[Update Historical Converted Qi Mechanism]]
 ### [[Update Historical Converted Quai Mechanism]]
+### [[Log Simulation Data Mechanism]]
 ### [[Mint Qi Tokens Mechanism]]
 ### [[Mint Quai Tokens Mechanism]]
 ### [[Burn Qi Tokens Mechanism]]

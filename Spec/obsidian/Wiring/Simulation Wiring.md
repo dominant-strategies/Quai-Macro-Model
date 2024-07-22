@@ -27,9 +27,11 @@ EES9(["Quai Price"])
 EES9 --- EE0
 EES10(["Quai Supply"])
 EES10 --- EE0
+EES11(["Simulation History Log"])
+EES11 --- EE0
 end
 
-subgraph X36["Simulation Wiring"]
+subgraph X35["Simulation Wiring"]
 direction TB
 subgraph X4["Price Movements Wiring"]
 direction TB
@@ -126,14 +128,12 @@ X32 --> EES5
 X30--"Observable State Space"--->X31
 X31--"K Space"--->X32
 end
-subgraph X35["Log Simulation Wiring"]
-direction TB
-X34["Placeholder"]
-end
+X34["Log Simulation Data Mechanism"]
+X34 --> EES11
 X4--->X16
 X16--->X29
 X29--->X33
-X33--->X35
+X33--->X34
 end
 ```
 
@@ -146,7 +146,7 @@ The wiring of the entire simulation
 2. [[Conversions Wiring]]
 3. [[Mine Block Wiring]]
 4. [[Controller Update Wiring]]
-5. [[Log Simulation Wiring]]
+5. [[Log Simulation Data Mechanism]]
 
 ## All Blocks
 1. [[Block Reward Policy]]
@@ -157,11 +157,11 @@ The wiring of the entire simulation
 6. [[Conversions Boundary Action]]
 7. [[Conversions Policy]]
 8. [[Increment Block Number Mechanism]]
-9. [[Mine Block Boundary Action]]
-10. [[Mining Payment Policy]]
-11. [[Mint Qi Tokens Mechanism]]
-12. [[Mint Quai Tokens Mechanism]]
-13. [[Placeholder]]
+9. [[Log Simulation Data Mechanism]]
+10. [[Mine Block Boundary Action]]
+11. [[Mining Payment Policy]]
+12. [[Mint Qi Tokens Mechanism]]
+13. [[Mint Quai Tokens Mechanism]]
 14. [[Price Movements Boundary Action]]
 15. [[Price Movements Policy]]
 16. [[Set K Mechanism]]
@@ -177,7 +177,7 @@ The wiring of the entire simulation
 ## Domain Spaces
 
 ## Codomain Spaces
-1. [[Empty Space]]
+1. [[Terminating Space]]
 
 ## All Spaces Used
 1. [[Block Difficulty Space]]
@@ -219,4 +219,5 @@ The wiring of the entire simulation
 9. [[Global]].[[Global State-Qi Supply|Qi Supply]]
 10. [[Global]].[[Global State-Quai Price|Quai Price]]
 11. [[Global]].[[Global State-Quai Supply|Quai Supply]]
+12. [[Global]].[[Global State-Simulation History Log|Simulation History Log]]
 
