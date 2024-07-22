@@ -25,105 +25,107 @@ EES8(["Quai Supply"])
 EES8 --- EE0
 end
 
-subgraph X34["Simulation Wiring"]
+subgraph X35["Simulation Wiring"]
 direction TB
-subgraph X2["Price Movements Wiring"]
+subgraph X3["Price Movements Wiring"]
 direction TB
-X1["Placeholder"]
+X1["Price Movements Boundary Action"]
+X2["Price Movements Policy"]
+X1--"Price Movement Space"--->X2
 end
-subgraph X14["Conversions Wiring"]
+subgraph X15["Conversions Wiring"]
 direction TB
-X3["Conversions Boundary Action"]
-X4["Conversions Policy"]
-subgraph X13["Conversions Mechanisms Wiring"]
+X4["Conversions Boundary Action"]
+X5["Conversions Policy"]
+subgraph X14["Conversions Mechanisms Wiring"]
 direction TB
-X5["Mint Qi Tokens Mechanism"]
-X5 --> EES7
-X6["Mint Quai Tokens Mechanism"]
-X6 --> EES8
-X7["Burn Qi Tokens Mechanism"]
-X7 --> EES7
-X8["Burn Quai Tokens Mechanism"]
-X8 --> EES8
-X9["Update Historical Converted Qi Mechanism"]
-X9 --> EES1
-X10["Update Historical Converted Quai Mechanism"]
-X10 --> EES2
-X11[Domain]
+X6["Mint Qi Tokens Mechanism"]
+X6 --> EES7
+X7["Mint Quai Tokens Mechanism"]
+X7 --> EES8
+X8["Burn Qi Tokens Mechanism"]
+X8 --> EES7
+X9["Burn Quai Tokens Mechanism"]
+X9 --> EES8
+X10["Update Historical Converted Qi Mechanism"]
+X10 --> EES1
+X11["Update Historical Converted Quai Mechanism"]
+X11 --> EES2
+X12[Domain]
 
 direction LR
 direction TB
-X11 --"Qi Space"--> X5
-X11 --"Quai Space"--> X6
-X11 --"Qi Space"--> X7
-X11 --"Quai Space"--> X8
-X11 --"Conversion Log Space"--> X9
-X11 --"Conversion Log Space"--> X10
+X12 --"Qi Space"--> X6
+X12 --"Quai Space"--> X7
+X12 --"Qi Space"--> X8
+X12 --"Quai Space"--> X9
+X12 --"Conversion Log Space"--> X10
+X12 --"Conversion Log Space"--> X11
 end
-X3--"Conversion Space"--->X4
-X4--"Qi Space
+X4--"Conversion Space"--->X5
+X5--"Qi Space
 Quai Space
 Qi Space
 Quai Space
 Conversion Log Space
-Conversion Log Space"-------->X13
+Conversion Log Space"-------->X14
 end
-subgraph X27["Mine Block Wiring"]
+subgraph X28["Mine Block Wiring"]
 direction TB
-X15["Mine Block Boundary Action"]
-X16["Block Reward Policy"]
-X17["Mining Payment Policy"]
-subgraph X26["Mining Mechanisms"]
+X16["Mine Block Boundary Action"]
+X17["Block Reward Policy"]
+X18["Mining Payment Policy"]
+subgraph X27["Mining Mechanisms"]
 direction TB
-X18["Increment Block Number Mechanism"]
-X18 --> EES0
-X19["Mint Qi Tokens Mechanism"]
-X19 --> EES7
-X20["Mint Quai Tokens Mechanism"]
-X20 --> EES8
-X21["Update Historical Mined Ratio Mechanism"]
-X21 --> EES3
-X22["Update Historical Qi Hash Mechanism"]
-X22 --> EES4
-X23["Update Historical Quai Hash Mechanism"]
+X19["Increment Block Number Mechanism"]
+X19 --> EES0
+X20["Mint Qi Tokens Mechanism"]
+X20 --> EES7
+X21["Mint Quai Tokens Mechanism"]
+X21 --> EES8
+X22["Update Historical Mined Ratio Mechanism"]
+X22 --> EES3
+X23["Update Historical Qi Hash Mechanism"]
 X23 --> EES4
-X24[Domain]
+X24["Update Historical Quai Hash Mechanism"]
+X24 --> EES4
+X25[Domain]
 
 direction LR
 direction TB
-X24 --> X18
-X24 --"Qi Space"--> X19
-X24 --"Quai Space"--> X20
-X24 --"Mined Ratio Space"--> X21
-X24 --"Qi Hash Space"--> X22
-X24 --"Quai Hash Space"--> X23
+X25 --> X19
+X25 --"Qi Space"--> X20
+X25 --"Quai Space"--> X21
+X25 --"Mined Ratio Space"--> X22
+X25 --"Qi Hash Space"--> X23
+X25 --"Quai Hash Space"--> X24
 end
-X15--"Block Difficulty Space"--->X16
-X16--"Block Reward Options Space"--->X17
-X17--"Qi Space
+X16--"Block Difficulty Space"--->X17
+X17--"Block Reward Options Space"--->X18
+X18--"Qi Space
 Quai Space
 Mined Ratio Space
 Qi Hash Space
-Quai Hash Space"------->X26
+Quai Hash Space"------->X27
 end
-subgraph X31["Controller Update Wiring"]
+subgraph X32["Controller Update Wiring"]
 direction TB
-X28["Controller Update Control Action"]
-X29["Controller Update Policy"]
-X30["Set K Mechanism"]
-X30 --> EES6
-X30 --> EES5
-X28--"Observable State Space"--->X29
-X29--"K Space"--->X30
+X29["Controller Update Control Action"]
+X30["Controller Update Policy"]
+X31["Set K Mechanism"]
+X31 --> EES6
+X31 --> EES5
+X29--"Observable State Space"--->X30
+X30--"K Space"--->X31
 end
-subgraph X33["Log Simulation Wiring"]
+subgraph X34["Log Simulation Wiring"]
 direction TB
-X32["Placeholder"]
+X33["Placeholder"]
 end
-X2--->X14
-X14--->X27
-X27--->X31
-X31--->X33
+X3--->X15
+X15--->X28
+X28--->X32
+X32--->X34
 end
 ```
 
@@ -152,12 +154,14 @@ The wiring of the entire simulation
 11. [[Mint Qi Tokens Mechanism]]
 12. [[Mint Quai Tokens Mechanism]]
 13. [[Placeholder]]
-14. [[Set K Mechanism]]
-15. [[Update Historical Converted Qi Mechanism]]
-16. [[Update Historical Converted Quai Mechanism]]
-17. [[Update Historical Mined Ratio Mechanism]]
-18. [[Update Historical Qi Hash Mechanism]]
-19. [[Update Historical Quai Hash Mechanism]]
+14. [[Price Movements Boundary Action]]
+15. [[Price Movements Policy]]
+16. [[Set K Mechanism]]
+17. [[Update Historical Converted Qi Mechanism]]
+18. [[Update Historical Converted Quai Mechanism]]
+19. [[Update Historical Mined Ratio Mechanism]]
+20. [[Update Historical Qi Hash Mechanism]]
+21. [[Update Historical Quai Hash Mechanism]]
 
 ## Constraints
 
@@ -175,17 +179,19 @@ The wiring of the entire simulation
 6. [[K Space]]
 7. [[Mined Ratio Space]]
 8. [[Observable State Space]]
-9. [[Qi Hash Space]]
-10. [[Qi Space]]
-11. [[Quai Hash Space]]
-12. [[Quai Space]]
-13. [[Terminating Space]]
+9. [[Price Movement Space]]
+10. [[Qi Hash Space]]
+11. [[Qi Space]]
+12. [[Quai Hash Space]]
+13. [[Quai Space]]
+14. [[Terminating Space]]
 
 ## Parameters Used
-1. [[Initial Block Difficulty]]
-2. [[Minimum Qi Conversion Amount]]
-3. [[Minimum Quai Conversion Amount]]
-4. [[PID Parameterization]]
+1. [[Asset Return Parameterization]]
+2. [[Initial Block Difficulty]]
+3. [[Minimum Qi Conversion Amount]]
+4. [[Minimum Quai Conversion Amount]]
+5. [[PID Parameterization]]
 
 ## Called By
 

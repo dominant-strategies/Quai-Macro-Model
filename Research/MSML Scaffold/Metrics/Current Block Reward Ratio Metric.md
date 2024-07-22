@@ -1,7 +1,3 @@
----
-aliases:
-  - block mining rewards ratio
----
 Description: $$\frac{R_{Quai}}{R_{Qi}}$$
 
 Type: [[Ratio Type]]

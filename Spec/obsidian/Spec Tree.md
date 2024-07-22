@@ -51,9 +51,12 @@ cssclasses:
 │   ├──[[Qi Type]]
 │   ├──[[Ratio Type]]
 │   ├──[[Datetime Type]]
+│   ├──[[Decimal Type]]
+│   ├──[[Delta Time Type]]
 │   ├──[[Simulation History Log Type]]
 │   ├──[[Token Name Type]]
 │   ├──[[Token Amount Type]]
+│   ├──[[Return Parameterization Type]]
 │   ├──[[PID Parameters Type]]
 ├──**Spaces**
 │   ├──[[Terminating Space]]
@@ -72,6 +75,7 @@ cssclasses:
 │   ├──[[Conversion Log Space]]
 │   ├──[[Observable State Space]]
 │   ├──[[K Space]]
+│   ├──[[Price Movement Space]]
 ├──**Parameters**
 │   ├──Dummy Parameter Set
 │   │   ├──[[DUMMY D Probability]]
@@ -79,6 +83,7 @@ cssclasses:
 │   ├──Market Parameter Set
 │   │   ├──[[Minimum Quai Conversion Amount]]
 │   │   ├──[[Minimum Qi Conversion Amount]]
+│   │   ├──[[Asset Return Parameterization]]
 │   ├──Controller Parameter Set
 │   │   ├──[[PID Parameterization]]
 │   │   ├──[[Initial Block Difficulty]]
@@ -87,6 +92,7 @@ cssclasses:
 │   ├──[[Dummy Boundary Action 2]]
 │   ├──[[Mine Block Boundary Action]]
 │   ├──[[Conversions Boundary Action]]
+│   ├──[[Price Movements Boundary Action]]
 ├──**Control Actions**
 │   ├──[[Dummy Control Action]]
 │   ├──[[Placeholder]]
@@ -96,6 +102,7 @@ cssclasses:
 │   ├──[[Block Reward Policy]]
 │   ├──[[Mining Payment Policy]]
 │   ├──[[Conversions Policy]]
+│   ├──[[Price Movements Policy]]
 │   ├──[[Controller Update Policy]]
 ├──**Mechanisms**
 │   ├──[[DUMMY Log Results Mechanism]]

@@ -10,4 +10,11 @@ TokenAmountType = {
     "notes": "An amount of Qi or Quai",
 }
 
-market_types = [TokenNameType, TokenAmountType]
+ReturnParameterizationType = {
+    "name": "Return Parameterization Type",
+    "type": "ReturnParameterizationType",
+    "notes": "A parameterization of asset returns including a covariance matrix and mean return vector",
+}
+
+
+market_types = [TokenNameType, TokenAmountType, ReturnParameterizationType]
