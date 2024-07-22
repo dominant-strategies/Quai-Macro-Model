@@ -38,9 +38,20 @@ burn_quai_mechanism = {
     "updates": [("Global", "Quai Supply", False)],
 }
 
+update_prices_mechanism = {
+    "name": "Update Prices Mechanism",
+    "description": "Mechanism for updating prices",
+    "constraints": [],
+    "logic": "Set the values",
+    "domain": ["Price Space"],
+    "parameters_used": [],
+    "updates": [("Global", "Quai Price", False), ("Global", "Qi Price", False)],
+}
+
 monetary_policy_mechanisms = [
     mint_qi_mechanism,
     mint_quai_mechanism,
     burn_qi_mechanism,
     burn_quai_mechanism,
+    update_prices_mechanism,
 ]

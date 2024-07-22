@@ -4,12 +4,8 @@ cssclasses:
 ---
 
 ├──**Entities**
-│   ├──[[Dummy]]
 │   ├──[[Global]]
 ├──**State**
-│   ├──[[Dummy State]]
-│   │   ├──[[Dummy State-Words\|Words]]
-│   │   ├──[[Dummy State-Total Length\|Total Length]]
 │   ├──[[Global State]]
 │   │   ├──[[Global State-Dummy\|Dummy]]
 │   │   ├──[[Global State-Qi Supply\|Qi Supply]]
@@ -28,15 +24,10 @@ cssclasses:
 │   │   ├──[[Global State-Qi Price\|Qi Price]]
 │   │   ├──[[Global State-Simulation History Log\|Simulation History Log]]
 ├──**Stateful Metrics**
-│   ├──Dummy Stateful Metrics
-│   │   ├──[[dummy_metric]]
 │   ├──Block Reward Stateful Metrics
 │   │   ├──[[Current Quai Block Reward Stateful Metric]]
 │   │   ├──[[Current Qi Block Reward Stateful Metric]]
 ├──**Types**
-│   ├──[[Dummy Type 1]]
-│   ├──[[Dummy Type 2]]
-│   ├──[[Dummy Compound Type]]
 │   ├──[[Entity Type]]
 │   ├──[[Block Number Type]]
 │   ├──[[Block Difficulty Type]]
@@ -51,15 +42,16 @@ cssclasses:
 │   ├──[[Qi Type]]
 │   ├──[[Ratio Type]]
 │   ├──[[Datetime Type]]
+│   ├──[[Decimal Type]]
+│   ├──[[Delta Time Type]]
 │   ├──[[Simulation History Log Type]]
 │   ├──[[Token Name Type]]
 │   ├──[[Token Amount Type]]
+│   ├──[[Return Parameterization Type]]
 │   ├──[[PID Parameters Type]]
 ├──**Spaces**
 │   ├──[[Terminating Space]]
 │   ├──[[Empty Space]]
-│   ├──[[Dummy Space 1]]
-│   ├──[[Dummy Space 2]]
 │   ├──[[Block Reward Options Space]]
 │   ├──[[Block Difficulty Space]]
 │   ├──[[Block Reward Space]]
@@ -72,41 +64,40 @@ cssclasses:
 │   ├──[[Conversion Log Space]]
 │   ├──[[Observable State Space]]
 │   ├──[[K Space]]
+│   ├──[[Price Movement Space]]
+│   ├──[[Price Space]]
 ├──**Parameters**
-│   ├──Dummy Parameter Set
-│   │   ├──[[DUMMY D Probability]]
-│   │   ├──[[DUMMY Length Multiplier]]
 │   ├──Market Parameter Set
 │   │   ├──[[Minimum Quai Conversion Amount]]
 │   │   ├──[[Minimum Qi Conversion Amount]]
+│   │   ├──[[Asset Return Parameterization]]
 │   ├──Controller Parameter Set
 │   │   ├──[[PID Parameterization]]
 │   │   ├──[[Initial Block Difficulty]]
 ├──**Boundary Actions**
-│   ├──[[Dummy Boundary Action]]
-│   ├──[[Dummy Boundary Action 2]]
 │   ├──[[Mine Block Boundary Action]]
 │   ├──[[Conversions Boundary Action]]
+│   ├──[[Price Movements Boundary Action]]
 ├──**Control Actions**
-│   ├──[[Dummy Control Action]]
 │   ├──[[Placeholder]]
 │   ├──[[Controller Update Control Action]]
 ├──**Policies**
-│   ├──[[DUMMY Letter Count Policy]]
 │   ├──[[Block Reward Policy]]
 │   ├──[[Mining Payment Policy]]
 │   ├──[[Conversions Policy]]
+│   ├──[[Price Movements Policy]]
 │   ├──[[Controller Update Policy]]
 ├──**Mechanisms**
-│   ├──[[DUMMY Log Results Mechanism]]
 │   ├──[[Increment Block Number Mechanism]]
 │   ├──[[Update Historical Mined Ratio Mechanism]]
 │   ├──[[Update Historical Qi Hash Mechanism]]
 │   ├──[[Update Historical Quai Hash Mechanism]]
 │   ├──[[Update Historical Converted Qi Mechanism]]
 │   ├──[[Update Historical Converted Quai Mechanism]]
+│   ├──[[Log Simulation Data Mechanism]]
 │   ├──[[Mint Qi Tokens Mechanism]]
 │   ├──[[Mint Quai Tokens Mechanism]]
 │   ├──[[Burn Qi Tokens Mechanism]]
 │   ├──[[Burn Quai Tokens Mechanism]]
+│   ├──[[Update Prices Mechanism]]
 │   ├──[[Set K Mechanism]]

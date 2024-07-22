@@ -18,6 +18,14 @@ market_parameter_set = {
             "domain": None,
             "parameter_class": "System",
         },
+        {
+            "variable_type": "Return Parameterization Type",
+            "name": "Asset Return Parameterization",
+            "description": "The parameters for determining random assets returns with correlations",
+            "symbol": None,
+            "domain": None,
+            "parameter_class": "Behavioral",
+        },
     ],
 }
 

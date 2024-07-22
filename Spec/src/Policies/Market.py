@@ -28,4 +28,18 @@ conversions_policy = {
     "metrics_used": ["Current Block Reward Ratio Metric"],
 }
 
-market_policies = [conversions_policy]
+price_movements_policy = {
+    "name": "Price Movements Policy",
+    "description": "The policy for updating the prices.",
+    "constraints": [],
+    "policy_options": [],
+    "domain": [
+        "Price Movement Space",
+    ],
+    "codomain": ["Price Space"],
+    "parameters_used": [],
+    "metrics_used": [],
+}
+
+
+market_policies = [conversions_policy, price_movements_policy]
