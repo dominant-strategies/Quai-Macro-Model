@@ -76,6 +76,7 @@ cssclasses:
 │   ├──[[Observable State Space]]
 │   ├──[[K Space]]
 │   ├──[[Price Movement Space]]
+│   ├──[[Price Space]]
 ├──**Parameters**
 │   ├──Dummy Parameter Set
 │   │   ├──[[DUMMY D Probability]]
@@ -116,4 +117,5 @@ cssclasses:
 │   ├──[[Mint Quai Tokens Mechanism]]
 │   ├──[[Burn Qi Tokens Mechanism]]
 │   ├──[[Burn Quai Tokens Mechanism]]
+│   ├──[[Update Prices Mechanism]]
 │   ├──[[Set K Mechanism]]

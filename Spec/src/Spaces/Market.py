@@ -7,5 +7,13 @@ price_movements_space = {
     },
 }
 
+price_space = {
+    "name": "Price Space",
+    "schema": {
+        "Qi Price": "USD Type",
+        "Quai Price": "USD Type",
+    },
+}
 
-market_spaces = [price_movements_space]
+
+market_spaces = [price_movements_space, price_space]

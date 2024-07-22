@@ -36,7 +36,7 @@ price_movements_policy = {
     "domain": [
         "Price Movement Space",
     ],
-    "codomain": [],
+    "codomain": ["Price Space"],
     "parameters_used": [],
     "metrics_used": [],
 }

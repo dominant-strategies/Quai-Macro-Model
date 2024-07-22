@@ -4,13 +4,22 @@
 graph TB
 
 subgraph SVS["State Variables"]
+EE0[("Global")]
+EES0(["Qi Price"])
+EES0 --- EE0
+EES1(["Quai Price"])
+EES1 --- EE0
 end
 
-subgraph X3["Price Movements Wiring"]
+subgraph X4["Price Movements Wiring"]
 direction TB
 X1["Price Movements Boundary Action"]
 X2["Price Movements Policy"]
+X3["Update Prices Mechanism"]
+X3 --> EES1
+X3 --> EES0
 X1--"Price Movement Space"--->X2
+X2--"Price Space"--->X3
 end
 ```
 
@@ -21,21 +30,24 @@ The wiring for movements on the price of Qi and Quai
 ## Components
 1. [[Price Movements Boundary Action]]
 2. [[Price Movements Policy]]
+3. [[Update Prices Mechanism]]
 
 ## All Blocks
 1. [[Price Movements Boundary Action]]
 2. [[Price Movements Policy]]
+3. [[Update Prices Mechanism]]
 
 ## Constraints
 
 ## Domain Spaces
 
 ## Codomain Spaces
-1. [[Empty Space]]
+1. [[Terminating Space]]
 
 ## All Spaces Used
-1. [[Empty Space]]
-2. [[Price Movement Space]]
+1. [[Price Movement Space]]
+2. [[Price Space]]
+3. [[Terminating Space]]
 
 ## Parameters Used
 1. [[Asset Return Parameterization]]
@@ -45,4 +57,6 @@ The wiring for movements on the price of Qi and Quai
 ## Calls
 
 ## All State Updates
+1. [[Global]].[[Global State-Qi Price|Qi Price]]
+2. [[Global]].[[Global State-Quai Price|Quai Price]]
 
