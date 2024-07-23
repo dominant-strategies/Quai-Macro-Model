@@ -21,10 +21,10 @@
 - [[Update Historical Quai Hash Mechanism]]
 - [[Update Historical Converted Qi Mechanism]]
 - [[Update Historical Converted Quai Mechanism]]
-- [[Minimum Quai Conversion Amount Parameter]]
-- [[Minimum Qi Conversion Amount Parameter]]
+- [[Minimum Quai Conversion Amount]]
+- [[Minimum Quai Conversion Amount]]
 - [[Delta Time Type]]
-- [[Initial Block Difficulty Parameter]]
+- [[Initial Block Difficulty]]
 - [[Update Current Block Difficulty Mechanism]]
 - [[Difficulty Period Parameter]]
 
