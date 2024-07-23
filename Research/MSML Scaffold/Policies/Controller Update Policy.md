@@ -44,7 +44,7 @@ Inputs are:
 - $\Sigma H_{Quai}$, the sum of [[Global State-Historical Quai Hash]]
 - $\Sigma H_{Qi}$, the sum of [[Global State-Historical Qi Hash]]
 - B, the [[Global State-Current Block Difficulty|Current Block Difficulty]]
-- $B_I$, the [[Initial Block Difficulty Parameter]]
+- $B_I$, the [[Initial Block Difficulty]]
 - PID values set with constants of P = 0.0001, I = P\*0.001, D = P\*.02 (but commented out .05 value)
 - $R_{Qi}$, the [[Current Qi Block Reward Stateful Metric]]
 - $R_{Quai}$, the [[Current Quai Block Reward Stateful Metric]]

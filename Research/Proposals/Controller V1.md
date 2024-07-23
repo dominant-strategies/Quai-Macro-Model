@@ -5,10 +5,10 @@ what can the controller actually control (eg what variables can it set, and on w
 $u \in U$
 
 Actions:
-1. [[Update K Quai Mechanism|Setting]] $k_{quai}$ 
+1. [[Set K Mechanism|Setting]] $k_{quai}$ 
 	1. The variable of [[Global State-K Quai|kquai]] is set
 	2. Timeframe of setting is TBD
-2. [[Update K Qi Mechanism|Setting]] $k_{qi}$ 
+2. [[Set K Mechanism|Setting]] $k_{qi}$ 
 	1. The variable of [[Global State-K Qi|kqi]] is set
 	2. Timeframe of setting is TBD
 
