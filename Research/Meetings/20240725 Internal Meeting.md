@@ -2,23 +2,23 @@
 	- Or something like there is variations in valuation but market price is the average
 - BIBO stability
 	- Does it require a set point
-	- Dynamic equilibrium, system is changing and moving 
+	- Dynamic [[Controller Equilibrium|equilibrium]], system is changing and moving 
 		- Should resolve into an error ball in epsilon
-		- Loss function should be low, but if it gets perturbed we know it will come down from the controller
+		- Loss function should be low, but if it gets perturbed we know it will come down from the [[controller]]
 - Functional dependencies on set point, what is the zero of the epsilon ball
 	- Make a statement that says this is the assumption we are using
 	- This set point will be dependent on state
 - MRAC will be too much computational machinery
 - Define a loss function
 	- Lyapunov loss function probably is too difficult right now to implement
-	- Dupes theorem, super-martingale
-- The conversion rate basically makes an "on-demand" desk that allows you to arbitrage
+	- Doobs theorem, super-martingale
+- The conversion rate basically makes an "on-demand" desk that allows you to [[Trade Tokens Wiring|arbitrage]]
 - Stochastic gradient descent
-	- Leads to dupes theorem
+	- Leads to doobs theorem
 - Originally the model was trying to stabilize to 50%/50% Quai vs. Qi mining
 - Attenuate volatility to be around a desired volatility
-- Exogenous signal for block time
-	- And get your difficulty as an inverse from there
+- Exogenous signal for [[block time]]
+	- And get your [[Block Difficulty|difficulty]] as an inverse from there
 - Sufficient statistic of interest
 	- Volatility of this sufficient statistic
 	- At some point we will need to come down on one side or another of what we treat as the estimate of this unobserved thing
