@@ -80,6 +80,7 @@ This mechanism allows for greater responsiveness in the [[Qi Supply Metric|suppl
 ## Constraints
 
 ## Domain Spaces
+1. [[Empty Space]]
 
 ## Codomain Spaces
 1. [[Empty Space]]

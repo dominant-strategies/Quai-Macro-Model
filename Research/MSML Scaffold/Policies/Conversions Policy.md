@@ -33,28 +33,3 @@ The conversion ratio is defined by the ratio of the [[Current Block Reward Ratio
 If the asset is Quai, then return spaces for Quai as -TokenValue and 1/[[Current Block Reward Ratio Metric]] * TokenValue for Qi.
     Else return Qi as -Token Value and [[Current Block Reward Ratio Metric]] * TokenValue for Quai
 
-
-
-## Old Code
-
-	    def convertQiToQuai(self, qiAmount):
-	        if qiAmount < self.amtMin or qiAmount > self.qi:
-	            return 0
-	        self.qi -= qiAmount
-	        quaiAmt = self.quaiRewardVal/self.qiRewardVal * qiAmount
-	        self.convertedQuai[-1] += quaiAmt
-	        self.quaiHash[-1] += quaiAmt
-	        #print("convertQiToQuai:", "qi", self.qi, "quai", self.quai, "block", self.blockNum, "qiAmount", qiAmount, "quaiAmount", quaiAmt)
-	        return quaiAmt
-
-## Old Code
-
-	    def convertQuaiToQi(self, quaiAmount):
-	        if quaiAmount < self.amtMin or quaiAmount > self.quai:
-	            return 0
-	        self.quai -= quaiAmount
-	        qiAmt = self.qiRewardVal/self.quaiRewardVal * quaiAmount
-	        self.convertedQi[-1] += qiAmt
-	        self.qiHash[-1] += qiAmt
-	        #print("convertQuaiToQi:", "qi", self.qi, "quai", self.quai, "block", self.blockNum, "qiAmount", qiAmt, "quaiAmount", quaiAmount)
-	        return qiAmt

@@ -13,7 +13,3 @@ A mechanism which sets the values for K
 
 1. [[Global]].[[Global State-K Quai|K Quai]]
 2. [[Global]].[[Global State-K Qi|K Qi]]
-
-
-
-

@@ -40,14 +40,16 @@ The wiring for the controller actions
 ## Constraints
 
 ## Domain Spaces
+1. [[Empty Space]]
 
 ## Codomain Spaces
 1. [[Terminating Space]]
 
 ## All Spaces Used
-1. [[K Space]]
-2. [[Observable State Space]]
-3. [[Terminating Space]]
+1. [[Empty Space]]
+2. [[K Space]]
+3. [[Observable State Space]]
+4. [[Terminating Space]]
 
 ## Parameters Used
 1. [[Initial Block Difficulty]]

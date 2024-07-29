@@ -81,6 +81,7 @@ The wiring for mining a block
 ## Constraints
 
 ## Domain Spaces
+1. [[Empty Space]]
 
 ## Codomain Spaces
 1. [[Empty Space]]

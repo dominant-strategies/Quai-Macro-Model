@@ -175,6 +175,7 @@ The wiring of the entire simulation
 ## Constraints
 
 ## Domain Spaces
+1. [[Empty Space]]
 
 ## Codomain Spaces
 1. [[Terminating Space]]

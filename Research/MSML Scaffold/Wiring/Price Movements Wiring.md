@@ -40,14 +40,16 @@ The wiring for movements on the price of Qi and Quai
 ## Constraints
 
 ## Domain Spaces
+1. [[Empty Space]]
 
 ## Codomain Spaces
 1. [[Terminating Space]]
 
 ## All Spaces Used
-1. [[Price Movement Space]]
-2. [[Price Space]]
-3. [[Terminating Space]]
+1. [[Empty Space]]
+2. [[Price Movement Space]]
+3. [[Price Space]]
+4. [[Terminating Space]]
 
 ## Parameters Used
 1. [[Asset Return Parameterization]]
