@@ -1,43 +1,43 @@
-- Start with formalisms then go into controller very quickly then show MSML scaffold currently
+- Start with formalisms then go into [[controller]] very quickly then show MSML scaffold currently
 - For analyzing the hash rate, if we need to do it continuously then it is fine
 	- One approaches the other
 - All block rewards are observable
 	- From an implementation standpoint, there is a finite window, need to take a subsample
 - Should work looking at just a couple hundred blocks
-- Would be great if input parameters could operate a stable controller, DAA
-- Treat miner decision making process as a signal processing problem
-	- Signal coming in from miners
+- Would be great if input parameters could operate a stable [[controller]], DAA
+- Treat [[Mining Payment Policy|miner decision]] making process as a signal processing problem
+	- Signal coming in from [[Miner|miners]]
 	- Why distinguishment with partial derivative?
-- The actual real decision that is happening for the miner is almost swipe left or swipe right for Quai or Qi
+- The actual real decision that is happening for the [[miner]] is almost swipe left or swipe right for Quai or Qi
 	- Because that decision is effectively a single bit there is going to be a necessary interpretation/having a sub-gradient
 	- Needs to reflect a much larger pool of actors and as well the market influences
 - It is important that they can also choose not to mine
 	- But in this formalism we are basing it on the assumption that someone has mined
-	- Not mining can effect the difficulty / pricing
+	- Not mining can effect the [[Block Difficulty|difficulty]] / pricing
 - There will be time and the event of mining a block and choices made at those times
 - One way is to assume DAA is keeping blocks at a relatively consistent cadence
 - We want to avoid using an oracle
 	- Neither does Quai
-	- The whole point is using the miners and exchange mechanisms to set prices and not worry about Oracle
+	- The whole point is using the [[Miner|miners]] and exchange mechanisms to set prices and not worry about Oracle
 - Conversion
 	- Also needs a time component, could be nominal, say two weeks
 	- The idea being that the conversion should act as a market making desk, not a user desk
-	- Idea here is that when supply of Qi is materially changed it will happen through conversions
+	- Idea here is that when [[Qi Supply Metric|supply of Qi]] is materially changed it will happen through conversions
 	- It is really two different choices, mining choice and conversion choice but conversion does not have the same time basis
 	- !! Need to figure out conversion delay and also if the exchange rate is locked in then two weeks later the exchange happens or in two weeks the exchange rate is the one that is current would be good to know
-- The controller and conversions is always going to happen at prime blocks
+- The [[controller]] and conversions is always going to happen at prime blocks
 	- Which means every time you get an update it is actually going to be a large subsample
 	- Everything that is referenced into that prime block, maybe 100 zone blocks, and each one will have a miner choice and potentially people trying to run conversions
 		- !!! It is going to be a basket
 		- !!!! Need to update model for basket of mined blocks and potential conversions
 - There is one other dynamic
 	- The batch size could change over time
-	- Single shard -> maybe 5 samples
+	- Single [[Execution Shard|shard]] -> maybe 5 samples
 	- As hierarchy increases, it is going to increase every time the hierarchy doubles
-	- Number of samples in system changes as number of shards change
+	- Number of samples in system changes as number of [[Execution Shard|shards]] change
 - If we assume that we are operating on a trailing subsample set in the prime context, each one of those blocks also represents a discreet number of those blocks
 - The reason for 2 exponent with Quai has to do with the fact, it just has to be K to something.
-	- Having a linear controller it helps out but all that matters is that we have log2 of the hash
+	- Having a linear [[controller]] it helps out but all that matters is that we have log2 of the hash
 - The cause of Qi being a stablecoin
 	- When there is great Qi volatility there is always going to be a stable alternative i.e. dollar or Euro
 		- Then because there is a stable alternative
