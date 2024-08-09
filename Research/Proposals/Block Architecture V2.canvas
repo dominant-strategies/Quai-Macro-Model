@@ -1,0 +1,16 @@
+{
+	"nodes":[
+		{"id":"a9be234ba6ca9c22","x":-240,"y":20,"width":340,"height":580,"type":"group","label":"Price Movements Wiring"},
+		{"id":"093dce88b412424e","x":-220,"y":40,"width":300,"height":200,"type":"text","text":"# Price Movements Boundary Action\n- Should take into consideration a sensor of mining choices\n- And also have stochastic process attributes"},
+		{"id":"3c8073e1b1081225","x":-220,"y":300,"width":300,"height":160,"type":"text","text":"# Price Movements Policy\n\n- Any checks, computation, etc"},
+		{"id":"0220fd2c1b75b33b","x":-220,"y":500,"width":300,"height":80,"type":"text","text":"# Update Prices Mechanisms"},
+		{"id":"9ae52c90229f9cc5","x":200,"y":40,"width":340,"height":200,"type":"text","text":"# Conversions Boundary Action"},
+		{"id":"b9d2af1896d173a1","x":820,"y":40,"width":240,"height":100,"type":"text","text":"# Meta Control Action"},
+		{"id":"f900d738017a3ce9","x":820,"y":180,"width":240,"height":100,"type":"text","text":"# Unlocking Policy"}
+	],
+	"edges":[
+		{"id":"1784045896b067bf","fromNode":"093dce88b412424e","fromSide":"bottom","toNode":"3c8073e1b1081225","toSide":"top"},
+		{"id":"3de2523ffdd19739","fromNode":"3c8073e1b1081225","fromSide":"bottom","toNode":"0220fd2c1b75b33b","toSide":"top"},
+		{"id":"741af69a2d29e986","fromNode":"b9d2af1896d173a1","fromSide":"bottom","toNode":"f900d738017a3ce9","toSide":"top"}
+	]
+}
