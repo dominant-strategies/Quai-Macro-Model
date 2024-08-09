@@ -1,6 +1,7 @@
 {
 	"nodes":[
 		{"id":"e1ba1a3325de6b92","x":720,"y":-10,"width":760,"height":890,"type":"group","label":"Mining Wiring"},
+		{"id":"65f7d52c3cf6e5f7","x":2180,"y":-10,"width":640,"height":690,"type":"group","label":"Meta Wiring"},
 		{"id":"54c2e18df11200b2","x":180,"y":-10,"width":380,"height":700,"type":"group","label":"Conversions Wiring"},
 		{"id":"a9be234ba6ca9c22","x":-240,"y":20,"width":340,"height":580,"type":"group","label":"Price Movements Wiring"},
 		{"id":"093dce88b412424e","x":-220,"y":40,"width":300,"height":200,"type":"text","text":"# Price Movements Boundary Action\n- Should take into consideration a sensor of mining choices\n- And also have stochastic process attributes"},
@@ -12,8 +13,11 @@
 		{"id":"8db798f328b80251","x":740,"y":10,"width":400,"height":240,"type":"text","text":"# Block Mining Boundary Action\n- Decides aggregate hashpower through a heuristic, passed through as a space\n- Difficulty is known through state\n- Produce the array of difficulties for the different blocks and the "},
 		{"id":"b51b1c72c5cd6792","x":740,"y":290,"width":400,"height":570,"type":"text","text":"# Block Mining Policy\n- Nested block which takes care of:\n\t- Figuring out what gets mined over an epoch\n\t- Logic for the difficulty adjustment controller\n\t- Anything to do with non-mined blocks, aggregation, etc.\n- Follows implementation similar to the simulation notebook\n- Will continue running until a prime block is merged\n- Output is List[List[Mined Block Type]] where the Mined Block Type has attributes of block level difficulty, etc.\n- If the outer list dimension == 1: prime block mined successfully\n\t- Otherwise all previous blocks were from non-prime mined blocks\n- Also encapsulates miner decision on Quai/Qi"},
 		{"id":"4be03d95bcd2d43f","x":1200,"y":90,"width":260,"height":260,"type":"text","text":"# Block Mining Mechanisms\n- All reward distributions\n- Difficulty adjustments\n- Logging of data"},
-		{"id":"b9d2af1896d173a1","x":2080,"y":80,"width":240,"height":100,"type":"text","text":"# Meta Control Action"},
-		{"id":"f900d738017a3ce9","x":2080,"y":220,"width":240,"height":100,"type":"text","text":"# Unlocking Policy"}
+		{"id":"b4815b290e57cdd7","x":1560,"y":10,"width":440,"height":850,"type":"text","text":"# Controller Update Wiring\n\n- All updates for the controller!"},
+		{"id":"b9d2af1896d173a1","x":2400,"y":10,"width":240,"height":100,"type":"text","text":"# Meta Control Action"},
+		{"id":"eb9140db94e7cdc7","x":2560,"y":220,"width":240,"height":215,"type":"text","text":"# Simulation Logging Mechanism\n- All mechanisms for logging simulation level data"},
+		{"id":"f900d738017a3ce9","x":2200,"y":220,"width":240,"height":215,"type":"text","text":"# Unlocking Policy\n- Policy for unlocking of rewards from both conversions and mining"},
+		{"id":"6ed24fd32edb9e1d","x":2200,"y":480,"width":240,"height":180,"type":"text","text":"# Unlocking Mechanisms\n- All changes to the state of locked and unlocked currencies"}
 	],
 	"edges":[
 		{"id":"1784045896b067bf","fromNode":"093dce88b412424e","fromSide":"bottom","toNode":"3c8073e1b1081225","toSide":"top"},
@@ -24,6 +28,10 @@
 		{"id":"d1593bf9d7beb1ce","fromNode":"a9be234ba6ca9c22","fromSide":"right","toNode":"54c2e18df11200b2","toSide":"left"},
 		{"id":"71a5d5569f1dc80c","fromNode":"8db798f328b80251","fromSide":"bottom","toNode":"b51b1c72c5cd6792","toSide":"top"},
 		{"id":"2368865a7b8941f1","fromNode":"b51b1c72c5cd6792","fromSide":"right","toNode":"4be03d95bcd2d43f","toSide":"bottom"},
-		{"id":"080d895fa8f09c39","fromNode":"54c2e18df11200b2","fromSide":"right","toNode":"e1ba1a3325de6b92","toSide":"left"}
+		{"id":"080d895fa8f09c39","fromNode":"54c2e18df11200b2","fromSide":"right","toNode":"e1ba1a3325de6b92","toSide":"left"},
+		{"id":"275bad60e3c20770","fromNode":"e1ba1a3325de6b92","fromSide":"right","toNode":"b4815b290e57cdd7","toSide":"left"},
+		{"id":"1be21b31c25dad3c","fromNode":"f900d738017a3ce9","fromSide":"bottom","toNode":"6ed24fd32edb9e1d","toSide":"top"},
+		{"id":"fbc3f2245050c3c9","fromNode":"b9d2af1896d173a1","fromSide":"bottom","toNode":"eb9140db94e7cdc7","toSide":"top"},
+		{"id":"72797dc13ec58339","fromNode":"b4815b290e57cdd7","fromSide":"right","toNode":"65f7d52c3cf6e5f7","toSide":"left"}
 	]
 }
