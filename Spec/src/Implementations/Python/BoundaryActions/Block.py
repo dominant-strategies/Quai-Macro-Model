@@ -1,0 +1,45 @@
+import numpy as np
+from bisect import bisect
+
+
+def create_block_hashes(state, params):
+
+    # Get the baseline block difficulties without randomness
+    prime_block_hashes = [
+        state["Global Difficulty"] * params["Block Difficulty Multiples"]["Prime"]
+    ]
+    region_block_hashes = [
+        state["Global Difficulty"] * params["Block Difficulty Multiples"]["Region"]
+    ] * state["Regions"]
+    zone_block_hashes = (
+        [state["Global Difficulty"] * params["Block Difficulty Multiples"]["Zone"]]
+        * state["Regions"]
+        * state["Zones per Region"]
+    )
+
+    # Merge and order
+    block_hashes = []
+    while len(region_block_hashes) > 0:
+        for _ in range(state["Zones per Region"]):
+            block_hashes.append(zone_block_hashes.pop())
+        block_hashes.append(region_block_hashes.pop())
+    block_hashes.append(prime_block_hashes.pop())
+
+    # Add in randomness
+    block_hashes = np.array(block_hashes)
+    mutlipliers = np.random.lognormal(0, 0.05, len(block_hashes))
+    block_hashes = block_hashes * mutlipliers
+    block_hashes = block_hashes.round().astype(int)
+
+    # Get cumulative sum for later computation of how far the aggregate hash rate gets us
+    block_hashes_cs = np.cumsum(block_hashes)
+
+    return block_hashes, block_hashes_cs
+
+
+def create_aggregate_hashpower(state, params):
+    pass
+
+
+def mine_block_boundary_action(state, params, spaces):
+    pass
