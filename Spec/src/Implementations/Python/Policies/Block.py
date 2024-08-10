@@ -1,11 +1,14 @@
 from bisect import bisect
+import numpy as np
 
 
 def compute_progress(state, params, block_hashes, block_hashes_cs, aggregate_hashpower):
     total_hashpower = params["Target Mining Time"] * aggregate_hashpower
     # Prime block mined
     if total_hashpower >= block_hashes_cs[-1]:
-        time_to_mine = block_hashes_cs[-1] / total_hashpower * params["Target Time"]
+        time_to_mine = (
+            block_hashes_cs[-1] / total_hashpower * params["Target Mining Time"]
+        )
 
         mined_blocks = block_hashes
         block_hashes, block_hashes_cs = [], []
@@ -21,28 +24,28 @@ def compute_progress(state, params, block_hashes, block_hashes_cs, aggregate_has
 
 
 def compute_difficulty_change(
-    state, params, time_to_mine, block_hashes, block_hashes_cs
+    state, params, time_to_mine, block_hashes, block_hashes_cs, new_difficulty
 ):
-    assert False, "Ensure that block difficulties are updated"
-    percentage_of_target = time_to_mine / params["Target Time"]
-    new_difficulty = state["Global Difficulty"]
-
-    print("-" * 20 + "Difficulty Adjustment" + "-" * 20)
-    print("Time in mining was {} of target time".format(percentage_of_target))
+    percentage_of_target = time_to_mine / params["Target Mining Time"]
 
     # Too fast if it finishes the block within less than 80% of target time , increase difficulty by 5%
     if percentage_of_target < 0.8:
         new_difficulty = new_difficulty * 1.05
-        print("Difficulty adjusted upwards by 5%")
+        for y in block_hashes:
+            y["Difficulty"] = int(y["Difficulty"] * 1.05)
+        block_hashes_cs = np.cumsum([x["Difficulty"] for x in block_hashes])
+        # print("Difficulty adjusted upwards by 5%")
     # Too slow, did not complete in time
     elif percentage_of_target >= 1:
         new_difficulty = new_difficulty * 0.95
-        print("Difficulty adjusted downwards by 5%")
+        for y in block_hashes:
+            y["Difficulty"] = int(y["Difficulty"] * 0.95)
+        block_hashes_cs = np.cumsum([x["Difficulty"] for x in block_hashes])
+        # print("Difficulty adjusted downwards by 5%")
     else:
-        print("Difficulty not changed, within reasonable range")
-    print("New difficulty: {}".format(new_difficulty))
-    print()
-    return new_difficulty
+        # print("Difficulty not changed, within reasonable range")
+        pass
+    return block_hashes, block_hashes_cs, new_difficulty
 
 
 def mining_policy_v1(state, params, spaces):
@@ -61,7 +64,7 @@ def mining_policy_v1(state, params, spaces):
         l1.append(mined_blocks)
         l2.append(time_to_mine)
         block_hashes, block_hashes_cs, new_difficulty = compute_difficulty_change(
-            state, params, time_to_mine, block_hashes, block_hashes_cs
+            state, params, time_to_mine, block_hashes, block_hashes_cs, new_difficulty
         )
 
     print(l1, l2, new_difficulty)
