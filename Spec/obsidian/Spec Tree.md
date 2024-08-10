@@ -23,6 +23,8 @@ cssclasses:
 │   │   ├──[[Global State-Quai Price\|Quai Price]]
 │   │   ├──[[Global State-Qi Price\|Qi Price]]
 │   │   ├──[[Global State-Simulation History Log\|Simulation History Log]]
+│   │   ├──[[Global State-Number of Regions\|Number of Regions]]
+│   │   ├──[[Global State-Zones per Region\|Zones per Region]]
 ├──**Stateful Metrics**
 │   ├──Block Reward Stateful Metrics
 │   │   ├──[[Current Quai Block Reward Stateful Metric]]
@@ -34,6 +36,10 @@ cssclasses:
 │   ├──[[Hash Type]]
 │   ├──[[Block Array Type]]
 │   ├──[[Hashpower per Second]]
+│   ├──[[Hash Cumulative Sum Array Type]]
+│   ├──[[Block Difficulty Multiples Type]]
+│   ├──[[Number of Regions Type]]
+│   ├──[[Zones per Region Type]]
 │   ├──[[Conversions Array Type]]
 │   ├──[[Mined Ratio Array Type]]
 │   ├──[[Hash Array Type]]
@@ -61,6 +67,7 @@ cssclasses:
 │   ├──[[Qi Hash Space]]
 │   ├──[[Quai Hash Space]]
 │   ├──[[Pre-Mining Space]]
+│   ├──[[Mined Blocks Space]]
 │   ├──[[Quai Space]]
 │   ├──[[Qi Space]]
 │   ├──[[Conversion Space]]
@@ -77,6 +84,8 @@ cssclasses:
 │   ├──Controller Parameter Set
 │   │   ├──[[PID Parameterization]]
 │   │   ├──[[Initial Block Difficulty]]
+│   ├──Mining Parameter Set
+│   │   ├──[[Block Difficulty Multiples]]
 ├──**Boundary Actions**
 │   ├──[[Mine Block Boundary Action]]
 │   ├──[[Conversions Boundary Action]]
@@ -87,6 +96,7 @@ cssclasses:
 ├──**Policies**
 │   ├──[[Block Reward Policy]]
 │   ├──[[Mining Payment Policy]]
+│   ├──[[Mining Policy]]
 │   ├──[[Conversions Policy]]
 │   ├──[[Price Movements Policy]]
 │   ├──[[Controller Update Policy]]

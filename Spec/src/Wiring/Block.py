@@ -5,6 +5,7 @@ block_wiring.append(
         "name": "Mine Block Wiring",
         "components": [
             "Mine Block Boundary Action",
+            "Mining Policy",
             "Block Reward Policy",
             "Mining Payment Policy",
             "Mining Mechanisms",

@@ -19,6 +19,8 @@
 |[[Global State-Quai Price\|Quai Price]]|The current price of Quai.|[[USD Type]]|||
 |[[Global State-Qi Price\|Qi Price]]|The current price of Qi.|[[USD Type]]|||
 |[[Global State-Simulation History Log\|Simulation History Log]]|The logged data from simulation history.|[[Simulation History Log Type]]|||
+|[[Global State-Number of Regions\|Number of Regions]]|The current number of regions.|[[Number of Regions Type]]|||
+|[[Global State-Zones per Region\|Zones per Region]]|The current number of zones in each region.|[[Zones per Region Type]]|||
 
 
 ## Updated By
