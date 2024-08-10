@@ -67,4 +67,10 @@ def mining_policy_v1(state, params, spaces):
             state, params, time_to_mine, block_hashes, block_hashes_cs, new_difficulty
         )
 
-    print(l1, l2, new_difficulty)
+    space = {}
+    space["New Difficulty"] = new_difficulty
+    l = []
+    for x, y in zip(l1, l2):
+        l.append({"Mined Blocks": x, "Mining Time": y})
+    space["Mining Epochs"] = l
+    return [space]
