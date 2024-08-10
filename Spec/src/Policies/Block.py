@@ -62,10 +62,17 @@ mining_payment_policy = {
 }
 
 
-mining_policy_v1 = {"name": "Mining Policy V1", "description": "", "logic": ""}
+mining_policy_v1 = {
+    "name": "Mining Policy V1",
+    "description": "A baseline mining policy",
+    "logic": """Until all blocks are mined the following while loop continues:
+1. Given hashpower and the target mining time (parameter), see how many blocks can be mined. If prime block is mined cut the time at target time, otherwise compute the time taken for mining all the blocks.
+2. Pass the time taken to difficulty adjustment which if time taken was < .8 of target time will increase difficulty, or if it was equal to target time will decrease difficulty. Block difficulties leftover still are adjusted by this amount.
+The final returned object will have the epochs (only 1 if prime block is mined in the first epoch) as well as the final new difficulty after any adjustments""",
+}
 mining_policy = {
     "name": "Mining Policy",
-    "description": "Policy for mining and how long it takes.",
+    "description": "Policy for mining and how long it takes in terms of epochs and also the time epochs take.",
     "constraints": [],
     "policy_options": [mining_policy_v1],
     "domain": ["Pre-Mining Space"],
