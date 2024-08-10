@@ -10,6 +10,14 @@ mining_parameter_set = {
             "domain": None,
             "parameter_class": "System",
         },
+        {
+            "variable_type": "Seconds Type",
+            "name": "Target Mining Time",
+            "description": "The target time for mining to take",
+            "symbol": None,
+            "domain": None,
+            "parameter_class": "System",
+        },
     ],
 }
 

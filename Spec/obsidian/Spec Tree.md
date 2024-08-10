@@ -52,6 +52,7 @@ cssclasses:
 │   ├──[[Datetime Type]]
 │   ├──[[Decimal Type]]
 │   ├──[[Delta Time Type]]
+│   ├──[[Seconds Type]]
 │   ├──[[Simulation History Log Type]]
 │   ├──[[Token Name Type]]
 │   ├──[[Token Amount Type]]
@@ -86,6 +87,7 @@ cssclasses:
 │   │   ├──[[Initial Block Difficulty]]
 │   ├──Mining Parameter Set
 │   │   ├──[[Block Difficulty Multiples]]
+│   │   ├──[[Target Mining Time]]
 ├──**Boundary Actions**
 │   ├──[[Mine Block Boundary Action]]
 │   ├──[[Conversions Boundary Action]]

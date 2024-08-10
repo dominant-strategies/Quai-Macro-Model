@@ -12,3 +12,10 @@ Policy for mining and how long it takes.
 ## Constraints
 ## Parameters Used
 ## Metrics Used
+## Policy Options
+### 1. Mining Policy V1
+#### Description
+
+#### Logic
+
+

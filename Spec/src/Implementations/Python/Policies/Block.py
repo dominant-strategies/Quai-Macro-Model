@@ -1,8 +1,8 @@
 from bisect import bisect
 
 
-def compute_progress(state, params, block_hashes, block_hashes_cs):
-    total_hashpower = state["Aggregate Hashpower"] * params["Target Time"]
+def compute_progress(state, params, block_hashes, block_hashes_cs, aggregate_hashpower):
+    total_hashpower = params["Target Mining Time"] * aggregate_hashpower
     # Prime block mined
     if total_hashpower >= block_hashes_cs[-1]:
         time_to_mine = block_hashes_cs[-1] / total_hashpower * params["Target Time"]
@@ -10,14 +10,14 @@ def compute_progress(state, params, block_hashes, block_hashes_cs):
         mined_blocks = block_hashes
         block_hashes, block_hashes_cs = [], []
     else:
-        time_to_mine = params["Target Time"]
+        time_to_mine = params["Target Mining Time"]
         i = bisect(block_hashes_cs, total_hashpower)
         mined_blocks = block_hashes[:i]
         if i > 0:
             block_hashes_cs[i:] -= block_hashes_cs[i - 1]
             block_hashes, block_hashes_cs = block_hashes[i:], block_hashes_cs[i:]
 
-    return block_hashes, block_hashes_cs, time_to_mine
+    return block_hashes, block_hashes_cs, time_to_mine, mined_blocks
 
 
 def compute_difficulty_change(state, params, time_to_mine):

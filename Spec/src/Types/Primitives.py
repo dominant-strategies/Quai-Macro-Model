@@ -47,6 +47,12 @@ DeltaTimeType = {
     "notes": "In days",
 }
 
+SecondsType = {
+    "name": "Seconds Type",
+    "type": "SecondsType",
+    "notes": "Some number of seconds",
+}
+
 
 primitive_types = [
     CoeffecientType,
@@ -57,4 +63,5 @@ primitive_types = [
     DatetimeType,
     DecimalType,
     DeltaTimeType,
+    SecondsType,
 ]
