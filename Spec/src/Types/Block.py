@@ -58,6 +58,12 @@ ZonesPerRegionType = {
     "notes": "",
 }
 
+MiningEpochArrayType = {
+    "name": "Mining Epoch Array Type",
+    "type": "MiningEpochArrayType",
+    "notes": "An array of mining epochs where each mining epoch has the mined blocks of type BlockArrayType and mining time in seconds",
+}
+
 
 block_types = [
     EntityType,
@@ -70,4 +76,5 @@ block_types = [
     BlockDifficultyMultiplesType,
     NumberOfRegionsType,
     ZonesPerRegionType,
+    MiningEpochArrayType,
 ]

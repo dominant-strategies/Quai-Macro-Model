@@ -50,7 +50,10 @@ quai_hash_space = {
 
 mined_blocks_space = {
     "name": "Mined Blocks Space",
-    "schema": {},
+    "schema": {
+        "Mining Epochs": "Mining Epoch Array Type",
+        "New Difficulty": "Block Difficulty Type",
+    },
 }
 
 

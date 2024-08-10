@@ -40,6 +40,7 @@ cssclasses:
 │   ├──[[Block Difficulty Multiples Type]]
 │   ├──[[Number of Regions Type]]
 │   ├──[[Zones per Region Type]]
+│   ├──[[Mining Epoch Array Type]]
 │   ├──[[Conversions Array Type]]
 │   ├──[[Mined Ratio Array Type]]
 │   ├──[[Hash Array Type]]
