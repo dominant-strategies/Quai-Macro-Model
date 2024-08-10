@@ -34,6 +34,12 @@ HashpowerPerSecond = {
     "notes": "The amount of hashpower per second",
 }
 
+HashCumulativeSumArrayType = {
+    "name": "Hash Cumulative Sum Array Type",
+    "type": "HashCumulativeSumArrayType",
+    "notes": "A cumulative sum array for total hash (for computation effeciency in simulation)",
+}
+
 
 block_types = [
     EntityType,
@@ -42,4 +48,5 @@ block_types = [
     HashType,
     BlockArrayType,
     HashpowerPerSecond,
+    HashCumulativeSumArrayType,
 ]
