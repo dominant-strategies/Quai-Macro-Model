@@ -2,7 +2,7 @@ import numpy as np
 from bisect import bisect
 
 
-def create_block_hashes(state, params):
+def create_block_hashes_v1(state, params):
 
     # Get the baseline block difficulties without randomness
     prime_block_hashes = [
@@ -37,9 +37,11 @@ def create_block_hashes(state, params):
     return block_hashes, block_hashes_cs
 
 
-def create_aggregate_hashpower(state, params):
-    pass
+def create_aggregate_hashpower_v1(state, params):
+    return 1000 * state["Qi Price"]
 
 
-def mine_block_boundary_action(state, params, spaces):
-    pass
+def mine_block_boundary_action_v1(state, params, spaces):
+    space = {}
+    space["Aggregate Hashpower"] = create_aggregate_hashpower_v1(state, params)
+    return [space]
