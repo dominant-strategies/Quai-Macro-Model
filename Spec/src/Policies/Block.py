@@ -61,11 +61,13 @@ mining_payment_policy = {
     "metrics_used": ["Qi to Hash Metric", "Quai to Hash Metric"],
 }
 
+
+mining_policy_v1 = {"name": "Mining Policy V1", "description": "", "logic": ""}
 mining_policy = {
     "name": "Mining Policy",
     "description": "Policy for mining and how long it takes.",
     "constraints": [],
-    "policy_options": [],
+    "policy_options": [mining_policy_v1],
     "domain": ["Pre-Mining Space"],
     "codomain": ["Mined Blocks Space"],
     "parameters_used": [],
