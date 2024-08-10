@@ -17,43 +17,45 @@ EES4(["Quai Supply"])
 EES4 --- EE0
 end
 
-subgraph X13["Mine Block Wiring"]
+subgraph X14["Mine Block Wiring"]
 direction TB
 X1["Mine Block Boundary Action"]
-X2["Block Reward Policy"]
-X3["Mining Payment Policy"]
-subgraph X12["Mining Mechanisms"]
+X2["Mining Policy"]
+X3["Block Reward Policy"]
+X4["Mining Payment Policy"]
+subgraph X13["Mining Mechanisms"]
 direction TB
-X4["Increment Block Number Mechanism"]
-X4 --> EES0
-X5["Mint Qi Tokens Mechanism"]
-X5 --> EES3
-X6["Mint Quai Tokens Mechanism"]
-X6 --> EES4
-X7["Update Historical Mined Ratio Mechanism"]
-X7 --> EES1
-X8["Update Historical Qi Hash Mechanism"]
-X8 --> EES2
-X9["Update Historical Quai Hash Mechanism"]
+X5["Increment Block Number Mechanism"]
+X5 --> EES0
+X6["Mint Qi Tokens Mechanism"]
+X6 --> EES3
+X7["Mint Quai Tokens Mechanism"]
+X7 --> EES4
+X8["Update Historical Mined Ratio Mechanism"]
+X8 --> EES1
+X9["Update Historical Qi Hash Mechanism"]
 X9 --> EES2
-X10[Domain]
+X10["Update Historical Quai Hash Mechanism"]
+X10 --> EES2
+X11[Domain]
 
 direction LR
 direction TB
-X10 --> X4
-X10 --"Qi Space"--> X5
-X10 --"Quai Space"--> X6
-X10 --"Mined Ratio Space"--> X7
-X10 --"Qi Hash Space"--> X8
-X10 --"Quai Hash Space"--> X9
+X11 --> X5
+X11 --"Qi Space"--> X6
+X11 --"Quai Space"--> X7
+X11 --"Mined Ratio Space"--> X8
+X11 --"Qi Hash Space"--> X9
+X11 --"Quai Hash Space"--> X10
 end
-X1--"Block Difficulty Space"--->X2
-X2--"Block Reward Options Space"--->X3
-X3--"Qi Space
+X1--"Pre-Mining Space"--->X2
+X2--"Mined Blocks Space"--->X3
+X3--"Block Reward Options Space"--->X4
+X4--"Qi Space
 Quai Space
 Mined Ratio Space
 Qi Hash Space
-Quai Hash Space"------->X12
+Quai Hash Space"------->X13
 end
 ```
 
@@ -63,20 +65,22 @@ Block Type: Stack Block
 The wiring for mining a block
 ## Components
 1. [[Mine Block Boundary Action]]
-2. [[Block Reward Policy]]
-3. [[Mining Payment Policy]]
-4. [[Mining Mechanisms]]
+2. [[Mining Policy]]
+3. [[Block Reward Policy]]
+4. [[Mining Payment Policy]]
+5. [[Mining Mechanisms]]
 
 ## All Blocks
 1. [[Block Reward Policy]]
 2. [[Increment Block Number Mechanism]]
 3. [[Mine Block Boundary Action]]
 4. [[Mining Payment Policy]]
-5. [[Mint Qi Tokens Mechanism]]
-6. [[Mint Quai Tokens Mechanism]]
-7. [[Update Historical Mined Ratio Mechanism]]
-8. [[Update Historical Qi Hash Mechanism]]
-9. [[Update Historical Quai Hash Mechanism]]
+5. [[Mining Policy]]
+6. [[Mint Qi Tokens Mechanism]]
+7. [[Mint Quai Tokens Mechanism]]
+8. [[Update Historical Mined Ratio Mechanism]]
+9. [[Update Historical Qi Hash Mechanism]]
+10. [[Update Historical Quai Hash Mechanism]]
 
 ## Constraints
 
@@ -87,15 +91,16 @@ The wiring for mining a block
 1. [[Empty Space]]
 
 ## All Spaces Used
-1. [[Block Difficulty Space]]
-2. [[Block Reward Options Space]]
-3. [[Empty Space]]
+1. [[Block Reward Options Space]]
+2. [[Empty Space]]
+3. [[Mined Blocks Space]]
 4. [[Mined Ratio Space]]
-5. [[Qi Hash Space]]
-6. [[Qi Space]]
-7. [[Quai Hash Space]]
-8. [[Quai Space]]
-9. [[Terminating Space]]
+5. [[Pre-Mining Space]]
+6. [[Qi Hash Space]]
+7. [[Qi Space]]
+8. [[Quai Hash Space]]
+9. [[Quai Space]]
+10. [[Terminating Space]]
 
 ## Parameters Used
 

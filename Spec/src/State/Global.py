@@ -114,5 +114,19 @@ global_state = {
             "symbol": None,
             "domain": None,
         },
+        {
+            "type": "Number of Regions Type",
+            "name": "Number of Regions",
+            "description": "The current number of regions.",
+            "symbol": None,
+            "domain": None,
+        },
+        {
+            "type": "Zones per Region Type",
+            "name": "Zones per Region",
+            "description": "The current number of zones in each region.",
+            "symbol": None,
+            "domain": None,
+        },
     ],
 }
