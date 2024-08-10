@@ -1,18 +1,17 @@
 import numpy as np
-from bisect import bisect
 
 
 def create_block_hashes_v1(state, params):
 
     # Get the baseline block difficulties without randomness
     prime_block_hashes = [
-        state["Global Difficulty"] * params["Block Difficulty Multiples"]["Prime"]
+        state["Block Difficulty"] * params["Block Difficulty Multiples"]["Prime"]
     ]
     region_block_hashes = [
-        state["Global Difficulty"] * params["Block Difficulty Multiples"]["Region"]
+        state["Block Difficulty"] * params["Block Difficulty Multiples"]["Region"]
     ] * state["Regions"]
     zone_block_hashes = (
-        [state["Global Difficulty"] * params["Block Difficulty Multiples"]["Zone"]]
+        [state["Block Difficulty"] * params["Block Difficulty Multiples"]["Zone"]]
         * state["Regions"]
         * state["Zones per Region"]
     )
@@ -44,4 +43,7 @@ def create_aggregate_hashpower_v1(state, params):
 def mine_block_boundary_action_v1(state, params, spaces):
     space = {}
     space["Aggregate Hashpower"] = create_aggregate_hashpower_v1(state, params)
+    space["Blocks to Mine"], space["Block Hash Cumulative Sum"] = (
+        create_block_hashes_v1(state, params)
+    )
     return [space]

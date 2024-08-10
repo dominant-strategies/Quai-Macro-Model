@@ -40,6 +40,12 @@ HashCumulativeSumArrayType = {
     "notes": "A cumulative sum array for total hash (for computation effeciency in simulation)",
 }
 
+BlockDifficultyMultiplesType = {
+    "name": "Block Difficulty Multiples Type",
+    "type": "BlockDifficultyMultiplesType",
+    "notes": "A dictionary mapping each block level to a multiple of difficulty",
+}
+
 
 block_types = [
     EntityType,
@@ -49,4 +55,5 @@ block_types = [
     BlockArrayType,
     HashpowerPerSecond,
     HashCumulativeSumArrayType,
+    BlockDifficultyMultiplesType,
 ]
