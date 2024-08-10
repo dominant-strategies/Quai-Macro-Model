@@ -9,10 +9,10 @@ def create_block_hashes_v1(state, params):
     ]
     region_block_hashes = [
         state["Block Difficulty"] * params["Block Difficulty Multiples"]["Region"]
-    ] * state["Regions"]
+    ] * state["Number of Regions"]
     zone_block_hashes = (
         [state["Block Difficulty"] * params["Block Difficulty Multiples"]["Zone"]]
-        * state["Regions"]
+        * state["Number of Regions"]
         * state["Zones per Region"]
     )
 

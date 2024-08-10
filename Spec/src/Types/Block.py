@@ -46,6 +46,18 @@ BlockDifficultyMultiplesType = {
     "notes": "A dictionary mapping each block level to a multiple of difficulty",
 }
 
+NumberOfRegionsType = {
+    "name": "Number of Regions Type",
+    "type": "NumberOfRegionsType",
+    "notes": "",
+}
+
+ZonesPerRegionType = {
+    "name": "Zones per Region Type",
+    "type": "ZonesPerRegionType",
+    "notes": "",
+}
+
 
 block_types = [
     EntityType,
@@ -56,4 +68,6 @@ block_types = [
     HashpowerPerSecond,
     HashCumulativeSumArrayType,
     BlockDifficultyMultiplesType,
+    NumberOfRegionsType,
+    ZonesPerRegionType,
 ]
