@@ -20,7 +20,10 @@ def compute_progress(state, params, block_hashes, block_hashes_cs, aggregate_has
     return block_hashes, block_hashes_cs, time_to_mine, mined_blocks
 
 
-def compute_difficulty_change(state, params, time_to_mine):
+def compute_difficulty_change(
+    state, params, time_to_mine, block_hashes, block_hashes_cs
+):
+    assert False, "Ensure that block difficulties are updated"
     percentage_of_target = time_to_mine / params["Target Time"]
     new_difficulty = state["Global Difficulty"]
 
@@ -48,8 +51,17 @@ def mining_policy_v1(state, params, spaces):
         spaces[0]["Blocks to Mine"],
         spaces[0]["Block Hash Cumulative Sum"],
     )
-    print(
-        compute_progress(
+    l1 = []
+    l2 = []
+    new_difficulty = state["Block Difficulty"]
+    while len(block_hashes) > 0:
+        block_hashes, block_hashes_cs, time_to_mine, mined_blocks = compute_progress(
             state, params, block_hashes, block_hashes_cs, aggregate_hashpower
         )
-    )
+        l1.append(mined_blocks)
+        l2.append(time_to_mine)
+        block_hashes, block_hashes_cs, new_difficulty = compute_difficulty_change(
+            state, params, time_to_mine, block_hashes, block_hashes_cs
+        )
+
+    print(l1, l2, new_difficulty)
