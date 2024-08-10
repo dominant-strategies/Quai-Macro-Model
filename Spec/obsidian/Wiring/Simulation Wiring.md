@@ -110,7 +110,7 @@ X26 --"Mined Ratio Space"--> X23
 X26 --"Qi Hash Space"--> X24
 X26 --"Quai Hash Space"--> X25
 end
-X17--"Block Difficulty Space"--->X18
+X17--"Pre-Mining Space"--->X18
 X18--"Block Reward Options Space"--->X19
 X19--"Qi Space
 Quai Space
@@ -181,14 +181,14 @@ The wiring of the entire simulation
 1. [[Terminating Space]]
 
 ## All Spaces Used
-1. [[Block Difficulty Space]]
-2. [[Block Reward Options Space]]
-3. [[Conversion Log Space]]
-4. [[Conversion Space]]
-5. [[Empty Space]]
-6. [[K Space]]
-7. [[Mined Ratio Space]]
-8. [[Observable State Space]]
+1. [[Block Reward Options Space]]
+2. [[Conversion Log Space]]
+3. [[Conversion Space]]
+4. [[Empty Space]]
+5. [[K Space]]
+6. [[Mined Ratio Space]]
+7. [[Observable State Space]]
+8. [[Pre-Mining Space]]
 9. [[Price Movement Space]]
 10. [[Price Space]]
 11. [[Qi Hash Space]]

@@ -9,5 +9,5 @@ Boundary action which determines the block difficulty for the current block to b
 ## Constraints
 
 ## Codomain Spaces
-1. [[Block Difficulty Space]]
+1. [[Pre-Mining Space]]
 

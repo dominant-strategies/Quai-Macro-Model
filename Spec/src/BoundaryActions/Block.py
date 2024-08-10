@@ -5,7 +5,7 @@ mine_block_boundary_action = {
     "boundary_action_options": [],
     "called_by": [],
     "codomain": [
-        "Block Difficulty Space",
+        "Pre-Mining Space",
     ],
     "parameters_used": [],
 }

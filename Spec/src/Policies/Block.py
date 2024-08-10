@@ -27,7 +27,7 @@ This logarithmic versus linear relationship produces the significant difference 
 Importantly, these block reward functions only define how many Quai/Qi tokens can potentially be emitted. Actual, realized supply emissions from block rewards are determined by the choices miners must make to receive only either Quai or Qi, a selection they may change going forward at any time.""",
     "constraints": [],
     "policy_options": [block_reward_policy_option1],
-    "domain": ["Block Difficulty Space"],
+    "domain": ["Pre-Mining Space"],
     "codomain": ["Block Reward Options Space"],
     "parameters_used": [],
     "metrics_used": [],

@@ -13,7 +13,7 @@ BlockNumberType = {
 BlockDifficultyType = {
     "name": "Block Difficulty Type",
     "type": "BlockDifficultyType",
-    "notes": "Dimensionless comparitive measure, i.e. 10 means 10X more difficult",
+    "notes": "Difficulty in has",
 }
 
 HashType = {
@@ -22,4 +22,24 @@ HashType = {
     "notes": "",
 }
 
-block_types = [EntityType, BlockNumberType, BlockDifficultyType, HashType]
+BlockArrayType = {
+    "name": "Block Array Type",
+    "type": "BlockArrayType",
+    "notes": "An array of blocks where each block has its difficulty and its level",
+}
+
+HashpowerPerSecond = {
+    "name": "Hashpower per Second",
+    "type": "HashpowerPerSecond",
+    "notes": "The amount of hashpower per second",
+}
+
+
+block_types = [
+    EntityType,
+    BlockNumberType,
+    BlockDifficultyType,
+    HashType,
+    BlockArrayType,
+    HashpowerPerSecond,
+]

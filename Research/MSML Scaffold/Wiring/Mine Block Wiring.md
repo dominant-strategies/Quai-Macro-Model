@@ -47,7 +47,7 @@ X10 --"Mined Ratio Space"--> X7
 X10 --"Qi Hash Space"--> X8
 X10 --"Quai Hash Space"--> X9
 end
-X1--"Block Difficulty Space"--->X2
+X1--"Pre-Mining Space"--->X2
 X2--"Block Reward Options Space"--->X3
 X3--"Qi Space
 Quai Space
@@ -87,10 +87,10 @@ The wiring for mining a block
 1. [[Empty Space]]
 
 ## All Spaces Used
-1. [[Block Difficulty Space]]
-2. [[Block Reward Options Space]]
-3. [[Empty Space]]
-4. [[Mined Ratio Space]]
+1. [[Block Reward Options Space]]
+2. [[Empty Space]]
+3. [[Mined Ratio Space]]
+4. [[Pre-Mining Space]]
 5. [[Qi Hash Space]]
 6. [[Qi Space]]
 7. [[Quai Hash Space]]

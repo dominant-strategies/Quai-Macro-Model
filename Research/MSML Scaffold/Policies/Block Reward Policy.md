@@ -16,7 +16,7 @@ Importantly, these block reward functions only define how many Quai/Qi tokens ca
 ## Called By
 1. [[Mine Block Boundary Action]]
 ## Domain Spaces
-1. [[Block Difficulty Space]]
+1. [[Pre-Mining Space]]
 ## Followed By
 1. [[Mining Payment Policy]]
 ## Codomain Spaces
