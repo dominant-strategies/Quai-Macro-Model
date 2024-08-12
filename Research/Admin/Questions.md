@@ -18,6 +18,10 @@
 - Do all instances of the prime, zone and region blocks need to get mined each time or are there situations in which a prime block only has partial filling from these levels?
 - If a prime block has not been mined in X amount of time, does difficulty then adjust down or is it that once it eventually is mined the difficulty is adjusted downwards?
 
+## Sharding
+
+- Are there any impacts beyond network size increases and throughput increases that we should worry about in the context of the impact of sharding?
+
 ## Internal Questions
 
 - Are we OK excluding the growth of the network in terms of size for the MVP simulation model? And if not, how do we want to model it?
