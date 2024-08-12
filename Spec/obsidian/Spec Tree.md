@@ -41,6 +41,7 @@ cssclasses:
 │   ├──[[Number of Regions Type]]
 │   ├──[[Zones per Region Type]]
 │   ├──[[Mining Epoch Array Type]]
+│   ├──[[Mined Blocks Array Type]]
 │   ├──[[Conversions Array Type]]
 │   ├──[[Mined Ratio Array Type]]
 │   ├──[[Hash Array Type]]

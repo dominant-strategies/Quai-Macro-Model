@@ -64,6 +64,12 @@ MiningEpochArrayType = {
     "notes": "An array of mining epochs where each mining epoch has the mined blocks of type BlockArrayType and mining time in seconds",
 }
 
+MinedBlocksArrayType = {
+    "name": "Mined Blocks Array Type",
+    "type": "MinedBlocksArrayType",
+    "notes": "An extension of MiningEpochArrayType that includes the Quai and Qi rewards offered",
+}
+
 
 block_types = [
     EntityType,
@@ -77,4 +83,5 @@ block_types = [
     NumberOfRegionsType,
     ZonesPerRegionType,
     MiningEpochArrayType,
+    MinedBlocksArrayType,
 ]
