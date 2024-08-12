@@ -18,6 +18,14 @@ mining_parameter_set = {
             "domain": None,
             "parameter_class": "System",
         },
+        {
+            "variable_type": "Integer Type",
+            "name": "Quai Reward Base Parameter",
+            "description": "The base used for Quai reward computation",
+            "symbol": "B",
+            "domain": None,
+            "parameter_class": "System",
+        },
     ],
 }
 

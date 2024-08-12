@@ -103,6 +103,7 @@ The wiring for mining a block
 10. [[Terminating Space]]
 
 ## Parameters Used
+1. [[Quai Reward Base Parameter]]
 
 ## Called By
 
