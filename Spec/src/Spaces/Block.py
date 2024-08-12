@@ -24,7 +24,10 @@ pre_mining_space = {
 
 block_reward_space = {
     "name": "Block Reward Space",
-    "schema": {"Mined Blocks": "Mined Blocks Array Type"},
+    "schema": {
+        "Mined Blocks": "Mined Blocks Array Type",
+        "New Difficulty": "Block Difficulty Type",
+    },
 }
 
 mined_ratio_space = {
