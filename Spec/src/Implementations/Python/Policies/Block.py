@@ -97,3 +97,7 @@ def block_reward_policy_v1(state, params, spaces):
             )
     space["Mined Blocks"] = epochs
     return [space]
+
+
+def deterministic_mining_payment_policy(state, params, spaces):
+    pass
