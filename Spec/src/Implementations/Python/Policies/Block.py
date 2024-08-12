@@ -74,3 +74,7 @@ def mining_policy_v1(state, params, spaces):
         l.append({"Mined Blocks": x, "Mining Time": y})
     space["Mining Epochs"] = l
     return [space]
+
+
+def block_reward_policy_v1(state, params, spaces):
+    pass
