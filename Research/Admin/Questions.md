@@ -17,3 +17,9 @@
 - Is there variance to difficulties realized and planned for? Is it always deterministic what reward someone will get from a block or can is vary even given the same difficulty?
 - Do all instances of the prime, zone and region blocks need to get mined each time or are there situations in which a prime block only has partial filling from these levels?
 - If a prime block has not been mined in X amount of time, does difficulty then adjust down or is it that once it eventually is mined the difficulty is adjusted downwards?
+
+## Internal Questions
+
+- Are we OK excluding the growth of the network in terms of size for the MVP simulation model? And if not, how do we want to model it?
+- Do we have any strong intuitions on a heuristic that would map nicely to aggregate hashpower? Do we want a linear model of some price of Qi/Quai or something more nuanced?
+- To what extent do we want to be modeling prices still? I think at one point we talked about not modeling them at all, but we do have secondary market interactions through conversions, are we definitely thinking of removing them from the MVP model?
