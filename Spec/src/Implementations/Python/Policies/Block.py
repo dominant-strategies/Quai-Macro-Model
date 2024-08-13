@@ -100,4 +100,16 @@ def block_reward_policy_v1(state, params, spaces):
 
 
 def deterministic_mining_payment_policy(state, params, spaces):
-    pass
+    mined_quai = 0
+    mined_qi = 0
+    quai_hash = 0
+    qi_hash = 0
+    for block_epoch in spaces[0]["Mined Blocks"]:
+        for block in block_epoch["Mined Blocks"]:
+            if (
+                block["Quai Reward Offered"] * state["Quai Price"]
+                >= block["Qi Reward Offered"] * state["Qi Price"]
+            ):
+                print("Quai")
+            else:
+                print("Qi")
