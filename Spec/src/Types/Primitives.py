@@ -53,6 +53,12 @@ SecondsType = {
     "notes": "Some number of seconds",
 }
 
+IntegerType = {
+    "name": "Integer Type",
+    "type": "IntegerType",
+    "notes": "",
+}
+
 
 primitive_types = [
     CoeffecientType,
@@ -64,4 +70,5 @@ primitive_types = [
     DecimalType,
     DeltaTimeType,
     SecondsType,
+    IntegerType,
 ]

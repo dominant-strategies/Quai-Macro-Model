@@ -41,6 +41,7 @@ cssclasses:
 │   ├──[[Number of Regions Type]]
 │   ├──[[Zones per Region Type]]
 │   ├──[[Mining Epoch Array Type]]
+│   ├──[[Mined Blocks Array Type]]
 │   ├──[[Conversions Array Type]]
 │   ├──[[Mined Ratio Array Type]]
 │   ├──[[Hash Array Type]]
@@ -54,6 +55,7 @@ cssclasses:
 │   ├──[[Decimal Type]]
 │   ├──[[Delta Time Type]]
 │   ├──[[Seconds Type]]
+│   ├──[[Integer Type]]
 │   ├──[[Simulation History Log Type]]
 │   ├──[[Token Name Type]]
 │   ├──[[Token Amount Type]]
@@ -89,6 +91,7 @@ cssclasses:
 │   ├──Mining Parameter Set
 │   │   ├──[[Block Difficulty Multiples]]
 │   │   ├──[[Target Mining Time]]
+│   │   ├──[[Quai Reward Base Parameter]]
 ├──**Boundary Actions**
 │   ├──[[Mine Block Boundary Action]]
 │   ├──[[Conversions Boundary Action]]

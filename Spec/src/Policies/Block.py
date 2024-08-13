@@ -1,13 +1,15 @@
 block_reward_policy_option1 = {
     "name": "Block Reward Policy V1",
     "description": r"Basic policy option which uses the $k_{Quai}$ and $k_{Qi}$",
-    "logic": r"""The following are the computations for the offered rewards in Quai and Qi:
-1. d = DOMAIN[0]["Block Difficulty"]
+    "logic": r"""The following are the computations for the offered rewards in Quai and Qi, we denote the parameter Quai Reward Base Parameter as B:
+1. d = difficulty for a given block
 2. $Qi = \frac{d}{k_{Qi}}$
-3. $Quai = 2^{-(1+k_{Quai})} \cdot \log_2(d)$
+3. $Quai = B^{-(1+k_{Quai})} \cdot \log_B(d)$
 4. Return spaces of [{"Quai Reward Offered": Quai,
         "Qi Reward Offered": Qi,
-        "Block Difficulty": d}]""",
+        "Block Difficulty": d}]
+        
+These computations are done for each of the blocks presented from the DOMAIN""",
 }
 
 block_reward_policy = {
@@ -29,19 +31,23 @@ Importantly, these block reward functions only define how many Quai/Qi tokens ca
     "policy_options": [block_reward_policy_option1],
     "domain": ["Mined Blocks Space"],
     "codomain": ["Block Reward Options Space"],
-    "parameters_used": [],
+    "parameters_used": ["Quai Reward Base Parameter"],
     "metrics_used": [],
 }
 
 mining_payment_policy_option1 = {
     "name": "Deterministic Mining Payment Policy",
-    "description": "User chooses either all Qi or all Quai based on which is more valuable.",
-    "logic": """Compare the price of Qi times Qi amount to price of Quai times Quai amount and pick the larger sum. Then the spaces are as follows:
+    "description": "User chooses either all Qi or all Quai based on which is more valuable based on USD prices.",
+    "logic": """
+Compare the price of Qi times Qi amount to price of Quai times Quai amount and pick the larger sum. Then the values for each iteration loop are as follows:
 1. Qi Space is equal to 0 or the Qi amount
 2. Quai Space is equal to 0 or the Quai amount
 3. Mined Ratio Space has 0 if Qi was chosen, 1 if Quai was chosen
 4. Qi Hash Space has 0 if Quai was chosen, otherwise $QiToHashMetric(Qi)$
-5. Quai Hash Space has 0 if Qi was chosen, otherwise $QuaiToHashMetric(Quai)$""",
+5. Quai Hash Space has 0 if Qi was chosen, otherwise $QuaiToHashMetric(Quai)$
+
+
+Aggregate all the data into total values after iteration.""",
 }
 
 mining_payment_policy = {

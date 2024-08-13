@@ -1,5 +1,7 @@
 from bisect import bisect
 import numpy as np
+from copy import deepcopy
+from math import log
 
 
 def compute_progress(state, params, block_hashes, block_hashes_cs, aggregate_hashpower):
@@ -74,3 +76,58 @@ def mining_policy_v1(state, params, spaces):
         l.append({"Mined Blocks": x, "Mining Time": y})
     space["Mining Epochs"] = l
     return [space]
+
+
+def calculate_qi_reward(difficulty, k_qi):
+    return difficulty / k_qi
+
+
+def calculate_quai_reward(difficulty, k_quai, quai_base):
+    return quai_base ** -(1 + k_quai) * log(difficulty, quai_base)
+
+
+def block_reward_policy_v1(state, params, spaces):
+    space = deepcopy(spaces[0])
+    epochs = space.pop("Mining Epochs")
+    for x in epochs:
+        for y in x["Mined Blocks"]:
+            y["Qi Reward Offered"] = calculate_qi_reward(y["Difficulty"], state["K Qi"])
+            y["Quai Reward Offered"] = calculate_quai_reward(
+                y["Difficulty"], state["K Quai"], params["Quai Reward Base Parameter"]
+            )
+    space["Mined Blocks"] = epochs
+    return [space]
+
+
+def deterministic_mining_payment_policy(state, params, spaces):
+    mined_quai = 0
+    mined_qi = 0
+    quai_hash = 0
+    qi_hash = 0
+    for block_epoch in spaces[0]["Mined Blocks"]:
+        for block in block_epoch["Mined Blocks"]:
+            if (
+                block["Quai Reward Offered"] * state["Quai Price"]
+                >= block["Qi Reward Offered"] * state["Qi Price"]
+            ):
+                mined_quai += block["Quai Reward Offered"]
+                quai_hash += block["Difficulty"]
+            else:
+                mined_qi += block["Qi Reward Offered"]
+                qi_hash += block["Difficulty"]
+
+    space1 = {"Qi": mined_qi}
+    space2 = {"Quai": mined_quai}
+    space3 = {
+        "Block Height": state["Block Number"],
+        "Ratio": mined_quai / (mined_quai + mined_qi),
+    }
+    space4 = {
+        "Block Height": state["Block Number"],
+        "Hash Value": qi_hash,
+    }
+    space5 = {
+        "Block Height": state["Block Number"],
+        "Hash Value": quai_hash,
+    }
+    return [space1, space2, space3, space4, space5]
