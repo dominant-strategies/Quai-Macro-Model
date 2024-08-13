@@ -110,6 +110,24 @@ def deterministic_mining_payment_policy(state, params, spaces):
                 block["Quai Reward Offered"] * state["Quai Price"]
                 >= block["Qi Reward Offered"] * state["Qi Price"]
             ):
-                print("Quai")
+                mined_quai += block["Quai Reward Offered"]
+                quai_hash += block["Difficulty"]
             else:
-                print("Qi")
+                mined_qi += block["Qi Reward Offered"]
+                qi_hash += block["Difficulty"]
+
+    space1 = {"Qi": mined_qi}
+    space2 = {"Quai": mined_quai}
+    space3 = {
+        "Block Height": state["Block Number"],
+        "Ratio": mined_quai / (mined_quai + mined_qi),
+    }
+    space4 = {
+        "Block Height": state["Block Number"],
+        "Hash Value": qi_hash,
+    }
+    space5 = {
+        "Block Height": state["Block Number"],
+        "Hash Value": quai_hash,
+    }
+    return [space1, space2, space3, space4, space5]
