@@ -1,6 +1,6 @@
 Description: Metric which converts and amount of Quai to an amount of hash
 
-Type: [[Hash Type]]
+Type: [[Quai Type]]
 
 Symbol: None
 
@@ -15,5 +15,3 @@ $$quaiToHash(Quai) -> \frac{R_{Qi}}{R_{Quai}} \cdot Quai \cdot k_{qi}$$
 ## Domain Spaces
 1. [[Quai Space]]
 ## Metrics Used
-1. [[Hash to Qi Metric]]
-2. [[Hash to Quai Metric]]

@@ -1,11 +1,11 @@
-metrics_hash = []
+metrics_rewards = []
 
 
-metrics_hash.append(
+metrics_rewards.append(
     {
-        "type": "Hash Type",
-        "name": "Qi to Hash Metric",
-        "description": "Metric which converts an amount of Qi to an amount of hash. This may change in the future depending on parameterization.",
+        "type": "Qi Type",
+        "name": "Hash to Qi Metric",
+        "description": "Metric which converts an amount of hash to an amount of Qi.",
         "variables_used": [
             ["Global State", "K Qi"],
         ],
@@ -17,17 +17,14 @@ metrics_hash.append(
     }
 )
 
-metrics_hash.append(
+metrics_rewards.append(
     {
-        "type": "Hash Type",
-        "name": "Quai to Hash Metric",
+        "type": "Quai Type",
+        "name": "Hash to Quai Metric",
         "description": "Metric which converts and amount of Quai to an amount of hash",
         "variables_used": [["Global State", "K Qi"]],
         "parameters_used": [],
-        "metrics_used": [
-            "Hash to Qi Metric",
-            "Hash to Quai Metric",
-        ],
+        "metrics_used": [],
         "domain": ["Quai Space"],
         "logic": r"$$quaiToHash(Quai) -> \frac{R_{Qi}}{R_{Quai}} \cdot Quai \cdot k_{qi}$$",
         "symbol": None,

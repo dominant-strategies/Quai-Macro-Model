@@ -25,9 +25,6 @@ cssclasses:
 │   │   ├──[[Global State-Number of Regions\|Number of Regions]]
 │   │   ├──[[Global State-Zones per Region\|Zones per Region]]
 ├──**Stateful Metrics**
-│   ├──Block Reward Stateful Metrics
-│   │   ├──[[Current Quai Block Reward Stateful Metric]]
-│   │   ├──[[Current Qi Block Reward Stateful Metric]]
 ├──**Types**
 │   ├──[[Entity Type]]
 │   ├──[[Block Number Type]]
