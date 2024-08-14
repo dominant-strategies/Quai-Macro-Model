@@ -33,3 +33,4 @@
     - If we do, we should talk about how we want it to impact movement. Do we add a distribution of price impact and scale it by amount minted?
     - Do we want anything related to market cap/dilution stuff?
 - What behavioral model to we want to employ with relation to conversions that take place each epoch?
+- Is $H^i$ meant to represent the global difficulty for setting the prime block difficulty (as well as the difficulties of subprime blocks based on multiples), or is it meant to represent the aggregate hash over all blocks in a prime block?
