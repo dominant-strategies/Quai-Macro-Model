@@ -27,9 +27,9 @@
 - Are we OK excluding the growth of the network in terms of size for the MVP simulation model? And if not, how do we want to model it?
 - Do we have any strong intuitions on a heuristic that would map nicely to aggregate hashpower? Do we want a linear model of some price of Qi/Quai or something more nuanced?
 - To what extent do we want to be modeling prices still? I think at one point we talked about not modeling them at all, but we do have secondary market interactions through conversions, are we definitely thinking of removing them from the MVP model?
-- I don't see anything that specifically needs a representation of individual miners / it could always be added later, so are we fine with not including miner entities as representations in the MVP?
 - Likewise question for peer-to-peer trading / participants. Are we fine to not model inidividual users with their balances at this point and instead opt just for total amount of Qi and Quai in circulation?
 - We currently have [this issue](https://github.com/BlockScience/Quai-Macro-Model/issues/114) for mining impact on price movement
     - If we don't care about price we can drop it
     - If we do, we should talk about how we want it to impact movement. Do we add a distribution of price impact and scale it by amount minted?
     - Do we want anything related to market cap/dilution stuff?
+- What behavioral model to we want to employ with relation to conversions that take place each epoch?
