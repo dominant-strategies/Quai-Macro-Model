@@ -25,12 +25,16 @@ Policy which determines what amount of Quai vs. Qi is taken as payment.
 ## Policy Options
 ### 1. Deterministic Mining Payment Policy
 #### Description
-User chooses either all Qi or all Quai based on which is more valuable.
+User chooses either all Qi or all Quai based on which is more valuable based on USD prices.
 #### Logic
-Compare the price of Qi times Qi amount to price of Quai times Quai amount and pick the larger sum. Then the spaces are as follows:
+
+Compare the price of Qi times Qi amount to price of Quai times Quai amount and pick the larger sum. Then the values for each iteration loop are as follows:
 1. Qi Space is equal to 0 or the Qi amount
 2. Quai Space is equal to 0 or the Quai amount
 3. Mined Ratio Space has 0 if Qi was chosen, 1 if Quai was chosen
 4. Qi Hash Space has 0 if Quai was chosen, otherwise $QiToHashMetric(Qi)$
 5. Quai Hash Space has 0 if Qi was chosen, otherwise $QuaiToHashMetric(Quai)$
+
+
+Aggregate all the data into total values after iteration.
 

@@ -1,4 +1,4 @@
 ## Schema
 
-{K Quai: [[Coeffecient Type]],
-K Qi: [[Coeffecient Type]]}
+{K Quai: [[Gain Type]],
+K Qi: [[Gain Type]]}

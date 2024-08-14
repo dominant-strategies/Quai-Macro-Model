@@ -37,13 +37,13 @@ global_state = {
             "symbol": None,
             "domain": None,
         },
-        {
-            "type": "Hash Type",
-            "name": "Current Hash Difference",
-            "description": "",
-            "symbol": None,
-            "domain": None,
-        },
+        # {
+        #     "type": "Hash Type",
+        #     "name": "Current Hash Difference",
+        #     "description": "",
+        #     "symbol": None,
+        #     "domain": None,
+        # },
         {
             "type": "Conversions Array Type",
             "name": "Historical Converted Qi",
@@ -80,14 +80,14 @@ global_state = {
             "domain": None,
         },
         {
-            "type": "Coeffecient Type",
+            "type": "Gain Type",
             "name": "K Qi",
             "description": "The controller coeffecient for Qi.",
             "symbol": None,
             "domain": None,
         },
         {
-            "type": "Coeffecient Type",
+            "type": "Gain Type",
             "name": "K Quai",
             "description": "The controller coeffecient for Quai.",
             "symbol": None,

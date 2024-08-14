@@ -12,7 +12,7 @@ observable_state_space = {
 
 k_space = {
     "name": "K Space",
-    "schema": {"K Quai": "Coeffecient Type", "K Qi": "Coeffecient Type"},
+    "schema": {"K Quai": "Gain Type", "K Qi": "Gain Type"},
 }
 
 controller_spaces = [observable_state_space, k_space]

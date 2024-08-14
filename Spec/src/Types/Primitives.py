@@ -1,7 +1,7 @@
-CoeffecientType = {
-    "name": "Coeffecient Type",
-    "type": "CoeffecientType",
-    "notes": "Coeffecients used in the system for different parameterizations that may or may not have changing values",
+GainType = {
+    "name": "Gain Type",
+    "type": "GainType",
+    "notes": "Gain parameters (coeffecients)",
 }
 
 USDType = {
@@ -61,7 +61,7 @@ IntegerType = {
 
 
 primitive_types = [
-    CoeffecientType,
+    GainType,
     USDType,
     QuaiType,
     QiType,
