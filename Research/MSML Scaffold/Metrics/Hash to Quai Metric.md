@@ -1,11 +1,11 @@
 Description: Metric which converts and amount of Quai to an amount of hash
 
-Type: [[Hash Type]]
+Type: [[Quai Type]]
 
 Symbol: None
 
 ## Logic
-$$quaiToHash(Quai) -> QuaiRewardBaseParameter^{\frac{Quai}{k_{quai}}}$$
+$$hashToQuai(Hash) -> k_{quai} \cdot log_{QuaiRewardBaseParameter}(Hash)$$
 
 ## Parameters Used
 1. [[Quai Reward Base Parameter]] , symbol: B
@@ -14,5 +14,5 @@ $$quaiToHash(Quai) -> QuaiRewardBaseParameter^{\frac{Quai}{k_{quai}}}$$
 1. [[Global State]].[[Global State-K Quai|K Quai]]
 
 ## Domain Spaces
-1. [[Quai Space]]
+1. [[Hash Space]]
 ## Metrics Used

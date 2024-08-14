@@ -1,0 +1,3 @@
+## Schema
+
+{Hash: [[Hash Type]]}

@@ -1,4 +1,4 @@
-Description: Metric which converts an amount of Qi to an amount of hash. This may change in the future depending on parameterization.
+Description: Metric which converts an amount of Qi to an amount of hash.
 
 Type: [[Hash Type]]
 
