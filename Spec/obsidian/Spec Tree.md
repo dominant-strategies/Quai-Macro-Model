@@ -45,7 +45,7 @@ cssclasses:
 │   ├──[[Mined Ratio Array Type]]
 │   ├──[[Hash Array Type]]
 │   ├──[[Mined Ratio Type]]
-│   ├──[[Coeffecient Type]]
+│   ├──[[Gain Type]]
 │   ├──[[USD Type]]
 │   ├──[[Quai Type]]
 │   ├──[[Qi Type]]

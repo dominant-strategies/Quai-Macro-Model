@@ -16,8 +16,8 @@
 |[[Global State-Historical Mined Ratio\|Historical Mined Ratio]]|An array of the historical ratios of mining between Qi and Quai which the miners had chosen at given times.|[[Mined Ratio Array Type]]|||
 |[[Global State-Historical Qi Hash\|Historical Qi Hash]]|An array of the historical amount of hash attributed to Qi in block rewards with block numbers attatched to each entry.|[[Hash Array Type]]|||
 |[[Global State-Historical Quai Hash\|Historical Quai Hash]]|An array of the historical amount of hash attributed to Quai in block rewards with block numbers attatched to each entry.|[[Hash Array Type]]|||
-|[[Global State-K Qi\|K Qi]]|The controller coeffecient for Qi.|[[Coeffecient Type]]|||
-|[[Global State-K Quai\|K Quai]]|The controller coeffecient for Quai.|[[Coeffecient Type]]|||
+|[[Global State-K Qi\|K Qi]]|The controller coeffecient for Qi.|[[Gain Type]]|||
+|[[Global State-K Quai\|K Quai]]|The controller coeffecient for Quai.|[[Gain Type]]|||
 |[[Global State-Quai Price\|Quai Price]]|The current price of Quai.|[[USD Type]]|||
 |[[Global State-Qi Price\|Qi Price]]|The current price of Qi.|[[USD Type]]|||
 |[[Global State-Simulation History Log\|Simulation History Log]]|The logged data from simulation history.|[[Simulation History Log Type]]|||

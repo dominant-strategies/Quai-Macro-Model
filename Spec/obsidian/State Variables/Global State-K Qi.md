@@ -1,6 +1,6 @@
 Description: The controller coeffecient for Qi.
 
-Type: [[Coeffecient Type]]
+Type: [[Gain Type]]
 
 Symbol: 
 

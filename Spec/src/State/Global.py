@@ -80,14 +80,14 @@ global_state = {
             "domain": None,
         },
         {
-            "type": "Coeffecient Type",
+            "type": "Gain Type",
             "name": "K Qi",
             "description": "The controller coeffecient for Qi.",
             "symbol": None,
             "domain": None,
         },
         {
-            "type": "Coeffecient Type",
+            "type": "Gain Type",
             "name": "K Quai",
             "description": "The controller coeffecient for Quai.",
             "symbol": None,
