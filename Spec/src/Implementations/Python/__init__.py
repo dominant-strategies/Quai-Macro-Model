@@ -3,6 +3,7 @@ from .ControlActions import control_action_options
 from .Mechanisms import mechanisms
 from .Policies import policies
 from .StatefulMetrics import stateful_metrics
+from .Metrics import metrics
 
 
 implementation = {
@@ -11,4 +12,5 @@ implementation = {
     "policies": policies,
     "boundary_action_options": boundary_action_options,
     "stateful_metrics": stateful_metrics,
+    "metrics": metrics,
 }
