@@ -37,13 +37,13 @@ global_state = {
             "symbol": None,
             "domain": None,
         },
-        {
-            "type": "Hash Type",
-            "name": "Current Hash Difference",
-            "description": "",
-            "symbol": None,
-            "domain": None,
-        },
+        # {
+        #     "type": "Hash Type",
+        #     "name": "Current Hash Difference",
+        #     "description": "",
+        #     "symbol": None,
+        #     "domain": None,
+        # },
         {
             "type": "Conversions Array Type",
             "name": "Historical Converted Qi",

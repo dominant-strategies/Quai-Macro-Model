@@ -12,7 +12,6 @@ cssclasses:
 │   │   ├──[[Global State-Quai Supply\|Quai Supply]]
 │   │   ├──[[Global State-Block Number\|Block Number]]
 │   │   ├──[[Global State-Block Difficulty\|Block Difficulty]]
-│   │   ├──[[Global State-Current Hash Difference\|Current Hash Difference]]
 │   │   ├──[[Global State-Historical Converted Qi\|Historical Converted Qi]]
 │   │   ├──[[Global State-Historical Converted Quai\|Historical Converted Quai]]
 │   │   ├──[[Global State-Historical Mined Ratio\|Historical Mined Ratio]]

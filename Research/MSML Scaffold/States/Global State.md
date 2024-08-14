@@ -8,7 +8,6 @@
 |[[Global State-Quai Supply\|Quai Supply]]|The total supply of Quai|[[Quai Type]]|||
 |[[Global State-Block Number\|Block Number]]|The current block that the system is on|[[Block Number Type]]|||
 |[[Global State-Block Difficulty\|Block Difficulty]]|The latest difficulty for blocks|[[Block Difficulty Type]]|||
-|[[Global State-Current Hash Difference\|Current Hash Difference]]||[[Hash Type]]|||
 |[[Global State-Historical Converted Qi\|Historical Converted Qi]]|An array of the conversions from Qi to Quai. The Qi Values will be negative in each entry and Quai values will be positive. Time is also logged in the entries of the array.|[[Conversions Array Type]]|||
 |[[Global State-Historical Converted Quai\|Historical Converted Quai]]|An array of the conversions from Quai to Qi. The Quai Values will be negative in each entry and Qi values will be positive. Time is also logged in the entries of the array.|[[Conversions Array Type]]|||
 |[[Global State-Historical Mined Ratio\|Historical Mined Ratio]]|An array of the historical ratios of mining between Qi and Quai which the miners had chosen at given times.|[[Mined Ratio Array Type]]|||
