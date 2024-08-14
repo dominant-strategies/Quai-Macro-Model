@@ -6,6 +6,7 @@ conversions_boundary_action = {
     "called_by": [],
     "codomain": ["Conversion Space"],
     "parameters_used": [],
+    "metrics_used": ["Conversion Rate Metric"],
 }
 
 price_movements_boundary_action = {
