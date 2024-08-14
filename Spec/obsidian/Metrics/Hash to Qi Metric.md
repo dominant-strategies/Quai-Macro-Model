@@ -5,7 +5,7 @@ Type: [[Qi Type]]
 Symbol: None
 
 ## Logic
-$$qiToHash(Qi) ->  Qi \cdot k_{qi}$$
+$$hashToQi(Hash) -> \frac{Hash}{k_{qi}}$$
 
 ## Parameters Used
 
@@ -13,5 +13,5 @@ $$qiToHash(Qi) ->  Qi \cdot k_{qi}$$
 1. [[Global State]].[[Global State-K Qi|K Qi]]
 
 ## Domain Spaces
-1. [[Qi Space]]
+1. [[Hash Space]]
 ## Metrics Used

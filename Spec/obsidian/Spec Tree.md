@@ -68,6 +68,7 @@ cssclasses:
 │   ├──[[Quai Hash Space]]
 │   ├──[[Pre-Mining Space]]
 │   ├──[[Mined Blocks Space]]
+│   ├──[[Hash Space]]
 │   ├──[[Quai Space]]
 │   ├──[[Qi Space]]
 │   ├──[[Conversion Space]]

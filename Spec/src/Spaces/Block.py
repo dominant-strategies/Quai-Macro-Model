@@ -53,6 +53,12 @@ mined_blocks_space = {
     },
 }
 
+hash_space = {
+    "name": "Hash Space",
+    "schema": {
+        "Hash": "Hash Type",
+    },
+}
 
 block_spaces = [
     block_reward_options_space,
@@ -63,4 +69,5 @@ block_spaces = [
     quai_hash_space,
     pre_mining_space,
     mined_blocks_space,
+    hash_space,
 ]

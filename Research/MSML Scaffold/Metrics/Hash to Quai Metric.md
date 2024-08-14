@@ -5,13 +5,14 @@ Type: [[Quai Type]]
 Symbol: None
 
 ## Logic
-$$quaiToHash(Quai) -> \frac{R_{Qi}}{R_{Quai}} \cdot Quai \cdot k_{qi}$$
+$$hashToQuai(Hash) -> k_{quai} \cdot log_{QuaiRewardBaseParameter}(Hash)$$
 
 ## Parameters Used
+1. [[Quai Reward Base Parameter]] , symbol: B
 
 ## Variables Used
-1. [[Global State]].[[Global State-K Qi|K Qi]]
+1. [[Global State]].[[Global State-K Quai|K Quai]]
 
 ## Domain Spaces
-1. [[Quai Space]]
+1. [[Hash Space]]
 ## Metrics Used
