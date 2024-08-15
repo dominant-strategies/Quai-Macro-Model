@@ -8,7 +8,10 @@ conversions_policy_option1 = {
 conversions_policy = {
     "name": "Conversions Policy",
     "description": "The policy which determines the amount of Quai or Qi exchanged.",
-    "constraints": [],
+    "constraints": [
+        "Quai/Qi converted must be less than total circulating",
+        "Quai/Qi must be greater than the minimum amount parameters",
+    ],
     "policy_options": [conversions_policy_option1],
     "domain": [
         "Conversion Space",

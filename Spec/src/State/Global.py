@@ -128,5 +128,12 @@ global_state = {
             "symbol": None,
             "domain": None,
         },
+        {
+            "type": "Datetime Type",
+            "name": "Time",
+            "description": "The current time in the system.",
+            "symbol": None,
+            "domain": None,
+        },
     ],
 }
