@@ -32,7 +32,11 @@ and where
 $$
   \frac{\partial R^i_{\text{Quai}}}{\partial R^i_{\text{Qi}}} = \left ( \frac{ k^i_{\text{Quai}} k^i_{\text{Qi}}   }{\ln(2) H^i} \right )= \left ( \frac{R^i_{\text{Quai}}}{R^i_{\text{Qi}}} \right ) \left ( \frac{1}{\ln \left ( H^i \right )} \right ).
 $$""",
-        "variables_used": [["Global State", "Block Difficulty"]],
+        "variables_used": [
+            ["Global State", "Block Difficulty"],
+            ["Global State", "K Quai"],
+            ["Global State", "K Qi"],
+        ],
         "parameters_used": [],
         "metrics_used": [
             "Hash to Qi Metric",

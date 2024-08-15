@@ -20,6 +20,8 @@ $$\left ( \frac{R^i_{\text{Quai}}}{R^i_{\text{Qi}}} \right ) \left ( \frac{1}{\l
 
 ## Variables Used
 1. [[Global State]].[[Global State-Block Difficulty|Block Difficulty]]
+2. [[Global State]].[[Global State-K Quai|K Quai]]
+3. [[Global State]].[[Global State-K Qi|K Qi]]
 
 ## Domain Spaces
 ## Metrics Used
