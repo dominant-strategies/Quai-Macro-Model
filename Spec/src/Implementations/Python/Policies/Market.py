@@ -26,4 +26,23 @@ def block_reward_ratio_conversion_policy(state, params, spaces):
         else:
             qi = -amount
             quai = amount * conversion_rate
-    print(qi, quai)
+
+    # Minting Spaces
+    space1 = {"Qi": max(0, qi)}
+    space2 = {"Quai": max(0, quai)}
+
+    # Burning Spaces
+    space3 = {"Qi": -min(0, qi)}
+    space4 = {"Quai": -min(0, quai)}
+
+    if qi < 0:
+        space5 = {"Qi": qi, "Quai": quai, "Time": state["Time"]}
+        space6 = None
+    elif quai < 0:
+        space5 = None
+        space6 = {"Qi": qi, "Quai": quai, "Time": state["Time"]}
+
+    else:
+        space5 = None
+        space6 = None
+    return [space1, space2, space3, space4, space5, space6]
