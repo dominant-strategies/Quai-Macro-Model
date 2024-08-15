@@ -1,6 +1,6 @@
 params_base = {
-    "Minimum Quai Conversion Amount": None,
-    "Minimum Qi Conversion Amount": None,
+    "Minimum Quai Conversion Amount": 100,
+    "Minimum Qi Conversion Amount": 100,
     "Asset Return Parameterization": None,
     "PID Parameterization": None,
     "Initial Block Difficulty": None,

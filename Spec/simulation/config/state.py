@@ -1,6 +1,6 @@
 state_base = {
-    "Qi Supply": None,
-    "Quai Supply": None,
+    "Qi Supply": 10000,
+    "Quai Supply": 10000,
     "Block Number": None,
     "Block Difficulty": 6000,
     "Number of Regions": 2,
