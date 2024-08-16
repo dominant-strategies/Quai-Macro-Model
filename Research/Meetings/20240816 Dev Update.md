@@ -34,8 +34,15 @@
     - Mechanisms to be updated once finalization of locking/unlocking is done
 5. Controller: Convering on finalized model but the spec currently has the rough scaffold of all blocks and the prior controllers from previous model as options
 6. Meta Block: Simulation log implemented in spec but not code (should be easy but should be the last implementation once all final tweaks complete), unlocking should be straight forward but confirming a few final pieces of information
+7. A lot of the starting simulation specific stuff such as state, parameters, etc. is ~80% complete and set up
 
 ## Current Implementation Notebooks
+
+These notebooks display some of the current progress on implementations for alignment across everyone
+
+1. Metrics Examples: Notebook comparing the current metrics and graphing the relations
+2. Conversions Examples: Full split out component wirings of the conversions and spaces they pass for a test example with both Quai and Qi
+3. Mining Examples: Mining completed from boundary action through policies with broken out printing of all spaces passed
 
 ## Outstanding Questions + Considerations
 
@@ -48,6 +55,10 @@
 1. Do we have any feelings on whether or not we think USD prices are necessary?
     - They could be used an input into the behavioral model of aggregate hashpower where higher USD valuation correlates to more hashpower
     - But there might also be a case to cut from current version of the model
+
+### Fees
+
+1. Fees for conversions can be modularized so as to extend in the future, but are we ok with either a constant value fee and/or pulling fees from a distribution right now?
 
 ### Unlocking/Locking
 
