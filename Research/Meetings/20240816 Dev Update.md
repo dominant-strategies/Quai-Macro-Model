@@ -50,6 +50,15 @@ These notebooks display some of the current progress on implementations for alig
 
 1. Prefer to not include in this version of the model, but if we do need it, what impacts would we expect from the unvesting over time besides the obvious accounting updates? Does it impact prices?
 
+### Reward Metric
+
+1. Currently $k_{qi}$ is divided into difficulty and $k_{quai}$ is multiplied in to $log_2(difficulty)$ (no longer using the $2^{-(1+k_{quai})}$ as discussed last meeting). Want to confirm relations (inverse versus linear for each) for legibility
+    - From the telegram we have this:
+![alt text](rewards.png)
+    - For $k_{qi}$, there was somewhere it was referenced as dividing, possibly was the legacy model, but should it be linear?
+    - For $k_{quai}$, should it be linear? In that telegram message the relation would be one that would be divided?
+2. Confirming $log_2$ as opposed to having the base be a modular parameter
+
 ### USD Prices
 
 1. Do we have any feelings on whether or not we think USD prices are necessary?
@@ -66,3 +75,8 @@ These notebooks display some of the current progress on implementations for alig
 2. In the following table, is the miner and converter in both cases offered these 4 options of locking and they choose whatever suits them?
 
 ![alt text](lockup.png)
+
+### Mining
+
+1. Best to try and validate and understand based on the mining example notebook
+2. Might need to figure out if a global difficulty is fine or if we need to model the individual block difficulties updating at subprime blocks
