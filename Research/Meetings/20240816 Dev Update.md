@@ -73,10 +73,13 @@ These notebooks display some of the current progress on implementations for alig
 
 1. How important is locking/unlocking here on macroeconomics? Hypothetically could be a place to cut for first version of the model but it sounds like we want it represented.
 2. In the following table, is the miner and converter in both cases offered these 4 options of locking and they choose whatever suits them?
-
 ![alt text](lockup.png)
+    - From telegram: "On the rates for lockup, these have not been decided but they will be variable (i.e 5% for 6 months, 7% for 1 year, etc.)"
+    - It could be modularized as a parameter table and then would just need a behavioral assumption which of the options miners are going to pick each time
 
 ### Mining
 
 1. Best to try and validate and understand based on the mining example notebook
 2. Might need to figure out if a global difficulty is fine or if we need to model the individual block difficulties updating at subprime blocks
+3. From telegram: "The difficulty is adjusted most frequently through Zone blocks since they are the more frequent work checkpoints that modify the difficulty adjustment algorithm. I can check with Karl on how that may impact Prime / Region from a modeling perspective."
+    - Does the difficulty adjustment work locally on blocks or is it actually global difficulty for all blocks get updated with this (I think it can be global updates from a technical perspective right?)
