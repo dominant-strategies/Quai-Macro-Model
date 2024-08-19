@@ -9,6 +9,8 @@
 |[[Global State-Dummy\|Dummy]]|The dummy entity|[[Entity Type]]|||
 |[[Global State-Qi Supply\|Qi Supply]]|The total supply of Qi|[[Qi Type]]|||
 |[[Global State-Quai Supply\|Quai Supply]]|The total supply of Quai|[[Quai Type]]|||
+|[[Global State-Locked Qi Supply\|Locked Qi Supply]]|The total supply of Qi that is locked|[[Qi Type]]|||
+|[[Global State-Locked Quai Supply\|Locked Quai Supply]]|The total supply of Quai that is locked|[[Quai Type]]|||
 |[[Global State-Block Number\|Block Number]]|The current block that the system is on|[[Block Number Type]]|||
 |[[Global State-Block Difficulty\|Block Difficulty]]|The latest difficulty for blocks|[[Block Difficulty Type]]|||
 |[[Global State-Historical Converted Qi\|Historical Converted Qi]]|An array of the conversions from Qi to Quai. The Qi Values will be negative in each entry and Quai values will be positive. Time is also logged in the entries of the array.|[[Conversions Array Type]]|||

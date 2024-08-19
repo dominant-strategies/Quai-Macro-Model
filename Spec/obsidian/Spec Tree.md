@@ -10,6 +10,8 @@ cssclasses:
 │   │   ├──[[Global State-Dummy\|Dummy]]
 │   │   ├──[[Global State-Qi Supply\|Qi Supply]]
 │   │   ├──[[Global State-Quai Supply\|Quai Supply]]
+│   │   ├──[[Global State-Locked Qi Supply\|Locked Qi Supply]]
+│   │   ├──[[Global State-Locked Quai Supply\|Locked Quai Supply]]
 │   │   ├──[[Global State-Block Number\|Block Number]]
 │   │   ├──[[Global State-Block Difficulty\|Block Difficulty]]
 │   │   ├──[[Global State-Historical Converted Qi\|Historical Converted Qi]]

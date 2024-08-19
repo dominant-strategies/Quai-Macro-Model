@@ -24,6 +24,20 @@ global_state = {
             "domain": None,
         },
         {
+            "type": "Qi Type",
+            "name": "Locked Qi Supply",
+            "description": "The total supply of Qi that is locked",
+            "symbol": None,
+            "domain": None,
+        },
+        {
+            "type": "Quai Type",
+            "name": "Locked Quai Supply",
+            "description": "The total supply of Quai that is locked",
+            "symbol": None,
+            "domain": None,
+        },
+        {
             "type": "Block Number Type",
             "name": "Block Number",
             "description": "The current block that the system is on",

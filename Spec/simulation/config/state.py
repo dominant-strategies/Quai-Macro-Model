@@ -1,6 +1,8 @@
 state_base = {
     "Qi Supply": 10000,
     "Quai Supply": 10000,
+    "Locked Qi Supply": 0,
+    "Locked Quai Supply": 0,
     "Block Number": None,
     "Block Difficulty": 6000,
     "Number of Regions": 2,
