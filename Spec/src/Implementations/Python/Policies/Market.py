@@ -46,3 +46,19 @@ def block_reward_ratio_conversion_policy(state, params, spaces):
         space5 = None
         space6 = None
     return [space1, space2, space3, space4, space5, space6]
+
+
+def price_movements_policy_v1(state, params, spaces):
+    assert (
+        min(spaces[0].values()) > -1
+    ), "Values must be greater than -1 (otherwise prices could become negative)"
+
+    r1 = spaces[0]["Qi Return"]
+    r2 = spaces[0]["Quai Return"]
+
+    space = {
+        "Qi Price": state["Qi Price"] * (1 + r1),
+        "Quai Price": state["Quai Price"] * (1 + r2),
+    }
+
+    return [space]

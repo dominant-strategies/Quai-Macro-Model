@@ -28,3 +28,8 @@ def burn_quai_tokens_mechanism(state, params, spaces):
         return
     assert amount > 0, "Amount must be positive"
     state["Quai Supply"] -= amount
+
+
+def update_prices_mechanism(state, params, spaces):
+    state["Qi Price"] = spaces[0]["Qi Price"]
+    state["Quai Price"] = spaces[0]["Quai Price"]

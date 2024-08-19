@@ -31,11 +31,17 @@ conversions_policy = {
     "metrics_used": ["Current Block Reward Ratio Metric"],
 }
 
+price_movements_policy_v1 = {
+    "name": "Price Movements Policy V1",
+    "description": "Simple policy that only checks that values > -1 for return and then computes new price",
+    "logic": "For each asset, multiply the (1+return) in to get final price",
+}
+
 price_movements_policy = {
     "name": "Price Movements Policy",
     "description": "The policy for updating the prices.",
     "constraints": [],
-    "policy_options": [],
+    "policy_options": [price_movements_policy_v1],
     "domain": [
         "Price Movement Space",
     ],

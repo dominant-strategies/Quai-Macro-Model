@@ -4,6 +4,7 @@ from .MonetaryPolicy import (
     mint_quai_token_mechanism,
     burn_qi_tokens_mechanism,
     burn_quai_tokens_mechanism,
+    update_prices_mechanism,
 )
 from .Logs import (
     update_historical_converted_qi_mechanism,
@@ -18,4 +19,5 @@ mechanisms = {
     "Burn Quai Tokens Mechanism": burn_quai_tokens_mechanism,
     "Update Historical Converted Qi Mechanism": update_historical_converted_qi_mechanism,
     "Update Historical Converted Quai Mechanism": update_historical_converted_quai_mechanism,
+    "Update Prices Mechanism": update_prices_mechanism,
 }

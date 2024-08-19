@@ -4,7 +4,7 @@ from .Block import (
     block_reward_policy_v1,
     deterministic_mining_payment_policy,
 )
-from .Market import block_reward_ratio_conversion_policy
+from .Market import block_reward_ratio_conversion_policy, price_movements_policy_v1
 
 
 policies = {
@@ -13,4 +13,5 @@ policies = {
     "Block Reward Policy V1": block_reward_policy_v1,
     "Deterministic Mining Payment Policy": deterministic_mining_payment_policy,
     "Block Reward Ratio Conversion Policy": block_reward_ratio_conversion_policy,
+    "Price Movements Policy V1": price_movements_policy_v1,
 }
