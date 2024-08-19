@@ -61,6 +61,7 @@ cssclasses:
 │   ├──[[Token Amount Type]]
 │   ├──[[Return Parameterization Type]]
 │   ├──[[PID Parameters Type]]
+│   ├──[[Vesting Schedule Type]]
 ├──**Spaces**
 │   ├──[[Terminating Space]]
 │   ├──[[Empty Space]]
@@ -93,6 +94,8 @@ cssclasses:
 │   │   ├──[[Block Difficulty Multiples]]
 │   │   ├──[[Target Mining Time]]
 │   │   ├──[[Quai Reward Base Parameter]]
+│   ├──Vesting Parameter Set
+│   │   ├──[[Initial Vesting Schedule]]
 ├──**Boundary Actions**
 │   ├──[[Mine Block Boundary Action]]
 │   ├──[[Conversions Boundary Action]]
