@@ -1,2 +1,3 @@
 def test_price_movements_boundary(state, params, spaces):
-    pass
+    space = {"Qi Return": 0.1, "Quai Return": 0.1}
+    return [space]
