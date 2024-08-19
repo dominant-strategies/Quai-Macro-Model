@@ -16,5 +16,6 @@ state_base = {
     "Qi Price": 1,
     "Simulation History Log": None,
     "Dummy": None,
-    "Time": None,
+    "Time": 0,
+    "Delta Time": 0,
 }
