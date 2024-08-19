@@ -46,3 +46,7 @@ def block_reward_ratio_conversion_policy(state, params, spaces):
         space5 = None
         space6 = None
     return [space1, space2, space3, space4, space5, space6]
+
+
+def price_movements_policy_v1(state, params, spaces):
+    pass
