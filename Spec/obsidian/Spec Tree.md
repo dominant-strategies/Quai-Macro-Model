@@ -28,6 +28,7 @@ cssclasses:
 │   │   ├──[[Global State-Zones per Region\|Zones per Region]]
 │   │   ├──[[Global State-Time\|Time]]
 │   │   ├──[[Global State-Delta Time\|Delta Time]]
+│   │   ├──[[Global State-Unlock Schedule\|Unlock Schedule]]
 ├──**Stateful Metrics**
 ├──**Types**
 │   ├──[[Entity Type]]
@@ -62,6 +63,7 @@ cssclasses:
 │   ├──[[Return Parameterization Type]]
 │   ├──[[PID Parameters Type]]
 │   ├──[[Vesting Schedule Type]]
+│   ├──[[Unlock Schedule Type]]
 ├──**Spaces**
 │   ├──[[Terminating Space]]
 │   ├──[[Empty Space]]

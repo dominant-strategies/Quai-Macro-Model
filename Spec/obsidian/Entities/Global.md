@@ -27,6 +27,7 @@
 |[[Global State-Zones per Region\|Zones per Region]]|The current number of zones in each region.|[[Zones per Region Type]]|||
 |[[Global State-Time\|Time]]|The current time in the system.|[[Datetime Type]]|||
 |[[Global State-Delta Time\|Delta Time]]|The amount of time covered in the current simulation epoch.|[[Delta Time Type]]|||
+|[[Global State-Unlock Schedule\|Unlock Schedule]]|The schedule of token unlocks that will happen in the future|[[Unlock Schedule Type]]|||
 
 
 ## Boundary Actions
