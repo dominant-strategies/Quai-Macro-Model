@@ -19,7 +19,7 @@ def unlock_tokens_policy_v1(state, params, spaces):
 
     space = {
         "Qi Tokens": unlocked_qi,
-        "Quai Tokens": unlock_schedule_quai,
+        "Quai Tokens": unlocked_quai,
         "Quai Unlock Schedule": unlock_schedule_quai,
         "Qi Unlock Schedule": unlock_schedule_qi,
     }
