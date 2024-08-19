@@ -20,4 +20,6 @@ state_base = {
     "Dummy": None,
     "Time": 0,
     "Delta Time": 0,
+    "Quai Unlock Schedule": None,  # Set in state preperation function
+    "Qi Unlock Schedule": None,  # Set in state preperation functions
 }

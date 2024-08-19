@@ -158,8 +158,15 @@ global_state = {
         },
         {
             "type": "Unlock Schedule Type",
-            "name": "Unlock Schedule",
-            "description": "The schedule of token unlocks that will happen in the future",
+            "name": "Quai Unlock Schedule",
+            "description": "The schedule of Quai token unlocks that will happen in the future",
+            "symbol": None,
+            "domain": None,
+        },
+        {
+            "type": "Unlock Schedule Type",
+            "name": "Qi Unlock Schedule",
+            "description": "The schedule of Qi token unlocks that will happen in the future",
             "symbol": None,
             "domain": None,
         },
