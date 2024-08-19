@@ -27,7 +27,8 @@
 |[[Global State-Zones per Region\|Zones per Region]]|The current number of zones in each region.|[[Zones per Region Type]]|||
 |[[Global State-Time\|Time]]|The current time in the system.|[[Datetime Type]]|||
 |[[Global State-Delta Time\|Delta Time]]|The amount of time covered in the current simulation epoch.|[[Delta Time Type]]|||
-|[[Global State-Unlock Schedule\|Unlock Schedule]]|The schedule of token unlocks that will happen in the future|[[Unlock Schedule Type]]|||
+|[[Global State-Quai Unlock Schedule\|Quai Unlock Schedule]]|The schedule of Quai token unlocks that will happen in the future|[[Unlock Schedule Type]]|||
+|[[Global State-Qi Unlock Schedule\|Qi Unlock Schedule]]|The schedule of Qi token unlocks that will happen in the future|[[Unlock Schedule Type]]|||
 
 
 ## Boundary Actions
@@ -47,8 +48,13 @@
 ### [[Update Prices Mechanism]]
 ### [[Set K Mechanism]]
 ### [[Set K Mechanism]]
+### [[Unlock Tokens Mechanism]]
+### [[Unlock Tokens Mechanism]]
+### [[Unlock Tokens Mechanism]]
+### [[Unlock Tokens Mechanism]]
 ## Actions Impacting the Entity
 ### [[Mine Block Boundary Action]]
 ### [[Conversions Boundary Action]]
 ### [[Price Movements Boundary Action]]
 ### [[Controller Update Control Action]]
+### [[Unlock Tokens Control Action]]
