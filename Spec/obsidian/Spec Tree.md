@@ -24,6 +24,8 @@ cssclasses:
 │   │   ├──[[Global State-Simulation History Log\|Simulation History Log]]
 │   │   ├──[[Global State-Number of Regions\|Number of Regions]]
 │   │   ├──[[Global State-Zones per Region\|Zones per Region]]
+│   │   ├──[[Global State-Time\|Time]]
+│   │   ├──[[Global State-Delta Time\|Delta Time]]
 ├──**Stateful Metrics**
 ├──**Types**
 │   ├──[[Entity Type]]

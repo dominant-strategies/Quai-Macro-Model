@@ -20,6 +20,8 @@
 |[[Global State-Simulation History Log\|Simulation History Log]]|The logged data from simulation history.|[[Simulation History Log Type]]|||
 |[[Global State-Number of Regions\|Number of Regions]]|The current number of regions.|[[Number of Regions Type]]|||
 |[[Global State-Zones per Region\|Zones per Region]]|The current number of zones in each region.|[[Zones per Region Type]]|||
+|[[Global State-Time\|Time]]|The current time in the system.|[[Datetime Type]]|||
+|[[Global State-Delta Time\|Delta Time]]|The amount of time covered in the current simulation epoch.|[[Delta Time Type]]|||
 
 
 ## Updated By

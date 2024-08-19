@@ -135,5 +135,12 @@ global_state = {
             "symbol": None,
             "domain": None,
         },
+        {
+            "type": "Delta Time Type",
+            "name": "Delta Time",
+            "description": "The amount of time covered in the current simulation epoch.",
+            "symbol": None,
+            "domain": None,
+        },
     ],
 }

@@ -20,6 +20,8 @@ The policy which determines the amount of Quai or Qi exchanged.
 5. [[Conversion Log Space]]
 6. [[Conversion Log Space]]
 ## Constraints
+1. Quai/Qi converted must be less than total circulating
+2. Quai/Qi must be greater than the minimum amount parameters
 ## Parameters Used
 1. [[Minimum Qi Conversion Amount]]
 2. [[Minimum Quai Conversion Amount]]
