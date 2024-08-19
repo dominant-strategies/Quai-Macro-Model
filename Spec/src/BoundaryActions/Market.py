@@ -23,7 +23,7 @@ conversions_boundary_action = {
 
 test_price_movements = {
     "name": "TEST Price Movements Boundary",
-    "description": r"Testing function for price that always returns a 10% return on both assets",
+    "description": r"Testing function for price that always returns a 5% and 10% return on assets for Qi and Quai respectively.",
     "logic": "",
 }
 
