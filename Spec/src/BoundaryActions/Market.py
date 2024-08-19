@@ -21,11 +21,17 @@ conversions_boundary_action = {
     "metrics_used": ["Conversion Rate Metric"],
 }
 
+test_price_movements = {
+    "name": "TEST Price Movements Boundary",
+    "description": r"Testing function for price that always returns a 10% return on both assets",
+    "logic": "",
+}
+
 price_movements_boundary_action = {
     "name": "Price Movements Boundary Action",
     "description": "Boundary action which begins the process of price changes.",
     "constraints": [],
-    "boundary_action_options": [],
+    "boundary_action_options": [test_price_movements],
     "called_by": [],
     "codomain": ["Price Movement Space"],
     "parameters_used": ["Asset Return Parameterization"],
