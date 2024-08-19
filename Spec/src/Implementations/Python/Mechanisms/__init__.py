@@ -10,6 +10,7 @@ from .Logs import (
     update_historical_converted_qi_mechanism,
     update_historical_converted_quai_mechanism,
 )
+from .Vesting import unlock_tokens_mechanism
 
 mechanisms = {
     "DUMMY Log Results Mechanism": dummy_log_results_mechanism,
@@ -20,4 +21,5 @@ mechanisms = {
     "Update Historical Converted Qi Mechanism": update_historical_converted_qi_mechanism,
     "Update Historical Converted Quai Mechanism": update_historical_converted_quai_mechanism,
     "Update Prices Mechanism": update_prices_mechanism,
+    "Unlock Tokens Mechanism": unlock_tokens_mechanism,
 }

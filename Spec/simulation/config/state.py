@@ -1,7 +1,9 @@
 state_base = {
-    "Qi Supply": 10000,
-    "Quai Supply": 10000,
-    "Block Number": None,
+    "Qi Supply": None,  # Set in state preperation function
+    "Quai Supply": None,  # Set in state preperation function
+    "Locked Qi Supply": None,  # Set in state preperation function
+    "Locked Quai Supply": None,  # Set in state preperation function
+    "Block Number": 0,
     "Block Difficulty": 6000,
     "Number of Regions": 2,
     "Zones per Region": 2,
@@ -16,5 +18,8 @@ state_base = {
     "Qi Price": 1,
     "Simulation History Log": None,
     "Dummy": None,
-    "Time": None,
+    "Time": 0,
+    "Delta Time": 0,
+    "Quai Unlock Schedule": None,  # Set in state preperation function
+    "Qi Unlock Schedule": None,  # Set in state preperation functions
 }

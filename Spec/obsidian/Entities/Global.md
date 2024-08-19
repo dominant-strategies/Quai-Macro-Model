@@ -9,6 +9,8 @@
 |[[Global State-Dummy\|Dummy]]|The dummy entity|[[Entity Type]]|||
 |[[Global State-Qi Supply\|Qi Supply]]|The total supply of Qi|[[Qi Type]]|||
 |[[Global State-Quai Supply\|Quai Supply]]|The total supply of Quai|[[Quai Type]]|||
+|[[Global State-Locked Qi Supply\|Locked Qi Supply]]|The total supply of Qi that is locked|[[Qi Type]]|||
+|[[Global State-Locked Quai Supply\|Locked Quai Supply]]|The total supply of Quai that is locked|[[Quai Type]]|||
 |[[Global State-Block Number\|Block Number]]|The current block that the system is on|[[Block Number Type]]|||
 |[[Global State-Block Difficulty\|Block Difficulty]]|The latest difficulty for blocks|[[Block Difficulty Type]]|||
 |[[Global State-Historical Converted Qi\|Historical Converted Qi]]|An array of the conversions from Qi to Quai. The Qi Values will be negative in each entry and Quai values will be positive. Time is also logged in the entries of the array.|[[Conversions Array Type]]|||
@@ -23,6 +25,10 @@
 |[[Global State-Simulation History Log\|Simulation History Log]]|The logged data from simulation history.|[[Simulation History Log Type]]|||
 |[[Global State-Number of Regions\|Number of Regions]]|The current number of regions.|[[Number of Regions Type]]|||
 |[[Global State-Zones per Region\|Zones per Region]]|The current number of zones in each region.|[[Zones per Region Type]]|||
+|[[Global State-Time\|Time]]|The current time in the system.|[[Datetime Type]]|||
+|[[Global State-Delta Time\|Delta Time]]|The amount of time covered in the current simulation epoch.|[[Delta Time Type]]|||
+|[[Global State-Quai Unlock Schedule\|Quai Unlock Schedule]]|The schedule of Quai token unlocks that will happen in the future|[[Unlock Schedule Type]]|||
+|[[Global State-Qi Unlock Schedule\|Qi Unlock Schedule]]|The schedule of Qi token unlocks that will happen in the future|[[Unlock Schedule Type]]|||
 
 
 ## Boundary Actions
@@ -42,8 +48,13 @@
 ### [[Update Prices Mechanism]]
 ### [[Set K Mechanism]]
 ### [[Set K Mechanism]]
+### [[Unlock Tokens Mechanism]]
+### [[Unlock Tokens Mechanism]]
+### [[Unlock Tokens Mechanism]]
+### [[Unlock Tokens Mechanism]]
 ## Actions Impacting the Entity
 ### [[Mine Block Boundary Action]]
 ### [[Conversions Boundary Action]]
 ### [[Price Movements Boundary Action]]
 ### [[Controller Update Control Action]]
+### [[Unlock Tokens Control Action]]

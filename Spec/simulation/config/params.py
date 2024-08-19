@@ -1,3 +1,5 @@
+initial_vesting_allocation = 3000000000
+
 params_base = {
     "Minimum Quai Conversion Amount": 100,
     "Minimum Qi Conversion Amount": 100,
@@ -7,6 +9,85 @@ params_base = {
     "Block Difficulty Multiples": {"Prime": 1, "Region": 0.5, "Zone": 0.25},
     "Target Mining Time": 2,
     "Quai Reward Base Parameter": 2,
+    "Initial Vesting Schedule": [
+        {
+            "vesting_amount": initial_vesting_allocation / 3 * 0.3,
+            "vesting_frequency": "Immediate",
+            "time": 0,
+            "recipient": "Foundation",
+            "duration": None,
+        },
+        {
+            "vesting_amount": initial_vesting_allocation / 3 * 0.7,
+            "vesting_frequency": "Monthly",
+            "time": 0,
+            "recipient": "Foundation",
+            "duration": 6,
+        },
+        {
+            "vesting_amount": initial_vesting_allocation * 7 / 30,
+            "vesting_frequency": "Monthly",
+            "time": 0,
+            "recipient": "Community Incentives",
+            "duration": 4,
+        },
+        {
+            "vesting_amount": initial_vesting_allocation * 0.2 * 0.25,
+            "vesting_frequency": "Immediate",
+            "time": 0,
+            "recipient": "Investors",
+            "duration": None,
+        },
+        {
+            "vesting_amount": initial_vesting_allocation * 0.2 * 0.75,
+            "vesting_frequency": "Monthly",
+            "time": 0,
+            "recipient": "Investors",
+            "duration": 3,
+        },
+        {
+            "vesting_amount": initial_vesting_allocation * 49 / 3 / 100 * 0.25,
+            "vesting_frequency": "Immediate",
+            "time": 1,
+            "recipient": "Founders & Team",
+            "duration": None,
+        },
+        {
+            "vesting_amount": initial_vesting_allocation * 49 / 3 / 100 * 0.75,
+            "vesting_frequency": "Monthly",
+            "time": 1,
+            "recipient": "Founders & Team",
+            "duration": 3,
+        },
+        {
+            "vesting_amount": initial_vesting_allocation * 0.02,
+            "vesting_frequency": "Immediate",
+            "time": 0,
+            "recipient": "Exchanges & MMs",
+            "duration": None,
+        },
+        {
+            "vesting_amount": initial_vesting_allocation * 11 / 3 / 100,
+            "vesting_frequency": "Immediate",
+            "time": 0,
+            "recipient": "Testnet",
+            "duration": None,
+        },
+        {
+            "vesting_amount": initial_vesting_allocation * 4 / 3 / 100 * 0.25,
+            "vesting_frequency": "Immediate",
+            "time": 0,
+            "recipient": "Earn Program",
+            "duration": None,
+        },
+        {
+            "vesting_amount": initial_vesting_allocation * 4 / 3 / 100 * 0.75,
+            "vesting_frequency": "Monthly",
+            "time": 0,
+            "recipient": "Earn Program",
+            "duration": 2,
+        },
+    ],
     "FP Controller Update Policy": "Linear Controller Policy",
     "FP Conversions Boundary Action": "TEST Quai Conversion",
 }
