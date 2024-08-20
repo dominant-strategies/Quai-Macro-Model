@@ -21,3 +21,10 @@ Boundary action for determining the blocks to mine and aggregate hashpower.
     3. Noise is added to all the block difficulties as a multiplier from a lognormal distribution with mean 0 and standard deviation of .05
     4. A cumulative sum array is also created of difficulty for ease in computation for the simulation
 
+### 2. Mine Block Boundary Action V2
+#### Description
+Boundary action for determining the blocks to mine and aggregate hashpower.
+#### Logic
+1. Aggregate hashpower is pulled from the [[Aggregate Hashpower Series]] parameter
+    TBD
+
