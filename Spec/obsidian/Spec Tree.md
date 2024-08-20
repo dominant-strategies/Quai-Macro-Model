@@ -101,6 +101,7 @@ cssclasses:
 │   │   ├──[[Block Difficulty Multiples]]
 │   │   ├──[[Target Mining Time]]
 │   │   ├──[[Quai Reward Base Parameter]]
+│   │   ├──[[Aggregate Hashpower Series]]
 │   ├──Vesting Parameter Set
 │   │   ├──[[Initial Vesting Schedule]]
 ├──**Boundary Actions**

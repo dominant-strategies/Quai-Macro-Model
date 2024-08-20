@@ -26,6 +26,14 @@ mining_parameter_set = {
             "domain": None,
             "parameter_class": "System",
         },
+        {
+            "variable_type": "Hash Array Type",
+            "name": "Aggregate Hashpower Series",
+            "description": "A series of the aggregate hashpower to be used at each block number",
+            "symbol": None,
+            "domain": None,
+            "parameter_class": "Behavioral",
+        },
     ],
 }
 

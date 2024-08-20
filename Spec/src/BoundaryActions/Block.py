@@ -16,7 +16,7 @@ mine_block_boundary_action = {
     "codomain": [
         "Pre-Mining Space",
     ],
-    "parameters_used": [],
+    "parameters_used": ["Aggregate Hashpower Series"],
 }
 
 block_boundary_actions = [mine_block_boundary_action]
