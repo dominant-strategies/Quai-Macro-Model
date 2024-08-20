@@ -31,6 +31,9 @@ cssclasses:
 │   │   ├──[[Global State-Quai Unlock Schedule\|Quai Unlock Schedule]]
 │   │   ├──[[Global State-Qi Unlock Schedule\|Qi Unlock Schedule]]
 ├──**Stateful Metrics**
+│   ├──Circulating Stateful Metrics
+│   │   ├──[[Circulating Quai Supply]]
+│   │   ├──[[Circulating Qi Supply]]
 ├──**Types**
 │   ├──[[Entity Type]]
 │   ├──[[Block Number Type]]
