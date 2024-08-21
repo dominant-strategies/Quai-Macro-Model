@@ -34,6 +34,14 @@ mining_parameter_set = {
             "domain": None,
             "parameter_class": "Behavioral",
         },
+        {
+            "variable_type": "Integer Type",
+            "name": "Difficulty Adjustment Period",
+            "description": "The number of blocks over which difficulty is adjusted",
+            "symbol": None,
+            "domain": None,
+            "parameter_class": "System",
+        },
     ],
 }
 

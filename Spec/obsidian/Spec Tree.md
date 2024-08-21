@@ -102,6 +102,7 @@ cssclasses:
 │   │   ├──[[Target Mining Time]]
 │   │   ├──[[Quai Reward Base Parameter]]
 │   │   ├──[[Aggregate Hashpower Series]]
+│   │   ├──[[Difficulty Adjustment Period]]
 │   ├──Vesting Parameter Set
 │   │   ├──[[Initial Vesting Schedule]]
 ├──**Boundary Actions**
@@ -122,6 +123,7 @@ cssclasses:
 │   ├──[[Unlock Tokens Policy]]
 ├──**Mechanisms**
 │   ├──[[Increment Block Number Mechanism]]
+│   ├──[[Update Block Difficulty Mechanism]]
 │   ├──[[Update Historical Mined Ratio Mechanism]]
 │   ├──[[Update Historical Qi Hash Mechanism]]
 │   ├──[[Update Historical Quai Hash Mechanism]]

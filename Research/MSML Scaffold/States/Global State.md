@@ -30,6 +30,7 @@
 
 ## Updated By
 ### [[Increment Block Number Mechanism]]
+### [[Update Block Difficulty Mechanism]]
 ### [[Update Historical Mined Ratio Mechanism]]
 ### [[Update Historical Qi Hash Mechanism]]
 ### [[Update Historical Quai Hash Mechanism]]
