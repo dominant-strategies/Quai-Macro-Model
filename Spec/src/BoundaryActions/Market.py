@@ -27,6 +27,12 @@ test_price_movements = {
     "logic": "",
 }
 
+hashpower_price_movement = {
+    "name": "Hashpower Price Movement",
+    "description": r"",
+    "logic": "",
+}
+
 price_movements_boundary_action = {
     "name": "Price Movements Boundary Action",
     "description": "Boundary action which begins the process of price changes.",
