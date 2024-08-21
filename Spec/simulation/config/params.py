@@ -90,4 +90,6 @@ params_base = {
     ],
     "FP Controller Update Policy": "Linear Controller Policy",
     "FP Conversions Boundary Action": "TEST Quai Conversion",
+    "FP Mine Block Boundary Action": "Mine Block Boundary Action V2",
+    "Aggregate Hashpower Series": [x * 1000 for x in range(1, 1002)],
 }
