@@ -13,7 +13,7 @@ update_block_difficulty = {
     "description": "A mechanism which slowly updates the difficulty over an adjustment period.",
     "constraints": [],
     "logic": "(CurrentDifficulty * (Period-1) + NewDifficulty) / Period",
-    "domain": [],
+    "domain": ["Block Difficulty Space"],
     "parameters_used": ["Difficulty Adjustment Period"],
     "updates": [("Global", "Block Difficulty", False)],
 }
