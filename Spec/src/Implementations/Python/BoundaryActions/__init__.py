@@ -1,5 +1,5 @@
 from .Dummy import v1_dummy_boundary, v1_dummy_boundary2, v2_dummy_boundary2
-from .Block import mine_block_boundary_action_v1
+from .Block import mine_block_boundary_action_v1, mine_block_boundary_action_v2
 from .Conversions import test_quai_conversion, test_qi_conversion
 from .Market import test_price_movements_boundary
 
@@ -11,4 +11,5 @@ boundary_action_options = {
     "TEST Quai Conversion": test_quai_conversion,
     "TEST Qi Conversion": test_qi_conversion,
     "TEST Price Movements Boundary": test_price_movements_boundary,
+    "Mine Block Boundary Action V2": mine_block_boundary_action_v2,
 }

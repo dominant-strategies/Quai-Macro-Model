@@ -202,12 +202,13 @@ The wiring of the entire simulation
 16. [[Terminating Space]]
 
 ## Parameters Used
-1. [[Asset Return Parameterization]]
-2. [[Initial Block Difficulty]]
-3. [[Minimum Qi Conversion Amount]]
-4. [[Minimum Quai Conversion Amount]]
-5. [[PID Parameterization]]
-6. [[Quai Reward Base Parameter]]
+1. [[Aggregate Hashpower Series]]
+2. [[Asset Return Parameterization]]
+3. [[Initial Block Difficulty]]
+4. [[Minimum Qi Conversion Amount]]
+5. [[Minimum Quai Conversion Amount]]
+6. [[PID Parameterization]]
+7. [[Quai Reward Base Parameter]]
 
 ## Called By
 

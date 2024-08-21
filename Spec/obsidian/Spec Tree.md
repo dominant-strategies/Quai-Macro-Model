@@ -31,6 +31,9 @@ cssclasses:
 │   │   ├──[[Global State-Quai Unlock Schedule\|Quai Unlock Schedule]]
 │   │   ├──[[Global State-Qi Unlock Schedule\|Qi Unlock Schedule]]
 ├──**Stateful Metrics**
+│   ├──Circulating Stateful Metrics
+│   │   ├──[[Circulating Quai Supply]]
+│   │   ├──[[Circulating Qi Supply]]
 ├──**Types**
 │   ├──[[Entity Type]]
 │   ├──[[Block Number Type]]
@@ -98,6 +101,8 @@ cssclasses:
 │   │   ├──[[Block Difficulty Multiples]]
 │   │   ├──[[Target Mining Time]]
 │   │   ├──[[Quai Reward Base Parameter]]
+│   │   ├──[[Aggregate Hashpower Series]]
+│   │   ├──[[Difficulty Adjustment Period]]
 │   ├──Vesting Parameter Set
 │   │   ├──[[Initial Vesting Schedule]]
 ├──**Boundary Actions**
@@ -118,6 +123,7 @@ cssclasses:
 │   ├──[[Unlock Tokens Policy]]
 ├──**Mechanisms**
 │   ├──[[Increment Block Number Mechanism]]
+│   ├──[[Update Block Difficulty Mechanism]]
 │   ├──[[Update Historical Mined Ratio Mechanism]]
 │   ├──[[Update Historical Qi Hash Mechanism]]
 │   ├──[[Update Historical Quai Hash Mechanism]]
