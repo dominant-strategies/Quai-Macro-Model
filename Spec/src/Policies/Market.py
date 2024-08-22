@@ -28,7 +28,7 @@ conversions_policy = {
         "Minimum Quai Conversion Amount",
         "Minimum Qi Conversion Amount",
     ],
-    "metrics_used": ["Current Block Reward Ratio Metric"],
+    "metrics_used": ["Conversion Rate Metric"],
 }
 
 price_movements_policy_v1 = {
