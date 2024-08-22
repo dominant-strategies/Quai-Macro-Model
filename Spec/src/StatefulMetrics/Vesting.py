@@ -29,4 +29,22 @@ circulating_stateful_metric = {
     ],
 }
 
-vesting_stateful_metrics = [circulating_stateful_metric]
+lockup_stateful_metrics = {
+    "name": "Lockup Stateful Metrics",
+    "notes": "Metrics for the lockups",
+    "metrics": [
+        {
+            "type": "Quai Type",
+            "name": "Current Lockup Options",
+            "description": "The current options for lockup presented, found by looking at the current year and the options presented",
+            "variables_used": [
+                ("Global State", "Time"),
+            ],
+            "parameters_used": ["Lockup Options"],
+            "symbol": None,
+            "domain": None,
+        },
+    ],
+}
+
+vesting_stateful_metrics = [circulating_stateful_metric, lockup_stateful_metrics]
