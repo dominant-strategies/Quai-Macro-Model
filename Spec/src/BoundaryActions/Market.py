@@ -48,8 +48,8 @@ $$P_{Quai}^{t+1} = \lambda C_i(...)P_{Qi} + (1-\lambda)P_{Quai}^{t} + NORM(0, \s
 
 Conversion into a return space (for compatibility with the way the block logic works/space output schema):
 
-$$r_{Qi} = 1 - \frac{P_{Qi}^{t+1}}{P_{Qi}^{t}}$$
-$$r_{Quai} = 1 - \frac{P_{Quai}^{t+1}}{P_{Quai}^{t}}$$""",
+$$r_{Qi} = \frac{P_{Qi}^{t+1}}{P_{Qi}^{t}} - 1$$
+$$r_{Quai} = \frac{P_{Quai}^{t+1}}{P_{Quai}^{t}} - 1$$""",
 }
 
 price_movements_boundary_action = {
