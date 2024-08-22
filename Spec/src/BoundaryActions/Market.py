@@ -59,7 +59,14 @@ price_movements_boundary_action = {
     "boundary_action_options": [test_price_movements, hashpower_price_movement],
     "called_by": [],
     "codomain": ["Price Movement Space"],
-    "parameters_used": ["Asset Return Parameterization"],
+    "parameters_used": [
+        "Asset Return Parameterization",
+        "Price EWMA Lambda",
+        "Hashpower Cost Series",
+        "Qi Price Movemement Sigma",
+        "Quai Price Movemement Sigma",
+    ],
+    "metrics_used": ["Conversion Rate"],
 }
 
 
