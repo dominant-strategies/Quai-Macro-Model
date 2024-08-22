@@ -206,13 +206,14 @@ The wiring of the entire simulation
 2. [[Asset Return Parameterization]]
 3. [[Hashpower Cost Series]]
 4. [[Initial Block Difficulty]]
-5. [[Minimum Qi Conversion Amount]]
-6. [[Minimum Quai Conversion Amount]]
-7. [[PID Parameterization]]
-8. [[Price EWMA Lambda]]
-9. [[Qi Price Movemement Sigma]]
-10. [[Quai Price Movemement Sigma]]
-11. [[Quai Reward Base Parameter]]
+5. [[Lockup Options]]
+6. [[Minimum Qi Conversion Amount]]
+7. [[Minimum Quai Conversion Amount]]
+8. [[PID Parameterization]]
+9. [[Price EWMA Lambda]]
+10. [[Qi Price Movemement Sigma]]
+11. [[Quai Price Movemement Sigma]]
+12. [[Quai Reward Base Parameter]]
 
 ## Called By
 

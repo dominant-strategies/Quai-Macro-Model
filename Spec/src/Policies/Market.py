@@ -27,6 +27,7 @@ conversions_policy = {
     "parameters_used": [
         "Minimum Quai Conversion Amount",
         "Minimum Qi Conversion Amount",
+        "Lockup Options",
     ],
     "metrics_used": ["Conversion Rate Metric"],
 }

@@ -14,13 +14,13 @@ Boundary action which determines amount of potentially converted Qi or Quai.
 ## Boundary Action Options:
 ### 1. TEST Quai Conversion
 #### Description
-Test function that moves to exchange 100 Quai.
+Test function that moves to exchange 100 Quai and always picks the second lowest lock up period.
 #### Logic
 Return a space with quai conversion of 100
 
 ### 2. TEST Qi Conversion
 #### Description
-Test function that moves to exchange 100 Qi.
+Test function that moves to exchange 100 Qi and always picks the second lowest lock up period.
 #### Logic
 Return a space with qi conversion of 100
 

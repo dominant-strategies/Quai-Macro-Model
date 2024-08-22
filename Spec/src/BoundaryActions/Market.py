@@ -1,12 +1,12 @@
 test_quai_conversion = {
     "name": "TEST Quai Conversion",
-    "description": "Test function that moves to exchange 100 Quai.",
+    "description": "Test function that moves to exchange 100 Quai and always picks the second lowest lock up period.",
     "logic": "Return a space with quai conversion of 100",
 }
 
 test_qi_conversion = {
     "name": "TEST Qi Conversion",
-    "description": "Test function that moves to exchange 100 Qi.",
+    "description": "Test function that moves to exchange 100 Qi and always picks the second lowest lock up period.",
     "logic": "Return a space with qi conversion of 100",
 }
 
@@ -17,7 +17,7 @@ conversions_boundary_action = {
     "boundary_action_options": [test_quai_conversion, test_qi_conversion],
     "called_by": [],
     "codomain": ["Conversion Space"],
-    "parameters_used": [],
+    "parameters_used": ["Lockup Options"],
     "metrics_used": ["Conversion Rate Metric"],
 }
 

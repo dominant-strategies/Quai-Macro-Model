@@ -94,8 +94,9 @@ This mechanism allows for greater responsiveness in the [[Qi Supply Metric|suppl
 6. [[Terminating Space]]
 
 ## Parameters Used
-1. [[Minimum Qi Conversion Amount]]
-2. [[Minimum Quai Conversion Amount]]
+1. [[Lockup Options]]
+2. [[Minimum Qi Conversion Amount]]
+3. [[Minimum Quai Conversion Amount]]
 
 ## Called By
 
