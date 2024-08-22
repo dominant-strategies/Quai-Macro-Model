@@ -26,6 +26,38 @@ market_parameter_set = {
             "domain": None,
             "parameter_class": "Behavioral",
         },
+        {
+            "variable_type": "Float Type",
+            "name": "Price EWMA Lambda",
+            "description": "The exponential decay rate for price signals",
+            "symbol": None,
+            "domain": None,
+            "parameter_class": "Behavioral",
+        },
+        {
+            "variable_type": "USD Array Type",
+            "name": "Hashpower Cost Series",
+            "description": "The cost of hashpower by block number",
+            "symbol": None,
+            "domain": None,
+            "parameter_class": "Behavioral",
+        },
+        {
+            "variable_type": "Float Type",
+            "name": "Qi Price Movemement Sigma",
+            "description": "The standard deviation of qi price movements",
+            "symbol": None,
+            "domain": None,
+            "parameter_class": "Behavioral",
+        },
+        {
+            "variable_type": "Float Type",
+            "name": "Quai Price Movemement Sigma",
+            "description": "The standard deviation of quai price movements",
+            "symbol": None,
+            "domain": None,
+            "parameter_class": "Behavioral",
+        },
     ],
 }
 

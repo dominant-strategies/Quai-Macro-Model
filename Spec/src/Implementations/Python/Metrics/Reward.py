@@ -2,7 +2,7 @@ from math import log
 
 
 def qi_to_hash_metric(state, params, spaces):
-    return spaces[0]["Qi"] * state["K Qi"]
+    return spaces[0]["Qi"] / state["K Qi"]
 
 
 def quai_to_hash_metric(state, params, spaces):
@@ -10,7 +10,7 @@ def quai_to_hash_metric(state, params, spaces):
 
 
 def hash_to_qi_metric(state, params, spaces):
-    return spaces[0]["Hash"] / state["K Qi"]
+    return spaces[0]["Hash"] * state["K Qi"]
 
 
 def hash_to_quai_metric(state, params, spaces):

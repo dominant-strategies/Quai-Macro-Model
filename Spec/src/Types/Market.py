@@ -16,5 +16,16 @@ ReturnParameterizationType = {
     "notes": "A parameterization of asset returns including a covariance matrix and mean return vector",
 }
 
+USDArrayType = {
+    "name": "USD Array Type",
+    "type": "USDArrayType",
+    "notes": "An array of USD values",
+}
 
-market_types = [TokenNameType, TokenAmountType, ReturnParameterizationType]
+
+market_types = [
+    TokenNameType,
+    TokenAmountType,
+    ReturnParameterizationType,
+    USDArrayType,
+]

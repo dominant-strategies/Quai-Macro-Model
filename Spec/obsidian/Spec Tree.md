@@ -61,13 +61,16 @@ cssclasses:
 │   ├──[[Delta Time Type]]
 │   ├──[[Seconds Type]]
 │   ├──[[Integer Type]]
+│   ├──[[Float Type]]
 │   ├──[[Simulation History Log Type]]
 │   ├──[[Token Name Type]]
 │   ├──[[Token Amount Type]]
 │   ├──[[Return Parameterization Type]]
+│   ├──[[USD Array Type]]
 │   ├──[[PID Parameters Type]]
 │   ├──[[Vesting Schedule Type]]
 │   ├──[[Unlock Schedule Type]]
+│   ├──[[Lockup Table Type]]
 ├──**Spaces**
 │   ├──[[Terminating Space]]
 │   ├──[[Empty Space]]
@@ -94,6 +97,10 @@ cssclasses:
 │   │   ├──[[Minimum Quai Conversion Amount]]
 │   │   ├──[[Minimum Qi Conversion Amount]]
 │   │   ├──[[Asset Return Parameterization]]
+│   │   ├──[[Price EWMA Lambda]]
+│   │   ├──[[Hashpower Cost Series]]
+│   │   ├──[[Qi Price Movemement Sigma]]
+│   │   ├──[[Quai Price Movemement Sigma]]
 │   ├──Controller Parameter Set
 │   │   ├──[[PID Parameterization]]
 │   │   ├──[[Initial Block Difficulty]]
@@ -105,6 +112,7 @@ cssclasses:
 │   │   ├──[[Difficulty Adjustment Period]]
 │   ├──Vesting Parameter Set
 │   │   ├──[[Initial Vesting Schedule]]
+│   │   ├──[[Lockup Options]]
 ├──**Boundary Actions**
 │   ├──[[Mine Block Boundary Action]]
 │   ├──[[Conversions Boundary Action]]

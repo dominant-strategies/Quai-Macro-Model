@@ -53,6 +53,10 @@ The wiring for movements on the price of Qi and Quai
 
 ## Parameters Used
 1. [[Asset Return Parameterization]]
+2. [[Hashpower Cost Series]]
+3. [[Price EWMA Lambda]]
+4. [[Qi Price Movemement Sigma]]
+5. [[Quai Price Movemement Sigma]]
 
 ## Called By
 

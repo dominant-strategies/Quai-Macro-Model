@@ -3,9 +3,7 @@ def block_reward_ratio_conversion_policy(state, params, spaces):
     amount = spaces[0]["Amount"]
     assert asset in ["Quai", "Qi"], "{} is not a valid asset".format(asset)
     assert amount >= 0, "Amount must be positive"
-    conversion_rate = state["Metrics"]["Current Block Reward Ratio Metric"](
-        state, params, []
-    )
+    conversion_rate = state["Metrics"]["Conversion Rate Metric"](state, params, [])
     if asset == "Quai":
         if amount < params["Minimum Quai Conversion Amount"]:
             quai = 0

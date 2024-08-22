@@ -12,7 +12,7 @@ metrics_hash.append(
         "parameters_used": [],
         "metrics_used": [],
         "domain": ["Qi Space"],
-        "logic": r"$$qiToHash(Qi) ->  Qi \cdot k_{qi}$$",
+        "logic": r"$$qiToHash(Qi) ->  \frac{Qi}{k_{qi}}$$",
         "symbol": None,
     }
 )

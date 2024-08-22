@@ -12,7 +12,7 @@ metrics_rewards.append(
         "parameters_used": [],
         "metrics_used": [],
         "domain": ["Hash Space"],
-        "logic": r"$$hashToQi(Hash) -> \frac{Hash}{k_{qi}}$$",
+        "logic": r"$$hashToQi(Hash) -> Hash \cdot k_{qi}$$",
         "symbol": None,
     }
 )
