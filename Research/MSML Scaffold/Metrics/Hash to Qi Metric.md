@@ -5,7 +5,7 @@ Type: [[Qi Type]]
 Symbol: None
 
 ## Logic
-$$hashToQi(Hash) -> \frac{Hash}{k_{qi}}$$
+$$hashToQi(Hash) -> Hash \cdot k_{qi}$$
 
 ## Parameters Used
 
