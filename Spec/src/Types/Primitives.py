@@ -59,6 +59,12 @@ IntegerType = {
     "notes": "",
 }
 
+FloatType = {
+    "name": "Float Type",
+    "type": "FloatType",
+    "notes": "",
+}
+
 
 primitive_types = [
     GainType,
@@ -71,4 +77,5 @@ primitive_types = [
     DeltaTimeType,
     SecondsType,
     IntegerType,
+    FloatType,
 ]
