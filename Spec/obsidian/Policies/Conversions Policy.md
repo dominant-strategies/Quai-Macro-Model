@@ -26,7 +26,7 @@ The policy which determines the amount of Quai or Qi exchanged.
 1. [[Minimum Qi Conversion Amount]]
 2. [[Minimum Quai Conversion Amount]]
 ## Metrics Used
-1. [[Current Block Reward Ratio Metric]]
+1. [[Conversion Rate Metric]]
 ## Policy Options
 ### 1. Block Reward Ratio Conversion Policy
 #### Description

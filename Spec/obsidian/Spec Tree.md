@@ -70,6 +70,7 @@ cssclasses:
 │   ├──[[PID Parameters Type]]
 │   ├──[[Vesting Schedule Type]]
 │   ├──[[Unlock Schedule Type]]
+│   ├──[[Lockup Table Type]]
 ├──**Spaces**
 │   ├──[[Terminating Space]]
 │   ├──[[Empty Space]]
@@ -111,6 +112,7 @@ cssclasses:
 │   │   ├──[[Difficulty Adjustment Period]]
 │   ├──Vesting Parameter Set
 │   │   ├──[[Initial Vesting Schedule]]
+│   │   ├──[[Lockup Options]]
 ├──**Boundary Actions**
 │   ├──[[Mine Block Boundary Action]]
 │   ├──[[Conversions Boundary Action]]

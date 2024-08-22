@@ -10,6 +10,14 @@ vesting_parameter_set = {
             "domain": None,
             "parameter_class": "System",
         },
+        {
+            "variable_type": "Lockup Table Type",
+            "name": "Lockup Options",
+            "description": "The options for locking up for different time frames",
+            "symbol": None,
+            "domain": None,
+            "parameter_class": "System",
+        },
     ],
 }
 
