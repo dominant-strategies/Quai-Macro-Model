@@ -33,3 +33,11 @@ def burn_quai_tokens_mechanism(state, params, spaces):
 def update_prices_mechanism(state, params, spaces):
     state["Qi Price"] = spaces[0]["Qi Price"]
     state["Quai Price"] = spaces[0]["Quai Price"]
+
+
+def update_locked_qi_mechanism(state, params, spaces):
+    state["Locked Qi Supply"] += spaces[0]["Qi"]
+
+
+def update_locked_quai_mechanism(state, params, spaces):
+    state["Locked Quai Supply"] += spaces[0]["Quai"]
