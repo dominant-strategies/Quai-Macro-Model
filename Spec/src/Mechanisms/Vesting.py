@@ -21,7 +21,8 @@ append_to_unlock_schedule_mechanism = {
     "domain": ["Unlock Schedule Entry Space"],
     "parameters_used": [],
     "updates": [
-        ("Global", "Unlock Schedule", False),
+        ("Global", "Quai Unlock Schedule", False),
+        ("Global", "Qi Unlock Schedule", False),
     ],
 }
 

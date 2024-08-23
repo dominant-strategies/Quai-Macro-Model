@@ -94,6 +94,7 @@ cssclasses:
 │   ├──[[Price Movement Space]]
 │   ├──[[Price Space]]
 │   ├──[[Unlock Tokens Space]]
+│   ├──[[Unlock Schedule Entry Space]]
 ├──**Parameters**
 │   ├──Market Parameter Set
 │   │   ├──[[Minimum Quai Conversion Amount]]
@@ -145,5 +146,8 @@ cssclasses:
 │   ├──[[Burn Qi Tokens Mechanism]]
 │   ├──[[Burn Quai Tokens Mechanism]]
 │   ├──[[Update Prices Mechanism]]
+│   ├──[[Update Locked Qi Mechanism]]
+│   ├──[[Update Locked Quai Mechanism]]
 │   ├──[[Set K Mechanism]]
 │   ├──[[Unlock Tokens Mechanism]]
+│   ├──[[Append to Unlock Schedule Mechanism]]

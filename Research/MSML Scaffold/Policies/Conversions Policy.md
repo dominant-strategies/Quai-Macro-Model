@@ -12,6 +12,9 @@ The policy which determines the amount of Quai or Qi exchanged.
 4. [[Burn Quai Tokens Mechanism]]
 5. [[Update Historical Converted Qi Mechanism]]
 6. [[Update Historical Converted Quai Mechanism]]
+7. [[Update Locked Qi Mechanism]]
+8. [[Update Locked Quai Mechanism]]
+9. [[Append to Unlock Schedule Mechanism]]
 ## Codomain Spaces
 1. [[Qi Space]]
 2. [[Quai Space]]
@@ -19,6 +22,9 @@ The policy which determines the amount of Quai or Qi exchanged.
 4. [[Quai Space]]
 5. [[Conversion Log Space]]
 6. [[Conversion Log Space]]
+7. [[Qi Space]]
+8. [[Quai Space]]
+9. [[Unlock Schedule Entry Space]]
 ## Constraints
 1. Quai/Qi converted must be less than total circulating
 2. Quai/Qi must be greater than the minimum amount parameters

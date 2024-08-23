@@ -23,6 +23,9 @@ conversions_policy = {
         "Quai Space",
         "Conversion Log Space",
         "Conversion Log Space",
+        "Qi Space",
+        "Quai Space",
+        "Unlock Schedule Entry Space",
     ],
     "parameters_used": [
         "Minimum Quai Conversion Amount",
