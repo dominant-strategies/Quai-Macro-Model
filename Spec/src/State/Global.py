@@ -75,7 +75,7 @@ global_state = {
         {
             "type": "Mined Ratio Array Type",
             "name": "Historical Mined Ratio",
-            "description": "An array of the historical ratios of mining between Qi and Quai which the miners had chosen at given times.",
+            "description": "An array of the historical ratios of mining between Qi and Quai which the miners had chosen at given times. 0 corresponds to 100% Qi, 1 corresponds to 100% Quai, number in between are the increments between those balances.",
             "symbol": None,
             "domain": None,
         },
