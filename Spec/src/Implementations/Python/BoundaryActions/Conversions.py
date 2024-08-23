@@ -1,3 +1,7 @@
+def conversions_boundary_action_v1(state, params, spaces):
+    return test_quai_conversion(state, params, spaces)
+
+
 def test_quai_conversion(state, params, spaces):
     return [
         {
