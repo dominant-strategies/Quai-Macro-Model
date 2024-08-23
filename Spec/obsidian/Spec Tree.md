@@ -34,6 +34,8 @@ cssclasses:
 │   ├──Circulating Stateful Metrics
 │   │   ├──[[Circulating Quai Supply]]
 │   │   ├──[[Circulating Qi Supply]]
+│   ├──Lockup Stateful Metrics
+│   │   ├──[[Current Lockup Options]]
 ├──**Types**
 │   ├──[[Entity Type]]
 │   ├──[[Block Number Type]]

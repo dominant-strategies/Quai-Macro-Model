@@ -12,7 +12,11 @@ qi_space = {
 
 conversion_space = {
     "name": "Conversion Space",
-    "schema": {"Token": "Token Name Type", "Amount": "Token Amount Type"},
+    "schema": {
+        "Token": "Token Name Type",
+        "Amount": "Token Amount Type",
+        "Locking Time": "Delta Time Type",
+    },
 }
 
 conversion_log_space = {
