@@ -48,10 +48,34 @@ update_prices_mechanism = {
     "updates": [("Global", "Quai Price", False), ("Global", "Qi Price", False)],
 }
 
+update_locked_qi_mechanism = {
+    "name": "Update Locked Qi Mechanism",
+    "description": "Mechanism for updating the locked Qi amount",
+    "constraints": [],
+    "logic": "Add the domain to the value",
+    "domain": ["Qi Space"],
+    "parameters_used": [],
+    "updates": [("Global", "Locked Qi Supply", False)],
+}
+
+
+update_locked_quai_mechanism = {
+    "name": "Update Locked Quai Mechanism",
+    "description": "Mechanism for updating prices",
+    "constraints": [],
+    "logic": "Add the domain to the value",
+    "domain": ["Quai Space"],
+    "parameters_used": [],
+    "updates": [("Global", "Locked Qi Supply", False)],
+}
+
+
 monetary_policy_mechanisms = [
     mint_qi_mechanism,
     mint_quai_mechanism,
     burn_qi_mechanism,
     burn_quai_mechanism,
     update_prices_mechanism,
+    update_locked_qi_mechanism,
+    update_locked_quai_mechanism,
 ]
