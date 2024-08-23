@@ -5,7 +5,7 @@ conversions_boundary_action_v1 = {
 
 1. Latest mined ratio, pulled from state: $R$
 2. Speculator percentage, parameter: $P$
-3. Supply of Quai/Qi where Q is which currency to use $S_Q$
+3. Circulating supply of Quai/Qi where Q is which currency to use $S_Q$
 4. Conversion percentage mu, the average percentage of traded capital converted, $\mu$
 5. Conversion percentage sigma, the standard deviation of the percentage of traded capital converted, $\sigma$
 6. Lockup options, $L$
@@ -50,7 +50,12 @@ conversions_boundary_action = {
         "Conversion Percentage Mu",
         "Conversion Percentage Sigma",
     ],
-    "metrics_used": ["Conversion Rate Metric", "Current Lockup Options"],
+    "metrics_used": [
+        "Conversion Rate Metric",
+        "Current Lockup Options",
+        "Circulating Qi Supply",
+        "Circulating Quai Supply",
+    ],
 }
 
 

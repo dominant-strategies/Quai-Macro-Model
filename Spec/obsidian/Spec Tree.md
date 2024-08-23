@@ -104,6 +104,9 @@ cssclasses:
 │   │   ├──[[Hashpower Cost Series]]
 │   │   ├──[[Qi Price Movemement Sigma]]
 │   │   ├──[[Quai Price Movemement Sigma]]
+│   │   ├──[[Speculator Percentage]]
+│   │   ├──[[Conversion Percentage Mu]]
+│   │   ├──[[Conversion Percentage Sigma]]
 │   ├──Controller Parameter Set
 │   │   ├──[[PID Parameterization]]
 │   │   ├──[[Initial Block Difficulty]]

@@ -117,9 +117,12 @@ This mechanism allows for greater responsiveness in the [[Qi Supply Metric|suppl
 7. [[Unlock Schedule Entry Space]]
 
 ## Parameters Used
-1. [[Lockup Options]]
-2. [[Minimum Qi Conversion Amount]]
-3. [[Minimum Quai Conversion Amount]]
+1. [[Conversion Percentage Mu]]
+2. [[Conversion Percentage Sigma]]
+3. [[Lockup Options]]
+4. [[Minimum Qi Conversion Amount]]
+5. [[Minimum Quai Conversion Amount]]
+6. [[Speculator Percentage]]
 
 ## Called By
 

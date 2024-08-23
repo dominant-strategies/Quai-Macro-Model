@@ -58,6 +58,30 @@ market_parameter_set = {
             "domain": None,
             "parameter_class": "Behavioral",
         },
+        {
+            "variable_type": "Decimal Type",
+            "name": "Speculator Percentage",
+            "description": "The percentage of the supply that is speculative",
+            "symbol": None,
+            "domain": None,
+            "parameter_class": "Behavioral",
+        },
+        {
+            "variable_type": "Float Type",
+            "name": "Conversion Percentage Mu",
+            "description": "The avergage percentage for conversions of tradeable capital",
+            "symbol": None,
+            "domain": None,
+            "parameter_class": "Behavioral",
+        },
+        {
+            "variable_type": "Decimal Type",
+            "name": "Conversion Percentage Sigma",
+            "description": "The standard deviation for conversions of tradeable capital",
+            "symbol": None,
+            "domain": None,
+            "parameter_class": "Behavioral",
+        },
     ],
 }
 
