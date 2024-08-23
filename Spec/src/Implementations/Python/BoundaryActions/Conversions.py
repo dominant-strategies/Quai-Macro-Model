@@ -1,4 +1,5 @@
-from random import random
+from random import random, choice
+import numpy as np
 
 
 def conversions_boundary_action_v1(state, params, spaces):
@@ -16,8 +17,21 @@ def conversions_boundary_action_v1(state, params, spaces):
         )
     else:
         circulating = state["Stateful Metrics"]["Circulating Qi Supply"](state, params)
-    print(circulating)
-    assert False
+    T = circulating * params["Speculator Percentage"]
+    C = T * max(
+        min(
+            1,
+            np.random.normal(
+                params["Conversion Percentage Mu"],
+                params["Conversion Percentage Sigma"],
+            ),
+        ),
+        0,
+    )
+    L = state["Stateful Metrics"]["Current Lockup Options"](state, params)
+    H = choice(list(L.keys()))
+    space = {"Token": q, "Amount": C, "Locking Time": H}
+    return [space]
 
 
 def test_quai_conversion(state, params, spaces):
