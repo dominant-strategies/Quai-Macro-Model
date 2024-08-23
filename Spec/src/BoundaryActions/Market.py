@@ -20,6 +20,7 @@ Amount: C,
 Locking Time: H}""",
 }
 
+
 test_quai_conversion = {
     "name": "TEST Quai Conversion",
     "description": "Test function that moves to exchange 100 Quai and always picks the second lowest lock up period.",
@@ -43,9 +44,15 @@ conversions_boundary_action = {
     ],
     "called_by": [],
     "codomain": ["Conversion Space"],
-    "parameters_used": ["Lockup Options"],
-    "metrics_used": ["Conversion Rate Metric"],
+    "parameters_used": [
+        "Lockup Options",
+        "Speculator Percentage",
+        "Conversion Percentage Mu",
+        "Conversion Percentage Sigma",
+    ],
+    "metrics_used": ["Conversion Rate Metric", "Current Lockup Options"],
 }
+
 
 test_price_movements = {
     "name": "TEST Price Movements Boundary",
