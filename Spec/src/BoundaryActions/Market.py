@@ -1,3 +1,26 @@
+conversions_boundary_action_v1 = {
+    "name": "Conversions Boundary Action V1",
+    "description": "Basic boundary action that follows the latest mining ratio",
+    "logic": r"""Inputs:
+
+1. Latest mined ratio, pulled from state: $R$
+2. Speculator percentage, parameter: $P$
+3. Circulating supply of Quai/Qi where Q is which currency to use $S_Q$
+4. Conversion percentage mu, the average percentage of traded capital converted, $\mu$
+5. Conversion percentage sigma, the standard deviation of the percentage of traded capital converted, $\sigma$
+6. Lockup options, $L$
+
+Logic:
+1. Decide which side to trade based on mined ratio. Take $R$ as the probability of choosing Quai and use a random sample to determine. We will use $Q$ to denote this side.
+2. Determine the potentially traded capital $T$ as $T = S_Q \cdot P$.
+3. Find the conversion size as $C = MAX(MIN(NORM(\mu, \sigma), 1),0) \cdot T$
+4. Randomly select the lockup horizon $H$ with equal probability from the lockup options L
+5. Return space of: {Token: Q,
+Amount: C,
+Locking Time: H}""",
+}
+
+
 test_quai_conversion = {
     "name": "TEST Quai Conversion",
     "description": "Test function that moves to exchange 100 Quai and always picks the second lowest lock up period.",
@@ -14,12 +37,27 @@ conversions_boundary_action = {
     "name": "Conversions Boundary Action",
     "description": "Boundary action which determines amount of potentially converted Qi or Quai.",
     "constraints": [],
-    "boundary_action_options": [test_quai_conversion, test_qi_conversion],
+    "boundary_action_options": [
+        conversions_boundary_action_v1,
+        test_quai_conversion,
+        test_qi_conversion,
+    ],
     "called_by": [],
     "codomain": ["Conversion Space"],
-    "parameters_used": ["Lockup Options"],
-    "metrics_used": ["Conversion Rate Metric"],
+    "parameters_used": [
+        "Lockup Options",
+        "Speculator Percentage",
+        "Conversion Percentage Mu",
+        "Conversion Percentage Sigma",
+    ],
+    "metrics_used": [
+        "Conversion Rate Metric",
+        "Current Lockup Options",
+        "Circulating Qi Supply",
+        "Circulating Quai Supply",
+    ],
 }
+
 
 test_price_movements = {
     "name": "TEST Price Movements Boundary",

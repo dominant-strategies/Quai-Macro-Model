@@ -1,4 +1,9 @@
 def block_reward_ratio_conversion_policy(state, params, spaces):
+
+    lockup_return = state["Stateful Metrics"]["Current Lockup Options"](state, params)[
+        spaces[0]["Locking Time"]
+    ]
+
     asset = spaces[0]["Token"]
     amount = spaces[0]["Amount"]
     assert asset in ["Quai", "Qi"], "{} is not a valid asset".format(asset)
@@ -13,7 +18,7 @@ def block_reward_ratio_conversion_policy(state, params, spaces):
             qi = 0
         else:
             quai = -amount
-            qi = amount / conversion_rate
+            qi = amount / conversion_rate * lockup_return
     else:
         if amount < params["Minimum Qi Conversion Amount"]:
             quai = 0
@@ -23,7 +28,7 @@ def block_reward_ratio_conversion_policy(state, params, spaces):
             qi = 0
         else:
             qi = -amount
-            quai = amount * conversion_rate
+            quai = amount * conversion_rate * lockup_return
 
     # Minting Spaces
     space1 = {"Qi": max(0, qi)}
@@ -43,7 +48,22 @@ def block_reward_ratio_conversion_policy(state, params, spaces):
     else:
         space5 = None
         space6 = None
-    return [space1, space2, space3, space4, space5, space6]
+    space7 = space1
+    space8 = space2
+
+    t = spaces[0]["Locking Time"] * 365 + state["Time"]
+    if qi > 0:
+        a = [{"amount": qi, "recipient": "Conversions", "time": t}]
+        b = []
+    elif quai > 0:
+        a = []
+        b = [{"amount": quai, "recipient": "Conversions", "time": t}]
+    else:
+        a = []
+        b = []
+    space9 = {"Qi Schedule Entry": a, "Quai Schedule Entry": b}
+
+    return [space1, space2, space3, space4, space5, space6, space7, space8, space9]
 
 
 def price_movements_policy_v1(state, params, spaces):

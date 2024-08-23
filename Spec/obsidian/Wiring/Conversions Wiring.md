@@ -9,40 +9,56 @@ EES0(["Historical Converted Qi"])
 EES0 --- EE0
 EES1(["Historical Converted Quai"])
 EES1 --- EE0
-EES2(["Qi Supply"])
+EES2(["Locked Qi Supply"])
 EES2 --- EE0
-EES3(["Quai Supply"])
+EES3(["Qi Supply"])
 EES3 --- EE0
+EES4(["Qi Unlock Schedule"])
+EES4 --- EE0
+EES5(["Quai Supply"])
+EES5 --- EE0
+EES6(["Quai Unlock Schedule"])
+EES6 --- EE0
 end
 
-subgraph X12["Conversions Wiring"]
+subgraph X15["Conversions Wiring"]
 direction TB
 X1["Conversions Boundary Action"]
 X2["Conversions Policy"]
-subgraph X11["Conversions Mechanisms Wiring"]
+subgraph X14["Conversions Mechanisms Wiring"]
 direction TB
 X3["Mint Qi Tokens Mechanism"]
-X3 --> EES2
+X3 --> EES3
 X4["Mint Quai Tokens Mechanism"]
-X4 --> EES3
+X4 --> EES5
 X5["Burn Qi Tokens Mechanism"]
-X5 --> EES2
+X5 --> EES3
 X6["Burn Quai Tokens Mechanism"]
-X6 --> EES3
+X6 --> EES5
 X7["Update Historical Converted Qi Mechanism"]
 X7 --> EES0
 X8["Update Historical Converted Quai Mechanism"]
 X8 --> EES1
-X9[Domain]
+X9["Update Locked Qi Mechanism"]
+X9 --> EES2
+X10["Update Locked Quai Mechanism"]
+X10 --> EES2
+X11["Append to Unlock Schedule Mechanism"]
+X11 --> EES6
+X11 --> EES4
+X12[Domain]
 
 direction LR
 direction TB
-X9 --"Qi Space"--> X3
-X9 --"Quai Space"--> X4
-X9 --"Qi Space"--> X5
-X9 --"Quai Space"--> X6
-X9 --"Conversion Log Space"--> X7
-X9 --"Conversion Log Space"--> X8
+X12 --"Qi Space"--> X3
+X12 --"Quai Space"--> X4
+X12 --"Qi Space"--> X5
+X12 --"Quai Space"--> X6
+X12 --"Conversion Log Space"--> X7
+X12 --"Conversion Log Space"--> X8
+X12 --"Qi Space"--> X9
+X12 --"Quai Space"--> X10
+X12 --"Unlock Schedule Entry Space"--> X11
 end
 X1--"Conversion Space"--->X2
 X2--"Qi Space
@@ -50,7 +66,10 @@ Quai Space
 Qi Space
 Quai Space
 Conversion Log Space
-Conversion Log Space"-------->X11
+Conversion Log Space
+Qi Space
+Quai Space
+Unlock Schedule Entry Space"----------->X14
 end
 ```
 
@@ -68,14 +87,17 @@ This mechanism allows for greater responsiveness in the [[Qi Supply Metric|suppl
 3. [[Conversions Mechanisms Wiring]]
 
 ## All Blocks
-1. [[Burn Qi Tokens Mechanism]]
-2. [[Burn Quai Tokens Mechanism]]
-3. [[Conversions Boundary Action]]
-4. [[Conversions Policy]]
-5. [[Mint Qi Tokens Mechanism]]
-6. [[Mint Quai Tokens Mechanism]]
-7. [[Update Historical Converted Qi Mechanism]]
-8. [[Update Historical Converted Quai Mechanism]]
+1. [[Append to Unlock Schedule Mechanism]]
+2. [[Burn Qi Tokens Mechanism]]
+3. [[Burn Quai Tokens Mechanism]]
+4. [[Conversions Boundary Action]]
+5. [[Conversions Policy]]
+6. [[Mint Qi Tokens Mechanism]]
+7. [[Mint Quai Tokens Mechanism]]
+8. [[Update Historical Converted Qi Mechanism]]
+9. [[Update Historical Converted Quai Mechanism]]
+10. [[Update Locked Qi Mechanism]]
+11. [[Update Locked Quai Mechanism]]
 
 ## Constraints
 
@@ -92,11 +114,15 @@ This mechanism allows for greater responsiveness in the [[Qi Supply Metric|suppl
 4. [[Qi Space]]
 5. [[Quai Space]]
 6. [[Terminating Space]]
+7. [[Unlock Schedule Entry Space]]
 
 ## Parameters Used
-1. [[Lockup Options]]
-2. [[Minimum Qi Conversion Amount]]
-3. [[Minimum Quai Conversion Amount]]
+1. [[Conversion Percentage Mu]]
+2. [[Conversion Percentage Sigma]]
+3. [[Lockup Options]]
+4. [[Minimum Qi Conversion Amount]]
+5. [[Minimum Quai Conversion Amount]]
+6. [[Speculator Percentage]]
 
 ## Called By
 
@@ -105,6 +131,9 @@ This mechanism allows for greater responsiveness in the [[Qi Supply Metric|suppl
 ## All State Updates
 1. [[Global]].[[Global State-Historical Converted Qi|Historical Converted Qi]]
 2. [[Global]].[[Global State-Historical Converted Quai|Historical Converted Quai]]
-3. [[Global]].[[Global State-Qi Supply|Qi Supply]]
-4. [[Global]].[[Global State-Quai Supply|Quai Supply]]
+3. [[Global]].[[Global State-Locked Qi Supply|Locked Qi Supply]]
+4. [[Global]].[[Global State-Qi Supply|Qi Supply]]
+5. [[Global]].[[Global State-Qi Unlock Schedule|Qi Unlock Schedule]]
+6. [[Global]].[[Global State-Quai Supply|Quai Supply]]
+7. [[Global]].[[Global State-Quai Unlock Schedule|Quai Unlock Schedule]]
 

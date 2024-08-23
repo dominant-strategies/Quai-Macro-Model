@@ -12,7 +12,7 @@
 |[[Global State-Block Difficulty\|Block Difficulty]]|The latest difficulty for blocks|[[Block Difficulty Type]]|||
 |[[Global State-Historical Converted Qi\|Historical Converted Qi]]|An array of the conversions from Qi to Quai. The Qi Values will be negative in each entry and Quai values will be positive. Time is also logged in the entries of the array.|[[Conversions Array Type]]|||
 |[[Global State-Historical Converted Quai\|Historical Converted Quai]]|An array of the conversions from Quai to Qi. The Quai Values will be negative in each entry and Qi values will be positive. Time is also logged in the entries of the array.|[[Conversions Array Type]]|||
-|[[Global State-Historical Mined Ratio\|Historical Mined Ratio]]|An array of the historical ratios of mining between Qi and Quai which the miners had chosen at given times.|[[Mined Ratio Array Type]]|||
+|[[Global State-Historical Mined Ratio\|Historical Mined Ratio]]|An array of the historical ratios of mining between Qi and Quai which the miners had chosen at given times. 0 corresponds to 100% Qi, 1 corresponds to 100% Quai, number in between are the increments between those balances.|[[Mined Ratio Array Type]]|||
 |[[Global State-Historical Qi Hash\|Historical Qi Hash]]|An array of the historical amount of hash attributed to Qi in block rewards with block numbers attatched to each entry.|[[Hash Array Type]]|||
 |[[Global State-Historical Quai Hash\|Historical Quai Hash]]|An array of the historical amount of hash attributed to Quai in block rewards with block numbers attatched to each entry.|[[Hash Array Type]]|||
 |[[Global State-K Qi\|K Qi]]|The controller coeffecient for Qi.|[[Gain Type]]|||
@@ -43,9 +43,13 @@
 ### [[Burn Quai Tokens Mechanism]]
 ### [[Update Prices Mechanism]]
 ### [[Update Prices Mechanism]]
+### [[Update Locked Qi Mechanism]]
+### [[Update Locked Quai Mechanism]]
 ### [[Set K Mechanism]]
 ### [[Set K Mechanism]]
 ### [[Unlock Tokens Mechanism]]
 ### [[Unlock Tokens Mechanism]]
 ### [[Unlock Tokens Mechanism]]
 ### [[Unlock Tokens Mechanism]]
+### [[Append to Unlock Schedule Mechanism]]
+### [[Append to Unlock Schedule Mechanism]]
