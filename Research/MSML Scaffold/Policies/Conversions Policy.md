@@ -39,6 +39,10 @@ The policy which determines the amount of Quai or Qi exchanged.
 #### Description
 The conversion ratio is defined by the ratio of the [[Current Block Reward Ratio Metric|current block reward of both Quai and Qi]].
 #### Logic
-If the asset is Quai, then return spaces for Quai as -TokenValue and 1/[[Current Block Reward Ratio Metric]] * TokenValue for Qi.
-    Else return Qi as -Token Value and [[Current Block Reward Ratio Metric]] * TokenValue for Quai
+Find the locking return by looking up in the locking options parameter indexed to the locking timeframe in the space and call this r.
+
+- If the asset is Quai, then return spaces for Quai as -TokenValue and 1/ConversionRate(...) * TokenValue * r for Qi.
+- Else return Qi as -Token Value and ConversionRate(...) * TokenValue * r for Quai
+    
+The minting/burning tokens are this same amount as the locked token updates. Also an entry for unlock in the appropriate currency is added.
 
