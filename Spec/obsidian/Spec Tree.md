@@ -67,6 +67,8 @@ cssclasses:
 │   ├──[[Seconds Type]]
 │   ├──[[Integer Type]]
 │   ├──[[Float Type]]
+│   ├──[[Quai Array Type]]
+│   ├──[[Qi Array Type]]
 │   ├──[[Simulation History Log Type]]
 │   ├──[[Token Name Type]]
 │   ├──[[Token Amount Type]]

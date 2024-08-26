@@ -1,5 +1,9 @@
 from .Dummy import v1_dummy_boundary, v1_dummy_boundary2, v2_dummy_boundary2
-from .Block import mine_block_boundary_action_v1, mine_block_boundary_action_v2
+from .Block import (
+    mine_block_boundary_action_v1,
+    mine_block_boundary_action_v2,
+    test_mine_block_boundary_action,
+)
 from .Conversions import (
     test_quai_conversion,
     test_qi_conversion,
@@ -18,4 +22,5 @@ boundary_action_options = {
     "Mine Block Boundary Action V2": mine_block_boundary_action_v2,
     "Hashpower Price Movement": hashpower_price_movement,
     "Conversions Boundary Action V1": conversions_boundary_action_v1,
+    "TEST Mine Block Boundary Action": test_mine_block_boundary_action,
 }
