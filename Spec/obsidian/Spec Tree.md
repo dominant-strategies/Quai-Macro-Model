@@ -135,6 +135,7 @@ cssclasses:
 │   ├──[[Block Reward Policy]]
 │   ├──[[Mining Payment Policy]]
 │   ├──[[Mining Policy]]
+│   ├──[[Mezzanine Wiring Passthrough]]
 │   ├──[[Conversions Policy]]
 │   ├──[[Price Movements Policy]]
 │   ├──[[Controller Update Policy]]

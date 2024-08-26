@@ -2,7 +2,7 @@
 
 A mechanism which appends the latest quai hash to historical quai hash
 ## Called By
-1. [[Mining Payment Policy]]
+1. [[Mezzanine Wiring Passthrough]]
 ## Domain Spaces
 1. [[Quai Hash Space]]
 ## Constraints

@@ -57,6 +57,7 @@ mining_payment_policy = {
     "policy_options": [mining_payment_policy_option1],
     "domain": ["Block Reward Options Space"],
     "codomain": [
+        "Mined Blocks Space 2",
         "Qi Space",
         "Quai Space",
         "Mined Ratio Space",
@@ -65,6 +66,29 @@ mining_payment_policy = {
     ],
     "parameters_used": [],
     "metrics_used": ["Qi to Hash Metric", "Quai to Hash Metric"],
+}
+
+mezzanine_wiring_passthrough = {
+    "name": "Mezzanine Wiring Passthrough",
+    "description": "Policy which passes through the spaces for the mezzanine wiring.",
+    "constraints": [],
+    "policy_options": [],
+    "domain": [
+        "Qi Space",
+        "Quai Space",
+        "Mined Ratio Space",
+        "Qi Hash Space",
+        "Quai Hash Space",
+    ],
+    "codomain": [
+        "Qi Space",
+        "Quai Space",
+        "Mined Ratio Space",
+        "Qi Hash Space",
+        "Quai Hash Space",
+    ],
+    "parameters_used": [],
+    "metrics_used": [],
 }
 
 
@@ -88,4 +112,9 @@ mining_policy = {
 }
 
 
-block_policies = [block_reward_policy, mining_payment_policy, mining_policy]
+block_policies = [
+    block_reward_policy,
+    mining_payment_policy,
+    mining_policy,
+    mezzanine_wiring_passthrough,
+]

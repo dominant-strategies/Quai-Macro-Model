@@ -7,55 +7,109 @@ subgraph SVS["State Variables"]
 EE0[("Global")]
 EES0(["Block Number"])
 EES0 --- EE0
-EES1(["Historical Mined Ratio"])
+EES1(["Estimated Mining Beta Vector"])
 EES1 --- EE0
-EES2(["Historical Qi Hash"])
+EES2(["Historical Mined Ratio"])
 EES2 --- EE0
-EES3(["Qi Supply"])
+EES3(["Historical Qi Hash"])
 EES3 --- EE0
-EES4(["Quai Supply"])
+EES4(["K Qi"])
 EES4 --- EE0
+EES5(["K Quai"])
+EES5 --- EE0
+EES6(["Qi Supply"])
+EES6 --- EE0
+EES7(["Quai Supply"])
+EES7 --- EE0
 end
 
-subgraph X14["Mine Block Wiring"]
+subgraph X26["Mine Block Wiring"]
 direction TB
 X1["Mine Block Boundary Action"]
 X2["Mining Policy"]
 X3["Block Reward Policy"]
 X4["Mining Payment Policy"]
-subgraph X13["Mining Mechanisms"]
+subgraph X16["Mezzanine Mining Wiring"]
 direction TB
-X5["Increment Block Number Mechanism"]
-X5 --> EES0
-X6["Mint Qi Tokens Mechanism"]
-X6 --> EES3
-X7["Mint Quai Tokens Mechanism"]
+subgraph X12["Controller Update Wiring"]
+direction TB
+X5["Beta Estimation Policy"]
+X6["Controller Update Policy"]
+subgraph X11["Controller Mechanisms"]
+direction TB
+X7["Set K Mechanism"]
+X7 --> EES5
 X7 --> EES4
-X8["Update Historical Mined Ratio Mechanism"]
+X8["Set Estimated Beta Vector Mechanism"]
 X8 --> EES1
-X9["Update Historical Qi Hash Mechanism"]
-X9 --> EES2
-X10["Update Historical Quai Hash Mechanism"]
-X10 --> EES2
-X11[Domain]
+X9[Domain]
 
 direction LR
 direction TB
-X11 --> X5
-X11 --"Qi Space"--> X6
-X11 --"Quai Space"--> X7
-X11 --"Mined Ratio Space"--> X8
-X11 --"Qi Hash Space"--> X9
-X11 --"Quai Hash Space"--> X10
+X9 --"K Space"--> X7
+X9 --"Beta Vector Space"--> X8
+end
+X5--"Mined Blocks Space 2
+Beta Vector Space"---->X6
+X6--"K Space
+Beta Vector Space"---->X11
+end
+X13["Mezzanine Wiring Passthrough"]
+X14[Domain]
+X15[Codomain]
+direction LR
+direction TB
+X14 --"Mined Blocks Space 2"--> X12
+X14 --"Qi Space
+Quai Space
+Mined Ratio Space
+Qi Hash Space
+Quai Hash Space"------> X13
+X13 --"Qi Space
+Quai Space
+Mined Ratio Space
+Qi Hash Space
+Quai Hash Space"--> X15
+end
+subgraph X25["Mining Mechanisms"]
+direction TB
+X17["Increment Block Number Mechanism"]
+X17 --> EES0
+X18["Mint Qi Tokens Mechanism"]
+X18 --> EES6
+X19["Mint Quai Tokens Mechanism"]
+X19 --> EES7
+X20["Update Historical Mined Ratio Mechanism"]
+X20 --> EES2
+X21["Update Historical Qi Hash Mechanism"]
+X21 --> EES3
+X22["Update Historical Quai Hash Mechanism"]
+X22 --> EES3
+X23[Domain]
+
+direction LR
+direction TB
+X23 --> X17
+X23 --"Qi Space"--> X18
+X23 --"Quai Space"--> X19
+X23 --"Mined Ratio Space"--> X20
+X23 --"Qi Hash Space"--> X21
+X23 --"Quai Hash Space"--> X22
 end
 X1--"Pre-Mining Space"--->X2
 X2--"Mined Blocks Space"--->X3
 X3--"Block Reward Options Space"--->X4
-X4--"Qi Space
+X4--"Mined Blocks Space 2
+Qi Space
 Quai Space
 Mined Ratio Space
 Qi Hash Space
-Quai Hash Space"------->X13
+Quai Hash Space"-------->X16
+X16--"Qi Space
+Quai Space
+Mined Ratio Space
+Qi Hash Space
+Quai Hash Space"------->X25
 end
 ```
 
@@ -72,19 +126,25 @@ If the demand for Qi is greater than the supply, there should be a profitable op
 2. [[Mining Policy]]
 3. [[Block Reward Policy]]
 4. [[Mining Payment Policy]]
-5. [[Mining Mechanisms]]
+5. [[Mezzanine Mining Wiring]]
+6. [[Mining Mechanisms]]
 
 ## All Blocks
-1. [[Block Reward Policy]]
-2. [[Increment Block Number Mechanism]]
-3. [[Mine Block Boundary Action]]
-4. [[Mining Payment Policy]]
-5. [[Mining Policy]]
-6. [[Mint Qi Tokens Mechanism]]
-7. [[Mint Quai Tokens Mechanism]]
-8. [[Update Historical Mined Ratio Mechanism]]
-9. [[Update Historical Qi Hash Mechanism]]
-10. [[Update Historical Quai Hash Mechanism]]
+1. [[Beta Estimation Policy]]
+2. [[Block Reward Policy]]
+3. [[Controller Update Policy]]
+4. [[Increment Block Number Mechanism]]
+5. [[Mezzanine Wiring Passthrough]]
+6. [[Mine Block Boundary Action]]
+7. [[Mining Payment Policy]]
+8. [[Mining Policy]]
+9. [[Mint Qi Tokens Mechanism]]
+10. [[Mint Quai Tokens Mechanism]]
+11. [[Set Estimated Beta Vector Mechanism]]
+12. [[Set K Mechanism]]
+13. [[Update Historical Mined Ratio Mechanism]]
+14. [[Update Historical Qi Hash Mechanism]]
+15. [[Update Historical Quai Hash Mechanism]]
 
 ## Constraints
 
@@ -95,20 +155,25 @@ If the demand for Qi is greater than the supply, there should be a profitable op
 1. [[Empty Space]]
 
 ## All Spaces Used
-1. [[Block Reward Options Space]]
-2. [[Empty Space]]
-3. [[Mined Blocks Space]]
-4. [[Mined Ratio Space]]
-5. [[Pre-Mining Space]]
-6. [[Qi Hash Space]]
-7. [[Qi Space]]
-8. [[Quai Hash Space]]
-9. [[Quai Space]]
-10. [[Terminating Space]]
+1. [[Beta Vector Space]]
+2. [[Block Reward Options Space]]
+3. [[Empty Space]]
+4. [[K Space]]
+5. [[Mined Blocks Space]]
+6. [[Mined Blocks Space 2]]
+7. [[Mined Ratio Space]]
+8. [[Pre-Mining Space]]
+9. [[Qi Hash Space]]
+10. [[Qi Space]]
+11. [[Quai Hash Space]]
+12. [[Quai Space]]
+13. [[Terminating Space]]
 
 ## Parameters Used
 1. [[Aggregate Hashpower Series]]
-2. [[Quai Reward Base Parameter]]
+2. [[Initial Block Difficulty]]
+3. [[PID Parameterization]]
+4. [[Quai Reward Base Parameter]]
 
 ## Called By
 
@@ -116,8 +181,11 @@ If the demand for Qi is greater than the supply, there should be a profitable op
 
 ## All State Updates
 1. [[Global]].[[Global State-Block Number|Block Number]]
-2. [[Global]].[[Global State-Historical Mined Ratio|Historical Mined Ratio]]
-3. [[Global]].[[Global State-Historical Qi Hash|Historical Qi Hash]]
-4. [[Global]].[[Global State-Qi Supply|Qi Supply]]
-5. [[Global]].[[Global State-Quai Supply|Quai Supply]]
+2. [[Global]].[[Global State-Estimated Mining Beta Vector|Estimated Mining Beta Vector]]
+3. [[Global]].[[Global State-Historical Mined Ratio|Historical Mined Ratio]]
+4. [[Global]].[[Global State-Historical Qi Hash|Historical Qi Hash]]
+5. [[Global]].[[Global State-K Qi|K Qi]]
+6. [[Global]].[[Global State-K Quai|K Quai]]
+7. [[Global]].[[Global State-Qi Supply|Qi Supply]]
+8. [[Global]].[[Global State-Quai Supply|Quai Supply]]
 

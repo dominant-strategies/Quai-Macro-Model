@@ -2,7 +2,7 @@
 
 A mechanism which appends the latest mined ratio to historical mined ratio
 ## Called By
-1. [[Mining Payment Policy]]
+1. [[Mezzanine Wiring Passthrough]]
 ## Domain Spaces
 1. [[Mined Ratio Space]]
 ## Constraints
