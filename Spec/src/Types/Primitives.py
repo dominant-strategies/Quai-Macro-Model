@@ -22,6 +22,18 @@ QiType = {
     "notes": "",
 }
 
+QuaiArrayType = {
+    "name": "Quai Array Type",
+    "type": "QuaiArrayType",
+    "notes": "Array of Quai values",
+}
+
+QiArrayType = {
+    "name": "Qi Array Type",
+    "type": "QiArrayType",
+    "notes": "Array of Qi values",
+}
+
 
 RatioType = {
     "name": "Ratio Type",
@@ -78,4 +90,6 @@ primitive_types = [
     SecondsType,
     IntegerType,
     FloatType,
+    QuaiArrayType,
+    QiArrayType,
 ]

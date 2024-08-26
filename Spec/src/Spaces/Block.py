@@ -1,11 +1,13 @@
 block_reward_options_space = {
     "name": "Block Reward Options Space",
     "schema": {
-        "Quai Reward Offered": "Quai Type",
-        "Qi Reward Offered": "Qi Type",
-        "Block Difficulty": "Block Difficulty Type",
+        "Quai Reward Offered": "Quai Array Type",
+        "Qi Reward Offered": "Qi Array Type",
+        "Block Difficulty": "Hash Array Type",
+        "Mining Time": "Delta Time Type",
     },
 }
+
 
 block_difficulty_space = {
     "name": "Block Difficulty Space",
