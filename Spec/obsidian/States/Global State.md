@@ -49,6 +49,7 @@
 ### [[Update Locked Quai Mechanism]]
 ### [[Set K Mechanism]]
 ### [[Set K Mechanism]]
+### [[Set Estimated Beta Vector Mechanism]]
 ### [[Unlock Tokens Mechanism]]
 ### [[Unlock Tokens Mechanism]]
 ### [[Unlock Tokens Mechanism]]

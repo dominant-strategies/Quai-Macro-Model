@@ -13,4 +13,19 @@ set_k_mechanism = {
     ],
 }
 
-controller_mechanisms = [set_k_mechanism]
+set_estimated_beta_vector_mechanism = {
+    "name": "Set Estimated Beta Vector Mechanism",
+    "description": "A mechanism which sets the beta vector estimation",
+    "constraints": [],
+    "logic": "",
+    "domain": [
+        "Beta Vector Space",
+    ],
+    "parameters_used": [],
+    "updates": [
+        ("Global", "Estimated Mining Beta Vector", False),
+    ],
+}
+
+
+controller_mechanisms = [set_k_mechanism, set_estimated_beta_vector_mechanism]

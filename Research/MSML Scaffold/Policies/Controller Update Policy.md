@@ -2,12 +2,17 @@
 
 The policy which determines the update to the K Values.
 ## Called By
+1. [[Beta Estimation Policy]]
+2. [[Beta Estimation Policy]]
 ## Domain Spaces
-1. [[Observable State Space]]
+1. [[Mined Blocks Space 2]]
+2. [[Beta Vector Space]]
 ## Followed By
 1. [[Set K Mechanism]]
+2. [[Set Estimated Beta Vector Mechanism]]
 ## Codomain Spaces
 1. [[K Space]]
+2. [[Beta Vector Space]]
 ## Constraints
 ## Parameters Used
 1. [[Initial Block Difficulty]]

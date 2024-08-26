@@ -20,6 +20,6 @@ controller_wiring.append(
         "components": ["Set K Mechanism", "Set Estimated Beta Vector Mechanism"],
         "description": "The wiring for mechanisms for controllers",
         "constraints": [],
-        "type": "Stack",
+        "type": "Parallel",
     }
 )
