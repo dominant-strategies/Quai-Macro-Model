@@ -30,6 +30,8 @@ cssclasses:
 │   │   ├──[[Global State-Delta Time\|Delta Time]]
 │   │   ├──[[Global State-Quai Unlock Schedule\|Quai Unlock Schedule]]
 │   │   ├──[[Global State-Qi Unlock Schedule\|Qi Unlock Schedule]]
+│   │   ├──[[Global State-Population Mining Beta Vector\|Population Mining Beta Vector]]
+│   │   ├──[[Global State-Estimated Mining Beta Vector\|Estimated Mining Beta Vector]]
 ├──**Stateful Metrics**
 │   ├──Circulating Stateful Metrics
 │   │   ├──[[Circulating Quai Supply]]
@@ -49,6 +51,7 @@ cssclasses:
 │   ├──[[Zones per Region Type]]
 │   ├──[[Mining Epoch Array Type]]
 │   ├──[[Mined Blocks Array Type]]
+│   ├──[[Mining Beta Vector Type]]
 │   ├──[[Conversions Array Type]]
 │   ├──[[Mined Ratio Array Type]]
 │   ├──[[Hash Array Type]]

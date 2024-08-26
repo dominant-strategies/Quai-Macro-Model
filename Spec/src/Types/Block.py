@@ -70,6 +70,12 @@ MinedBlocksArrayType = {
     "notes": "An extension of MiningEpochArrayType that includes the Quai and Qi rewards offered",
 }
 
+MiningBetaVectorType = {
+    "name": "Mining Beta Vector Type",
+    "type": "MiningBetaVectorType",
+    "notes": "Associated weights for the features used in the logit function",
+}
+
 
 block_types = [
     EntityType,
@@ -84,4 +90,5 @@ block_types = [
     ZonesPerRegionType,
     MiningEpochArrayType,
     MinedBlocksArrayType,
+    MiningBetaVectorType,
 ]
