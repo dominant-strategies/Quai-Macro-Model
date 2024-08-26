@@ -11,15 +11,13 @@ EES1(["K Quai"])
 EES1 --- EE0
 end
 
-subgraph X4["Controller Update Wiring"]
+subgraph X3["Controller Update Wiring"]
 direction TB
-X1["Controller Update Control Action"]
-X2["Controller Update Policy"]
-X3["Set K Mechanism"]
-X3 --> EES1
-X3 --> EES0
-X1--"Observable State Space"--->X2
-X2--"K Space"--->X3
+X1["Controller Update Policy"]
+X2["Set K Mechanism"]
+X2 --> EES1
+X2 --> EES0
+X1--"K Space"--->X2
 end
 ```
 
@@ -28,28 +26,25 @@ end
 Block Type: Stack Block
 The wiring for the controller actions
 ## Components
-1. [[Controller Update Control Action]]
-2. [[Controller Update Policy]]
-3. [[Set K Mechanism]]
+1. [[Controller Update Policy]]
+2. [[Set K Mechanism]]
 
 ## All Blocks
-1. [[Controller Update Control Action]]
-2. [[Controller Update Policy]]
-3. [[Set K Mechanism]]
+1. [[Controller Update Policy]]
+2. [[Set K Mechanism]]
 
 ## Constraints
 
 ## Domain Spaces
-1. [[Empty Space]]
+1. [[Observable State Space]]
 
 ## Codomain Spaces
 1. [[Terminating Space]]
 
 ## All Spaces Used
-1. [[Empty Space]]
-2. [[K Space]]
-3. [[Observable State Space]]
-4. [[Terminating Space]]
+1. [[K Space]]
+2. [[Observable State Space]]
+3. [[Terminating Space]]
 
 ## Parameters Used
 1. [[Initial Block Difficulty]]

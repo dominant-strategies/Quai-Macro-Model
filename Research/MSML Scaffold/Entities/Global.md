@@ -63,5 +63,4 @@
 ### [[Mine Block Boundary Action]]
 ### [[Conversions Boundary Action]]
 ### [[Price Movements Boundary Action]]
-### [[Controller Update Control Action]]
 ### [[Unlock Tokens Control Action]]

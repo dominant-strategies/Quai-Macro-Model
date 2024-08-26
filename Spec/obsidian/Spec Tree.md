@@ -128,7 +128,6 @@ cssclasses:
 │   ├──[[Price Movements Boundary Action]]
 ├──**Control Actions**
 │   ├──[[Placeholder]]
-│   ├──[[Controller Update Control Action]]
 │   ├──[[Unlock Tokens Control Action]]
 ├──**Policies**
 │   ├──[[Block Reward Policy]]
