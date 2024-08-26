@@ -51,12 +51,24 @@ controller_update_policy = {
         controller_update_policy_option1,
         controller_update_policy_option2,
     ],
-    "domain": [
-        "Observable State Space",
-    ],
-    "codomain": ["K Space"],
+    "domain": ["Mined Blocks Space 2", "Beta Update Space"],
+    "codomain": ["K Space", "Beta Vector Space"],
     "parameters_used": ["PID Parameterization", "Initial Block Difficulty"],
     "metrics_used": ["Qi to Hash Metric", "Quai to Hash Metric"],
 }
 
-controller_policies = [controller_update_policy]
+beta_estimation_policy = {
+    "name": "Beta Estimation Policy",
+    "description": "The policy which determines the update to beta vector estimates.",
+    "constraints": [],
+    "policy_options": [],
+    "domain": [
+        "Mined Blocks Space 2",
+    ],
+    "codomain": ["Mined Blocks Space 2", "Beta Update Space"],
+    "parameters_used": [],
+    "metrics_used": [],
+}
+
+
+controller_policies = [controller_update_policy, beta_estimation_policy]
