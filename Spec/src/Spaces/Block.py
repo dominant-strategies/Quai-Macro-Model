@@ -5,6 +5,7 @@ block_reward_options_space = {
         "Qi Reward Offered": "Qi Array Type",
         "Block Difficulty": "Hash Array Type",
         "Mining Time": "Delta Time Type",
+        "New Difficulty": "Block Difficulty Type",
     },
 }
 
@@ -49,7 +50,8 @@ quai_hash_space = {
 mined_blocks_space = {
     "name": "Mined Blocks Space",
     "schema": {
-        "Mining Epochs": "Mining Epoch Array Type",
+        "Block Difficulty": "Hash Array Type",
+        "Mining Time": "Delta Time Type",
         "New Difficulty": "Block Difficulty Type",
     },
 }

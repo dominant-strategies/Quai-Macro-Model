@@ -50,7 +50,7 @@ def compute_difficulty_change(
     return block_hashes, block_hashes_cs, new_difficulty
 
 
-def mining_policy_v1(state, params, spaces):
+"""def mining_policy_v1(state, params, spaces):
     aggregate_hashpower, block_hashes, block_hashes_cs = (
         spaces[0]["Aggregate Hashpower"],
         spaces[0]["Blocks to Mine"],
@@ -75,6 +75,20 @@ def mining_policy_v1(state, params, spaces):
     for x, y in zip(l1, l2):
         l.append({"Mined Blocks": x, "Mining Time": y})
     space["Mining Epochs"] = l
+    return [space]"""
+
+
+def mining_policy_v1(state, params, spaces):
+    aggregate_hashpower, block_hashes = (
+        spaces[0]["Aggregate Hashpower"],
+        spaces[0]["Blocks to Mine"],
+    )
+
+    space = {}
+    space["Block Difficulty"] = [x["Difficulty"] for x in block_hashes]
+    space["Mining Time"] = sum(space["Block Difficulty"]) / aggregate_hashpower
+    space["New Difficulty"] = state["Block Difficulty"]
+
     return [space]
 
 
