@@ -94,17 +94,15 @@ def mining_policy_v1(state, params, spaces):
 
 def block_reward_policy_v1(state, params, spaces):
     space = deepcopy(spaces[0])
-    epochs = space.pop("Mining Epochs")
-    for x in epochs:
-        for y in x["Mined Blocks"]:
-            y["Qi Reward Offered"] = state["Metrics"]["Hash to Qi Metric"](
-                state, params, [{"Hash": y["Difficulty"]}]
-            )
-            y["Quai Reward Offered"] = state["Metrics"]["Hash to Quai Metric"](
-                state, params, [{"Hash": y["Difficulty"]}]
-            )
+    space["Quai Reward Offered"] = [
+        state["Metrics"]["Hash to Quai Metric"](state, params, [{"Hash": x}])
+        for x in space["Block Difficulty"]
+    ]
+    space["Qi Reward Offered"] = [
+        state["Metrics"]["Hash to Qi Metric"](state, params, [{"Hash": x}])
+        for x in space["Block Difficulty"]
+    ]
 
-    space["Mined Blocks"] = epochs
     return [space]
 
 
