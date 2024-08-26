@@ -53,6 +53,12 @@ mined_blocks_space = {
     },
 }
 
+mined_blocks_space2 = {
+    "name": "Mined Blocks Space 2",
+    "schema": {},
+}
+
+
 hash_space = {
     "name": "Hash Space",
     "schema": {
@@ -70,4 +76,5 @@ block_spaces = [
     pre_mining_space,
     mined_blocks_space,
     hash_space,
+    mined_blocks_space2,
 ]
