@@ -26,3 +26,7 @@ def reward_ratio_gain(state, params, spaces):
     k_quai += alpha * (x_d / x_b_star - 1) * k_quai
     spaces = [{"K Quai": k_quai, "K Qi": state["K Qi"]}, spaces[1]]
     return spaces
+
+
+def mezzanine_wiring_passthrough(state, params, spaces):
+    return spaces
