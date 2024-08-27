@@ -11,3 +11,7 @@ def sgd_logistic_classifier_training(state, params, spaces):
     state["Logistic Classifier"].partial_fit(X, Y, classes=[0, 1])
     betas = state["Logistic Classifier"].coef_[0]
     return [spaces[0], {"Beta": betas}]
+
+
+def reward_ratio_gain(state, params, spaces):
+    pass
