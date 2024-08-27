@@ -57,11 +57,23 @@ controller_update_policy = {
     "metrics_used": ["Qi to Hash Metric", "Quai to Hash Metric"],
 }
 
+
+beta_estimation_policy_option1 = {
+    "name": "SGD Logistic Classifier Training",
+    "description": "Simple SGD training with partial fit.",
+    "logic": """X = [[1, x / log(x, params["Quai Reward Base Parameter"])] for x in spaces[0]["Block Difficulty"]]
+Y = [x > 0 for x in spaces[0]["Quai Taken"]]
+
+state["Logistic Classifier"].partial_fit(X, Y, classes=[0, 1])
+betas = state["Logistic Classifier"].coef_[0]""",
+}
+
+
 beta_estimation_policy = {
     "name": "Beta Estimation Policy",
     "description": "The policy which determines the update to beta vector estimates.",
     "constraints": [],
-    "policy_options": [],
+    "policy_options": [beta_estimation_policy_option1],
     "domain": [
         "Mined Blocks Space 2",
     ],
