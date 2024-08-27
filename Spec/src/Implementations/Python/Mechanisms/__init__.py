@@ -17,6 +17,7 @@ from .Block import (
     update_block_difficulty_mechanism,
     append_to_unlock_schedule_mechanism,
 )
+from .Controller import set_k_mechanism, set_estimated_beta_vector_mechanism
 
 mechanisms = {
     "DUMMY Log Results Mechanism": dummy_log_results_mechanism,
@@ -32,4 +33,6 @@ mechanisms = {
     "Update Locked Qi Mechanism": update_locked_qi_mechanism,
     "Update Locked Quai Mechanism": update_locked_quai_mechanism,
     "Append to Unlock Schedule Mechanism": append_to_unlock_schedule_mechanism,
+    "Set K Mechanism": set_k_mechanism,
+    "Set Estimated Beta Vector Mechanism": set_estimated_beta_vector_mechanism,
 }
