@@ -110,11 +110,17 @@ mining_payment_policy = {
     "metrics_used": ["Qi to Hash Metric", "Quai to Hash Metric"],
 }
 
+mezzanine_wiring_passthrough_option1 = {
+    "name": "Mezzanine Wiring Passthrough",
+    "description": "Simple pass through",
+    "logic": "Pass spaces through",
+}
+
 mezzanine_wiring_passthrough = {
     "name": "Mezzanine Wiring Passthrough",
     "description": "Policy which passes through the spaces for the mezzanine wiring.",
     "constraints": [],
-    "policy_options": [],
+    "policy_options": [mezzanine_wiring_passthrough_option1],
     "domain": [
         "Qi Space",
         "Quai Space",

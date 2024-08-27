@@ -125,7 +125,11 @@ controller_update_policy = {
     ],
     "domain": ["Mined Blocks Space 2", "Beta Vector Space"],
     "codomain": ["K Space", "Beta Vector Space"],
-    "parameters_used": ["PID Parameterization", "Initial Block Difficulty"],
+    "parameters_used": [
+        "PID Parameterization",
+        "Initial Block Difficulty",
+        "Controller Alpha Parameter",
+    ],
     "metrics_used": ["Qi to Hash Metric", "Quai to Hash Metric"],
 }
 

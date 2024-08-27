@@ -32,6 +32,7 @@ cssclasses:
 │   │   ├──[[Global State-Qi Unlock Schedule\|Qi Unlock Schedule]]
 │   │   ├──[[Global State-Population Mining Beta Vector\|Population Mining Beta Vector]]
 │   │   ├──[[Global State-Estimated Mining Beta Vector\|Estimated Mining Beta Vector]]
+│   │   ├──[[Global State-Logistic Classifier\|Logistic Classifier]]
 ├──**Stateful Metrics**
 │   ├──Circulating Stateful Metrics
 │   │   ├──[[Circulating Quai Supply]]
@@ -75,6 +76,7 @@ cssclasses:
 │   ├──[[Return Parameterization Type]]
 │   ├──[[USD Array Type]]
 │   ├──[[PID Parameters Type]]
+│   ├──[[Logistic Classifier Type]]
 │   ├──[[Vesting Schedule Type]]
 │   ├──[[Unlock Schedule Type]]
 │   ├──[[Lockup Table Type]]
@@ -117,6 +119,7 @@ cssclasses:
 │   ├──Controller Parameter Set
 │   │   ├──[[PID Parameterization]]
 │   │   ├──[[Initial Block Difficulty]]
+│   │   ├──[[Controller Alpha Parameter]]
 │   ├──Mining Parameter Set
 │   │   ├──[[Block Difficulty Multiples]]
 │   │   ├──[[Target Mining Time]]

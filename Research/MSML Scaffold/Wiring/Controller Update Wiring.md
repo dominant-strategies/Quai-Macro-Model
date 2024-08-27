@@ -69,8 +69,9 @@ The wiring for the controller actions
 5. [[Terminating Space]]
 
 ## Parameters Used
-1. [[Initial Block Difficulty]]
-2. [[PID Parameterization]]
+1. [[Controller Alpha Parameter]]
+2. [[Initial Block Difficulty]]
+3. [[PID Parameterization]]
 
 ## Called By
 

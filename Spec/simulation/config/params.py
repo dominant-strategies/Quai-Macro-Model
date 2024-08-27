@@ -104,6 +104,7 @@ params_base = {
     "Speculator Percentage": 0.1,
     "Conversion Percentage Mu": 0.01,
     "Conversion Percentage Sigma": 0.001,
+    "Controller Alpha Parameter": 0.000001,
     "FP Controller Update Policy": "Reward Ratio Gain",
     "FP Conversions Boundary Action": "TEST Quai Conversion",
     "FP Mine Block Boundary Action": "Mine Block Boundary Action V2",

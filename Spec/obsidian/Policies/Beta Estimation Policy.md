@@ -14,3 +14,14 @@ The policy which determines the update to beta vector estimates.
 ## Constraints
 ## Parameters Used
 ## Metrics Used
+## Policy Options
+### 1. SGD Logistic Classifier Training
+#### Description
+Simple SGD training with partial fit.
+#### Logic
+X = [[1, x / log(x, params["Quai Reward Base Parameter"])] for x in spaces[0]["Block Difficulty"]]
+Y = [x > 0 for x in spaces[0]["Quai Taken"]]
+
+state["Logistic Classifier"].partial_fit(X, Y, classes=[0, 1])
+betas = state["Logistic Classifier"].coef_[0]
+

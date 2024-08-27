@@ -16,6 +16,10 @@ from .Vesting import unlock_tokens_mechanism
 from .Block import (
     update_block_difficulty_mechanism,
     append_to_unlock_schedule_mechanism,
+    update_historical_mined_ratio_mechanism,
+    update_historical_qi_hash_mechanism,
+    update_historical_quai_hash_mechanism,
+    increment_block_number_mechanism,
 )
 from .Controller import set_k_mechanism, set_estimated_beta_vector_mechanism
 
@@ -35,4 +39,8 @@ mechanisms = {
     "Append to Unlock Schedule Mechanism": append_to_unlock_schedule_mechanism,
     "Set K Mechanism": set_k_mechanism,
     "Set Estimated Beta Vector Mechanism": set_estimated_beta_vector_mechanism,
+    "Update Historical Mined Ratio Mechanism": update_historical_mined_ratio_mechanism,
+    "Update Historical Qi Hash Mechanism": update_historical_qi_hash_mechanism,
+    "Update Historical Quai Hash Mechanism": update_historical_quai_hash_mechanism,
+    "Increment Block Number Mechanism": increment_block_number_mechanism,
 }

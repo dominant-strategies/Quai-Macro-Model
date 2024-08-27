@@ -16,3 +16,21 @@ def append_to_unlock_schedule_mechanism(state, params, spaces):
     state["Qi Unlock Schedule"] = sorted(
         state["Qi Unlock Schedule"], key=lambda x: x["time"]
     )
+
+
+def update_historical_mined_ratio_mechanism(state, params, spaces):
+    state["Historical Mined Ratio"].append(spaces[0])
+
+
+def update_historical_qi_hash_mechanism(state, params, spaces):
+    if spaces[0]:
+        state["Historical Qi Hash"].append(spaces[0])
+
+
+def update_historical_quai_hash_mechanism(state, params, spaces):
+    if spaces[0]:
+        state["Historical Quai Hash"].append(spaces[0])
+
+
+def increment_block_number_mechanism(state, params, spaces):
+    state["Block Number"] += 1

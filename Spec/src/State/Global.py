@@ -184,5 +184,12 @@ global_state = {
             "symbol": None,
             "domain": None,
         },
+        {
+            "type": "Logistic Classifier Type",
+            "name": "Logistic Classifier",
+            "description": "The logistic classifier used for beta estimation",
+            "symbol": None,
+            "domain": None,
+        },
     ],
 }
