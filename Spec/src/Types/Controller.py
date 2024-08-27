@@ -4,4 +4,11 @@ PIDParametersType = {
     "notes": "Dictionary which has values for P, I and D",
 }
 
-controller_types = [PIDParametersType]
+LogisticClassifierType = {
+    "name": "Logistic Classifier Type",
+    "type": "LogisticClassifierType",
+    "notes": "",
+}
+
+
+controller_types = [PIDParametersType, LogisticClassifierType]
