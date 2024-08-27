@@ -7,7 +7,7 @@ from .Block import (
 )
 from .Market import block_reward_ratio_conversion_policy, price_movements_policy_v1
 from .Vesting import unlock_tokens_policy_v1
-
+from .Controller import sgd_logistic_classifier_training
 
 policies = {
     "DUMMY Letter Count Policy V1": dummy_letter_count_policy,
@@ -18,4 +18,5 @@ policies = {
     "Price Movements Policy V1": price_movements_policy_v1,
     "Unlock Tokens Policy V1": unlock_tokens_policy_v1,
     "Logistic Probability Payment Policy": logistic_probability_payment_policy,
+    "SGD Logistic Classifier Training": sgd_logistic_classifier_training,
 }
