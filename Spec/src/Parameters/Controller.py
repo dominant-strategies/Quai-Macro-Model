@@ -18,6 +18,14 @@ controller_parameter_set = {
             "domain": None,
             "parameter_class": "System",
         },
+        {
+            "variable_type": "Gain Type",
+            "name": "Controller Alpha Parameter",
+            "description": "The alpha parameter for tuning the adjustment speed",
+            "symbol": None,
+            "domain": None,
+            "parameter_class": "System",
+        },
     ],
 }
 

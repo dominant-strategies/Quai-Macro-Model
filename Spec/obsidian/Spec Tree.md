@@ -117,6 +117,7 @@ cssclasses:
 │   ├──Controller Parameter Set
 │   │   ├──[[PID Parameterization]]
 │   │   ├──[[Initial Block Difficulty]]
+│   │   ├──[[Controller Alpha Parameter]]
 │   ├──Mining Parameter Set
 │   │   ├──[[Block Difficulty Multiples]]
 │   │   ├──[[Target Mining Time]]

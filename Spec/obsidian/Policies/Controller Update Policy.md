@@ -15,8 +15,9 @@ The policy which determines the update to the K Values.
 2. [[Beta Vector Space]]
 ## Constraints
 ## Parameters Used
-1. [[Initial Block Difficulty]]
-2. [[PID Parameterization]]
+1. [[Controller Alpha Parameter]]
+2. [[Initial Block Difficulty]]
+3. [[PID Parameterization]]
 ## Metrics Used
 1. [[Qi to Hash Metric]]
 2. [[Quai to Hash Metric]]
