@@ -4,12 +4,22 @@ controller_wiring.append(
     {
         "name": "Controller Update Wiring",
         "components": [
-            "Controller Update Control Action",
+            "Beta Estimation Policy",
             "Controller Update Policy",
-            "Set K Mechanism",
+            "Controller Mechanisms",
         ],
         "description": "The wiring for the controller actions",
         "constraints": [],
         "type": "Stack",
+    }
+)
+
+controller_wiring.append(
+    {
+        "name": "Controller Mechanisms",
+        "components": ["Set K Mechanism", "Set Estimated Beta Vector Mechanism"],
+        "description": "The wiring for mechanisms for controllers",
+        "constraints": [],
+        "type": "Parallel",
     }
 )

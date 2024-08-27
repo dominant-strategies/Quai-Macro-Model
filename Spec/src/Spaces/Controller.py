@@ -15,4 +15,10 @@ k_space = {
     "schema": {"K Quai": "Gain Type", "K Qi": "Gain Type"},
 }
 
-controller_spaces = [observable_state_space, k_space]
+beta_vector_space = {
+    "name": "Beta Vector Space",
+    "schema": {"Beta": "Mining Beta Vector Type"},
+}
+
+
+controller_spaces = [observable_state_space, k_space, beta_vector_space]

@@ -170,5 +170,19 @@ global_state = {
             "symbol": None,
             "domain": None,
         },
+        {
+            "type": "Mining Beta Vector Type",
+            "name": "Population Mining Beta Vector",
+            "description": "The population betas, not known to the controller",
+            "symbol": None,
+            "domain": None,
+        },
+        {
+            "type": "Mining Beta Vector Type",
+            "name": "Estimated Mining Beta Vector",
+            "description": "The controllers current estimation of the beta vector",
+            "symbol": None,
+            "domain": None,
+        },
     ],
 }

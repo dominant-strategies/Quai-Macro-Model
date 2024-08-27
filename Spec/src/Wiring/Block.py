@@ -8,6 +8,7 @@ block_wiring.append(
             "Mining Policy",
             "Block Reward Policy",
             "Mining Payment Policy",
+            "Mezzanine Mining Wiring",
             "Mining Mechanisms",
         ],
         "description": """"The wiring for mining a block.
@@ -19,6 +20,20 @@ If the demand for Qi is greater than the supply, there should be a profitable op
         "type": "Stack",
     }
 )
+
+block_wiring.append(
+    {
+        "name": "Mezzanine Mining Wiring",
+        "components": [
+            "Controller Update Wiring",
+            "Mezzanine Wiring Passthrough",
+        ],
+        "description": "Passes through most of the spaces except for the ones needed for updating the controller",
+        "constraints": [],
+        "type": "Parallel",
+    }
+)
+
 
 block_wiring.append(
     {

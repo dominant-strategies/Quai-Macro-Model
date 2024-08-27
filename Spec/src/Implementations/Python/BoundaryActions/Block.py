@@ -66,3 +66,15 @@ def mine_block_boundary_action_v2(state, params, spaces):
         create_block_hashes_v1(state, params)
     )
     return [space]
+
+
+def test_mine_block_boundary_action(state, params, spaces):
+    space = {}
+    space["Aggregate Hashpower"] = params["Aggregate Hashpower Series"][
+        state["Block Number"]
+    ]
+
+    space["Blocks to Mine"] = [
+        {"Difficulty": state["Block Difficulty"]} for _ in range(16)
+    ]
+    return [space]

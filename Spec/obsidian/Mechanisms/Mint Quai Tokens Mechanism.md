@@ -2,8 +2,8 @@
 
 A mechanism which deals with minting Quai
 ## Called By
-1. [[Mining Payment Policy]]
-2. [[Conversions Policy]]
+1. [[Conversions Policy]]
+2. [[Mezzanine Wiring Passthrough]]
 ## Domain Spaces
 1. [[Quai Space]]
 ## Constraints

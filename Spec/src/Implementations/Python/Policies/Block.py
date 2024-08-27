@@ -2,6 +2,7 @@ from bisect import bisect
 import numpy as np
 from copy import deepcopy
 from math import log
+from random import random
 
 
 def compute_progress(state, params, block_hashes, block_hashes_cs, aggregate_hashpower):
@@ -50,7 +51,7 @@ def compute_difficulty_change(
     return block_hashes, block_hashes_cs, new_difficulty
 
 
-def mining_policy_v1(state, params, spaces):
+"""def mining_policy_v1(state, params, spaces):
     aggregate_hashpower, block_hashes, block_hashes_cs = (
         spaces[0]["Aggregate Hashpower"],
         spaces[0]["Blocks to Mine"],
@@ -75,22 +76,34 @@ def mining_policy_v1(state, params, spaces):
     for x, y in zip(l1, l2):
         l.append({"Mined Blocks": x, "Mining Time": y})
     space["Mining Epochs"] = l
+    return [space]"""
+
+
+def mining_policy_v1(state, params, spaces):
+    aggregate_hashpower, block_hashes = (
+        spaces[0]["Aggregate Hashpower"],
+        spaces[0]["Blocks to Mine"],
+    )
+
+    space = {}
+    space["Block Difficulty"] = [x["Difficulty"] for x in block_hashes]
+    space["Mining Time"] = sum(space["Block Difficulty"]) / aggregate_hashpower
+    space["New Difficulty"] = state["Block Difficulty"]
+
     return [space]
 
 
 def block_reward_policy_v1(state, params, spaces):
     space = deepcopy(spaces[0])
-    epochs = space.pop("Mining Epochs")
-    for x in epochs:
-        for y in x["Mined Blocks"]:
-            y["Qi Reward Offered"] = state["Metrics"]["Hash to Qi Metric"](
-                state, params, [{"Hash": y["Difficulty"]}]
-            )
-            y["Quai Reward Offered"] = state["Metrics"]["Hash to Quai Metric"](
-                state, params, [{"Hash": y["Difficulty"]}]
-            )
+    space["Quai Reward Offered"] = [
+        state["Metrics"]["Hash to Quai Metric"](state, params, [{"Hash": x}])
+        for x in space["Block Difficulty"]
+    ]
+    space["Qi Reward Offered"] = [
+        state["Metrics"]["Hash to Qi Metric"](state, params, [{"Hash": x}])
+        for x in space["Block Difficulty"]
+    ]
 
-    space["Mined Blocks"] = epochs
     return [space]
 
 
@@ -99,17 +112,26 @@ def deterministic_mining_payment_policy(state, params, spaces):
     mined_qi = 0
     quai_hash = 0
     qi_hash = 0
-    for block_epoch in spaces[0]["Mined Blocks"]:
-        for block in block_epoch["Mined Blocks"]:
-            if (
-                block["Quai Reward Offered"] * state["Quai Price"]
-                >= block["Qi Reward Offered"] * state["Qi Price"]
-            ):
-                mined_quai += block["Quai Reward Offered"]
-                quai_hash += block["Difficulty"]
-            else:
-                mined_qi += block["Qi Reward Offered"]
-                qi_hash += block["Difficulty"]
+    space0 = deepcopy(spaces[0])
+    space0["Quai Taken"] = []
+    space0["Qi Taken"] = []
+
+    bd_l, quai_rew_l, qi_reward_l = (
+        spaces[0]["Block Difficulty"],
+        spaces[0]["Quai Reward Offered"],
+        spaces[0]["Qi Reward Offered"],
+    )
+    for bd, quai_rew, qi_rew in zip(bd_l, quai_rew_l, qi_reward_l):
+        if quai_rew * state["Quai Price"] >= qi_rew * state["Qi Price"]:
+            mined_quai += quai_rew
+            quai_hash += bd
+            space0["Quai Taken"].append(quai_rew)
+            space0["Qi Taken"].append(0)
+        else:
+            mined_qi += qi_rew
+            qi_hash += bd
+            space0["Quai Taken"].append(0)
+            space0["Qi Taken"].append(qi_rew)
 
     space1 = {"Qi": mined_qi}
     space2 = {"Quai": mined_quai}
@@ -125,4 +147,54 @@ def deterministic_mining_payment_policy(state, params, spaces):
         "Block Height": state["Block Number"],
         "Hash Value": quai_hash,
     }
-    return [space1, space2, space3, space4, space5]
+    return [space0, space1, space2, space3, space4, space5]
+
+
+def logistic_probability_payment_policy(state, params, spaces):
+    mined_quai = 0
+    mined_qi = 0
+    quai_hash = 0
+    qi_hash = 0
+    space0 = deepcopy(spaces[0])
+    space0["Quai Taken"] = []
+    space0["Qi Taken"] = []
+
+    bd_l, quai_rew_l, qi_reward_l = (
+        spaces[0]["Block Difficulty"],
+        spaces[0]["Quai Reward Offered"],
+        spaces[0]["Qi Reward Offered"],
+    )
+    for bd, quai_rew, qi_rew in zip(bd_l, quai_rew_l, qi_reward_l):
+
+        d1 = bd
+        d2 = log(bd, params["Quai Reward Base Parameter"])
+        x = np.array([1, d1 / d2])
+        p = 1 / (1 + np.exp(-state["Population Mining Beta Vector"].dot(x)))
+
+        quai_chosen = random() <= p
+        if quai_chosen:
+            mined_quai += quai_rew
+            quai_hash += bd
+            space0["Quai Taken"].append(quai_rew)
+            space0["Qi Taken"].append(0)
+        else:
+            mined_qi += qi_rew
+            qi_hash += bd
+            space0["Quai Taken"].append(0)
+            space0["Qi Taken"].append(qi_rew)
+
+    space1 = {"Qi": mined_qi}
+    space2 = {"Quai": mined_quai}
+    space3 = {
+        "Block Height": state["Block Number"],
+        "Ratio": mined_quai / (mined_quai + mined_qi),
+    }
+    space4 = {
+        "Block Height": state["Block Number"],
+        "Hash Value": qi_hash,
+    }
+    space5 = {
+        "Block Height": state["Block Number"],
+        "Hash Value": quai_hash,
+    }
+    return [space0, space1, space2, space3, space4, space5]

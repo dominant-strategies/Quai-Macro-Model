@@ -26,6 +26,8 @@
 |[[Global State-Delta Time\|Delta Time]]|The amount of time covered in the current simulation epoch.|[[Delta Time Type]]|||
 |[[Global State-Quai Unlock Schedule\|Quai Unlock Schedule]]|The schedule of Quai token unlocks that will happen in the future|[[Unlock Schedule Type]]|||
 |[[Global State-Qi Unlock Schedule\|Qi Unlock Schedule]]|The schedule of Qi token unlocks that will happen in the future|[[Unlock Schedule Type]]|||
+|[[Global State-Population Mining Beta Vector\|Population Mining Beta Vector]]|The population betas, not known to the controller|[[Mining Beta Vector Type]]|||
+|[[Global State-Estimated Mining Beta Vector\|Estimated Mining Beta Vector]]|The controllers current estimation of the beta vector|[[Mining Beta Vector Type]]|||
 
 
 ## Updated By
@@ -47,6 +49,7 @@
 ### [[Update Locked Quai Mechanism]]
 ### [[Set K Mechanism]]
 ### [[Set K Mechanism]]
+### [[Set Estimated Beta Vector Mechanism]]
 ### [[Unlock Tokens Mechanism]]
 ### [[Unlock Tokens Mechanism]]
 ### [[Unlock Tokens Mechanism]]

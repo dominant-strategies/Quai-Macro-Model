@@ -38,25 +38,68 @@ Importantly, these block reward functions only define how many Quai/Qi tokens ca
 mining_payment_policy_option1 = {
     "name": "Deterministic Mining Payment Policy",
     "description": "User chooses either all Qi or all Quai based on which is more valuable based on USD prices.",
-    "logic": """
-Compare the price of Qi times Qi amount to price of Quai times Quai amount and pick the larger sum. Then the values for each iteration loop are as follows:
+    "logic": """Compare the price of Qi times Qi amount to price of Quai times Quai amount and pick the larger sum. Then the values for each iteration loop are as follows:
 1. Qi Space is equal to 0 or the Qi amount
 2. Quai Space is equal to 0 or the Quai amount
 3. Mined Ratio Space has 0 if Qi was chosen, 1 if Quai was chosen
 4. Qi Hash Space has 0 if Quai was chosen, otherwise $QiToHashMetric(Qi)$
 5. Quai Hash Space has 0 if Qi was chosen, otherwise $QuaiToHashMetric(Quai)$
-
-
-Aggregate all the data into total values after iteration.""",
+6. The first space passed out before those 5 will be a copy of the domain space filled in with the options chosen by each miner""",
 }
+
+mining_payment_policy_option2 = {
+    "name": "Logistic Probability Payment Policy",
+    "description": r"""In what follows:
+$$
+  c_i = 
+  \begin{cases}
+    1 & \text{if token 1 is chosen} \\
+    0 & \text{if token 2 is chosen}.
+  \end{cases}
+$$
+
+Miner choices $c_i$ are assumed to be independently distributed such that for a block at height $i$,
+$$
+  p_i = \Pr(c_i = 1 | r_{i1}, r_{i2}, d_i ) := \frac{1}{1 + \exp(- \pmb{\beta}'\mathbf x_i) },
+$$
+where $\mathbf x_i$ is a set of features and $\pmb \beta$ their associated weights. It may be that the first such feature is $1$, so that the first weight is an intercept/'bias' term. Note that the linear term $\pmb{\beta}' \mathbf x$ is consistent with an interpretation of the above as coming from a latent variable/random utility model of the miner.
+
+Given the data set $z_k$, maximum likelihood estimation yields estimates $\hat{\pmb{\beta}}$.
+
+
+### Objective: stability via indifference
+
+The controller seeks to stabilize an imputed value of hashpower (difficulty) by adjusting the proposed block rewards so that the miner would have been _indifferent_ between receiving an award in _qi_ (token 1) or _quai_ (token 2). The interpretation of this is that _deviations from indifference reveals that one token is more valuable than the other_. In the case that one token (_qi_) is to reflect the value of hashpower (difficulty), indifference is a _reference_ or _focal_ point from which the value of hashpower may be observed from miner decisions.
+
+Indifference is when $p_i = 0.5$. Given $\hat{\pmb{\beta}}$, it is clear that the _invariant surface_ of features satisfies
+$$
+  \hat{\pmb{\beta}}' \mathbf x \equiv 0.
+$$
+
+Refining this further requires a definition of the features $\mathbf x$.
+
+### A simple example
+
+The simplest example is where $\mathbf x_i = (1, x_i) := (1, d_i/\log_2(d_i))$. In this case the invariant surface above yields a value $d_i = d^\star$ such that
+$$
+  \frac{d^\star}{\log_2(d^\star)} = -\frac{\hat{\beta_0}}{\hat{\beta_1}}.
+$$
+
+This is the difficulty level that would have to obtain in order for a miner to be (on average) indifferent between selecting token 1 and token 2. In this case define $x^\star(\hat{\pmb{\beta}}) = d^\star / \log_2(d^\star)$ (we will sometimes drop the dependence of $x^\star$ upon $\hat{\pmb{\beta}}$ for brevity in what follows, but it is important always to recall that $x^\star$ is derived from the _estimation problem_ the controller performs in finding a miner's indifference point).
+
+[It is worth noting here that provided $d_i > e$, $\frac{dx_i}{d(d_i)} > 0$, i.e. increasing difficulty $d_i$ will increase $x_i$ and hence increase $p_i$ from the logistic expression above. There is thus a weak restriction on $d_i$ under this approach.]""",
+    "logic": r"Get probabilities of Quai as the population beta vector by (1, d_i/\log_2(d_i))",
+}
+
 
 mining_payment_policy = {
     "name": "Mining Payment Policy",
     "description": "Policy which determines what amount of Quai vs. Qi is taken as payment.",
     "constraints": [],
-    "policy_options": [mining_payment_policy_option1],
+    "policy_options": [mining_payment_policy_option1, mining_payment_policy_option2],
     "domain": ["Block Reward Options Space"],
     "codomain": [
+        "Mined Blocks Space 2",
         "Qi Space",
         "Quai Space",
         "Mined Ratio Space",
@@ -67,18 +110,43 @@ mining_payment_policy = {
     "metrics_used": ["Qi to Hash Metric", "Quai to Hash Metric"],
 }
 
+mezzanine_wiring_passthrough = {
+    "name": "Mezzanine Wiring Passthrough",
+    "description": "Policy which passes through the spaces for the mezzanine wiring.",
+    "constraints": [],
+    "policy_options": [],
+    "domain": [
+        "Qi Space",
+        "Quai Space",
+        "Mined Ratio Space",
+        "Qi Hash Space",
+        "Quai Hash Space",
+    ],
+    "codomain": [
+        "Qi Space",
+        "Quai Space",
+        "Mined Ratio Space",
+        "Qi Hash Space",
+        "Quai Hash Space",
+    ],
+    "parameters_used": [],
+    "metrics_used": [],
+}
+
 
 mining_policy_v1 = {
     "name": "Mining Policy V1",
     "description": "A baseline mining policy",
-    "logic": """Until all blocks are mined the following while loop continues:
-1. Given hashpower and the target mining time (parameter), see how many blocks can be mined. If prime block is mined cut the time at target time, otherwise compute the time taken for mining all the blocks.
-2. Pass the time taken to difficulty adjustment which if time taken was < .8 of target time will increase difficulty, or if it was equal to target time will decrease difficulty. Block difficulties leftover still are adjusted by this amount.
-The final returned object will have the epochs (only 1 if prime block is mined in the first epoch) as well as the final new difficulty after any adjustments""",
+    "logic": """1. Create a space with no attributes
+2. Assign the "Block Difficulty" as the array of difficulties presented in the domain
+3. Add an attribute for "Mining Time" which is the sum of block difficulties / the aggregate hashpower taken from the domain
+4. Find the new block difficulty by TBD""",
 }
+
+
 mining_policy = {
     "name": "Mining Policy",
-    "description": "Policy for mining and how long it takes in terms of epochs and also the time epochs take.",
+    "description": "Policy for mining and how long it takes to mine as well as difficulty adjustment.",
     "constraints": [],
     "policy_options": [mining_policy_v1],
     "domain": ["Pre-Mining Space"],
@@ -88,4 +156,9 @@ mining_policy = {
 }
 
 
-block_policies = [block_reward_policy, mining_payment_policy, mining_policy]
+block_policies = [
+    block_reward_policy,
+    mining_payment_policy,
+    mining_policy,
+    mezzanine_wiring_passthrough,
+]

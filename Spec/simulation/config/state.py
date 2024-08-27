@@ -22,4 +22,6 @@ state_base = {
     "Delta Time": 0,
     "Quai Unlock Schedule": None,  # Set in state preperation function
     "Qi Unlock Schedule": None,  # Set in state preperation functions
+    "Population Mining Beta Vector": None,
+    "Estimated Mining Beta Vector": None,
 }

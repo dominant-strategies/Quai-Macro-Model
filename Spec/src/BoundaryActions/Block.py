@@ -14,6 +14,12 @@ mine_block_boundary_action2 = {
     TBD""",
 }
 
+mine_block_boundary_action3 = {
+    "name": "TEST Mine Block Boundary Action",
+    "description": "Testing function which pulls the aggereagete hashpower and then assigns deterministically the current difficulty to 16 blocks.",
+    "logic": """""",
+}
+
 mine_block_boundary_action = {
     "name": "Mine Block Boundary Action",
     "description": "Boundary action which determines the the aggregate hashpower as well as the blocks that need to be mined and their difficulties.",
@@ -21,6 +27,7 @@ mine_block_boundary_action = {
     "boundary_action_options": [
         mine_block_boundary_action1,
         mine_block_boundary_action2,
+        mine_block_boundary_action3,
     ],
     "called_by": [],
     "codomain": [

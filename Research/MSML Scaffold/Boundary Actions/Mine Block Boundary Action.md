@@ -28,3 +28,9 @@ Boundary action for determining the blocks to mine and aggregate hashpower.
 1. Aggregate hashpower is pulled from the [[Aggregate Hashpower Series]] parameter
     TBD
 
+### 3. TEST Mine Block Boundary Action
+#### Description
+Testing function which pulls the aggereagete hashpower and then assigns deterministically the current difficulty to 16 blocks.
+#### Logic
+
+

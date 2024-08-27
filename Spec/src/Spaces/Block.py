@@ -1,11 +1,14 @@
 block_reward_options_space = {
     "name": "Block Reward Options Space",
     "schema": {
-        "Quai Reward Offered": "Quai Type",
-        "Qi Reward Offered": "Qi Type",
-        "Block Difficulty": "Block Difficulty Type",
+        "Quai Reward Offered": "Quai Array Type",
+        "Qi Reward Offered": "Qi Array Type",
+        "Block Difficulty": "Hash Array Type",
+        "Mining Time": "Delta Time Type",
+        "New Difficulty": "Block Difficulty Type",
     },
 }
+
 
 block_difficulty_space = {
     "name": "Block Difficulty Space",
@@ -17,7 +20,6 @@ pre_mining_space = {
     "schema": {
         "Blocks to Mine": "Block Array Type",
         "Aggregate Hashpower": "Hashpower per Second",
-        "Block Hash Cumulative Sum": "Hash Cumulative Sum Array Type",
     },
 }
 
@@ -48,10 +50,26 @@ quai_hash_space = {
 mined_blocks_space = {
     "name": "Mined Blocks Space",
     "schema": {
-        "Mining Epochs": "Mining Epoch Array Type",
+        "Block Difficulty": "Hash Array Type",
+        "Mining Time": "Delta Time Type",
         "New Difficulty": "Block Difficulty Type",
     },
 }
+
+mined_blocks_space2 = {
+    "name": "Mined Blocks Space 2",
+    "schema": {
+        "Quai Reward Offered": "Quai Array Type",
+        "Qi Reward Offered": "Qi Array Type",
+        "Block Difficulty": "Hash Array Type",
+        "Mining Time": "Delta Time Type",
+        "Quai Taken": "Quai Array Type",
+        "Qi Taken": "Qi Array Type",
+        "New Difficulty": "Block Difficulty Type",
+        "Mining Time": "Delta Time Type",
+    },
+}
+
 
 hash_space = {
     "name": "Hash Space",
@@ -70,4 +88,5 @@ block_spaces = [
     pre_mining_space,
     mined_blocks_space,
     hash_space,
+    mined_blocks_space2,
 ]
