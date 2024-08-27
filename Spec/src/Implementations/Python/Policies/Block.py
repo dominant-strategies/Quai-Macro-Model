@@ -147,3 +147,46 @@ def deterministic_mining_payment_policy(state, params, spaces):
         "Hash Value": quai_hash,
     }
     return [space0, space1, space2, space3, space4, space5]
+
+
+def logistic_probability_payment_policy(state, params, spaces):
+    mined_quai = 0
+    mined_qi = 0
+    quai_hash = 0
+    qi_hash = 0
+    space0 = deepcopy(spaces[0])
+    space0["Quai Taken"] = []
+    space0["Qi Taken"] = []
+
+    bd_l, quai_rew_l, qi_reward_l = (
+        spaces[0]["Block Difficulty"],
+        spaces[0]["Quai Reward Offered"],
+        spaces[0]["Qi Reward Offered"],
+    )
+    for bd, quai_rew, qi_rew in zip(bd_l, quai_rew_l, qi_reward_l):
+        if quai_rew * state["Quai Price"] >= qi_rew * state["Qi Price"]:
+            mined_quai += quai_rew
+            quai_hash += bd
+            space0["Quai Taken"].append(quai_rew)
+            space0["Qi Taken"].append(0)
+        else:
+            mined_qi += qi_rew
+            qi_hash += bd
+            space0["Quai Taken"].append(0)
+            space0["Qi Taken"].append(qi_rew)
+
+    space1 = {"Qi": mined_qi}
+    space2 = {"Quai": mined_quai}
+    space3 = {
+        "Block Height": state["Block Number"],
+        "Ratio": mined_quai / (mined_quai + mined_qi),
+    }
+    space4 = {
+        "Block Height": state["Block Number"],
+        "Hash Value": qi_hash,
+    }
+    space5 = {
+        "Block Height": state["Block Number"],
+        "Hash Value": quai_hash,
+    }
+    return [space0, space1, space2, space3, space4, space5]
