@@ -47,11 +47,56 @@ mining_payment_policy_option1 = {
 6. The first space passed out before those 5 will be a copy of the domain space filled in with the options chosen by each miner""",
 }
 
+mining_payment_policy_option2 = {
+    "name": "Logistic Probability Payment Policy",
+    "description": r"""In what follows:
+$$
+  c_i = 
+  \begin{cases}
+    1 & \text{if token 1 is chosen} \\
+    0 & \text{if token 2 is chosen}.
+  \end{cases}
+$$
+
+Miner choices $c_i$ are assumed to be independently distributed such that for a block at height $i$,
+$$
+  p_i = \Pr(c_i = 1 | r_{i1}, r_{i2}, d_i ) := \frac{1}{1 + \exp(- \pmb{\beta}'\mathbf x_i) },
+$$
+where $\mathbf x_i$ is a set of features and $\pmb \beta$ their associated weights. It may be that the first such feature is $1$, so that the first weight is an intercept/'bias' term. Note that the linear term $\pmb{\beta}' \mathbf x$ is consistent with an interpretation of the above as coming from a latent variable/random utility model of the miner.
+
+Given the data set $z_k$, maximum likelihood estimation yields estimates $\hat{\pmb{\beta}}$.
+
+
+### Objective: stability via indifference
+
+The controller seeks to stabilize an imputed value of hashpower (difficulty) by adjusting the proposed block rewards so that the miner would have been _indifferent_ between receiving an award in _qi_ (token 1) or _quai_ (token 2). The interpretation of this is that _deviations from indifference reveals that one token is more valuable than the other_. In the case that one token (_qi_) is to reflect the value of hashpower (difficulty), indifference is a _reference_ or _focal_ point from which the value of hashpower may be observed from miner decisions.
+
+Indifference is when $p_i = 0.5$. Given $\hat{\pmb{\beta}}$, it is clear that the _invariant surface_ of features satisfies
+$$
+  \hat{\pmb{\beta}}' \mathbf x \equiv 0.
+$$
+
+Refining this further requires a definition of the features $\mathbf x$.
+
+### A simple example
+
+The simplest example is where $\mathbf x_i = (1, x_i) := (1, d_i/\log_2(d_i))$. In this case the invariant surface above yields a value $d_i = d^\star$ such that
+$$
+  \frac{d^\star}{\log_2(d^\star)} = -\frac{\hat{\beta_0}}{\hat{\beta_1}}.
+$$
+
+This is the difficulty level that would have to obtain in order for a miner to be (on average) indifferent between selecting token 1 and token 2. In this case define $x^\star(\hat{\pmb{\beta}}) = d^\star / \log_2(d^\star)$ (we will sometimes drop the dependence of $x^\star$ upon $\hat{\pmb{\beta}}$ for brevity in what follows, but it is important always to recall that $x^\star$ is derived from the _estimation problem_ the controller performs in finding a miner's indifference point).
+
+[It is worth noting here that provided $d_i > e$, $\frac{dx_i}{d(d_i)} > 0$, i.e. increasing difficulty $d_i$ will increase $x_i$ and hence increase $p_i$ from the logistic expression above. There is thus a weak restriction on $d_i$ under this approach.]""",
+    "logic": r"Get probabilities of Quai as the population beta vector by (1, d_i/\log_2(d_i))",
+}
+
+
 mining_payment_policy = {
     "name": "Mining Payment Policy",
     "description": "Policy which determines what amount of Quai vs. Qi is taken as payment.",
     "constraints": [],
-    "policy_options": [mining_payment_policy_option1],
+    "policy_options": [mining_payment_policy_option1, mining_payment_policy_option2],
     "domain": ["Block Reward Options Space"],
     "codomain": [
         "Mined Blocks Space 2",
