@@ -2,6 +2,7 @@ from bisect import bisect
 import numpy as np
 from copy import deepcopy
 from math import log
+from random import random
 
 
 def compute_progress(state, params, block_hashes, block_hashes_cs, aggregate_hashpower):
@@ -164,7 +165,14 @@ def logistic_probability_payment_policy(state, params, spaces):
         spaces[0]["Qi Reward Offered"],
     )
     for bd, quai_rew, qi_rew in zip(bd_l, quai_rew_l, qi_reward_l):
-        if quai_rew * state["Quai Price"] >= qi_rew * state["Qi Price"]:
+
+        d1 = bd
+        d2 = log(bd, params["Quai Reward Base Parameter"])
+        x = np.array([1, d1 / d2])
+        p = 1 / (1 + np.exp(-state["Population Mining Beta Vector"].dot(x)))
+
+        quai_chosen = random() <= p
+        if quai_chosen:
             mined_quai += quai_rew
             quai_hash += bd
             space0["Quai Taken"].append(quai_rew)
