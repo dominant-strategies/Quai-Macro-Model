@@ -20,7 +20,13 @@ mine_block_boundary_action3 = {
     "logic": """""",
 }
 
-# mine_block_boundary_action4 = {"name": "Mine Block Boundary Action V3"}
+mine_block_boundary_action4 = {
+    "name": "Mine Block Boundary Action V3",
+    "description": "Current working version of the boundary action for mining a block.",
+    "logic": """1. Aggregate hashpower is pulled from the [[Aggregate Hashpower Series]] parameter
+    2. TBD determine number of blocks
+    3. Difficulty for blocks is equal to current block difficulty times randomness parameters for block difficulty""",
+}
 
 mine_block_boundary_action = {
     "name": "Mine Block Boundary Action",
@@ -30,6 +36,7 @@ mine_block_boundary_action = {
         mine_block_boundary_action1,
         mine_block_boundary_action2,
         mine_block_boundary_action3,
+        mine_block_boundary_action4,
     ],
     "called_by": [],
     "codomain": [
