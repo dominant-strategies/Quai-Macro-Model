@@ -10,4 +10,11 @@ def update_historical_converted_quai_mechanism(state, params, spaces):
 
 def log_simulation_data_mechanism(state, params, spaces):
     log = {}
+
+    log["Estimate Beta0"] = state["Estimated Mining Beta Vector"][0]
+    log["Estimate Beta1"] = state["Estimated Mining Beta Vector"][1]
+
+    log["Population Beta0"] = state["Population Mining Beta Vector"][0]
+    log["Population Beta1"] = state["Population Mining Beta Vector"][1]
+
     state["Simulation History Log"].append(log)
