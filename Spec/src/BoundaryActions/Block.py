@@ -20,6 +20,8 @@ mine_block_boundary_action3 = {
     "logic": """""",
 }
 
+# mine_block_boundary_action4 = {"name": "Mine Block Boundary Action V3"}
+
 mine_block_boundary_action = {
     "name": "Mine Block Boundary Action",
     "description": "Boundary action which determines the the aggregate hashpower as well as the blocks that need to be mined and their difficulties.",
