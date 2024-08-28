@@ -171,17 +171,17 @@ def logistic_probability_payment_policy(state, params, spaces):
         x = np.array([1, d1 / d2])
         p = 1 / (1 + np.exp(-state["Population Mining Beta Vector"].dot(x)))
 
-        quai_chosen = random() <= p
-        if quai_chosen:
-            mined_quai += quai_rew
-            quai_hash += bd
-            space0["Quai Taken"].append(quai_rew)
-            space0["Qi Taken"].append(0)
-        else:
+        qi_chosen = random() <= p
+        if qi_chosen:
             mined_qi += qi_rew
             qi_hash += bd
             space0["Quai Taken"].append(0)
             space0["Qi Taken"].append(qi_rew)
+        else:
+            mined_quai += quai_rew
+            quai_hash += bd
+            space0["Quai Taken"].append(quai_rew)
+            space0["Qi Taken"].append(0)
 
     space1 = {"Qi": mined_qi}
     space2 = {"Quai": mined_quai}
