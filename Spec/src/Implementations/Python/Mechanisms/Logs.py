@@ -17,4 +17,6 @@ def log_simulation_data_mechanism(state, params, spaces):
     log["Population Beta0"] = state["Population Mining Beta Vector"][0]
     log["Population Beta1"] = state["Population Mining Beta Vector"][1]
 
+    log["Block Number"] = state["Block Number"]
+
     state["Simulation History Log"].append(log)
