@@ -126,6 +126,8 @@ cssclasses:
 │   │   ├──[[Quai Reward Base Parameter]]
 │   │   ├──[[Aggregate Hashpower Series]]
 │   │   ├──[[Difficulty Adjustment Period]]
+│   │   ├──[[Difficulty Randomness Sigma]]
+│   │   ├──[[Difficulty Randomness Mu]]
 │   ├──Vesting Parameter Set
 │   │   ├──[[Initial Vesting Schedule]]
 │   │   ├──[[Lockup Options]]

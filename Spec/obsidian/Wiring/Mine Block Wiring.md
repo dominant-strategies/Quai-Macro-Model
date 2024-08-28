@@ -172,9 +172,11 @@ If the demand for Qi is greater than the supply, there should be a profitable op
 ## Parameters Used
 1. [[Aggregate Hashpower Series]]
 2. [[Controller Alpha Parameter]]
-3. [[Initial Block Difficulty]]
-4. [[PID Parameterization]]
-5. [[Quai Reward Base Parameter]]
+3. [[Difficulty Randomness Mu]]
+4. [[Difficulty Randomness Sigma]]
+5. [[Initial Block Difficulty]]
+6. [[PID Parameterization]]
+7. [[Quai Reward Base Parameter]]
 
 ## Called By
 
