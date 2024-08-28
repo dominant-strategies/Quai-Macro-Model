@@ -105,6 +105,8 @@ params_base = {
     "Conversion Percentage Mu": 0.01,
     "Conversion Percentage Sigma": 0.001,
     "Controller Alpha Parameter": 0.000001,
+    "Difficulty Randomness Sigma": 0.05,
+    "Difficulty Randomness Mu": 1,
     "FP Controller Update Policy": "Reward Ratio Gain",
     "FP Conversions Boundary Action": "Conversions Boundary Action V1",
     "FP Mine Block Boundary Action": "Mine Block Boundary Action V2",

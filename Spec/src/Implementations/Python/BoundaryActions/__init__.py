@@ -3,6 +3,7 @@ from .Block import (
     mine_block_boundary_action_v1,
     mine_block_boundary_action_v2,
     test_mine_block_boundary_action,
+    mine_block_boundary_action_v3,
 )
 from .Conversions import (
     test_quai_conversion,
@@ -23,4 +24,5 @@ boundary_action_options = {
     "Hashpower Price Movement": hashpower_price_movement,
     "Conversions Boundary Action V1": conversions_boundary_action_v1,
     "TEST Mine Block Boundary Action": test_mine_block_boundary_action,
+    "Mine Block Boundary Action V3": mine_block_boundary_action_v3,
 }
