@@ -88,10 +88,10 @@ params_base = {
             "duration": 2,
         },
     ],
-    "Aggregate Hashpower Series": [x * 1000 for x in range(1, 1002)],
+    "Aggregate Hashpower Series": [x * 1000 for x in range(1, 10002)],
     "Difficulty Adjustment Period": 200,
     "Price EWMA Lambda": 0.05,
-    "Hashpower Cost Series": [x / 10 for x in range(1, 1002)],
+    "Hashpower Cost Series": [x / 10 for x in range(1, 10002)],
     "Qi Price Movemement Sigma": 0.01,
     "Quai Price Movemement Sigma": 0.01,
     "Lockup Options": {
