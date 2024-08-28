@@ -106,7 +106,7 @@ params_base = {
     "Conversion Percentage Sigma": 0.001,
     "Controller Alpha Parameter": 0.000001,
     "FP Controller Update Policy": "Reward Ratio Gain",
-    "FP Conversions Boundary Action": "TEST Quai Conversion",
+    "FP Conversions Boundary Action": "Conversions Boundary Action V1",
     "FP Mine Block Boundary Action": "Mine Block Boundary Action V2",
     "FP Price Movements Boundary Action": "Hashpower Price Movement",
     "FP Mining Payment Policy": "Logistic Probability Payment Policy",
