@@ -34,3 +34,11 @@ Testing function which pulls the aggereagete hashpower and then assigns determin
 #### Logic
 
 
+### 4. Mine Block Boundary Action V3
+#### Description
+Current working version of the boundary action for mining a block.
+#### Logic
+1. Aggregate hashpower is pulled from the [[Aggregate Hashpower Series]] parameter
+    2. TBD determine number of blocks
+    3. Difficulty for blocks is equal to current block difficulty times randomness parameters for block difficulty
+

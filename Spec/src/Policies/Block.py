@@ -88,7 +88,7 @@ $$
 This is the difficulty level that would have to obtain in order for a miner to be (on average) indifferent between selecting token 1 and token 2. In this case define $x^\star(\hat{\pmb{\beta}}) = d^\star / \log_2(d^\star)$ (we will sometimes drop the dependence of $x^\star$ upon $\hat{\pmb{\beta}}$ for brevity in what follows, but it is important always to recall that $x^\star$ is derived from the _estimation problem_ the controller performs in finding a miner's indifference point).
 
 [It is worth noting here that provided $d_i > e$, $\frac{dx_i}{d(d_i)} > 0$, i.e. increasing difficulty $d_i$ will increase $x_i$ and hence increase $p_i$ from the logistic expression above. There is thus a weak restriction on $d_i$ under this approach.]""",
-    "logic": r"Get probabilities of Quai as the population beta vector by (1, d_i/\log_2(d_i))",
+    "logic": r"Get probabilities of Qi as the population beta vector by (1, d_i/\log_2(d_i))",
 }
 
 

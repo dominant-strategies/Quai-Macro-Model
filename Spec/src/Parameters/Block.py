@@ -42,8 +42,23 @@ mining_parameter_set = {
             "domain": None,
             "parameter_class": "System",
         },
+        {
+            "variable_type": "Float Type",
+            "name": "Difficulty Randomness Sigma",
+            "description": "The mean value for randomness percentage multiplied into block difficulties (1 being default/average equal to block difficulty)",
+            "symbol": None,
+            "domain": None,
+            "parameter_class": "System",
+        },
+        {
+            "variable_type": "Float Type",
+            "name": "Difficulty Randomness Mu",
+            "description": "The standard deviation of the percentage multiplied into block difficulties",
+            "symbol": None,
+            "domain": None,
+            "parameter_class": "System",
+        },
     ],
 }
-
 
 block_parameter_sets = [mining_parameter_set]

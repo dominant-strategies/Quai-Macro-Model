@@ -78,3 +78,28 @@ def test_mine_block_boundary_action(state, params, spaces):
         {"Difficulty": state["Block Difficulty"]} for _ in range(16)
     ]
     return [space]
+
+
+def mine_block_boundary_action_v3(state, params, spaces):
+    space = {}
+    space["Aggregate Hashpower"] = params["Aggregate Hashpower Series"][
+        state["Block Number"]
+    ]
+
+    # TODO
+    n_blocks = 16
+
+    space["Blocks to Mine"] = [
+        {
+            "Difficulty": state["Block Difficulty"]
+            * max(
+                np.random.normal(
+                    params["Difficulty Randomness Mu"],
+                    params["Difficulty Randomness Sigma"],
+                ),
+                0.01,
+            )
+        }
+        for _ in range(16)
+    ]
+    return [space]

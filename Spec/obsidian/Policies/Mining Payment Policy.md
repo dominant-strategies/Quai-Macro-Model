@@ -79,5 +79,5 @@ This is the difficulty level that would have to obtain in order for a miner to b
 
 [It is worth noting here that provided $d_i > e$, $\frac{dx_i}{d(d_i)} > 0$, i.e. increasing difficulty $d_i$ will increase $x_i$ and hence increase $p_i$ from the logistic expression above. There is thus a weak restriction on $d_i$ under this approach.]
 #### Logic
-Get probabilities of Quai as the population beta vector by (1, d_i/\log_2(d_i))
+Get probabilities of Qi as the population beta vector by (1, d_i/\log_2(d_i))
 

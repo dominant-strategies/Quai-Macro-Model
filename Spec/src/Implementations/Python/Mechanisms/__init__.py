@@ -11,6 +11,7 @@ from .MonetaryPolicy import (
 from .Logs import (
     update_historical_converted_qi_mechanism,
     update_historical_converted_quai_mechanism,
+    log_simulation_data_mechanism,
 )
 from .Vesting import unlock_tokens_mechanism
 from .Block import (
@@ -43,4 +44,5 @@ mechanisms = {
     "Update Historical Qi Hash Mechanism": update_historical_qi_hash_mechanism,
     "Update Historical Quai Hash Mechanism": update_historical_quai_hash_mechanism,
     "Increment Block Number Mechanism": increment_block_number_mechanism,
+    "Log Simulation Data Mechanism": log_simulation_data_mechanism,
 }
