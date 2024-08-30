@@ -1,4 +1,5 @@
 import numpy as np
+from random import choice
 
 
 def create_block_hashes_v1(state, params):
@@ -101,4 +102,7 @@ def mine_block_boundary_action_v3(state, params, spaces):
         }
         for _ in range(n_blocks)
     ]
+    L = state["Stateful Metrics"]["Current Lockup Options"](state, params)
+    H = list(L.keys())
+    space["Locking Times"] = [choice(H) for _ in range(n_blocks)]
     return [space]
