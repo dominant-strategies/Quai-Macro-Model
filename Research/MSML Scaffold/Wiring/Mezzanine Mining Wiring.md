@@ -48,12 +48,22 @@ X10 --"Qi Space
 Quai Space
 Mined Ratio Space
 Qi Hash Space
-Quai Hash Space"------> X9
+Quai Hash Space
+Qi Space
+Quai Space
+Unlock Schedule Entry Space
+Mined Blocks Space 2
+Mined Blocks Space 2"-----------> X9
 X9 --"Qi Space
 Quai Space
 Mined Ratio Space
 Qi Hash Space
-Quai Hash Space"--> X11
+Quai Hash Space
+Qi Space
+Quai Space
+Unlock Schedule Entry Space
+Mined Blocks Space 2
+Mined Blocks Space 2"--> X11
 end
 ```
 
@@ -81,6 +91,11 @@ Passes through most of the spaces except for the ones needed for updating the co
 4. [[Mined Ratio Space]]
 5. [[Qi Hash Space]]
 6. [[Quai Hash Space]]
+7. [[Qi Space]]
+8. [[Quai Space]]
+9. [[Unlock Schedule Entry Space]]
+10. [[Mined Blocks Space 2]]
+11. [[Mined Blocks Space 2]]
 
 ## Codomain Spaces
 1. [[Qi Space]]
@@ -88,6 +103,11 @@ Passes through most of the spaces except for the ones needed for updating the co
 3. [[Mined Ratio Space]]
 4. [[Qi Hash Space]]
 5. [[Quai Hash Space]]
+6. [[Qi Space]]
+7. [[Quai Space]]
+8. [[Unlock Schedule Entry Space]]
+9. [[Mined Blocks Space 2]]
+10. [[Mined Blocks Space 2]]
 
 ## All Spaces Used
 1. [[Beta Vector Space]]
@@ -100,6 +120,7 @@ Passes through most of the spaces except for the ones needed for updating the co
 8. [[Quai Hash Space]]
 9. [[Quai Space]]
 10. [[Terminating Space]]
+11. [[Unlock Schedule Entry Space]]
 
 ## Parameters Used
 1. [[Controller Alpha Parameter]]

@@ -25,4 +25,5 @@ state_base = {
     "Population Mining Beta Vector": None,
     "Estimated Mining Beta Vector": None,
     "Logistic Classifier": None,  # Set in state preperation functions
+    "Mining Log": None,  # Set in state preperation functions
 }

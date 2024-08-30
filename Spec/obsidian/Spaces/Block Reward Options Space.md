@@ -4,4 +4,5 @@
 Qi Reward Offered: [[Qi Array Type]],
 Block Difficulty: [[Hash Array Type]],
 Mining Time: [[Delta Time Type]],
-New Difficulty: [[Block Difficulty Type]]}
+New Difficulty: [[Block Difficulty Type]],
+Locking Times: [[Delta Time Array Type]]}

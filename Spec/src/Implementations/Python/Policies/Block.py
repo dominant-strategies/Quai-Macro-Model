@@ -88,7 +88,13 @@ def mining_policy_v1(state, params, spaces):
     space = {}
     space["Block Difficulty"] = [x["Difficulty"] for x in block_hashes]
     space["Mining Time"] = sum(space["Block Difficulty"]) / aggregate_hashpower
-    space["New Difficulty"] = state["Block Difficulty"]
+
+    target_time = params["Target Mining Time"] * len(space["Block Difficulty"])
+
+    space["New Difficulty"] = state["Block Difficulty"] * (
+        space["Mining Time"] / target_time
+    )
+    space["Locking Times"] = deepcopy(spaces[0]["Locking Times"])
 
     return [space]
 
@@ -147,7 +153,40 @@ def deterministic_mining_payment_policy(state, params, spaces):
         "Block Height": state["Block Number"],
         "Hash Value": quai_hash,
     }
-    return [space0, space1, space2, space3, space4, space5]
+    space6 = deepcopy(space1)
+    space7 = deepcopy(space1)
+
+    space9 = deepcopy(spaces[0])
+    space10 = deepcopy(spaces[0])
+
+    a = []
+    b = []
+    print(spaces[0])
+    for l, qi, quai in zip(
+        spaces[0]["Locking Times"], spaces[0]["Qi Taken"], spaces[0]["Quai Taken"]
+    ):
+
+        t = l * 365 + state["Time"]
+
+        if qi > 0:
+            a.append({"amount": qi, "recipient": "Mining", "time": t})
+        elif quai > 0:
+            b.append({"amount": quai, "recipient": "Mining", "time": t})
+
+    space8 = {"Qi Schedule Entry": a, "Quai Schedule Entry": b}
+    return [
+        space0,
+        space1,
+        space2,
+        space3,
+        space4,
+        space5,
+        space6,
+        space7,
+        space8,
+        space9,
+        space10,
+    ]
 
 
 def logistic_probability_payment_policy(state, params, spaces):
@@ -197,4 +236,39 @@ def logistic_probability_payment_policy(state, params, spaces):
         "Block Height": state["Block Number"],
         "Hash Value": quai_hash,
     }
-    return [space0, space1, space2, space3, space4, space5]
+
+    space6 = deepcopy(space1)
+    space7 = deepcopy(space2)
+
+    space9 = deepcopy(spaces[0])
+    space10 = deepcopy(spaces[0])
+
+    a = []
+    b = []
+
+    for l, qi, quai in zip(
+        spaces[0]["Locking Times"], space0["Qi Taken"], space0["Quai Taken"]
+    ):
+
+        t = l * 365 + state["Time"]
+
+        if qi > 0:
+            a.append({"amount": qi, "recipient": "Mining", "time": t})
+        elif quai > 0:
+            b.append({"amount": quai, "recipient": "Mining", "time": t})
+
+    space8 = {"Qi Schedule Entry": a, "Quai Schedule Entry": b}
+
+    return [
+        space0,
+        space1,
+        space2,
+        space3,
+        space4,
+        space5,
+        space6,
+        space7,
+        space8,
+        space9,
+        space10,
+    ]

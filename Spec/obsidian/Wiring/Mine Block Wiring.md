@@ -17,13 +17,23 @@ EES4(["K Qi"])
 EES4 --- EE0
 EES5(["K Quai"])
 EES5 --- EE0
-EES6(["Qi Supply"])
+EES6(["Locked Qi Supply"])
 EES6 --- EE0
-EES7(["Quai Supply"])
+EES7(["Mining Log"])
 EES7 --- EE0
+EES8(["Qi Supply"])
+EES8 --- EE0
+EES9(["Qi Unlock Schedule"])
+EES9 --- EE0
+EES10(["Quai Supply"])
+EES10 --- EE0
+EES11(["Quai Unlock Schedule"])
+EES11 --- EE0
+EES12(["Time"])
+EES12 --- EE0
 end
 
-subgraph X26["Mine Block Wiring"]
+subgraph X31["Mine Block Wiring"]
 direction TB
 X1["Mine Block Boundary Action"]
 X2["Mining Policy"]
@@ -64,37 +74,63 @@ X14 --"Qi Space
 Quai Space
 Mined Ratio Space
 Qi Hash Space
-Quai Hash Space"------> X13
+Quai Hash Space
+Qi Space
+Quai Space
+Unlock Schedule Entry Space
+Mined Blocks Space 2
+Mined Blocks Space 2"-----------> X13
 X13 --"Qi Space
 Quai Space
 Mined Ratio Space
 Qi Hash Space
-Quai Hash Space"--> X15
+Quai Hash Space
+Qi Space
+Quai Space
+Unlock Schedule Entry Space
+Mined Blocks Space 2
+Mined Blocks Space 2"--> X15
 end
-subgraph X25["Mining Mechanisms"]
+subgraph X30["Mining Mechanisms"]
 direction TB
 X17["Increment Block Number Mechanism"]
 X17 --> EES0
 X18["Mint Qi Tokens Mechanism"]
-X18 --> EES6
+X18 --> EES8
 X19["Mint Quai Tokens Mechanism"]
-X19 --> EES7
+X19 --> EES10
 X20["Update Historical Mined Ratio Mechanism"]
 X20 --> EES2
 X21["Update Historical Qi Hash Mechanism"]
 X21 --> EES3
 X22["Update Historical Quai Hash Mechanism"]
 X22 --> EES3
-X23[Domain]
+X23["Update Locked Qi Mechanism"]
+X23 --> EES6
+X24["Update Locked Quai Mechanism"]
+X24 --> EES6
+X25["Append to Unlock Schedule Mechanism"]
+X25 --> EES11
+X25 --> EES9
+X26["Increment Time Mechanism"]
+X26 --> EES12
+X27["Log Mined Blocks Mechanism"]
+X27 --> EES7
+X28[Domain]
 
 direction LR
 direction TB
-X23 --> X17
-X23 --"Qi Space"--> X18
-X23 --"Quai Space"--> X19
-X23 --"Mined Ratio Space"--> X20
-X23 --"Qi Hash Space"--> X21
-X23 --"Quai Hash Space"--> X22
+X28 --> X17
+X28 --"Qi Space"--> X18
+X28 --"Quai Space"--> X19
+X28 --"Mined Ratio Space"--> X20
+X28 --"Qi Hash Space"--> X21
+X28 --"Quai Hash Space"--> X22
+X28 --"Qi Space"--> X23
+X28 --"Quai Space"--> X24
+X28 --"Unlock Schedule Entry Space"--> X25
+X28 --"Mined Blocks Space 2"--> X26
+X28 --"Mined Blocks Space 2"--> X27
 end
 X1--"Pre-Mining Space"--->X2
 X2--"Mined Blocks Space"--->X3
@@ -104,12 +140,22 @@ Qi Space
 Quai Space
 Mined Ratio Space
 Qi Hash Space
-Quai Hash Space"-------->X16
+Quai Hash Space
+Qi Space
+Quai Space
+Unlock Schedule Entry Space
+Mined Blocks Space 2
+Mined Blocks Space 2"------------->X16
 X16--"Qi Space
 Quai Space
 Mined Ratio Space
 Qi Hash Space
-Quai Hash Space"------->X25
+Quai Hash Space
+Qi Space
+Quai Space
+Unlock Schedule Entry Space
+Mined Blocks Space 2
+Mined Blocks Space 2"------------>X30
 end
 ```
 
@@ -130,21 +176,26 @@ If the demand for Qi is greater than the supply, there should be a profitable op
 6. [[Mining Mechanisms]]
 
 ## All Blocks
-1. [[Beta Estimation Policy]]
-2. [[Block Reward Policy]]
-3. [[Controller Update Policy]]
-4. [[Increment Block Number Mechanism]]
-5. [[Mezzanine Wiring Passthrough]]
-6. [[Mine Block Boundary Action]]
-7. [[Mining Payment Policy]]
-8. [[Mining Policy]]
-9. [[Mint Qi Tokens Mechanism]]
-10. [[Mint Quai Tokens Mechanism]]
-11. [[Set Estimated Beta Vector Mechanism]]
-12. [[Set K Mechanism]]
-13. [[Update Historical Mined Ratio Mechanism]]
-14. [[Update Historical Qi Hash Mechanism]]
-15. [[Update Historical Quai Hash Mechanism]]
+1. [[Append to Unlock Schedule Mechanism]]
+2. [[Beta Estimation Policy]]
+3. [[Block Reward Policy]]
+4. [[Controller Update Policy]]
+5. [[Increment Block Number Mechanism]]
+6. [[Increment Time Mechanism]]
+7. [[Log Mined Blocks Mechanism]]
+8. [[Mezzanine Wiring Passthrough]]
+9. [[Mine Block Boundary Action]]
+10. [[Mining Payment Policy]]
+11. [[Mining Policy]]
+12. [[Mint Qi Tokens Mechanism]]
+13. [[Mint Quai Tokens Mechanism]]
+14. [[Set Estimated Beta Vector Mechanism]]
+15. [[Set K Mechanism]]
+16. [[Update Historical Mined Ratio Mechanism]]
+17. [[Update Historical Qi Hash Mechanism]]
+18. [[Update Historical Quai Hash Mechanism]]
+19. [[Update Locked Qi Mechanism]]
+20. [[Update Locked Quai Mechanism]]
 
 ## Constraints
 
@@ -168,6 +219,7 @@ If the demand for Qi is greater than the supply, there should be a profitable op
 11. [[Quai Hash Space]]
 12. [[Quai Space]]
 13. [[Terminating Space]]
+14. [[Unlock Schedule Entry Space]]
 
 ## Parameters Used
 1. [[Aggregate Hashpower Series]]
@@ -189,6 +241,11 @@ If the demand for Qi is greater than the supply, there should be a profitable op
 4. [[Global]].[[Global State-Historical Qi Hash|Historical Qi Hash]]
 5. [[Global]].[[Global State-K Qi|K Qi]]
 6. [[Global]].[[Global State-K Quai|K Quai]]
-7. [[Global]].[[Global State-Qi Supply|Qi Supply]]
-8. [[Global]].[[Global State-Quai Supply|Quai Supply]]
+7. [[Global]].[[Global State-Locked Qi Supply|Locked Qi Supply]]
+8. [[Global]].[[Global State-Mining Log|Mining Log]]
+9. [[Global]].[[Global State-Qi Supply|Qi Supply]]
+10. [[Global]].[[Global State-Qi Unlock Schedule|Qi Unlock Schedule]]
+11. [[Global]].[[Global State-Quai Supply|Quai Supply]]
+12. [[Global]].[[Global State-Quai Unlock Schedule|Quai Unlock Schedule]]
+13. [[Global]].[[Global State-Time|Time]]
 

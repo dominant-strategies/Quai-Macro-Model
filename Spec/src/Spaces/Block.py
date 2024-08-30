@@ -6,6 +6,7 @@ block_reward_options_space = {
         "Block Difficulty": "Hash Array Type",
         "Mining Time": "Delta Time Type",
         "New Difficulty": "Block Difficulty Type",
+        "Locking Times": "Delta Time Array Type",
     },
 }
 
@@ -20,6 +21,7 @@ pre_mining_space = {
     "schema": {
         "Blocks to Mine": "Block Array Type",
         "Aggregate Hashpower": "Hashpower per Second",
+        "Locking Times": "Delta Time Array Type",
     },
 }
 
@@ -53,6 +55,7 @@ mined_blocks_space = {
         "Block Difficulty": "Hash Array Type",
         "Mining Time": "Delta Time Type",
         "New Difficulty": "Block Difficulty Type",
+        "Locking Times": "Delta Time Array Type",
     },
 }
 

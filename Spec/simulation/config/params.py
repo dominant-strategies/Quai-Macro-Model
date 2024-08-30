@@ -109,7 +109,7 @@ params_base = {
     "Difficulty Randomness Mu": 1,
     "FP Controller Update Policy": "Reward Ratio Gain",
     "FP Conversions Boundary Action": "Conversions Boundary Action V1",
-    "FP Mine Block Boundary Action": "Mine Block Boundary Action V2",
+    "FP Mine Block Boundary Action": "Mine Block Boundary Action V3",
     "FP Price Movements Boundary Action": "Hashpower Price Movement",
     "FP Mining Payment Policy": "Logistic Probability Payment Policy",
 }

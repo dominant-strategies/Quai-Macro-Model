@@ -3,6 +3,7 @@
 Mechanism for updating prices
 ## Called By
 1. [[Conversions Policy]]
+2. [[Mezzanine Wiring Passthrough]]
 ## Domain Spaces
 1. [[Quai Space]]
 ## Constraints

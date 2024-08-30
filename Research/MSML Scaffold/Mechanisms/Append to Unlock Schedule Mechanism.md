@@ -3,6 +3,7 @@
 Mechanism which appends a new unlock schedule entry
 ## Called By
 1. [[Conversions Policy]]
+2. [[Mezzanine Wiring Passthrough]]
 ## Domain Spaces
 1. [[Unlock Schedule Entry Space]]
 ## Constraints

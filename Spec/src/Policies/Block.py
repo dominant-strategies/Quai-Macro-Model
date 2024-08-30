@@ -7,7 +7,7 @@ block_reward_policy_option1 = {
 3. $Quai = B^{-(1+k_{Quai})} \cdot \log_B(d)$
 4. Return spaces of [{"Quai Reward Offered": Quai,
         "Qi Reward Offered": Qi,
-        "Block Difficulty": d}]
+        ... the domain space attributes}]
         
 These computations are done for each of the blocks presented from the DOMAIN""",
 }
@@ -105,6 +105,11 @@ mining_payment_policy = {
         "Mined Ratio Space",
         "Qi Hash Space",
         "Quai Hash Space",
+        "Qi Space",
+        "Quai Space",
+        "Unlock Schedule Entry Space",
+        "Mined Blocks Space 2",
+        "Mined Blocks Space 2",
     ],
     "parameters_used": [],
     "metrics_used": ["Qi to Hash Metric", "Quai to Hash Metric"],
@@ -127,6 +132,11 @@ mezzanine_wiring_passthrough = {
         "Mined Ratio Space",
         "Qi Hash Space",
         "Quai Hash Space",
+        "Qi Space",
+        "Quai Space",
+        "Unlock Schedule Entry Space",
+        "Mined Blocks Space 2",
+        "Mined Blocks Space 2",
     ],
     "codomain": [
         "Qi Space",
@@ -134,6 +144,11 @@ mezzanine_wiring_passthrough = {
         "Mined Ratio Space",
         "Qi Hash Space",
         "Quai Hash Space",
+        "Qi Space",
+        "Quai Space",
+        "Unlock Schedule Entry Space",
+        "Mined Blocks Space 2",
+        "Mined Blocks Space 2",
     ],
     "parameters_used": [],
     "metrics_used": [],
@@ -146,7 +161,11 @@ mining_policy_v1 = {
     "logic": """1. Create a space with no attributes
 2. Assign the "Block Difficulty" as the array of difficulties presented in the domain
 3. Add an attribute for "Mining Time" which is the sum of block difficulties / the aggregate hashpower taken from the domain
-4. Find the new block difficulty by TBD""",
+4. Find the new block difficulty by first grabbing the target time as params["Target Time"] * n_blocks then doing
+e = (t_n - t_(n-1))/t_target
+D_n = D_(n-1) * e
+
+Then in the mechanism, the difficulty adjustment get smoothed.""",
 }
 
 

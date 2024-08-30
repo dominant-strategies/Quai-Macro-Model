@@ -191,5 +191,12 @@ global_state = {
             "symbol": None,
             "domain": None,
         },
+        {
+            "type": "Simulation History Log Type",
+            "name": "Mining Log",
+            "description": "The log of mined blocks",
+            "symbol": None,
+            "domain": None,
+        },
     ],
 }

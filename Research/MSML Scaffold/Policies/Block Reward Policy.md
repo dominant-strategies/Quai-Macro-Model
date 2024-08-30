@@ -36,7 +36,7 @@ The following are the computations for the offered rewards in Quai and Qi, we de
 3. $Quai = B^{-(1+k_{Quai})} \cdot \log_B(d)$
 4. Return spaces of [{"Quai Reward Offered": Quai,
         "Qi Reward Offered": Qi,
-        "Block Difficulty": d}]
+        ... the domain space attributes}]
         
 These computations are done for each of the blocks presented from the DOMAIN
 

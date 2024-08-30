@@ -18,4 +18,29 @@ update_block_difficulty = {
     "updates": [("Global", "Block Difficulty", False)],
 }
 
-block_mechanisms = [increment_block_number_mechanism, update_block_difficulty]
+increment_time_mechanism = {
+    "name": "Increment Time Mechanism",
+    "description": "Mechanism for moving forward the simulation clock",
+    "constraints": [],
+    "logic": "Adds time",
+    "domain": ["Mined Blocks Space 2"],
+    "parameters_used": [],
+    "updates": [("Global", "Time", False)],
+}
+
+log_mined_blocks_mechanism = {
+    "name": "Log Mined Blocks Mechanism",
+    "description": "Mechanism for logging of blocks that were mined",
+    "constraints": [],
+    "logic": "Append the space to the ",
+    "domain": ["Mined Blocks Space 2"],
+    "parameters_used": [],
+    "updates": [("Global", "Mining Log", False)],
+}
+
+block_mechanisms = [
+    increment_block_number_mechanism,
+    update_block_difficulty,
+    increment_time_mechanism,
+    log_mined_blocks_mechanism,
+]
