@@ -1,0 +1,32 @@
+- For mining boundary action there is FEV, external value
+	- And then decide mine Qi, mine Quai or not at all
+- If Quai is going up rapidly, many people will want to buy/mine Quai
+- Miners need to pick Qi or Quai during mining, not after winning block
+- Deadline push is fine
+- Question of how does $D_i$ get represented
+	- Framework can allow for extending the examples
+	- Features as parameters of a model
+	- We will have a controller calibrating step here
+- Other point of non-linearity
+	- Difficulty can go over many levels of magnitude
+	- Does our model capture this?
+	- Changes will become more or less dramatic depending on input
+	- Marketable effects relative to miners
+	- As market gets bigger, less impact of variance
+	- We are trying to deal with these scale effects in our model
+- We would love to see it over 6 levels of scale of difficulty
+	- In principal controller should work over any control range
+	- Which kinds of transforms we use will be how we are trying to deal with a lot of this
+- We can get death spiraling with PoW and so we may need safeguarding
+	- Controller trying to adjust to that fact helps drive that value (maybe more aggressively than it should)
+	- Minimum ratio of which Quai/Qi can be set
+	- "Floors in the controller"
+		- Set initial value, 1/5 of that value as floor, below that don't reprice, and let decoupling happen
+- 
+
+
+Follow ups:
+- Our boundary action option right now picks from a parameter that is hashpower series
+	- Does this possibly need to get modified to take things in like price to modify?
+	- Do we want a second options
+- Minimum ratio of which Quai/Qi can be set
