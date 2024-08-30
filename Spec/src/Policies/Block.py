@@ -7,7 +7,7 @@ block_reward_policy_option1 = {
 3. $Quai = B^{-(1+k_{Quai})} \cdot \log_B(d)$
 4. Return spaces of [{"Quai Reward Offered": Quai,
         "Qi Reward Offered": Qi,
-        "Block Difficulty": d}]
+        ... the domain space attributes}]
         
 These computations are done for each of the blocks presented from the DOMAIN""",
 }
