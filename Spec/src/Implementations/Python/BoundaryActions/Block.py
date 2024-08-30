@@ -86,8 +86,7 @@ def mine_block_boundary_action_v3(state, params, spaces):
         state["Block Number"]
     ]
 
-    # TODO
-    n_blocks = 16
+    n_blocks = state["Number of Regions"] ** 2 * state["Zones per Region"] ** 2
 
     space["Blocks to Mine"] = [
         {
@@ -100,6 +99,6 @@ def mine_block_boundary_action_v3(state, params, spaces):
                 0.01,
             )
         }
-        for _ in range(16)
+        for _ in range(n_blocks)
     ]
     return [space]
