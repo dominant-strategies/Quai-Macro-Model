@@ -237,6 +237,28 @@ def logistic_probability_payment_policy(state, params, spaces):
         "Hash Value": quai_hash,
     }
 
+    space6 = deepcopy(space1)
+    space7 = deepcopy(space2)
+
+    space9 = deepcopy(spaces[0])
+    space10 = deepcopy(spaces[0])
+
+    a = []
+    b = []
+
+    for l, qi, quai in zip(
+        spaces[0]["Locking Times"], space0["Qi Taken"], space0["Quai Taken"]
+    ):
+
+        t = l * 365 + state["Time"]
+
+        if qi > 0:
+            a.append({"amount": qi, "recipient": "Mining", "time": t})
+        elif quai > 0:
+            b.append({"amount": quai, "recipient": "Mining", "time": t})
+
+    space8 = {"Qi Schedule Entry": a, "Quai Schedule Entry": b}
+
     return [
         space0,
         space1,
@@ -244,4 +266,9 @@ def logistic_probability_payment_policy(state, params, spaces):
         space3,
         space4,
         space5,
+        space6,
+        space7,
+        space8,
+        space9,
+        space10,
     ]
