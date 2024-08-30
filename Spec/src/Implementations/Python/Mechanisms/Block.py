@@ -37,8 +37,8 @@ def increment_block_number_mechanism(state, params, spaces):
 
 
 def increment_time_mechanism(state, params, spaces):
-    print(spaces)
+    state["Time"] += spaces[0]["Mining Time"]
 
 
 def log_mined_blocks_mechanism(state, params, spaces):
-    print(spaces)
+    state["Mining Log"].append(spaces)
