@@ -153,7 +153,40 @@ def deterministic_mining_payment_policy(state, params, spaces):
         "Block Height": state["Block Number"],
         "Hash Value": quai_hash,
     }
-    return [space0, space1, space2, space3, space4, space5]
+    space6 = deepcopy(space1)
+    space7 = deepcopy(space1)
+
+    space9 = deepcopy(spaces[0])
+    space10 = deepcopy(spaces[0])
+
+    a = []
+    b = []
+    print(spaces[0])
+    for l, qi, quai in zip(
+        spaces[0]["Locking Times"], spaces[0]["Qi Taken"], spaces[0]["Quai Taken"]
+    ):
+
+        t = l * 365 + state["Time"]
+
+        if qi > 0:
+            a.append({"amount": qi, "recipient": "Mining", "time": t})
+        elif quai > 0:
+            b.append({"amount": quai, "recipient": "Mining", "time": t})
+
+    space8 = {"Qi Schedule Entry": a, "Quai Schedule Entry": b}
+    return [
+        space0,
+        space1,
+        space2,
+        space3,
+        space4,
+        space5,
+        space6,
+        space7,
+        space8,
+        space9,
+        space10,
+    ]
 
 
 def logistic_probability_payment_policy(state, params, spaces):
@@ -203,4 +236,12 @@ def logistic_probability_payment_policy(state, params, spaces):
         "Block Height": state["Block Number"],
         "Hash Value": quai_hash,
     }
-    return [space0, space1, space2, space3, space4, space5]
+
+    return [
+        space0,
+        space1,
+        space2,
+        space3,
+        space4,
+        space5,
+    ]
