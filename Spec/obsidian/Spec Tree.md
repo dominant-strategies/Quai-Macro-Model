@@ -53,6 +53,7 @@ cssclasses:
 │   ├──[[Mining Epoch Array Type]]
 │   ├──[[Mined Blocks Array Type]]
 │   ├──[[Mining Beta Vector Type]]
+│   ├──[[Delta Time Array Type]]
 │   ├──[[Conversions Array Type]]
 │   ├──[[Mined Ratio Array Type]]
 │   ├──[[Hash Array Type]]

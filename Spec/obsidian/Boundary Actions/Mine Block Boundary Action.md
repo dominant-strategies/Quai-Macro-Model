@@ -1,6 +1,6 @@
 ## Description
 
-Boundary action which determines the the aggregate hashpower as well as the blocks that need to be mined and their difficulties.
+Boundary action which determines the the aggregate hashpower as well as the blocks that need to be mined and their difficulties as well as lock up time for each.
 ## Called By
 
 ## Followed By
@@ -39,6 +39,7 @@ Testing function which pulls the aggereagete hashpower and then assigns determin
 Current working version of the boundary action for mining a block.
 #### Logic
 1. Aggregate hashpower is pulled from the [[Aggregate Hashpower Series]] parameter
-    2. TBD determine number of blocks
-    3. Difficulty for blocks is equal to current block difficulty times randomness parameters for block difficulty
+    2. n_blocks = state["Number of Regions"] ** 2 * state["Zones per Region"] ** 2
+    3. Difficulty for blocks is equal to current block difficulty times randomness parameters for block difficulty, total of n_blocks
+    4. Randomly select the lockup horizon $H$ with equal probability from the lockup options for each mined block
 

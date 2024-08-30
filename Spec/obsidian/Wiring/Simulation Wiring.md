@@ -23,31 +23,33 @@ EES7(["K Quai"])
 EES7 --- EE0
 EES8(["Locked Qi Supply"])
 EES8 --- EE0
-EES9(["Qi Price"])
+EES9(["Locked Quai Supply"])
 EES9 --- EE0
-EES10(["Qi Supply"])
+EES10(["Qi Price"])
 EES10 --- EE0
-EES11(["Qi Unlock Schedule"])
+EES11(["Qi Supply"])
 EES11 --- EE0
-EES12(["Quai Price"])
+EES12(["Qi Unlock Schedule"])
 EES12 --- EE0
-EES13(["Quai Supply"])
+EES13(["Quai Price"])
 EES13 --- EE0
-EES14(["Quai Unlock Schedule"])
+EES14(["Quai Supply"])
 EES14 --- EE0
-EES15(["Simulation History Log"])
+EES15(["Quai Unlock Schedule"])
 EES15 --- EE0
+EES16(["Simulation History Log"])
+EES16 --- EE0
 end
 
-subgraph X47["Simulation Wiring"]
+subgraph X51["Simulation Wiring"]
 direction TB
 subgraph X4["Price Movements Wiring"]
 direction TB
 X1["Price Movements Boundary Action"]
 X2["Price Movements Policy"]
 X3["Update Prices Mechanism"]
-X3 --> EES12
-X3 --> EES9
+X3 --> EES13
+X3 --> EES10
 X1--"Price Movement Space"--->X2
 X2--"Price Space"--->X3
 end
@@ -58,13 +60,13 @@ X6["Conversions Policy"]
 subgraph X18["Conversions Mechanisms Wiring"]
 direction TB
 X7["Mint Qi Tokens Mechanism"]
-X7 --> EES10
+X7 --> EES11
 X8["Mint Quai Tokens Mechanism"]
-X8 --> EES13
+X8 --> EES14
 X9["Burn Qi Tokens Mechanism"]
-X9 --> EES10
+X9 --> EES11
 X10["Burn Quai Tokens Mechanism"]
-X10 --> EES13
+X10 --> EES14
 X11["Update Historical Converted Qi Mechanism"]
 X11 --> EES2
 X12["Update Historical Converted Quai Mechanism"]
@@ -74,8 +76,8 @@ X13 --> EES8
 X14["Update Locked Quai Mechanism"]
 X14 --> EES8
 X15["Append to Unlock Schedule Mechanism"]
-X15 --> EES14
-X15 --> EES11
+X15 --> EES15
+X15 --> EES12
 X16[Domain]
 
 direction LR
@@ -154,9 +156,9 @@ direction TB
 X36["Increment Block Number Mechanism"]
 X36 --> EES0
 X37["Mint Qi Tokens Mechanism"]
-X37 --> EES10
+X37 --> EES11
 X38["Mint Quai Tokens Mechanism"]
-X38 --> EES13
+X38 --> EES14
 X39["Update Historical Mined Ratio Mechanism"]
 X39 --> EES4
 X40["Update Historical Qi Hash Mechanism"]
@@ -189,11 +191,24 @@ Mined Ratio Space
 Qi Hash Space
 Quai Hash Space"------->X44
 end
-X46["Log Simulation Data Mechanism"]
-X46 --> EES15
+subgraph X49["Unlock Tokens Wiring"]
+direction TB
+X46["Unlock Tokens Control Action"]
+X47["Unlock Tokens Policy"]
+X48["Unlock Tokens Mechanism"]
+X48 --> EES9
+X48 --> EES8
+X48 --> EES15
+X48 --> EES12
+X46--->X47
+X47--"Unlock Tokens Space"--->X48
+end
+X50["Log Simulation Data Mechanism"]
+X50 --> EES16
 X4--->X19
 X19--->X45
-X45--->X46
+X45--->X49
+X49--->X50
 end
 ```
 
@@ -205,7 +220,8 @@ The wiring of the entire simulation
 1. [[Price Movements Wiring]]
 2. [[Conversions Wiring]]
 3. [[Mine Block Wiring]]
-4. [[Log Simulation Data Mechanism]]
+4. [[Unlock Tokens Wiring]]
+5. [[Log Simulation Data Mechanism]]
 
 ## All Blocks
 1. [[Append to Unlock Schedule Mechanism]]
@@ -228,14 +244,17 @@ The wiring of the entire simulation
 18. [[Price Movements Policy]]
 19. [[Set Estimated Beta Vector Mechanism]]
 20. [[Set K Mechanism]]
-21. [[Update Historical Converted Qi Mechanism]]
-22. [[Update Historical Converted Quai Mechanism]]
-23. [[Update Historical Mined Ratio Mechanism]]
-24. [[Update Historical Qi Hash Mechanism]]
-25. [[Update Historical Quai Hash Mechanism]]
-26. [[Update Locked Qi Mechanism]]
-27. [[Update Locked Quai Mechanism]]
-28. [[Update Prices Mechanism]]
+21. [[Unlock Tokens Control Action]]
+22. [[Unlock Tokens Mechanism]]
+23. [[Unlock Tokens Policy]]
+24. [[Update Historical Converted Qi Mechanism]]
+25. [[Update Historical Converted Quai Mechanism]]
+26. [[Update Historical Mined Ratio Mechanism]]
+27. [[Update Historical Qi Hash Mechanism]]
+28. [[Update Historical Quai Hash Mechanism]]
+29. [[Update Locked Qi Mechanism]]
+30. [[Update Locked Quai Mechanism]]
+31. [[Update Prices Mechanism]]
 
 ## Constraints
 
@@ -264,6 +283,7 @@ The wiring of the entire simulation
 16. [[Quai Space]]
 17. [[Terminating Space]]
 18. [[Unlock Schedule Entry Space]]
+19. [[Unlock Tokens Space]]
 
 ## Parameters Used
 1. [[Aggregate Hashpower Series]]
@@ -299,11 +319,12 @@ The wiring of the entire simulation
 7. [[Global]].[[Global State-K Qi|K Qi]]
 8. [[Global]].[[Global State-K Quai|K Quai]]
 9. [[Global]].[[Global State-Locked Qi Supply|Locked Qi Supply]]
-10. [[Global]].[[Global State-Qi Price|Qi Price]]
-11. [[Global]].[[Global State-Qi Supply|Qi Supply]]
-12. [[Global]].[[Global State-Qi Unlock Schedule|Qi Unlock Schedule]]
-13. [[Global]].[[Global State-Quai Price|Quai Price]]
-14. [[Global]].[[Global State-Quai Supply|Quai Supply]]
-15. [[Global]].[[Global State-Quai Unlock Schedule|Quai Unlock Schedule]]
-16. [[Global]].[[Global State-Simulation History Log|Simulation History Log]]
+10. [[Global]].[[Global State-Locked Quai Supply|Locked Quai Supply]]
+11. [[Global]].[[Global State-Qi Price|Qi Price]]
+12. [[Global]].[[Global State-Qi Supply|Qi Supply]]
+13. [[Global]].[[Global State-Qi Unlock Schedule|Qi Unlock Schedule]]
+14. [[Global]].[[Global State-Quai Price|Quai Price]]
+15. [[Global]].[[Global State-Quai Supply|Quai Supply]]
+16. [[Global]].[[Global State-Quai Unlock Schedule|Quai Unlock Schedule]]
+17. [[Global]].[[Global State-Simulation History Log|Simulation History Log]]
 

@@ -76,6 +76,12 @@ MiningBetaVectorType = {
     "notes": "Associated weights for the features used in the logit function",
 }
 
+DeltaTimeArrayType = {
+    "name": "Delta Time Array Type",
+    "type": "DeltaTimeArrayType",
+    "notes": "Array of delta times",
+}
+
 
 block_types = [
     EntityType,
@@ -91,4 +97,5 @@ block_types = [
     MiningEpochArrayType,
     MinedBlocksArrayType,
     MiningBetaVectorType,
+    DeltaTimeArrayType,
 ]
