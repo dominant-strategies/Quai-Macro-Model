@@ -88,7 +88,12 @@ def mining_policy_v1(state, params, spaces):
     space = {}
     space["Block Difficulty"] = [x["Difficulty"] for x in block_hashes]
     space["Mining Time"] = sum(space["Block Difficulty"]) / aggregate_hashpower
-    space["New Difficulty"] = state["Block Difficulty"]
+
+    target_time = params["Target Mining Time"] * len(space["Block Difficulty"])
+
+    space["New Difficulty"] = state["Block Difficulty"] * (
+        space["Mining Time"] / target_time
+    )
     space["Locking Times"] = deepcopy(spaces[0]["Locking Times"])
 
     return [space]
