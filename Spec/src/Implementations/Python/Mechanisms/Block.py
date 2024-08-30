@@ -34,3 +34,11 @@ def update_historical_quai_hash_mechanism(state, params, spaces):
 
 def increment_block_number_mechanism(state, params, spaces):
     state["Block Number"] += 1
+
+
+def increment_time_mechanism(state, params, spaces):
+    print(spaces)
+
+
+def log_mined_blocks_mechanism(state, params, spaces):
+    print(spaces)

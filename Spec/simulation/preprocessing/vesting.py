@@ -33,5 +33,6 @@ def vesting_schedule_translate(state, params):
     state["Locked Qi Supply"] = 0
     state["Quai Supply"] = quai_supply
     state["Locked Quai Supply"] = locked_quai
+    state["Mining Log"] = []
 
     return state

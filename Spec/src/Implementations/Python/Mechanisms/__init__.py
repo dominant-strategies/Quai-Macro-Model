@@ -21,6 +21,8 @@ from .Block import (
     update_historical_qi_hash_mechanism,
     update_historical_quai_hash_mechanism,
     increment_block_number_mechanism,
+    increment_time_mechanism,
+    log_mined_blocks_mechanism,
 )
 from .Controller import set_k_mechanism, set_estimated_beta_vector_mechanism
 
@@ -45,4 +47,6 @@ mechanisms = {
     "Update Historical Quai Hash Mechanism": update_historical_quai_hash_mechanism,
     "Increment Block Number Mechanism": increment_block_number_mechanism,
     "Log Simulation Data Mechanism": log_simulation_data_mechanism,
+    "Increment Time Mechanism": increment_time_mechanism,
+    "Log Mined Blocks Mechanism": log_mined_blocks_mechanism,
 }
