@@ -3,6 +3,7 @@
 Mechanism for updating the locked Qi amount
 ## Called By
 1. [[Conversions Policy]]
+2. [[Mezzanine Wiring Passthrough]]
 ## Domain Spaces
 1. [[Qi Space]]
 ## Constraints

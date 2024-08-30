@@ -20,5 +20,9 @@ A baseline mining policy
 1. Create a space with no attributes
 2. Assign the "Block Difficulty" as the array of difficulties presented in the domain
 3. Add an attribute for "Mining Time" which is the sum of block difficulties / the aggregate hashpower taken from the domain
-4. Find the new block difficulty by TBD
+4. Find the new block difficulty by first grabbing the target time as params["Target Time"] * n_blocks then doing
+e = (t_n - t_(n-1))/t_target
+D_n = D_(n-1) * e
+
+Then in the mechanism, the difficulty adjustment get smoothed.
 

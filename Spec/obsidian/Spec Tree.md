@@ -33,6 +33,7 @@ cssclasses:
 │   │   ├──[[Global State-Population Mining Beta Vector\|Population Mining Beta Vector]]
 │   │   ├──[[Global State-Estimated Mining Beta Vector\|Estimated Mining Beta Vector]]
 │   │   ├──[[Global State-Logistic Classifier\|Logistic Classifier]]
+│   │   ├──[[Global State-Mining Log\|Mining Log]]
 ├──**Stateful Metrics**
 │   ├──Circulating Stateful Metrics
 │   │   ├──[[Circulating Quai Supply]]
@@ -152,6 +153,8 @@ cssclasses:
 ├──**Mechanisms**
 │   ├──[[Increment Block Number Mechanism]]
 │   ├──[[Update Block Difficulty Mechanism]]
+│   ├──[[Increment Time Mechanism]]
+│   ├──[[Log Mined Blocks Mechanism]]
 │   ├──[[Update Historical Mined Ratio Mechanism]]
 │   ├──[[Update Historical Qi Hash Mechanism]]
 │   ├──[[Update Historical Quai Hash Mechanism]]

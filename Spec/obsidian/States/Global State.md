@@ -29,11 +29,14 @@
 |[[Global State-Population Mining Beta Vector\|Population Mining Beta Vector]]|The population betas, not known to the controller|[[Mining Beta Vector Type]]|||
 |[[Global State-Estimated Mining Beta Vector\|Estimated Mining Beta Vector]]|The controllers current estimation of the beta vector|[[Mining Beta Vector Type]]|||
 |[[Global State-Logistic Classifier\|Logistic Classifier]]|The logistic classifier used for beta estimation|[[Logistic Classifier Type]]|||
+|[[Global State-Mining Log\|Mining Log]]|The log of mined blocks|[[Simulation History Log Type]]|||
 
 
 ## Updated By
 ### [[Increment Block Number Mechanism]]
 ### [[Update Block Difficulty Mechanism]]
+### [[Increment Time Mechanism]]
+### [[Log Mined Blocks Mechanism]]
 ### [[Update Historical Mined Ratio Mechanism]]
 ### [[Update Historical Qi Hash Mechanism]]
 ### [[Update Historical Quai Hash Mechanism]]
