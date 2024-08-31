@@ -94,6 +94,7 @@ def mining_policy_v1(state, params, spaces):
     space["New Difficulty"] = state["Block Difficulty"] * (
         space["Mining Time"] / target_time
     )
+
     space["Locking Times"] = deepcopy(spaces[0]["Locking Times"])
 
     return [space]
