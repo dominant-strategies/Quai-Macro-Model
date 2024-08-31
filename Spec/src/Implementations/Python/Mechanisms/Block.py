@@ -1,4 +1,5 @@
 def update_block_difficulty_mechanism(state, params, spaces):
+
     new = (
         state["Block Difficulty"] * (params["Difficulty Adjustment Period"] - 1)
         + spaces[0]["Block Difficulty"]
@@ -37,7 +38,7 @@ def increment_block_number_mechanism(state, params, spaces):
 
 
 def increment_time_mechanism(state, params, spaces):
-    state["Time"] += spaces[0]["Mining Time"]
+    state["Time"] += spaces[0]["Mining Time"] / 60 / 60 / 24
 
 
 def log_mined_blocks_mechanism(state, params, spaces):
