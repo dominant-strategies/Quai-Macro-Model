@@ -17,6 +17,27 @@ def log_simulation_data_mechanism(state, params, spaces):
     log["Population Beta0"] = state["Population Mining Beta Vector"][0]
     log["Population Beta1"] = state["Population Mining Beta Vector"][1]
 
-    log["Block Number"] = state["Block Number"]
+    for x in [
+        "Qi Supply",
+        "Quai Supply",
+        "Locked Qi Supply",
+        "Locked Quai Supply",
+        "Block Number",
+        "Block Difficulty",
+        "Number of Regions",
+        "Zones per Region",
+        "K Qi",
+        "K Quai",
+        "Quai Price",
+        "Qi Price",
+        "Time",
+        "Delta Time",
+    ]:
+        log[x] = state[x]
+
+    if len(state["Historical Mined Ratio"]) > 0:
+        log["Mined Ratio"] = state["Historical Mined Ratio"][-1]["Ratio"]
+    else:
+        log["Mined Ratio"] = None
 
     state["Simulation History Log"].append(log)
