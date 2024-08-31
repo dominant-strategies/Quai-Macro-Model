@@ -110,6 +110,7 @@ mining_payment_policy = {
         "Unlock Schedule Entry Space",
         "Mined Blocks Space 2",
         "Mined Blocks Space 2",
+        "Block Difficulty Space",
     ],
     "parameters_used": [],
     "metrics_used": ["Qi to Hash Metric", "Quai to Hash Metric"],
@@ -137,6 +138,7 @@ mezzanine_wiring_passthrough = {
         "Unlock Schedule Entry Space",
         "Mined Blocks Space 2",
         "Mined Blocks Space 2",
+        "Block Difficulty Space",
     ],
     "codomain": [
         "Qi Space",
@@ -149,6 +151,7 @@ mezzanine_wiring_passthrough = {
         "Unlock Schedule Entry Space",
         "Mined Blocks Space 2",
         "Mined Blocks Space 2",
+        "Block Difficulty Space",
     ],
     "parameters_used": [],
     "metrics_used": [],

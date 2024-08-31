@@ -94,6 +94,7 @@ def mining_policy_v1(state, params, spaces):
     space["New Difficulty"] = state["Block Difficulty"] * (
         space["Mining Time"] / target_time
     )
+
     space["Locking Times"] = deepcopy(spaces[0]["Locking Times"])
 
     return [space]
@@ -243,6 +244,8 @@ def logistic_probability_payment_policy(state, params, spaces):
     space9 = deepcopy(spaces[0])
     space10 = deepcopy(spaces[0])
 
+    space11 = {"Block Difficulty": spaces[0]["New Difficulty"]}
+
     a = []
     b = []
 
@@ -271,4 +274,5 @@ def logistic_probability_payment_policy(state, params, spaces):
         space8,
         space9,
         space10,
+        space11,
     ]

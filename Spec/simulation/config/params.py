@@ -7,7 +7,7 @@ params_base = {
     "PID Parameterization": None,
     "Initial Block Difficulty": None,
     "Block Difficulty Multiples": {"Prime": 1, "Region": 0.5, "Zone": 0.25},
-    "Target Mining Time": 2,
+    "Target Mining Time": 60,
     "Quai Reward Base Parameter": 2,
     "Initial Vesting Schedule": [
         {
