@@ -4,7 +4,7 @@ import numpy as np
 
 def conversions_boundary_action_v1(state, params, spaces):
     if len(state["Historical Mined Ratio"]) > 0:
-        quai_probability = state["Historical Mined Ratio"][-1]
+        quai_probability = state["Historical Mined Ratio"][-1]["Ratio"]
     else:
         quai_probability = 0.5
     if random() < quai_probability:
