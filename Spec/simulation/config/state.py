@@ -1,3 +1,5 @@
+import numpy as np
+
 state_base = {
     "Qi Supply": None,  # Set in state preperation function
     "Quai Supply": None,  # Set in state preperation function
@@ -22,8 +24,8 @@ state_base = {
     "Delta Time": 0,
     "Quai Unlock Schedule": None,  # Set in state preperation function
     "Qi Unlock Schedule": None,  # Set in state preperation functions
-    "Population Mining Beta Vector": None,
-    "Estimated Mining Beta Vector": None,
+    "Population Mining Beta Vector": np.array([-0.0001, 0.0001]),
+    "Estimated Mining Beta Vector": [None, None],
     "Logistic Classifier": None,  # Set in state preperation functions
     "Mining Log": None,  # Set in state preperation functions
 }
