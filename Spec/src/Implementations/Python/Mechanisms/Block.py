@@ -4,6 +4,11 @@ def update_block_difficulty_mechanism(state, params, spaces):
         state["Block Difficulty"] * (params["Difficulty Adjustment Period"] - 1)
         + spaces[0]["Block Difficulty"]
     ) / params["Difficulty Adjustment Period"]
+    if new < 2:
+        print(
+            "Difficulty was getting adjusted to be below 2, setting to 2 to avoid issues from extremely low difficulties"
+        )
+        new = 2
     state["Block Difficulty"] = new
 
 
