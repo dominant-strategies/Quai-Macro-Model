@@ -27,5 +27,8 @@ def hashpower_price_movement(state, params, spaces):
         + np.random.normal(0, quai_sigma) * p_quai
     )
 
-    space = {"Qi Return": p_qi_new / p_qi - 1, "Quai Return": p_quai_new / p_quai - 1}
+    space = {
+        "Qi Return": max(p_qi_new / p_qi - 1, -0.99),
+        "Quai Return": max(p_quai_new / p_quai - 1, -0.99),
+    }
     return [space]

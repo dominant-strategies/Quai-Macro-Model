@@ -2,6 +2,7 @@ def mint_qi_tokens_mechanism(state, params, spaces):
     amount = spaces[0]["Qi"]
     if amount == 0:
         return
+
     assert amount > 0, "Amount must be positive. spaces: {}, state: {}".format(
         spaces, state
     )
