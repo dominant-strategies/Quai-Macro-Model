@@ -31,7 +31,6 @@ def conversions_boundary_action_v1(state, params, spaces):
     L = state["Stateful Metrics"]["Current Lockup Options"](state, params)
     H = choice(list(L.keys()))
     space = {"Token": q, "Amount": C, "Locking Time": H}
-    print(state["K Qi"], state["K Quai"])
     return [space]
 
 
