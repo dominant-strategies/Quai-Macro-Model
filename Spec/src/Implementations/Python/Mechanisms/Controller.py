@@ -1,4 +1,6 @@
 def set_k_mechanism(state, params, spaces):
+    if "K Qi/Quai" in params["State Update Skipping Parameter"]:
+        return
     if spaces[0]["K Quai"] <= 0:
         print(
             "A value of {} was passed for setting KQuai, changing it to 1e-10".format(
