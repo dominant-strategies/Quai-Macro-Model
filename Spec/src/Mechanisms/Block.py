@@ -14,7 +14,10 @@ update_block_difficulty = {
     "constraints": [],
     "logic": "(CurrentDifficulty * (Period-1) + NewDifficulty) / Period",
     "domain": ["Block Difficulty Space"],
-    "parameters_used": ["Difficulty Adjustment Period"],
+    "parameters_used": [
+        "Difficulty Adjustment Period",
+        "State Update Skipping Parameter",
+    ],
     "updates": [("Global", "Block Difficulty", False)],
 }
 

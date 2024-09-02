@@ -72,6 +72,7 @@ The wiring for the controller actions
 1. [[Controller Alpha Parameter]]
 2. [[Initial Block Difficulty]]
 3. [[PID Parameterization]]
+4. [[State Update Skipping Parameter]]
 
 ## Called By
 

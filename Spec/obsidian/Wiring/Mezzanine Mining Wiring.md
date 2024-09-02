@@ -53,7 +53,8 @@ Qi Space
 Quai Space
 Unlock Schedule Entry Space
 Mined Blocks Space 2
-Mined Blocks Space 2"-----------> X9
+Mined Blocks Space 2
+Block Difficulty Space"------------> X9
 X9 --"Qi Space
 Quai Space
 Mined Ratio Space
@@ -63,7 +64,8 @@ Qi Space
 Quai Space
 Unlock Schedule Entry Space
 Mined Blocks Space 2
-Mined Blocks Space 2"--> X11
+Mined Blocks Space 2
+Block Difficulty Space"--> X11
 end
 ```
 
@@ -96,6 +98,7 @@ Passes through most of the spaces except for the ones needed for updating the co
 9. [[Unlock Schedule Entry Space]]
 10. [[Mined Blocks Space 2]]
 11. [[Mined Blocks Space 2]]
+12. [[Block Difficulty Space]]
 
 ## Codomain Spaces
 1. [[Qi Space]]
@@ -108,24 +111,27 @@ Passes through most of the spaces except for the ones needed for updating the co
 8. [[Unlock Schedule Entry Space]]
 9. [[Mined Blocks Space 2]]
 10. [[Mined Blocks Space 2]]
+11. [[Block Difficulty Space]]
 
 ## All Spaces Used
 1. [[Beta Vector Space]]
-2. [[Empty Space]]
-3. [[K Space]]
-4. [[Mined Blocks Space 2]]
-5. [[Mined Ratio Space]]
-6. [[Qi Hash Space]]
-7. [[Qi Space]]
-8. [[Quai Hash Space]]
-9. [[Quai Space]]
-10. [[Terminating Space]]
-11. [[Unlock Schedule Entry Space]]
+2. [[Block Difficulty Space]]
+3. [[Empty Space]]
+4. [[K Space]]
+5. [[Mined Blocks Space 2]]
+6. [[Mined Ratio Space]]
+7. [[Qi Hash Space]]
+8. [[Qi Space]]
+9. [[Quai Hash Space]]
+10. [[Quai Space]]
+11. [[Terminating Space]]
+12. [[Unlock Schedule Entry Space]]
 
 ## Parameters Used
 1. [[Controller Alpha Parameter]]
 2. [[Initial Block Difficulty]]
 3. [[PID Parameterization]]
+4. [[State Update Skipping Parameter]]
 
 ## Called By
 

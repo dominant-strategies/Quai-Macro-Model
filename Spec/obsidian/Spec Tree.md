@@ -72,6 +72,7 @@ cssclasses:
 │   ├──[[Float Type]]
 │   ├──[[Quai Array Type]]
 │   ├──[[Qi Array Type]]
+│   ├──[[String Array Type]]
 │   ├──[[Simulation History Log Type]]
 │   ├──[[Token Name Type]]
 │   ├──[[Token Amount Type]]
@@ -122,6 +123,7 @@ cssclasses:
 │   │   ├──[[PID Parameterization]]
 │   │   ├──[[Initial Block Difficulty]]
 │   │   ├──[[Controller Alpha Parameter]]
+│   │   ├──[[State Update Skipping Parameter]]
 │   ├──Mining Parameter Set
 │   │   ├──[[Block Difficulty Multiples]]
 │   │   ├──[[Target Mining Time]]
