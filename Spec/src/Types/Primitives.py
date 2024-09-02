@@ -77,6 +77,11 @@ FloatType = {
     "notes": "",
 }
 
+StringArrayType = {
+    "name": "String Array Type",
+    "type": "StringArrayType",
+    "notes": "",
+}
 
 primitive_types = [
     GainType,
@@ -92,4 +97,5 @@ primitive_types = [
     FloatType,
     QuaiArrayType,
     QiArrayType,
+    StringArrayType,
 ]

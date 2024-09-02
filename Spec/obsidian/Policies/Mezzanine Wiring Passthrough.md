@@ -9,6 +9,7 @@ Policy which passes through the spaces for the mezzanine wiring.
 5. [[Mining Payment Policy]]
 6. [[Mining Payment Policy]]
 7. [[Mining Payment Policy]]
+8. [[Mining Payment Policy]]
 ## Domain Spaces
 1. [[Qi Space]]
 2. [[Quai Space]]
@@ -20,6 +21,7 @@ Policy which passes through the spaces for the mezzanine wiring.
 8. [[Unlock Schedule Entry Space]]
 9. [[Mined Blocks Space 2]]
 10. [[Mined Blocks Space 2]]
+11. [[Block Difficulty Space]]
 ## Followed By
 1. [[Mint Qi Tokens Mechanism]]
 2. [[Mint Quai Tokens Mechanism]]
@@ -31,6 +33,7 @@ Policy which passes through the spaces for the mezzanine wiring.
 8. [[Append to Unlock Schedule Mechanism]]
 9. [[Increment Time Mechanism]]
 10. [[Log Mined Blocks Mechanism]]
+11. [[Update Block Difficulty Mechanism]]
 ## Codomain Spaces
 1. [[Qi Space]]
 2. [[Quai Space]]
@@ -42,6 +45,7 @@ Policy which passes through the spaces for the mezzanine wiring.
 8. [[Unlock Schedule Entry Space]]
 9. [[Mined Blocks Space 2]]
 10. [[Mined Blocks Space 2]]
+11. [[Block Difficulty Space]]
 ## Constraints
 ## Parameters Used
 ## Metrics Used

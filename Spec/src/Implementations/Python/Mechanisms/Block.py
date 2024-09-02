@@ -1,5 +1,8 @@
 def update_block_difficulty_mechanism(state, params, spaces):
 
+    if "Difficulty" in params["State Update Skipping Parameter"]:
+        return
+
     new = (
         state["Block Difficulty"] * (params["Difficulty Adjustment Period"] - 1)
         + spaces[0]["Block Difficulty"]
@@ -47,4 +50,4 @@ def increment_time_mechanism(state, params, spaces):
 
 
 def log_mined_blocks_mechanism(state, params, spaces):
-    state["Mining Log"].append(spaces)
+    state["Mining Log"].append(spaces[0])

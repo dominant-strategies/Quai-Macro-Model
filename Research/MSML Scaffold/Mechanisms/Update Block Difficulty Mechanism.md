@@ -2,6 +2,7 @@
 
 A mechanism which slowly updates the difficulty over an adjustment period.
 ## Called By
+1. [[Mezzanine Wiring Passthrough]]
 ## Domain Spaces
 1. [[Block Difficulty Space]]
 ## Constraints

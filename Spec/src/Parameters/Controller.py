@@ -26,6 +26,14 @@ controller_parameter_set = {
             "domain": None,
             "parameter_class": "System",
         },
+        {
+            "variable_type": "String Array Type",
+            "name": "State Update Skipping Parameter",
+            "description": "A list of state updates to turn off for debugging and testing purposes",
+            "symbol": None,
+            "domain": None,
+            "parameter_class": "Functional",
+        },
     ],
 }
 

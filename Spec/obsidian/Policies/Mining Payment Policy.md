@@ -14,6 +14,7 @@ Policy which determines what amount of Quai vs. Qi is taken as payment.
 6. [[Mezzanine Wiring Passthrough]]
 7. [[Mezzanine Wiring Passthrough]]
 8. [[Mezzanine Wiring Passthrough]]
+9. [[Mezzanine Wiring Passthrough]]
 ## Codomain Spaces
 1. [[Mined Blocks Space 2]]
 2. [[Qi Space]]
@@ -26,6 +27,7 @@ Policy which determines what amount of Quai vs. Qi is taken as payment.
 9. [[Unlock Schedule Entry Space]]
 10. [[Mined Blocks Space 2]]
 11. [[Mined Blocks Space 2]]
+12. [[Block Difficulty Space]]
 ## Constraints
 ## Parameters Used
 ## Metrics Used
