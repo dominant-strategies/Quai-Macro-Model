@@ -50,4 +50,4 @@ def increment_time_mechanism(state, params, spaces):
 
 
 def log_mined_blocks_mechanism(state, params, spaces):
-    state["Mining Log"].append(spaces)
+    state["Mining Log"].append(spaces[0])
