@@ -241,8 +241,8 @@ def logistic_probability_payment_policy(state, params, spaces):
     space6 = deepcopy(space1)
     space7 = deepcopy(space2)
 
-    space9 = deepcopy(spaces[0])
-    space10 = deepcopy(spaces[0])
+    space9 = deepcopy(space0)
+    space10 = deepcopy(space0)
 
     space11 = {"Block Difficulty": spaces[0]["New Difficulty"]}
 
