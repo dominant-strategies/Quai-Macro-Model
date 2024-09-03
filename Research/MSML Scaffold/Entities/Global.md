@@ -67,5 +67,6 @@
 ## Actions Impacting the Entity
 ### [[Mine Block Boundary Action]]
 ### [[Conversions Boundary Action]]
+### [[Placeholder]]
 ### [[Price Movements Boundary Action]]
 ### [[Unlock Tokens Control Action]]

@@ -47,7 +47,7 @@ EES19(["Time"])
 EES19 --- EE0
 end
 
-subgraph X57["Simulation Wiring"]
+subgraph X59["Simulation Wiring"]
 direction TB
 subgraph X4["Price Movements Wiring"]
 direction TB
@@ -252,12 +252,17 @@ X54 --> EES14
 X52--->X53
 X53--"Unlock Tokens Space"--->X54
 end
-X56["Log Simulation Data Mechanism"]
-X56 --> EES18
+subgraph X57["Update Population Beta Wiring"]
+direction TB
+X56["Placeholder"]
+end
+X58["Log Simulation Data Mechanism"]
+X58 --> EES18
 X4--->X19
 X19--->X51
 X51--->X55
-X55--->X56
+X55--->X57
+X57--->X58
 end
 ```
 
@@ -270,7 +275,8 @@ The wiring of the entire simulation
 2. [[Conversions Wiring]]
 3. [[Mine Block Wiring]]
 4. [[Unlock Tokens Wiring]]
-5. [[Log Simulation Data Mechanism]]
+5. [[Update Population Beta Wiring]]
+6. [[Log Simulation Data Mechanism]]
 
 ## All Blocks
 1. [[Append to Unlock Schedule Mechanism]]
@@ -291,22 +297,23 @@ The wiring of the entire simulation
 16. [[Mining Policy]]
 17. [[Mint Qi Tokens Mechanism]]
 18. [[Mint Quai Tokens Mechanism]]
-19. [[Price Movements Boundary Action]]
-20. [[Price Movements Policy]]
-21. [[Set Estimated Beta Vector Mechanism]]
-22. [[Set K Mechanism]]
-23. [[Unlock Tokens Control Action]]
-24. [[Unlock Tokens Mechanism]]
-25. [[Unlock Tokens Policy]]
-26. [[Update Block Difficulty Mechanism]]
-27. [[Update Historical Converted Qi Mechanism]]
-28. [[Update Historical Converted Quai Mechanism]]
-29. [[Update Historical Mined Ratio Mechanism]]
-30. [[Update Historical Qi Hash Mechanism]]
-31. [[Update Historical Quai Hash Mechanism]]
-32. [[Update Locked Qi Mechanism]]
-33. [[Update Locked Quai Mechanism]]
-34. [[Update Prices Mechanism]]
+19. [[Placeholder]]
+20. [[Price Movements Boundary Action]]
+21. [[Price Movements Policy]]
+22. [[Set Estimated Beta Vector Mechanism]]
+23. [[Set K Mechanism]]
+24. [[Unlock Tokens Control Action]]
+25. [[Unlock Tokens Mechanism]]
+26. [[Unlock Tokens Policy]]
+27. [[Update Block Difficulty Mechanism]]
+28. [[Update Historical Converted Qi Mechanism]]
+29. [[Update Historical Converted Quai Mechanism]]
+30. [[Update Historical Mined Ratio Mechanism]]
+31. [[Update Historical Qi Hash Mechanism]]
+32. [[Update Historical Quai Hash Mechanism]]
+33. [[Update Locked Qi Mechanism]]
+34. [[Update Locked Quai Mechanism]]
+35. [[Update Prices Mechanism]]
 
 ## Constraints
 
