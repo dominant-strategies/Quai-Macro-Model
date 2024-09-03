@@ -21,3 +21,10 @@ def set_k_mechanism(state, params, spaces):
 
 def set_estimated_beta_vector_mechanism(state, params, spaces):
     state["Estimated Mining Beta Vector"] = spaces[0]["Beta"]
+
+
+def update_population_beta_mechanism(state, params, spaces):
+    if "Population Beta" in params["State Update Skipping Parameter"]:
+        return
+
+    state["Population Mining Beta Vector"] = spaces[0]["Beta"]
