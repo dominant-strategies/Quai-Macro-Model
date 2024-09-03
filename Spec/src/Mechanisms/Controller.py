@@ -29,5 +29,23 @@ set_estimated_beta_vector_mechanism = {
     ],
 }
 
+update_population_beta_mechanism = {
+    "name": "Update Population Beta Mechanism",
+    "description": "A mechanism which sets the population beta vector",
+    "constraints": [],
+    "logic": "",
+    "domain": [
+        "Beta Vector Space",
+    ],
+    "parameters_used": [],
+    "updates": [
+        ("Global", "Population Mining Beta Vector", False),
+    ],
+}
 
-controller_mechanisms = [set_k_mechanism, set_estimated_beta_vector_mechanism]
+
+controller_mechanisms = [
+    set_k_mechanism,
+    set_estimated_beta_vector_mechanism,
+    update_population_beta_mechanism,
+]
