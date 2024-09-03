@@ -24,7 +24,11 @@ from .Block import (
     increment_time_mechanism,
     log_mined_blocks_mechanism,
 )
-from .Controller import set_k_mechanism, set_estimated_beta_vector_mechanism
+from .Controller import (
+    set_k_mechanism,
+    set_estimated_beta_vector_mechanism,
+    update_population_beta_mechanism,
+)
 
 mechanisms = {
     "DUMMY Log Results Mechanism": dummy_log_results_mechanism,
@@ -49,4 +53,5 @@ mechanisms = {
     "Log Simulation Data Mechanism": log_simulation_data_mechanism,
     "Increment Time Mechanism": increment_time_mechanism,
     "Log Mined Blocks Mechanism": log_mined_blocks_mechanism,
+    "Update Population Beta Mechanism": update_population_beta_mechanism,
 }

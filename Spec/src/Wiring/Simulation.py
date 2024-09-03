@@ -8,6 +8,7 @@ simulation_wiring.append(
             "Conversions Wiring",
             "Mine Block Wiring",
             "Unlock Tokens Wiring",
+            "Update Population Beta Wiring",
             "Log Simulation Data Mechanism",
         ],
         "description": "The wiring of the entire simulation",

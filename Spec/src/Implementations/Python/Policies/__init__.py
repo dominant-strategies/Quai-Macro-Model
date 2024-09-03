@@ -12,6 +12,7 @@ from .Controller import (
     reward_ratio_gain,
     mezzanine_wiring_passthrough,
 )
+from .User import update_population_beta_policy_passthrough
 
 policies = {
     "DUMMY Letter Count Policy V1": dummy_letter_count_policy,
@@ -25,4 +26,5 @@ policies = {
     "SGD Logistic Classifier Training": sgd_logistic_classifier_training,
     "Reward Ratio Gain": reward_ratio_gain,
     "Mezzanine Wiring Passthrough": mezzanine_wiring_passthrough,
+    "Update Population Beta Policy Passthrough": update_population_beta_policy_passthrough,
 }

@@ -73,6 +73,7 @@ cssclasses:
 │   ├──[[Quai Array Type]]
 │   ├──[[Qi Array Type]]
 │   ├──[[String Array Type]]
+│   ├──[[Vector Array Type]]
 │   ├──[[Simulation History Log Type]]
 │   ├──[[Token Name Type]]
 │   ├──[[Token Amount Type]]
@@ -124,6 +125,7 @@ cssclasses:
 │   │   ├──[[Initial Block Difficulty]]
 │   │   ├──[[Controller Alpha Parameter]]
 │   │   ├──[[State Update Skipping Parameter]]
+│   │   ├──[[Population Beta Signal]]
 │   ├──Mining Parameter Set
 │   │   ├──[[Block Difficulty Multiples]]
 │   │   ├──[[Target Mining Time]]
@@ -139,6 +141,7 @@ cssclasses:
 │   ├──[[Mine Block Boundary Action]]
 │   ├──[[Conversions Boundary Action]]
 │   ├──[[Price Movements Boundary Action]]
+│   ├──[[Update Population Beta Boundary Action]]
 ├──**Control Actions**
 │   ├──[[Placeholder]]
 │   ├──[[Unlock Tokens Control Action]]
@@ -152,6 +155,7 @@ cssclasses:
 │   ├──[[Controller Update Policy]]
 │   ├──[[Beta Estimation Policy]]
 │   ├──[[Unlock Tokens Policy]]
+│   ├──[[Update Population Beta Policy]]
 ├──**Mechanisms**
 │   ├──[[Increment Block Number Mechanism]]
 │   ├──[[Update Block Difficulty Mechanism]]
@@ -172,5 +176,6 @@ cssclasses:
 │   ├──[[Update Locked Quai Mechanism]]
 │   ├──[[Set K Mechanism]]
 │   ├──[[Set Estimated Beta Vector Mechanism]]
+│   ├──[[Update Population Beta Mechanism]]
 │   ├──[[Unlock Tokens Mechanism]]
 │   ├──[[Append to Unlock Schedule Mechanism]]
