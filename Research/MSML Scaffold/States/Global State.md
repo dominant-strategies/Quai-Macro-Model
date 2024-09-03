@@ -54,6 +54,7 @@
 ### [[Set K Mechanism]]
 ### [[Set K Mechanism]]
 ### [[Set Estimated Beta Vector Mechanism]]
+### [[Update Population Beta Mechanism]]
 ### [[Unlock Tokens Mechanism]]
 ### [[Unlock Tokens Mechanism]]
 ### [[Unlock Tokens Mechanism]]

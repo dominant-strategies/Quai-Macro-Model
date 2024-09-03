@@ -2,7 +2,6 @@
 
 Placerholder for wirings
 ## Followed By
-1. [[Log Simulation Data Mechanism]]
 
 ## Constraints
 ## Codomain Spaces

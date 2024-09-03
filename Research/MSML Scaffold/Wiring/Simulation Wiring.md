@@ -29,33 +29,35 @@ EES10(["Locked Quai Supply"])
 EES10 --- EE0
 EES11(["Mining Log"])
 EES11 --- EE0
-EES12(["Qi Price"])
+EES12(["Population Mining Beta Vector"])
 EES12 --- EE0
-EES13(["Qi Supply"])
+EES13(["Qi Price"])
 EES13 --- EE0
-EES14(["Qi Unlock Schedule"])
+EES14(["Qi Supply"])
 EES14 --- EE0
-EES15(["Quai Price"])
+EES15(["Qi Unlock Schedule"])
 EES15 --- EE0
-EES16(["Quai Supply"])
+EES16(["Quai Price"])
 EES16 --- EE0
-EES17(["Quai Unlock Schedule"])
+EES17(["Quai Supply"])
 EES17 --- EE0
-EES18(["Simulation History Log"])
+EES18(["Quai Unlock Schedule"])
 EES18 --- EE0
-EES19(["Time"])
+EES19(["Simulation History Log"])
 EES19 --- EE0
+EES20(["Time"])
+EES20 --- EE0
 end
 
-subgraph X59["Simulation Wiring"]
+subgraph X61["Simulation Wiring"]
 direction TB
 subgraph X4["Price Movements Wiring"]
 direction TB
 X1["Price Movements Boundary Action"]
 X2["Price Movements Policy"]
 X3["Update Prices Mechanism"]
-X3 --> EES15
-X3 --> EES12
+X3 --> EES16
+X3 --> EES13
 X1--"Price Movement Space"--->X2
 X2--"Price Space"--->X3
 end
@@ -66,13 +68,13 @@ X6["Conversions Policy"]
 subgraph X18["Conversions Mechanisms Wiring"]
 direction TB
 X7["Mint Qi Tokens Mechanism"]
-X7 --> EES13
+X7 --> EES14
 X8["Mint Quai Tokens Mechanism"]
-X8 --> EES16
+X8 --> EES17
 X9["Burn Qi Tokens Mechanism"]
-X9 --> EES13
+X9 --> EES14
 X10["Burn Quai Tokens Mechanism"]
-X10 --> EES16
+X10 --> EES17
 X11["Update Historical Converted Qi Mechanism"]
 X11 --> EES3
 X12["Update Historical Converted Quai Mechanism"]
@@ -82,8 +84,8 @@ X13 --> EES9
 X14["Update Locked Quai Mechanism"]
 X14 --> EES9
 X15["Append to Unlock Schedule Mechanism"]
-X15 --> EES17
-X15 --> EES14
+X15 --> EES18
+X15 --> EES15
 X16[Domain]
 
 direction LR
@@ -174,9 +176,9 @@ direction TB
 X36["Increment Block Number Mechanism"]
 X36 --> EES1
 X37["Mint Qi Tokens Mechanism"]
-X37 --> EES13
+X37 --> EES14
 X38["Mint Quai Tokens Mechanism"]
-X38 --> EES16
+X38 --> EES17
 X39["Update Historical Mined Ratio Mechanism"]
 X39 --> EES5
 X40["Update Historical Qi Hash Mechanism"]
@@ -188,10 +190,10 @@ X42 --> EES9
 X43["Update Locked Quai Mechanism"]
 X43 --> EES9
 X44["Append to Unlock Schedule Mechanism"]
-X44 --> EES17
-X44 --> EES14
+X44 --> EES18
+X44 --> EES15
 X45["Increment Time Mechanism"]
-X45 --> EES19
+X45 --> EES20
 X46["Log Mined Blocks Mechanism"]
 X46 --> EES11
 X47["Update Block Difficulty Mechanism"]
@@ -247,22 +249,27 @@ X53["Unlock Tokens Policy"]
 X54["Unlock Tokens Mechanism"]
 X54 --> EES10
 X54 --> EES9
-X54 --> EES17
-X54 --> EES14
+X54 --> EES18
+X54 --> EES15
 X52--->X53
 X53--"Unlock Tokens Space"--->X54
 end
-subgraph X57["Update Population Beta Wiring"]
+subgraph X59["Update Population Beta Wiring"]
 direction TB
-X56["Placeholder"]
+X56["Update Population Beta Boundary Action"]
+X57["Update Population Beta Policy"]
+X58["Update Population Beta Mechanism"]
+X58 --> EES12
+X56--"Beta Vector Space"--->X57
+X57--"Beta Vector Space"--->X58
 end
-X58["Log Simulation Data Mechanism"]
-X58 --> EES18
+X60["Log Simulation Data Mechanism"]
+X60 --> EES19
 X4--->X19
 X19--->X51
 X51--->X55
-X55--->X57
-X57--->X58
+X55--->X59
+X59--->X60
 end
 ```
 
@@ -297,23 +304,25 @@ The wiring of the entire simulation
 16. [[Mining Policy]]
 17. [[Mint Qi Tokens Mechanism]]
 18. [[Mint Quai Tokens Mechanism]]
-19. [[Placeholder]]
-20. [[Price Movements Boundary Action]]
-21. [[Price Movements Policy]]
-22. [[Set Estimated Beta Vector Mechanism]]
-23. [[Set K Mechanism]]
-24. [[Unlock Tokens Control Action]]
-25. [[Unlock Tokens Mechanism]]
-26. [[Unlock Tokens Policy]]
-27. [[Update Block Difficulty Mechanism]]
-28. [[Update Historical Converted Qi Mechanism]]
-29. [[Update Historical Converted Quai Mechanism]]
-30. [[Update Historical Mined Ratio Mechanism]]
-31. [[Update Historical Qi Hash Mechanism]]
-32. [[Update Historical Quai Hash Mechanism]]
-33. [[Update Locked Qi Mechanism]]
-34. [[Update Locked Quai Mechanism]]
-35. [[Update Prices Mechanism]]
+19. [[Price Movements Boundary Action]]
+20. [[Price Movements Policy]]
+21. [[Set Estimated Beta Vector Mechanism]]
+22. [[Set K Mechanism]]
+23. [[Unlock Tokens Control Action]]
+24. [[Unlock Tokens Mechanism]]
+25. [[Unlock Tokens Policy]]
+26. [[Update Block Difficulty Mechanism]]
+27. [[Update Historical Converted Qi Mechanism]]
+28. [[Update Historical Converted Quai Mechanism]]
+29. [[Update Historical Mined Ratio Mechanism]]
+30. [[Update Historical Qi Hash Mechanism]]
+31. [[Update Historical Quai Hash Mechanism]]
+32. [[Update Locked Qi Mechanism]]
+33. [[Update Locked Quai Mechanism]]
+34. [[Update Population Beta Boundary Action]]
+35. [[Update Population Beta Mechanism]]
+36. [[Update Population Beta Policy]]
+37. [[Update Prices Mechanism]]
 
 ## Constraints
 
@@ -360,12 +369,13 @@ The wiring of the entire simulation
 12. [[Minimum Qi Conversion Amount]]
 13. [[Minimum Quai Conversion Amount]]
 14. [[PID Parameterization]]
-15. [[Price EWMA Lambda]]
-16. [[Qi Price Movemement Sigma]]
-17. [[Quai Price Movemement Sigma]]
-18. [[Quai Reward Base Parameter]]
-19. [[Speculator Percentage]]
-20. [[State Update Skipping Parameter]]
+15. [[Population Beta Signal]]
+16. [[Price EWMA Lambda]]
+17. [[Qi Price Movemement Sigma]]
+18. [[Quai Price Movemement Sigma]]
+19. [[Quai Reward Base Parameter]]
+20. [[Speculator Percentage]]
+21. [[State Update Skipping Parameter]]
 
 ## Called By
 
@@ -384,12 +394,13 @@ The wiring of the entire simulation
 10. [[Global]].[[Global State-Locked Qi Supply|Locked Qi Supply]]
 11. [[Global]].[[Global State-Locked Quai Supply|Locked Quai Supply]]
 12. [[Global]].[[Global State-Mining Log|Mining Log]]
-13. [[Global]].[[Global State-Qi Price|Qi Price]]
-14. [[Global]].[[Global State-Qi Supply|Qi Supply]]
-15. [[Global]].[[Global State-Qi Unlock Schedule|Qi Unlock Schedule]]
-16. [[Global]].[[Global State-Quai Price|Quai Price]]
-17. [[Global]].[[Global State-Quai Supply|Quai Supply]]
-18. [[Global]].[[Global State-Quai Unlock Schedule|Quai Unlock Schedule]]
-19. [[Global]].[[Global State-Simulation History Log|Simulation History Log]]
-20. [[Global]].[[Global State-Time|Time]]
+13. [[Global]].[[Global State-Population Mining Beta Vector|Population Mining Beta Vector]]
+14. [[Global]].[[Global State-Qi Price|Qi Price]]
+15. [[Global]].[[Global State-Qi Supply|Qi Supply]]
+16. [[Global]].[[Global State-Qi Unlock Schedule|Qi Unlock Schedule]]
+17. [[Global]].[[Global State-Quai Price|Quai Price]]
+18. [[Global]].[[Global State-Quai Supply|Quai Supply]]
+19. [[Global]].[[Global State-Quai Unlock Schedule|Quai Unlock Schedule]]
+20. [[Global]].[[Global State-Simulation History Log|Simulation History Log]]
+21. [[Global]].[[Global State-Time|Time]]
 

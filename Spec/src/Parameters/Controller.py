@@ -34,6 +34,14 @@ controller_parameter_set = {
             "domain": None,
             "parameter_class": "Functional",
         },
+        {
+            "variable_type": "Vector Array Type",
+            "name": "Population Beta Signal",
+            "description": "A list of population beta vectors to use in simulation",
+            "symbol": None,
+            "domain": None,
+            "parameter_class": "Behavioral",
+        },
     ],
 }
 

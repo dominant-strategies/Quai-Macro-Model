@@ -83,6 +83,13 @@ StringArrayType = {
     "notes": "",
 }
 
+VectorArrayType = {
+    "name": "Vector Array Type",
+    "type": "VectorArrayType",
+    "notes": "Array of vectors",
+}
+
+
 primitive_types = [
     GainType,
     USDType,
@@ -98,4 +105,5 @@ primitive_types = [
     QuaiArrayType,
     QiArrayType,
     StringArrayType,
+    VectorArrayType,
 ]

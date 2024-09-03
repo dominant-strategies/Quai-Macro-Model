@@ -58,6 +58,7 @@
 ### [[Set K Mechanism]]
 ### [[Set K Mechanism]]
 ### [[Set Estimated Beta Vector Mechanism]]
+### [[Update Population Beta Mechanism]]
 ### [[Unlock Tokens Mechanism]]
 ### [[Unlock Tokens Mechanism]]
 ### [[Unlock Tokens Mechanism]]
@@ -67,6 +68,6 @@
 ## Actions Impacting the Entity
 ### [[Mine Block Boundary Action]]
 ### [[Conversions Boundary Action]]
-### [[Placeholder]]
 ### [[Price Movements Boundary Action]]
+### [[Update Population Beta Boundary Action]]
 ### [[Unlock Tokens Control Action]]
