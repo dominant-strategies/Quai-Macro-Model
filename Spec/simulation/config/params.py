@@ -116,4 +116,5 @@ params_base = {
     "FP Mine Block Boundary Action": "Mine Block Boundary Action V3",
     "FP Price Movements Boundary Action": "Hashpower Price Movement",
     "FP Mining Payment Policy": "Logistic Probability Payment Policy",
+    "FP Beta Estimation Policy": "Rolling Logistic Regression Estimation",
 }
