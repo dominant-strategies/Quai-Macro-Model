@@ -144,12 +144,18 @@ state["Logistic Classifier"].partial_fit(X, Y, classes=[0, 1])
 betas = state["Logistic Classifier"].coef_[0]""",
 }
 
+beta_estimation_policy_option2 = {
+    "name": "Rolling Logistic Regression Estimation",
+    "description": "Rolling window of the last 1000 observations used for training the logistic regression.",
+    "logic": """""",
+}
+
 
 beta_estimation_policy = {
     "name": "Beta Estimation Policy",
     "description": "The policy which determines the update to beta vector estimates.",
     "constraints": [],
-    "policy_options": [beta_estimation_policy_option1],
+    "policy_options": [beta_estimation_policy_option1, beta_estimation_policy_option2],
     "domain": [
         "Mined Blocks Space 2",
     ],

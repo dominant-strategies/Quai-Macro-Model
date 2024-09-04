@@ -25,3 +25,9 @@ Y = [x > 0 for x in spaces[0]["Quai Taken"]]
 state["Logistic Classifier"].partial_fit(X, Y, classes=[0, 1])
 betas = state["Logistic Classifier"].coef_[0]
 
+### 2. Rolling Logistic Regression Estimation
+#### Description
+Rolling window of the last 1000 observations used for training the logistic regression.
+#### Logic
+
+
