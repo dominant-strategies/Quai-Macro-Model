@@ -45,10 +45,11 @@ def rolling_logistic_regression_estimation(state, params, spaces):
     state["Logistic Classifier Queue X"] = state["Logistic Classifier Queue X"][-1000:]
     state["Logistic Classifier Queue Y"] = state["Logistic Classifier Queue Y"][-1000:]
 
-    state["Logistic Classifier"].fit(
-        state["Logistic Classifier Queue X"],
-        state["Logistic Classifier Queue Y"],
-    )
+    if len(set(state["Logistic Classifier Queue Y"])) > 1:
+        state["Logistic Classifier"].fit(
+            state["Logistic Classifier Queue X"],
+            state["Logistic Classifier Queue Y"],
+        )
 
     betas = state["Logistic Classifier"].coef_[0]
     return [spaces[0], {"Beta": betas}]
