@@ -239,9 +239,10 @@ If the demand for Qi is greater than the supply, there should be a profitable op
 4. [[Difficulty Randomness Mu]]
 5. [[Difficulty Randomness Sigma]]
 6. [[Initial Block Difficulty]]
-7. [[PID Parameterization]]
-8. [[Quai Reward Base Parameter]]
-9. [[State Update Skipping Parameter]]
+7. [[Minimum K Qi]]
+8. [[PID Parameterization]]
+9. [[Quai Reward Base Parameter]]
+10. [[State Update Skipping Parameter]]
 
 ## Called By
 

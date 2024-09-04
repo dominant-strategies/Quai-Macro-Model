@@ -6,9 +6,7 @@ set_k_mechanism = {
     "domain": [
         "K Space",
     ],
-    "parameters_used": [
-        "State Update Skipping Parameter",
-    ],
+    "parameters_used": ["State Update Skipping Parameter", "Minimum K Qi"],
     "updates": [
         ("Global", "K Quai", False),
         ("Global", "K Qi", False),
