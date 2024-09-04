@@ -11,6 +11,7 @@ from .Controller import (
     sgd_logistic_classifier_training,
     reward_ratio_gain,
     mezzanine_wiring_passthrough,
+    rolling_logistic_regression_estimation,
 )
 from .User import update_population_beta_policy_passthrough
 
@@ -27,4 +28,5 @@ policies = {
     "Reward Ratio Gain": reward_ratio_gain,
     "Mezzanine Wiring Passthrough": mezzanine_wiring_passthrough,
     "Update Population Beta Policy Passthrough": update_population_beta_policy_passthrough,
+    "Rolling Logistic Regression Estimation": rolling_logistic_regression_estimation,
 }
