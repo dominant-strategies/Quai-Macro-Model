@@ -42,8 +42,15 @@ controller_parameter_set = {
             "domain": None,
             "parameter_class": "Behavioral",
         },
+        {
+            "variable_type": "Gain Type",
+            "name": "Minimum K Qi",
+            "description": "The minimum value allowed for K Qi",
+            "symbol": None,
+            "domain": None,
+            "parameter_class": "System",
+        },
     ],
 }
-
 
 controller_parameter_sets = [controller_parameter_set]

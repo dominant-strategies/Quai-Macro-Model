@@ -130,8 +130,9 @@ Passes through most of the spaces except for the ones needed for updating the co
 ## Parameters Used
 1. [[Controller Alpha Parameter]]
 2. [[Initial Block Difficulty]]
-3. [[PID Parameterization]]
-4. [[State Update Skipping Parameter]]
+3. [[Minimum K Qi]]
+4. [[PID Parameterization]]
+5. [[State Update Skipping Parameter]]
 
 ## Called By
 

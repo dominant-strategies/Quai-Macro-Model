@@ -57,7 +57,8 @@ The wiring for mechanisms for controllers
 4. [[Terminating Space]]
 
 ## Parameters Used
-1. [[State Update Skipping Parameter]]
+1. [[Minimum K Qi]]
+2. [[State Update Skipping Parameter]]
 
 ## Called By
 

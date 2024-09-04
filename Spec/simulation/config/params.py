@@ -111,9 +111,11 @@ params_base = {
     "Difficulty Randomness Mu": 1,
     "State Update Skipping Parameter": [],
     "Population Beta Signal": [np.array([-2, 0.001])] * 10000,
+    "Minimum K Qi": 0.2,
     "FP Controller Update Policy": "Reward Ratio Gain",
     "FP Conversions Boundary Action": "Conversions Boundary Action V1",
     "FP Mine Block Boundary Action": "Mine Block Boundary Action V3",
     "FP Price Movements Boundary Action": "Hashpower Price Movement",
     "FP Mining Payment Policy": "Logistic Probability Payment Policy",
+    "FP Beta Estimation Policy": "Rolling Logistic Regression Estimation",
 }

@@ -126,6 +126,7 @@ cssclasses:
 │   │   ├──[[Controller Alpha Parameter]]
 │   │   ├──[[State Update Skipping Parameter]]
 │   │   ├──[[Population Beta Signal]]
+│   │   ├──[[Minimum K Qi]]
 │   ├──Mining Parameter Set
 │   │   ├──[[Block Difficulty Multiples]]
 │   │   ├──[[Target Mining Time]]

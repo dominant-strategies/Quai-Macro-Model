@@ -16,7 +16,7 @@ def set_k_mechanism(state, params, spaces):
         )
         spaces[0]["K Qi"] = 1e-10
     state["K Quai"] = spaces[0]["K Quai"]
-    state["K Qi"] = spaces[0]["K Qi"]
+    state["K Qi"] = max(spaces[0]["K Qi"], params["Minimum K Qi"])
 
 
 def set_estimated_beta_vector_mechanism(state, params, spaces):
