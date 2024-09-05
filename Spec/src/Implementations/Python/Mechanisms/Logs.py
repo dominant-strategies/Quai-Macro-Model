@@ -40,4 +40,11 @@ def log_simulation_data_mechanism(state, params, spaces):
     else:
         log["Mined Ratio"] = None
 
+    log["Block Reward Ratio"] = state["Metrics"]["Current Block Reward Ratio Metric"](
+        state, params, []
+    )
+    log["Conversion Rate"] = state["Metrics"]["Conversion Rate Metric"](
+        state, params, []
+    )
+
     state["Simulation History Log"].append(log)
