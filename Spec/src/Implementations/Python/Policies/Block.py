@@ -91,9 +91,9 @@ def mining_policy_v1(state, params, spaces):
 
     target_time = params["Target Mining Time"] * len(space["Block Difficulty"])
 
-    space["New Difficulty"] = state["Block Difficulty"] * (
-        space["Mining Time"] / target_time
-    )
+    e = target_time - space["Mining Time"]
+    space["New Difficulty"] = state["Block Difficulty"] * (1 + e / target_time)
+    space["New Difficulty"] = max(space["New Difficulty"], 2)
 
     space["Locking Times"] = deepcopy(spaces[0]["Locking Times"])
 
