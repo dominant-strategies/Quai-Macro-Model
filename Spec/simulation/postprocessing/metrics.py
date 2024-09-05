@@ -13,3 +13,10 @@ def reward_metrics(metrics, state, params, df):
 def controller_metrics(metrics, state, params, df):
     metrics["K Qi / K Quai Mu"] = df["K Qi / K Quai"].mean()
     metrics["K Qi / K Quai Sigma"] = df["K Qi / K Quai"].std()
+
+
+def mined_ratio_metrics(metrics, state, params, df):
+    metrics["Mined Ratio (Block Percent) Mu"] = df["Mined Ratio (Block Percent)"].mean()
+    metrics["Mined Ratio (Block Percent) Sigma"] = df[
+        "Mined Ratio (Block Percent)"
+    ].std()
