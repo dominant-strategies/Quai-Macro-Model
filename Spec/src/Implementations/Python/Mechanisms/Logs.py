@@ -46,5 +46,6 @@ def log_simulation_data_mechanism(state, params, spaces):
     log["Conversion Rate"] = state["Metrics"]["Conversion Rate Metric"](
         state, params, []
     )
+    log["K Qi / K Quai"] = state["K Qi"] / state["K Quai"]
 
     state["Simulation History Log"].append(log)
