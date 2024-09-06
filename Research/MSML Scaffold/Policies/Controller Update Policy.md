@@ -138,3 +138,20 @@ def reward_ratio_gain(state, params, spaces):
     spaces = [{"K Quai": k_quai, "K Qi": state["K Qi"]}, spaces[1]]
     return spaces
 
+### 4. Reward Ratio Gain KQuai
+#### Description
+The Reward Ratio Gain but with updates to KQuai instead
+#### Logic
+As the production Quai implementation will adjust $k_{quai}$ and leave $k_{qi}$ as numeraire, the above may be modified to provide the update rule in terms of $u_2$, with $u_1$ as numeraire. In that case we have from $(\ddagger)$:
+$$
+  u_2^\star = \frac{u_1^\star}{u_{k1}}u_{k2}\frac{x^\star(\pmb{\hat{\beta}})}{x(\bar D)},
+$$
+and the controller update $\Delta u_2$ becomes
+$$
+  \Delta u_2 = \left ( \frac{x^\star(\pmb{\hat{\beta}})}{x(\bar D)} - 1 \right )u_{k2}, \qquad \qquad (*)
+$$
+or with manual attenuation
+$$
+  \Delta u_2 = \alpha \left ( \frac{x^\star(\pmb{\hat{\beta}})}{x(\bar D)} - 1 \right )u_{k2}. \qquad \qquad (**)
+$$
+

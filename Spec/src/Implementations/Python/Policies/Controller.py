@@ -14,7 +14,6 @@ def sgd_logistic_classifier_training(state, params, spaces):
 
 
 def reward_ratio_gain(state, params, spaces):
-    # To be set to a parameter soon
     k_qi = state["K Qi"]
     alpha = params["Controller Alpha Parameter"]
     D = spaces[0]["Block Difficulty"]
@@ -25,6 +24,20 @@ def reward_ratio_gain(state, params, spaces):
     x_b_star = -spaces[1]["Beta"][0] / spaces[1]["Beta"][1]
     k_qi += alpha * (x_d / x_b_star - 1) * k_qi
     spaces = [{"K Qi": k_qi, "K Quai": state["K Quai"]}, spaces[1]]
+    return spaces
+
+
+def reward_ratio_gain_kquai(state, params, spaces):
+    k_quai = state["K Quai"]
+    alpha = params["Controller Alpha Parameter"]
+    D = spaces[0]["Block Difficulty"]
+    D = sum(D) / len(D)
+    d1 = D
+    d2 = log(D, params["Quai Reward Base Parameter"])
+    x_d = d1 / d2
+    x_b_star = -spaces[1]["Beta"][0] / spaces[1]["Beta"][1]
+    k_quai += alpha * (x_b_star / x_d - 1) * k_quai
+    spaces = [{"K Qi": state["K Qi"], "K Quai": k_quai}, spaces[1]]
     return spaces
 
 
