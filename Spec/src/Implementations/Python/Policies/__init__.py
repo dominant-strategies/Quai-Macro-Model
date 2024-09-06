@@ -12,6 +12,7 @@ from .Controller import (
     reward_ratio_gain,
     mezzanine_wiring_passthrough,
     rolling_logistic_regression_estimation,
+    reward_ratio_gain_kquai,
 )
 from .User import update_population_beta_policy_passthrough
 
@@ -29,4 +30,5 @@ policies = {
     "Mezzanine Wiring Passthrough": mezzanine_wiring_passthrough,
     "Update Population Beta Policy Passthrough": update_population_beta_policy_passthrough,
     "Rolling Logistic Regression Estimation": rolling_logistic_regression_estimation,
+    "Reward Ratio Gain KQuai": reward_ratio_gain_kquai,
 }
