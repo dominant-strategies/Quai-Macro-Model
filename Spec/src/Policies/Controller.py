@@ -114,6 +114,23 @@ The interpretation links the valuation of difficulty to the value of the _qi_ to
     return spaces""",
 }
 
+controller_update_policy_option4 = {
+    "name": "Reward Ratio Gain KQuai",
+    "description": "The Reward Ratio Gain but with updates to KQuai instead",
+    "logic": r"""As the production Quai implementation will adjust $k_{quai}$ and leave $k_{qi}$ as numeraire, the above may be modified to provide the update rule in terms of $u_2$, with $u_1$ as numeraire. In that case we have from $(\ddagger)$:
+$$
+  u_2^\star = \frac{u_1^\star}{u_{k1}}u_{k2}\frac{x^\star(\pmb{\hat{\beta}})}{x(\bar D)},
+$$
+and the controller update $\Delta u_2$ becomes
+$$
+  \Delta u_2 = \left ( \frac{x^\star(\pmb{\hat{\beta}})}{x(\bar D)} - 1 \right )u_{k2}, \qquad \qquad (*)
+$$
+or with manual attenuation
+$$
+  \Delta u_2 = \alpha \left ( \frac{x^\star(\pmb{\hat{\beta}})}{x(\bar D)} - 1 \right )u_{k2}. \qquad \qquad (**)
+$$""",
+}
+
 controller_update_policy = {
     "name": "Controller Update Policy",
     "description": "The policy which determines the update to the K Values.",
@@ -122,6 +139,7 @@ controller_update_policy = {
         controller_update_policy_option1,
         controller_update_policy_option2,
         controller_update_policy_option3,
+        controller_update_policy_option4,
     ],
     "domain": ["Mined Blocks Space 2", "Beta Vector Space"],
     "codomain": ["K Space", "Beta Vector Space"],
