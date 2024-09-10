@@ -55,3 +55,11 @@ def plot_block_difficulty(df):
     plt.ylabel("Difficulty")
     plt.title("Global Block Difficulty")
     plt.show()
+
+
+def plot_kqi_ratio(df):
+    df.set_index("Block Number")["K Qi / K Quai"].plot(kind="line")
+    plt.xlabel("Prime Block Number")
+    plt.ylabel("K Qi / K Quai")
+    plt.title("Ratio of K Qi to K Quai")
+    plt.show()
