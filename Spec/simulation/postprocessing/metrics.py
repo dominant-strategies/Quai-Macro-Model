@@ -20,3 +20,12 @@ def mined_ratio_metrics(metrics, state, params, df):
     metrics["Mined Ratio (Block Percent) Sigma"] = df[
         "Mined Ratio (Block Percent)"
     ].std()
+
+
+def beta_convergance(metrics, state, params, df, target_norm=0.25):
+
+    temp = df[df["Beta Estimation Norm"] < target_norm]
+    if len(temp) == 0:
+        metrics["Time to Beta Convergance"] = None
+    else:
+        metrics["Time to Beta Convergance"] = temp["Block Number"].min()

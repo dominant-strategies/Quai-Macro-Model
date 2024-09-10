@@ -13,4 +13,5 @@ from .postprocessing import (
     reward_metrics,
     controller_metrics,
     mined_ratio_metrics,
+    beta_convergance,
 )
