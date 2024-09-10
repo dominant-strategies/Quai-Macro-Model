@@ -44,3 +44,11 @@ def plot_mined_block_percent(df):
     plt.ylabel("Percentage of Blocks Qi Taken")
     plt.title("30 Day Rolling Average of Mining Percentages")
     plt.show()
+
+
+def plot_block_difficulty(df):
+    df.set_index("Block Number")["Block Difficulty"].plot(kind="line")
+    plt.xlabel("Prime Block Number")
+    plt.ylabel("Difficulty")
+    plt.title("Global Block Difficulty")
+    plt.show()
