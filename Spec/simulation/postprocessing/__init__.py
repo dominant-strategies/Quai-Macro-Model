@@ -5,4 +5,5 @@ from .metrics import (
     controller_metrics,
     mined_ratio_metrics,
     beta_convergance,
+    beta_convergance2,
 )

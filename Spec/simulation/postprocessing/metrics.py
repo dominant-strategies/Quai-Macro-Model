@@ -29,3 +29,20 @@ def beta_convergance(metrics, state, params, df, target_norm=0.25):
         metrics["Time to Beta Convergance"] = None
     else:
         metrics["Time to Beta Convergance"] = temp["Block Number"].min()
+
+
+def beta_convergance2(metrics, state, params, df, target_norm=0.25):
+    # Find the first breakpoint
+    temp = df[(df[["Population Beta0", "Population Beta1"]].diff() != 0).any(axis=1)]
+    temp = temp[temp["Block Number"] > 0]
+    breakpoint = temp["Block Number"].min()
+    temp = df[df["Block Number"] > breakpoint]
+    temp = temp[temp["Beta Estimation Norm"] < target_norm]
+    if len(temp) == 0:
+        metrics["Time to Beta Re-stabilization"] = None
+        metrics["Beta re-stabilized?"] = False
+    else:
+        metrics["Time to Beta Re-stabilization"] = (
+            temp["Block Number"].min() - breakpoint
+        )
+        metrics["Beta re-stabilized?"] = True
