@@ -34,3 +34,13 @@ def plot_beta_error_norm(df):
     plt.yscale("log")
     plt.title("Error Norm for Beta Estimation")
     plt.show()
+
+
+def plot_mined_block_percent(df):
+    df.set_index("Block Number")["Mined Ratio (Block Percent)"].rolling(30).mean().plot(
+        kind="line"
+    )
+    plt.xlabel("Prime Block Number")
+    plt.ylabel("Percentage of Blocks Qi Taken")
+    plt.title("30 Day Rolling Average of Mining Percentages")
+    plt.show()
