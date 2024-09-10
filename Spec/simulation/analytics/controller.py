@@ -26,3 +26,11 @@ def plot_beta_errors(df):
     plt.yscale("log")
     plt.title("Error in Beta0 and Beta1")
     plt.show()
+
+
+def plot_beta_error_norm(df):
+    df.set_index("Block Number")["Beta Estimation Norm"].plot(style=".")
+    plt.ylabel("Error Norm ")
+    plt.yscale("log")
+    plt.title("Error Norm for Beta Estimation")
+    plt.show()
