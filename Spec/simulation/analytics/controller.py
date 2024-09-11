@@ -63,3 +63,11 @@ def plot_kqi_ratio(df):
     plt.ylabel("K Qi / K Quai")
     plt.title("Ratio of K Qi to K Quai")
     plt.show()
+
+
+def difficulty_mining_scatter(df):
+    df.plot(kind="scatter", x="Block Difficulty", y="Mined Ratio (Block Percent)")
+    plt.xlabel("Block Difficulty")
+    plt.ylabel("Percentage of Blocks Quai Taken")
+    plt.title("Difficulty vs. Quai Taken")
+    plt.show()
