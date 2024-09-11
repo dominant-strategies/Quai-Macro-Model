@@ -44,7 +44,7 @@ def plot_mined_block_percent(df):
         kind="line"
     )
     plt.xlabel("Prime Block Number")
-    plt.ylabel("Percentage of Blocks Qi Taken")
+    plt.ylabel("Percentage of Blocks Quai Taken")
     plt.title("30 Day Rolling Average of Mining Percentages")
     plt.show()
 
