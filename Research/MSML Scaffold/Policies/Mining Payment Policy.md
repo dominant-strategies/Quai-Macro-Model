@@ -90,3 +90,15 @@ This is the difficulty level that would have to obtain in order for a miner to b
 #### Logic
 Get probabilities of Qi as the population beta vector by (1, d_i/\log_2(d_i))
 
+### 3. Logistic Probability Payment Policy V2
+#### Description
+V1 but with three dimensions, adding in the ratio of difficulties for Qi over Quai
+#### Logic
+
+
+### 4. Logistic Probability Payment Policy V3
+#### Description
+V1 but with three dimensions, adding in the log of the ratio of difficulties for Qi over Quai
+#### Logic
+
+
