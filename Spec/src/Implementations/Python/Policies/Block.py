@@ -190,7 +190,7 @@ def deterministic_mining_payment_policy(state, params, spaces):
     ]
 
 
-def logistic_probability_payment_policy(state, params, spaces):
+def logistic_probability_payment_policy(state, params, spaces, x_schema="V1"):
     mined_quai = 0
     mined_qi = 0
     quai_hash = 0
@@ -208,7 +208,21 @@ def logistic_probability_payment_policy(state, params, spaces):
 
         d1 = bd
         d2 = log(bd, params["Quai Reward Base Parameter"])
-        x = np.array([1, d1 / d2])
+        if x_schema == "V1":
+            x = np.array([1, d1 / d2])
+        elif x_schema == "V2":
+            x = np.array(
+                [
+                    1,
+                    d1 / d2,
+                    1
+                    / state["Metrics"]["Current Block Reward Ratio Metric"](
+                        state, params, []
+                    ),
+                ]
+            )
+        else:
+            assert False
         p = 1 / (1 + np.exp(-state["Population Mining Beta Vector"].dot(x)))
 
         qi_chosen = random() <= p
@@ -276,3 +290,7 @@ def logistic_probability_payment_policy(state, params, spaces):
         space10,
         space11,
     ]
+
+
+def logistic_probability_payment_policy2(state, params, spaces):
+    return logistic_probability_payment_policy(state, params, spaces, x_schema="V2")
