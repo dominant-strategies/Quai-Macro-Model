@@ -91,12 +91,28 @@ This is the difficulty level that would have to obtain in order for a miner to b
     "logic": r"Get probabilities of Qi as the population beta vector by (1, d_i/\log_2(d_i))",
 }
 
+mining_payment_policy_option3 = {
+    "name": "Logistic Probability Payment Policy V2",
+    "description": "V1 but with three dimensions, adding in the ratio of difficulties for Qi over Quai",
+    "logic": "",
+}
+
+mining_payment_policy_option4 = {
+    "name": "Logistic Probability Payment Policy V3",
+    "description": "V1 but with three dimensions, adding in the log of the ratio of difficulties for Qi over Quai",
+    "logic": "",
+}
 
 mining_payment_policy = {
     "name": "Mining Payment Policy",
     "description": "Policy which determines what amount of Quai vs. Qi is taken as payment.",
     "constraints": [],
-    "policy_options": [mining_payment_policy_option1, mining_payment_policy_option2],
+    "policy_options": [
+        mining_payment_policy_option1,
+        mining_payment_policy_option2,
+        mining_payment_policy_option3,
+        mining_payment_policy_option4,
+    ],
     "domain": ["Block Reward Options Space"],
     "codomain": [
         "Mined Blocks Space 2",

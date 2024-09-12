@@ -44,7 +44,7 @@ def plot_mined_block_percent(df):
         kind="line"
     )
     plt.xlabel("Prime Block Number")
-    plt.ylabel("Percentage of Blocks Qi Taken")
+    plt.ylabel("Percentage of Blocks Quai Taken")
     plt.title("30 Day Rolling Average of Mining Percentages")
     plt.show()
 
@@ -62,4 +62,12 @@ def plot_kqi_ratio(df):
     plt.xlabel("Prime Block Number")
     plt.ylabel("K Qi / K Quai")
     plt.title("Ratio of K Qi to K Quai")
+    plt.show()
+
+
+def difficulty_mining_scatter(df):
+    df.plot(kind="scatter", x="Block Difficulty", y="Mined Ratio (Block Percent)")
+    plt.xlabel("Block Difficulty")
+    plt.ylabel("Percentage of Blocks Quai Taken")
+    plt.title("Difficulty vs. Quai Taken")
     plt.show()
