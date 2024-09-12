@@ -1,6 +1,6 @@
 import numpy as np
 
-initial_vesting_allocation = 3000000000
+initial_vesting_allocation = 5000000000
 
 params_base = {
     "Minimum Quai Conversion Amount": 100,
@@ -8,8 +8,8 @@ params_base = {
     "Asset Return Parameterization": None,
     "PID Parameterization": None,
     "Initial Block Difficulty": None,
-    "Block Difficulty Multiples": {"Prime": 1, "Region": 0.5, "Zone": 0.25},
-    "Target Mining Time": 60,
+    "Block Difficulty Multiples": None,
+    "Target Mining Time": 5,
     "Quai Reward Base Parameter": 2,
     "Initial Vesting Schedule": [
         {
@@ -90,7 +90,7 @@ params_base = {
             "duration": 2,
         },
     ],
-    "Aggregate Hashpower Series": [x * 1000 for x in range(1, 10002)],
+    "Aggregate Hashpower Series": [1000000000 / 5 / 3 * 2 for x in range(1, 10002)],
     "Difficulty Adjustment Period": 200,
     "Price EWMA Lambda": 0.05,
     "Hashpower Cost Series": [x / 10 for x in range(1, 10002)],
