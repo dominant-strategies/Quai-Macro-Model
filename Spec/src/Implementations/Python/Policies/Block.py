@@ -221,6 +221,19 @@ def logistic_probability_payment_policy(state, params, spaces, x_schema="V1"):
                     ),
                 ]
             )
+        elif x_schema == "V3":
+            x = np.array(
+                [
+                    1,
+                    d1 / d2,
+                    np.log(
+                        1
+                        / state["Metrics"]["Current Block Reward Ratio Metric"](
+                            state, params, []
+                        )
+                    ),
+                ]
+            )
         else:
             assert False
         p = 1 / (1 + np.exp(-state["Population Mining Beta Vector"].dot(x)))
@@ -294,3 +307,7 @@ def logistic_probability_payment_policy(state, params, spaces, x_schema="V1"):
 
 def logistic_probability_payment_policy2(state, params, spaces):
     return logistic_probability_payment_policy(state, params, spaces, x_schema="V2")
+
+
+def logistic_probability_payment_policy3(state, params, spaces):
+    return logistic_probability_payment_policy(state, params, spaces, x_schema="V3")
