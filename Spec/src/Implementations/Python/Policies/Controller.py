@@ -1,4 +1,5 @@
 from math import log
+import numpy as np
 
 
 def sgd_logistic_classifier_training(state, params, spaces):
@@ -63,6 +64,8 @@ def rolling_logistic_regression_estimation(state, params, spaces):
             state["Logistic Classifier Queue X"],
             state["Logistic Classifier Queue Y"],
         )
-
-    betas = state["Logistic Classifier"].coef_[0]
+    try:
+        betas = state["Logistic Classifier"].coef_[0]
+    except:
+        betas = np.array([0, 0])
     return [spaces[0], {"Beta": betas}]
