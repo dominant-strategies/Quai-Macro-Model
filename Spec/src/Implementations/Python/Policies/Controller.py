@@ -1,5 +1,6 @@
 from math import log
 import numpy as np
+from sklearn.preprocessing import StandardScaler
 
 
 def sgd_logistic_classifier_training(state, params, spaces):
@@ -47,25 +48,80 @@ def mezzanine_wiring_passthrough(state, params, spaces):
 
 
 def rolling_logistic_regression_estimation(state, params, spaces):
+    
+    scaler = StandardScaler()
+
+    #X = [
+    #    [1.0, x / log(x, params["Quai Reward Base Parameter"])]
+    #    for x in spaces[0]["Block Difficulty"]
+    #]
+
     X = [
-        [1, x / log(x, params["Quai Reward Base Parameter"])]
+        [x / log(x, params["Quai Reward Base Parameter"])]
         for x in spaces[0]["Block Difficulty"]
     ]
+
     Y = [x > 0 for x in spaces[0]["Qi Taken"]]
 
     state["Logistic Classifier Queue X"].extend(X)
     state["Logistic Classifier Queue Y"].extend(Y)
 
-    state["Logistic Classifier Queue X"] = state["Logistic Classifier Queue X"][-1000:]
-    state["Logistic Classifier Queue Y"] = state["Logistic Classifier Queue Y"][-1000:]
+    state["Logistic Classifier Queue X"] = state["Logistic Classifier Queue X"][-2000:]
+    state["Logistic Classifier Queue Y"] = state["Logistic Classifier Queue Y"][-2000:]
 
+    X_transformed = scaler.fit_transform(state["Logistic Classifier Queue X"], state["Logistic Classifier Queue Y"])
+    
     if len(set(state["Logistic Classifier Queue Y"])) > 1:
         state["Logistic Classifier"].fit(
-            state["Logistic Classifier Queue X"],
+            X_transformed,
             state["Logistic Classifier Queue Y"],
         )
     try:
-        betas = state["Logistic Classifier"].coef_[0]
-    except:
+        # transform coefficients after scaling to proper values
+
+        scaled_beta = state["Logistic Classifier"].coef_[0][0]
+        scaled_int = state["Logistic Classifier"].intercept_[0]
+
+        beta = scaled_beta / scaler.scale_
+        int = scaled_int - scaled_beta * (scaler.mean_ / scaler.scale_)
+
+        betas = np.array([int, beta])
+
+    except Exception as e:
+        print(e)
+        print("Classifier did not converge, using default values of zero coefficients for beta")
         betas = np.array([0, 0])
     return [spaces[0], {"Beta": betas}]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

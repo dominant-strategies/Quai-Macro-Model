@@ -16,9 +16,23 @@ def plot_betas(df):
     )
     plt.xlabel("Prime Block Number")
     plt.ylabel("Beta Value")
-    plt.title("Population vs. Estimate of Beta0")
+    plt.title("Population vs. Estimate of Beta1")
     plt.show()
 
+def plot_boxplot_betas(df):
+    df.set_index("Block Number")[["Estimate Beta0"]].boxplot(
+    )
+    plt.xlabel("Beta0")
+    plt.ylabel("Value")
+    plt.title("Boxplot, Beta0 Estimation")
+    plt.show()
+
+    df.set_index("Block Number")[["Estimate Beta1"]].boxplot(
+    )
+    plt.xlabel("Beta1")
+    plt.ylabel("Value")
+    plt.title("Boxplot, Beta1 Estimation")
+    plt.show()
 
 def plot_beta_errors(df):
 
