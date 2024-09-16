@@ -225,16 +225,19 @@ def logistic_probability_payment_policy(state, params, spaces, x_schema="V1"):
                 ]
             )
         elif x_schema == "V3":
+            temp = np.log(
+                1
+                / state["Metrics"]["Current Block Reward Ratio Metric"](
+                    state, params, []
+                )
+            )
+            if type(temp) == np.ndarray:
+                temp = temp[0]
             x = np.array(
                 [
                     1,
                     d1 / d2,
-                    np.log(
-                        1
-                        / state["Metrics"]["Current Block Reward Ratio Metric"](
-                            state, params, []
-                        )
-                    ),
+                    temp,
                 ]
             )
         else:
