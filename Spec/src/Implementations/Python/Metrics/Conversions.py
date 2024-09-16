@@ -24,5 +24,6 @@ def current_block_reward_ratio_metric(state, params, spaces):
     qi_reward = state["Metrics"]["Hash to Qi Metric"](
         state, params, [{"Hash": hash_val}]
     )
+
     ratio = quai_reward / qi_reward
     return ratio
