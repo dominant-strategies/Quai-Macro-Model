@@ -66,8 +66,8 @@ def rolling_logistic_regression_estimation(state, params, spaces):
     state["Logistic Classifier Queue X"].extend(X)
     state["Logistic Classifier Queue Y"].extend(Y)
 
-    state["Logistic Classifier Queue X"] = state["Logistic Classifier Queue X"][-2000:]
-    state["Logistic Classifier Queue Y"] = state["Logistic Classifier Queue Y"][-2000:]
+    state["Logistic Classifier Queue X"] = state["Logistic Classifier Queue X"][-1000:]
+    state["Logistic Classifier Queue Y"] = state["Logistic Classifier Queue Y"][-1000:]
 
     X_transformed = scaler.fit_transform(state["Logistic Classifier Queue X"], state["Logistic Classifier Queue Y"])
     
