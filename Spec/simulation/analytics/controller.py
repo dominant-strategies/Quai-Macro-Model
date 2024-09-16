@@ -16,7 +16,7 @@ def plot_betas(df):
     )
     plt.xlabel("Prime Block Number")
     plt.ylabel("Beta Value")
-    plt.title("Population vs. Estimate of Beta0")
+    plt.title("Population vs. Estimate of Beta1")
     plt.show()
 
 
