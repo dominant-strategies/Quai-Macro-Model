@@ -58,7 +58,8 @@ The wiring for mechanisms for controllers
 
 ## Parameters Used
 1. [[Minimum K Qi]]
-2. [[State Update Skipping Parameter]]
+2. [[Minimum K Quai]]
+3. [[State Update Skipping Parameter]]
 
 ## Called By
 

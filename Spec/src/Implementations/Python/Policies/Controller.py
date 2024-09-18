@@ -87,7 +87,7 @@ def rolling_logistic_regression_estimation(state, params, spaces):
         beta = scaled_beta / scaler.scale_
         int = scaled_int - scaled_beta * (scaler.mean_ / scaler.scale_)
 
-        betas = np.array([int, beta])
+        betas = np.array([int[0], beta[0]])
 
     except Exception as e:
         # print(e)

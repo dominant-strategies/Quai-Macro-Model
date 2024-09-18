@@ -50,6 +50,14 @@ controller_parameter_set = {
             "domain": None,
             "parameter_class": "System",
         },
+        {
+            "variable_type": "Gain Type",
+            "name": "Minimum K Quai",
+            "description": "The minimum value allowed for K Quai",
+            "symbol": None,
+            "domain": None,
+            "parameter_class": "System",
+        },
     ],
 }
 
