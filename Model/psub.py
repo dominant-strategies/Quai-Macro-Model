@@ -1,14 +1,29 @@
 psub_blocks = []
 
 
-[
-    "Price Movements Wiring",
-    "Conversions Wiring",
-    "Mine Block Wiring",
-    "Unlock Tokens Wiring",
-    "Update Population Beta Wiring",
-    "Log Simulation Data Mechanism",
-]
+def p_price(_params, substep, state_history, state) -> dict:
+    _params["MSI"].components["Price Movements Wiring"](state, _params, [])
+    return {}
+
+
+def p_conversions(_params, substep, state_history, state) -> dict:
+    _params["MSI"].components["Conversions Wiring"](state, _params, [])
+    return {}
+
+
+def p_mine_blocks(_params, substep, state_history, state) -> dict:
+    _params["MSI"].components["Mine Block Wiring"](state, _params, [])
+    return {}
+
+
+def p_unlock(_params, substep, state_history, state) -> dict:
+    _params["MSI"].components["Unlock Tokens Wiring"](state, _params, [])
+    return {}
+
+
+def p_beta(_params, substep, state_history, state) -> dict:
+    _params["MSI"].components["Update Population Beta Wiring"](state, _params, [])
+    return {}
 
 
 def p_log(_params, substep, state_history, state) -> dict:
@@ -16,11 +31,41 @@ def p_log(_params, substep, state_history, state) -> dict:
     return {}
 
 
-test_block = {
-    "policies": {
-        "test": p_log,
+psub_blocks = [
+    {
+        "policies": {
+            "test": p_price,
+        },
+        "variables": {"IGNORE": lambda a, b, c, d, e: ("IGNORE", 0)},
     },
-    "variables": {"IGNORE": lambda a, b, c, d, e: ("IGNORE", 0)},
-}
-
-psub_blocks.append(test_block)
+    {
+        "policies": {
+            "test": p_conversions,
+        },
+        "variables": {"IGNORE": lambda a, b, c, d, e: ("IGNORE", 0)},
+    },
+    {
+        "policies": {
+            "test": p_mine_blocks,
+        },
+        "variables": {"IGNORE": lambda a, b, c, d, e: ("IGNORE", 0)},
+    },
+    {
+        "policies": {
+            "test": p_unlock,
+        },
+        "variables": {"IGNORE": lambda a, b, c, d, e: ("IGNORE", 0)},
+    },
+    {
+        "policies": {
+            "test": p_beta,
+        },
+        "variables": {"IGNORE": lambda a, b, c, d, e: ("IGNORE", 0)},
+    },
+    {
+        "policies": {
+            "test": p_log,
+        },
+        "variables": {"IGNORE": lambda a, b, c, d, e: ("IGNORE", 0)},
+    },
+]
