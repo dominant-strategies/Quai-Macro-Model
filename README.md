@@ -2,6 +2,9 @@
 
 The repository presented here is all the source code for the mathematical specification as well as model used to model the macroeconomics of the Quai ecosystem.
 
+## MSML Background
+
+## cadCAD Background
 
 ## Folder Structure
 
@@ -13,3 +16,11 @@ The repository presented here is all the source code for the mathematical specif
 ### Spec Folders
 
 ### Spec Notebooks
+
+## MSML Spec Creation Features
+
+## MSML Wiring Features
+
+## MSML Simulation Features
+
+## cadCAD Simulation Features
