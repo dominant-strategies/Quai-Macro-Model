@@ -48,13 +48,13 @@ def mezzanine_wiring_passthrough(state, params, spaces):
 
 
 def rolling_logistic_regression_estimation(state, params, spaces):
-    
+
     scaler = StandardScaler()
 
-    #X = [
+    # X = [
     #    [1.0, x / log(x, params["Quai Reward Base Parameter"])]
     #    for x in spaces[0]["Block Difficulty"]
-    #]
+    # ]
 
     X = [
         [x / log(x, params["Quai Reward Base Parameter"])]
@@ -69,8 +69,10 @@ def rolling_logistic_regression_estimation(state, params, spaces):
     state["Logistic Classifier Queue X"] = state["Logistic Classifier Queue X"][-2000:]
     state["Logistic Classifier Queue Y"] = state["Logistic Classifier Queue Y"][-2000:]
 
-    X_transformed = scaler.fit_transform(state["Logistic Classifier Queue X"], state["Logistic Classifier Queue Y"])
-    
+    X_transformed = scaler.fit_transform(
+        state["Logistic Classifier Queue X"], state["Logistic Classifier Queue Y"]
+    )
+
     if len(set(state["Logistic Classifier Queue Y"])) > 1:
         state["Logistic Classifier"].fit(
             X_transformed,
@@ -88,40 +90,7 @@ def rolling_logistic_regression_estimation(state, params, spaces):
         betas = np.array([int, beta])
 
     except Exception as e:
-        print(e)
-        print("Classifier did not converge, using default values of zero coefficients for beta")
-        betas = np.array([0, 0])
+        # print(e)
+        # print("Classifier did not converge, using default values of zero coefficients for beta")
+        betas = np.array([-0.001, 0.001])
     return [spaces[0], {"Beta": betas}]
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
