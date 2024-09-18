@@ -90,7 +90,7 @@ params_base = {
             "duration": 2,
         },
     ],
-    "Aggregate Hashpower Series": [1000000000 / 5 / 3 * 2 for x in range(1, 10002)],
+    "Aggregate Hashpower Series": [2.5e8 for _ in range(1, 10002)],
     "Difficulty Adjustment Period": 200,
     "Price EWMA Lambda": 0.05,
     "Hashpower Cost Series": [x / 10 for x in range(1, 10002)],
