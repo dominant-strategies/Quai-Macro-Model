@@ -107,7 +107,7 @@ params_base = {
     "Conversion Percentage Mu": 0.01,
     "Conversion Percentage Sigma": 0.001,
     "Controller Alpha Parameter": 0.001,
-    "Difficulty Randomness Sigma": 0.05,
+    "Difficulty Randomness Sigma": 0.2,
     "Difficulty Randomness Mu": 1,
     "State Update Skipping Parameter": [],
     "Population Beta Signal": [np.array([-2, 0.001])] * 10000,
