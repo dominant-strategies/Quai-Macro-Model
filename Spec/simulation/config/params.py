@@ -3,8 +3,8 @@ import numpy as np
 initial_vesting_allocation = 5000000000
 
 params_base = {
-    "Minimum Quai Conversion Amount": 100,
-    "Minimum Qi Conversion Amount": 100,
+    "Minimum Quai Conversion Amount": 0,
+    "Minimum Qi Conversion Amount": 0,
     "Asset Return Parameterization": None,
     "PID Parameterization": None,
     "Initial Block Difficulty": None,
@@ -91,7 +91,7 @@ params_base = {
         },
     ],
     "Aggregate Hashpower Series": [2.5e8 for _ in range(1, 10002)],
-    "Difficulty Adjustment Period": 200,
+    "Difficulty Adjustment Period": 700 / 16,  # Adjusting prime blocks into zone blocks
     "Price EWMA Lambda": 0.05,
     "Hashpower Cost Series": [x / 10 for x in range(1, 10002)],
     "Qi Price Movemement Sigma": 0.01,
@@ -112,6 +112,7 @@ params_base = {
     "State Update Skipping Parameter": [],
     "Population Beta Signal": [np.array([-2, 0.001])] * 10000,
     "Minimum K Qi": 0.2,
+    "Minimum K Quai": 0.1,
     "FP Controller Update Policy": "Reward Ratio Gain KQuai",
     "FP Conversions Boundary Action": "Conversions Boundary Action V1",
     "FP Mine Block Boundary Action": "Mine Block Boundary Action V3",

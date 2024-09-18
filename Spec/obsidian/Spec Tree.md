@@ -127,6 +127,7 @@ cssclasses:
 │   │   ├──[[State Update Skipping Parameter]]
 │   │   ├──[[Population Beta Signal]]
 │   │   ├──[[Minimum K Qi]]
+│   │   ├──[[Minimum K Quai]]
 │   ├──Mining Parameter Set
 │   │   ├──[[Block Difficulty Multiples]]
 │   │   ├──[[Target Mining Time]]
