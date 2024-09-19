@@ -1,0 +1,6 @@
+pandas==2.2.1
+numpy==1.24.4
+matplotlib==3.5.2
+math-spec-mapping==0.3.12
+IPython==7.31.1
+sklearn==1.1.3
