@@ -4,7 +4,13 @@ The repository presented here is all the source code for the mathematical specif
 
 ## MSML Background
 
+Writing mathematical specifications can be a difficult process, especially when variable names are changed or new mechanisms are introduced. MSML seeks to streamline the process with automations as well as enhance the abilities of static math specs to deliver deeper insights. Because it is automated, one can write specifications at different levels of details or for different purposes.
+
+More information on how the library works can be found [here](https://github.com/BlockScience/MSML).
+
 ## cadCAD Background
+
+cadCAD is a Python package that assists in the processes of designing, testing and validating complex systems through simulation, with support for Monte Carlo methods, A/B testing and parameter sweeping. More information on it can be found [here](https://github.com/cadCAD-org/cadCAD).
 
 ## Folder Structure
 
@@ -14,6 +20,11 @@ The repository presented here is all the source code for the mathematical specif
 4. Spec: The folder containing the majority of the code and all the components used for the spec creation process.
 
 ### Spec Folders
+
+1. src: The specification of all components of the system. The folder of Implementations/Python specifically is the code that is bound to all components for actually running the simulation.
+2. obsidian: This folder contains the outputted spec which can be opened up as an Obsidian vault to easily understand every component in the system. It is auto-generated every time the "Build Obsidian.ipynb" notebook is run.
+3. simulation: Special functions for running the simulations. The folders are analytics for any analytical functions of results, config for defining out default starting states and parameters, preprocessing for functions that are used before the simulation runs and postprocessing for functions and metrics run after the simulation has run.
+4. Wiring Examples: A folder of examples of running individual wirings. These examples are mostly meant for development purposes when zooming in on a specific aspect of the spec.
 
 ### Spec Notebooks
 
