@@ -32,3 +32,7 @@ cadCAD is a Python package that assists in the processes of designing, testing a
 2. Single Simulation: Notebook for experimenting with running one single simulation.
 3. Controller Basic Scenarios: Notebook for the basic scenarios in testing the controller.
 4. Controller Basic Scenarios - Variable Difficulty: Notebook for the basic scenarios with a varying aggregate hashpower array.
+
+## Running Simulations
+
+## Wiring Components
