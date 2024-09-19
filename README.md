@@ -21,6 +21,11 @@ cadCAD is a Python package that assists in the processes of designing, testing a
 
 ### Spec Folders
 
+1. src: The specification of all components of the system. The folder of Implementations/Python specifically is the code that is bound to all components for actually running the simulation.
+2. obsidian: This folder contains the outputted spec which can be opened up as an Obsidian vault to easily understand every component in the system. It is auto-generated every time the "Build Obsidian.ipynb" notebook is run.
+3. simulation: Special functions for running the simulations. The folders are analytics for any analytical functions of results, config for defining out default starting states and parameters, preprocessing for functions that are used before the simulation runs and postprocessing for functions and metrics run after the simulation has run.
+4. Wiring Examples: A folder of examples of running individual wirings. These examples are mostly meant for development purposes when zooming in on a specific aspect of the spec.
+
 ### Spec Notebooks
 
 ## MSML Spec Creation Features
