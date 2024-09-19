@@ -37,7 +37,7 @@ $$""",
             ["Global State", "K Quai"],
             ["Global State", "K Qi"],
         ],
-        "parameters_used": [],
+        "parameters_used": ["Maximum Conversion Rate"],
         "metrics_used": [
             "Hash to Qi Metric",
             "Hash to Quai Metric",

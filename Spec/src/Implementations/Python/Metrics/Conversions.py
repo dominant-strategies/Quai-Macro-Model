@@ -12,6 +12,7 @@ def conversion_rate_metric(state, params, spaces):
         state, params, [{"Hash": hash_val}]
     )
     ratio = quai_reward / qi_reward * (1 / np.log(hash_val))
+    ratio = min(ratio, params["Maximum Conversion Rate"])
     return ratio
 
 

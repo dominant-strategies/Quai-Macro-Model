@@ -113,6 +113,7 @@ params_base = {
     "Population Beta Signal": [np.array([-2, 0.001])] * 10000,
     "Minimum K Qi": 0,
     "Minimum K Quai": 0.1,
+    "Maximum Conversion Rate": 10,
     "FP Controller Update Policy": "Reward Ratio Gain KQuai",
     "FP Conversions Boundary Action": "Conversions Boundary Action V1",
     "FP Mine Block Boundary Action": "Mine Block Boundary Action V3",

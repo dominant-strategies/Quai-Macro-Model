@@ -82,6 +82,14 @@ market_parameter_set = {
             "domain": None,
             "parameter_class": "Behavioral",
         },
+        {
+            "variable_type": "Ratio Type",
+            "name": "Maximum Conversion Rate",
+            "description": "The maximum conversion rate allowed",
+            "symbol": None,
+            "domain": None,
+            "parameter_class": "System",
+        },
     ],
 }
 

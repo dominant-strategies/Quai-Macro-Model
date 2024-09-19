@@ -17,6 +17,7 @@ Symbol: None
 $$\left ( \frac{R^i_{\text{Quai}}}{R^i_{\text{Qi}}} \right ) \left ( \frac{1}{\ln \left ( H^i \right )} \right )$$
 
 ## Parameters Used
+1. [[Maximum Conversion Rate]]
 
 ## Variables Used
 1. [[Global State]].[[Global State-Block Difficulty|Block Difficulty]]

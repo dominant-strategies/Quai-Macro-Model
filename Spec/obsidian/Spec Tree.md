@@ -120,6 +120,7 @@ cssclasses:
 │   │   ├──[[Speculator Percentage]]
 │   │   ├──[[Conversion Percentage Mu]]
 │   │   ├──[[Conversion Percentage Sigma]]
+│   │   ├──[[Maximum Conversion Rate]]
 │   ├──Controller Parameter Set
 │   │   ├──[[PID Parameterization]]
 │   │   ├──[[Initial Block Difficulty]]
