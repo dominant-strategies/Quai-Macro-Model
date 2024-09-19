@@ -4,7 +4,13 @@ The repository presented here is all the source code for the mathematical specif
 
 ## MSML Background
 
+Writing mathematical specifications can be a difficult process, especially when variable names are changed or new mechanisms are introduced. MSML seeks to streamline the process with automations as well as enhance the abilities of static math specs to deliver deeper insights. Because it is automated, one can write specifications at different levels of details or for different purposes.
+
+More information on how the library works can be found [here](https://github.com/BlockScience/MSML).
+
 ## cadCAD Background
+
+cadCAD is a Python package that assists in the processes of designing, testing and validating complex systems through simulation, with support for Monte Carlo methods, A/B testing and parameter sweeping. More information on it can be found [here](https://github.com/cadCAD-org/cadCAD).
 
 ## Folder Structure
 
