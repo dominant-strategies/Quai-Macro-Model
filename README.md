@@ -28,10 +28,7 @@ cadCAD is a Python package that assists in the processes of designing, testing a
 
 ### Spec Notebooks
 
-## MSML Spec Creation Features
-
-## MSML Wiring Features
-
-## MSML Simulation Features
-
-## cadCAD Simulation Features
+1. Build Obsidian: This notebook allows for building out the Obsidian spec.
+2. Single Simulation: Notebook for experimenting with running one single simulation.
+3. Controller Basic Scenarios: Notebook for the basic scenarios in testing the controller.
+4. Controller Basic Scenarios - Variable Difficulty: Notebook for the basic scenarios with a varying aggregate hashpower array.
