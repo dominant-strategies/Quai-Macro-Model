@@ -35,4 +35,9 @@ cadCAD is a Python package that assists in the processes of designing, testing a
 
 ## Running Simulations
 
-## Wiring Components
+The following are the components for running a simulation (which can be seen in "Spec/Controller Basic Scenarios.ipynb"):
+- load_from_json() loads the math spec object
+- Under global inputs, the wirings run, the number of timesteps, and some the aggregate hashpower series can be set for use across all simulations
+- An experiment is initialized with a name, a dictionary for updates to base parameters, a dictionary for updates to base state, and the blocks to run (passed from the global inputs)
+- ms.run_experiment() runs the experiment and returns the final state, parameters used, a dataframe of the simulation log and metrics imputed
+- The parameters of this function define out the things that happen before and after including preprocessing, postprocessing and any metrics to compute for a simulation
