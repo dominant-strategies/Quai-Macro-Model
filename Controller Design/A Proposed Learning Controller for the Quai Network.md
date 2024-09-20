@@ -18,11 +18,12 @@
 
 In what follows we specify a _model_ for miner behavior in which the decision of the miner at block height $i$ is a binary variable $C_i$ such that:
 
-$$C_i = \begin{cases} 1 & \text{if token 1 is chosen} \\ 0 & \text{if token 2 is chosen}.\end{cases}$$
+$$C_i = \begin{cases} 1 & \text{if token 1 is chosen,} \\ 0 & \text{if token 2 is chosen}.\end{cases}$$
 
 Miner choices $C_i$ are assumed to be, from the perspective of the controller, _stochastic_ as they are based upon private information held by the miner. [Econometric](https://en.wikipedia.org/wiki/Econometrics) analysis often encounters decision-making of this form, and there are underlying economic models of behavior (e.g. _latent variable_ or _random utility_ models--see Cameron, C. A. and P. K. Trivedi [2005], _[Microeconometrics: Methods and Applications](https://doi.org/10.1017/CBO9780511811241)_, Cambridge UP) that lead to a specific functional form for the distribution of $C_i$. Under this form, miner decisions are distributed such that for a block at height $i$,
 
 $$p_i = \Pr(C_i = 1 | \mathbf u_k, D_i ) := \frac{1}{1 + \exp(- \pmb{\beta}'\mathbf x_i) },$$
+
 where:
 - $\mathbf u_k = (u_{k1},u_{k2})$ is vector of _controller update parameters_ from the last prime block, indexed by $k$,
 - $D_i$ is the _difficulty_ of the block at block height $i$,
@@ -38,9 +39,11 @@ We assume a weak form of rationality on the miner, which is that given two quant
 We also know, from the specification of the proposed block rewards, that provided $D_i > e$,
 
 $$\frac{d (r_{i1}/r_{i2})}{d D_i} >0,$$
+
 i.e. relatively more of _qi_ is proposed when difficulty $D_i$ increases, since when $\mathbf u_k = (k_{qi}, k_{quai})$, 
 
 $$\frac{r_{i1}}{r_{i2}} = \frac{u_{k1}D_i}{u_{k2}\log_2(D_i)} = \left ( \frac{u_{k1}}{u_{k2}} \right )\left ( \frac{D_i}{\log_2(D_i)} \right ). \qquad \qquad (\dagger)$$
+
 
 Given the above, we would like to admit (but cannot _enforce_) that if relatively more _qi_ is proposed, then it is (weakly) more likely for the miner to accept _qi_. This is possible when:
 1. The feature $\mathbf x_i$ is a function of $D_i$ such that $d \mathbf x_i / d D_i \geq 0$ component-wise, with at least one component, say $x_{i\hat j}$, such that the inequality is strict, and
@@ -49,6 +52,7 @@ Given the above, we would like to admit (but cannot _enforce_) that if relativel
 If this possibility is admitted, then
 
 $$\frac{d p_i}{d D_i} = p_i (1 - p_i) \sum_{j=1}^J  \beta_j\frac{\partial x_{ij}}{\partial D_i} \geq 0,$$
+
 i.e. the higher the difficulty of a block, the (weakly) more likely it is for the miner to select _qi_ over _quai_ (all other things equal). A parsimonious specification of $\mathbf x_i$ providing this admissibility is presented below.
 
 ## Learning the Miner's Decision
@@ -65,18 +69,21 @@ Given the above model for miner behavior, indifference is when $p_i = 0.5$, i.e.
 
 $$\pmb{\hat{\beta}}' \mathbf x_i = 0.$$
 
+
 Refining this further requires a definition of the features $\mathbf x_i$.
 
 ### A Parsimonious Specification
 
 A parsimonious specification is where each feature vector $\mathbf x_i$, $i = 1, \ldots, n_k$ has the form:
 
-$$\mathbf x_i = (1, x_i) := (1, D_i/\log_2(D_i)).$$ 
+$$\mathbf x_i = (1, x_i) := (1, D_i/\log_2(D_i)).$$
+
 Here the first feature is $1$ for every data point, so that the first weight $\beta_0$ is an intercept/'bias' term. The second feature is exactly the ratio of difficulties in equation $(\dagger)$ above. 
 
 Using the above invariant surface, it is possible to derive a value $D_i = D^\star$ such that
 
 $$\frac{D^\star}{\log_2(D^\star)} = -\frac{\hat{\beta_0}}{\hat{\beta_1}} =: x^\star(\pmb{\hat{\beta}}).$$
+
 
 The value $D^\star$ is the difficulty level that would have to obtain in order for a miner to be (on average) indifferent between selecting token 1 and token 2 given $\pmb{\hat{\beta}}$, i.e. **given the controller's best understanding of miner behavior**. In what follows we will sometimes drop the dependence of $x^\star$ upon $\pmb{\hat{\beta}}$ for brevity, but it is important always to recall that $x^\star$ is derived from the _estimation problem_ the controller performs in finding a miner's indifference point.
 
@@ -90,9 +97,11 @@ Denote $r_{1}/r_{2}$ by a _parameter_ $R$. This and $(\dagger)$ define a second 
 
 $$R u_2 = x^\star  u_1. \qquad \qquad (\ddagger)$$
 
+
 The controller seeks to select $(u_1^\star, u_2^\star)$ to satisfy the following loss function defined by $(\ddagger)$:
 
 $$\min_{u_1,u_2} \ell(x^\star, u_1, u_2; R) := R u_2 - x^\star u_1$$
+
 such that $\ell(\cdot) \geq 0$.
 
 Since the loss function is parameterized by $R$, a key question is what this value should be. As the latest available information of the proposed block rewards is $r_{1k}/r_{2k}$ for prime block $k$, this _could_ be used as an estimate of $R$. Alternatively, smoothing of values from $\mathbf z_k$, e.g. EWMA of the ratios $r_{1i}/r_{2i}$, could be used. An approach which treats the $R$ value as a pass-through of a "_gain_" from the difficulty controller is outlined in the "Gain as a Reward Ratio" section below.
@@ -114,18 +123,22 @@ It is likely that for controller stability at least $g'(\bar D) < 0$ (and perhap
 An alternative that may provide more insight into scaling is to treat the unspecified parameter $R$ as a function of $\bar D$, allowing that to change in a consistent fashion relative to the difficulty controller. This has the advantage of 'closing the loop' on $R$ and providing an economically-relevant response to average difficulty $\bar D$. Since $R$ is meant to be an expression of a ratio of proposed block rewards, one may adopt the definition of $R(\bar D)$ as _the ratio of proposed block rewards that would have obtained_ if $\bar D$ had been the block difficulty under the previous controller parameters, i.e.:
 
 $$R(\bar D) := \frac{u_{k1}}{u_{k2}}x(\bar D),$$
+
 where $\mathbf u_k := (u_{k1}, u_{k2})$ is the vector of controller parameters from previous prime block $k$, and
 
 $$x(\bar D) := \frac{\bar D}{\log_2(\bar D)},$$
+
 i.e. that ratio of difficulties that would have obtained from difficulty level $\bar D$. (This has the same form as the feature specification for $x_i$ given above.)
 
 Given this, the optimal controller parameter update for $u^\star_1$ from the loss function is (from $(\ddagger)$ above):
 
 $$u_1^\star = \frac{u_2^\star}{u_{k2}}u_{k1}\frac{x(\bar D)}{x^\star(\pmb{\hat{\beta}})}.$$
 
+
 If token 2 acts as a numeraire, then we may fix $u^\star_2 = u_{k2}$ (by extension, this sets $u_2$ to a single value $\bar u$). Letting $u_1^\star = u_{k1} + \Delta u_1$, this can be rearranged to yield the update "delta" for the controller paramter $u_1$:
 
 $$\Delta u_1 = \left ( \frac{x(\bar D)}{x^\star(\pmb{\hat{\beta}})} - 1 \right )u_{k1}. \qquad \qquad (*)$$
+
 
 This has an appealing interpretation for the controller: when the function of average difficulty $x(\bar D)$ is below the estimated value $x^\star(\pmb{\hat{\beta}})$, the controller parameter $u_1$ is adjusted proportionally downwards, so that the proposed block rewards, at the indifference difficulty level $D^\star$, move to reflect the block ratio $R(\bar D)$ for the average difficulty. **The controller is thus acting to _stabilize_ the block reward ratio around the miner's indifference, at the average difficulty of the system provided by the difficulty controller**. Similarly, when $x(\bar D) > x^\star(\pmb{\hat{\beta}})$ the controller parameter $u_1$ is adjusted upwards.
 
@@ -133,6 +146,7 @@ This has an appealing interpretation for the controller: when the function of av
 A manual "attenuation" parameter could also be added here, to adjust the sensitivity of $\Delta u_1$ to $x(\bar D)/x^\star(\pmb{\hat{\beta}})$. In that case $(*)$ above is slightly modified to
 >
 >$$\Delta u_1 = \alpha \left ( \frac{x(\bar D)}{x^\star(\pmb{\hat{\beta}})} - 1 \right )u_{k1}. \qquad \qquad (**)$$
+>
 > for an exogenous parameter $\alpha \in (0, \infty)$. Such attenuation may be used if other constraints must be met (e.g. conversions, secondary market operations etc.), or if the system's difficulty and/or preferences do not admit sufficient variability to avoid polar absorbing states (see [[#System Variability and Controller Performance]] below).
 > ^123
 
@@ -142,12 +156,15 @@ A manual "attenuation" parameter could also be added here, to adjust the sensiti
 As the production Quai implementation will adjust $k_{quai}$ and leave $k_{qi}$ as numeraire, the above may be modified to provide the update rule in terms of $u_2$, with $u_1$ as numeraire. In that case we have from $(\ddagger)$:
 
 $$u_2^\star = \frac{u_1^\star}{u_{k1}}u_{k2}\frac{x^\star(\pmb{\hat{\beta}})}{x(\bar D)},$$
+
 and the controller update $\Delta u_2$ becomes
 
 $$\Delta u_2 = \left ( \frac{x^\star(\pmb{\hat{\beta}})}{x(\bar D)} - 1 \right )u_{k2}, \qquad \qquad (*)$$
+
 or with manual attenuation
 
 $$\Delta u_2 = \alpha \left ( \frac{x^\star(\pmb{\hat{\beta}})}{x(\bar D)} - 1 \right )u_{k2}. \qquad \qquad (**)$$
+
 
 ### Controller Summary
 
@@ -159,6 +176,7 @@ The controller operates in the following way at prime block height $k+1$:
 4. The controller computes e.g. $\Delta u_2$ and updates
 5. 
 $$u_{(k+1)2} = u_{k2} + \Delta u_2,$$
+
 with $u_{k1} \equiv \bar u \: \forall k$ fixed from the beginning as numeraire.
 
 ## Miner Responsiveness
