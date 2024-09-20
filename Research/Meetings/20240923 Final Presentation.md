@@ -41,10 +41,22 @@
 
 ### Unit & Integration Testing
 
+- Because of how the wirings and components are set up, it can very easily be enhanced with tests to ensure the validity of the model after any iterations and updates
+- Unit tests can be built up into integration tests by testing entire wirings against different conditions
+
 ### A/B Testing of Mechanism
 
-
+- Given MSML's support of multiple policy/boundary action/etc. options, one can write out different potential implementations to talk through
+- As well, each can be bound with code and by just switching the functional parameterizations (parameters with FP before them), the simulation will run with different implementations
+- Multiple simulations can be set up to probe the effects of different policies and behavioral assumptions
 
 ### Digital Twin
 
-### Individual Wiring Investigations
+- When a production system is launched, a digital twin model can be used to backtest the realized outcomes versus backtested outcomes as well as make future extrapolations
+- Analytic dashboards and potentially even early warning systems can also be potentially designed
+
+
+### Cloud Enabled Simulations
+
+- For scaling of simulations, a custom cloud solution for running parallelized simulations can be built
+- This allows for a massive number of simulations to be run in a short time
