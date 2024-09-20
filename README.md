@@ -7,6 +7,8 @@ The repository presented here contains:
 - The scenario and analysis notebooks associated with testing the proposed value controller; and
 - The formal description of the proposed value controller.
 
+The repository Markdown text leverages features of the [Obsidian](https://obsidian.md) note-taking application. The text is compatible with other Markdown/Mathjax-ready applications, but some specific features (such as callouts and wiki-style internal hyperlinks) may have limited or no functionality.
+
 ## MSML Background
 
 Writing mathematical specifications can be a difficult process, especially when variable names are changed or new mechanisms are introduced. MSML seeks to streamline the process with automations as well as enhance the abilities of static math specs to deliver deeper insights. Because it is automated, one can write specifications at different levels of details or for different purposes.
