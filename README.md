@@ -25,8 +25,8 @@ cadCAD is a Python package that assists in the processes of designing, testing a
 2. Model: The folder containing the code for running a cadCAD model with MSML as the wiring orchestration engine. Currently the preference is to use the native MSML engine but this is set up for when/if large scale models and parameter selection under uncertainty workflows are run.
 3. Research: An Obsidian vault filled with annotated documents and meeting notes. This can also be safely ignored unless one wants to see some of the underlying documents that went into creating the specification.
 4. Spec: The folder containing the majority of the code and all the components used for the spec creation process.
-5. Scenario design: The folder contains the overview of the initial testing scenarios that were simulated.
-6. Controller design: The folder contains the formal description of the proposed value controller, including potential avenues for further refinement, testing and simulation.
+5. Scenario design: The folder containing the overview of the initial testing scenarios that were simulated.
+6. Controller design: The folder containing the formal description of the proposed value controller, including potential avenues for further refinement, testing and simulation.
 
 ### Spec Folders
 
