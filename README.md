@@ -7,7 +7,7 @@ The repository presented here contains:
 - The scenario and analysis notebooks associated with testing the proposed value controller; and
 - The formal description of the proposed value controller.
 
-The repository Markdown text leverages features of the [Obsidian](https://obsidian.md) note-taking application. The text is compatible with other Markdown/Mathjax-ready applications, but some specific features (such as callouts and wiki-style internal hyperlinks) may have limited or no functionality.
+The repository Markdown text leverages features of the [Obsidian](https://obsidian.md) note-taking application. The text is compatible with other Markdown/MathJax-ready applications, but some specific features (such as callouts and wiki-style internal hyperlinks) may have limited or no functionality.
 
 ## MSML Background
 
