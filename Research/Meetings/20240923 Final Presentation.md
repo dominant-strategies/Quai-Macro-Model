@@ -22,6 +22,8 @@
 
 ## Variable Difficulty Notebook
 
+- The variable difficulty notebook can be found [here](https://github.com/BlockScience/Quai-Macro-Model/blob/main/Spec/Controller%20Basic%20Scenarios%20-%20Variable%20Difficulty.ipynb).
+
 ## Potential Future Work Arcs
 
 ### Parameter Selection under Uncertainty
