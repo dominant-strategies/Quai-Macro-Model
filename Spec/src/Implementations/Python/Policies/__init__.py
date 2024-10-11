@@ -6,6 +6,7 @@ from .Block import (
     logistic_probability_payment_policy,
     logistic_probability_payment_policy2,
     logistic_probability_payment_policy3,
+    test_mining_payment_policy,
 )
 from .Market import block_reward_ratio_conversion_policy, price_movements_policy_v1
 from .Vesting import unlock_tokens_policy_v1
@@ -35,4 +36,5 @@ policies = {
     "Reward Ratio Gain KQuai": reward_ratio_gain_kquai,
     "Logistic Probability Payment Policy V2": logistic_probability_payment_policy2,
     "Logistic Probability Payment Policy V3": logistic_probability_payment_policy3,
+    "TEST MINING PAYMENT": test_mining_payment_policy,
 }

@@ -103,6 +103,12 @@ mining_payment_policy_option4 = {
     "logic": "",
 }
 
+mining_payment_policy_option5 = {
+    "name": "TEST MINING PAYMENT",
+    "description": "SIMPLE",
+    "logic": "ABC",
+}
+
 mining_payment_policy = {
     "name": "Mining Payment Policy",
     "description": "Policy which determines what amount of Quai vs. Qi is taken as payment.",
@@ -112,6 +118,7 @@ mining_payment_policy = {
         mining_payment_policy_option2,
         mining_payment_policy_option3,
         mining_payment_policy_option4,
+        mining_payment_policy_option5,
     ],
     "domain": ["Block Reward Options Space"],
     "codomain": [

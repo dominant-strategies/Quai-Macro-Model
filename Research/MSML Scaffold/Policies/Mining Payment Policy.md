@@ -102,3 +102,9 @@ V1 but with three dimensions, adding in the log of the ratio of difficulties for
 #### Logic
 
 
+### 5. TEST MINING PAYMENT
+#### Description
+SIMPLE
+#### Logic
+ABC
+

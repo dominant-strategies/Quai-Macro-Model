@@ -317,3 +317,9 @@ def logistic_probability_payment_policy2(state, params, spaces):
 
 def logistic_probability_payment_policy3(state, params, spaces):
     return logistic_probability_payment_policy(state, params, spaces, x_schema="V3")
+
+
+def test_mining_payment_policy(state, params, spaces):
+    print("WE ARE IN THE TEST FUNCTION HERE")
+
+    return logistic_probability_payment_policy(state, params, spaces, x_schema="V1")
