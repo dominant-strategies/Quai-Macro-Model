@@ -106,3 +106,30 @@ def mine_block_boundary_action_v3(state, params, spaces):
     H = list(L.keys())
     space["Locking Times"] = [choice(H) for _ in range(n_blocks)]
     return [space]
+
+
+def mine_block_boundary_action_v4(state, params, spaces):
+    space = {}
+    space["Aggregate Hashpower"] = params["Aggregate Hashpower Series"][
+        state["Block Number"]
+    ]
+
+    n_blocks = state["Number of Regions"] ** 2 * state["Zones per Region"] ** 2
+
+    space["Blocks to Mine"] = [
+        {
+            "Difficulty": state["Block Difficulty"]
+            * max(
+                np.random.normal(
+                    params["Difficulty Randomness Mu"],
+                    params["Difficulty Randomness Sigma"],
+                ),
+                0.01,
+            )
+        }
+        for _ in range(n_blocks)
+    ]
+    L = state["Stateful Metrics"]["Current Lockup Options"](state, params)
+    H = list(L.keys())
+    space["Locking Times"] = [choice(H) for _ in range(n_blocks)]
+    return [space]

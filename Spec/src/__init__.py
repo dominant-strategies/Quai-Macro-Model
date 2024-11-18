@@ -1,3 +1,5 @@
+%load_ext autoreload
+%autoreload 2
 from .StatefulMetrics import stateful_metrics
 from .State import states
 from .Spaces import spaces

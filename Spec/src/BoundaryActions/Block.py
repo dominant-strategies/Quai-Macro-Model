@@ -21,7 +21,7 @@ mine_block_boundary_action3 = {
 }
 
 mine_block_boundary_action4 = {
-    "name": "Mine Block Boundary Action V3",
+    "name": "Mine Block Boundary Action V4",
     "description": "Current working version of the boundary action for mining a block.",
     "logic": """1. Aggregate hashpower is pulled from the [[Aggregate Hashpower Series]] parameter
     2. n_blocks = state["Number of Regions"] ** 2 * state["Zones per Region"] ** 2
