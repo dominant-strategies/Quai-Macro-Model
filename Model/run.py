@@ -1,4 +1,6 @@
 from psub import psub_blocks
+import sys
+sys.path.append("/home/drk/prj/Quai-Macro-Model/cadCAD")
 from cadCAD.engine import ExecutionMode, ExecutionContext, Executor
 from cadCAD import configs
 from cadCAD.configuration.utils import config_sim
