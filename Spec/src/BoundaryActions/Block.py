@@ -14,14 +14,17 @@ mine_block_boundary_action2 = {
     TBD""",
 }
 
-mine_block_boundary_action3 = {
-    "name": "TEST Mine Block Boundary Action",
-    "description": "Testing function which pulls the aggereagete hashpower and then assigns deterministically the current difficulty to 16 blocks.",
-    "logic": """""",
-}
-
 mine_block_boundary_action4 = {
     "name": "Mine Block Boundary Action V4",
+    "description": "Current working version of the boundary action for mining a block.",
+    "logic": """1. Aggregate hashpower is pulled from the [[Aggregate Hashpower Series]] parameter
+    2. n_blocks = state["Number of Regions"] ** 2 * state["Zones per Region"] ** 2
+    3. Difficulty for blocks is equal to current block difficulty times randomness parameters for block difficulty, total of n_blocks
+    4. Randomly select the lockup horizon $H$ with equal probability from the lockup options for each mined block""",
+}
+
+mine_block_boundary_action3 = {
+    "name": "Mine Block Boundary Action V3",
     "description": "Current working version of the boundary action for mining a block.",
     "logic": """1. Aggregate hashpower is pulled from the [[Aggregate Hashpower Series]] parameter
     2. n_blocks = state["Number of Regions"] ** 2 * state["Zones per Region"] ** 2

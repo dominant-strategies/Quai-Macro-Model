@@ -86,30 +86,34 @@ def mine_block_boundary_action_v3(state, params, spaces):
     space["Aggregate Hashpower"] = params["Aggregate Hashpower Series"][
         state["Block Number"]
     ]
-
+    print("Aggregate Hashpower: ", space["Aggregate Hashpower"])
     n_blocks = state["Number of Regions"] ** 2 * state["Zones per Region"] ** 2
-
+    print("Number of Blocks: ", n_blocks)
     space["Blocks to Mine"] = [
         {
-            "Difficulty": state["Block Difficulty"]
-            * max(
-                np.random.normal(
-                    params["Difficulty Randomness Mu"],
-                    params["Difficulty Randomness Sigma"],
-                ),
-                0.01,
+            "Difficulty": max(
+                state["Block Difficulty"]
+                * 2 ** np.random.geometric(p=0.5, size=1).item(),  # Geometric scaling factor
+                state["Block Difficulty"],  # Ensure difficulty >= base difficulty
             )
         }
         for _ in range(n_blocks)
-    ]
+]
+    print("Block Difficulties: ", [x["Difficulty"] for x in space["Blocks to Mine"]])
     L = state["Stateful Metrics"]["Current Lockup Options"](state, params)
+    print("Locking Options: ", L)
     H = list(L.keys())
+    print("Locking Times: ", [choice(H) for _ in range(n_blocks)])
     space["Locking Times"] = [choice(H) for _ in range(n_blocks)]
+    print("Space: ", space) 
     return [space]
-
 
 def mine_block_boundary_action_v4(state, params, spaces):
     space = {}
+    quai_probability = 0.5
+    if len(state["Historical Mined Ratio"]) > 0:
+        quai_probability = state["Historical Mined Ratio"][-1]["Ratio"]
+    
     space["Aggregate Hashpower"] = params["Aggregate Hashpower Series"][
         state["Block Number"]
     ]
