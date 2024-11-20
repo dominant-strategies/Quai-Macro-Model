@@ -128,7 +128,9 @@ def deterministic_mining_payment_policy(state, params, spaces):
         spaces[0]["Quai Reward Offered"],
         spaces[0]["Qi Reward Offered"],
     )
+    print("coming to the deterministic payment policy")
     for bd, quai_rew, qi_rew in zip(bd_l, quai_rew_l, qi_reward_l):
+        print("quai rev", quai_rew, "quai price", state["Quai Price"], "qi rev", qi_rew, "qi price", state["Qi Price"])
         if quai_rew * state["Quai Price"] >= qi_rew * state["Qi Price"]:
             mined_quai += quai_rew
             quai_hash += bd
@@ -244,7 +246,8 @@ def logistic_probability_payment_policy(state, params, spaces, x_schema="V1"):
             assert False
         p = 1 / (1 + np.exp(-state["Population Mining Beta Vector"].dot(x)))
 
-        qi_chosen = random() <= p
+        random_num = random()
+        qi_chosen = random_num <= p
         if qi_chosen:
             mined_qi += qi_rew
             qi_hash += bd
