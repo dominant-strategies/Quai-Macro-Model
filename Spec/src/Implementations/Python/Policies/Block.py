@@ -78,7 +78,6 @@ def compute_difficulty_change(
     space["Mining Epochs"] = l
     return [space]"""
 
-
 def mining_policy_v1(state, params, spaces):
     aggregate_hashpower, block_hashes = (
         spaces[0]["Aggregate Hashpower"],
@@ -89,16 +88,12 @@ def mining_policy_v1(state, params, spaces):
     space["Block Difficulty"] = [x["Difficulty"] for x in block_hashes]
     space["Mining Time"] = sum(space["Block Difficulty"]) / aggregate_hashpower
 
-    target_time = params["Target Mining Time"] * len(space["Block Difficulty"])
-
-    e = target_time - space["Mining Time"]
-    space["New Difficulty"] = state["Block Difficulty"] * (1 + e / target_time)
+    space["New Difficulty"] = space["Block Difficulty"][-1]
     space["New Difficulty"] = max(space["New Difficulty"], 2)
 
     space["Locking Times"] = deepcopy(spaces[0]["Locking Times"])
 
     return [space]
-
 
 def block_reward_policy_v1(state, params, spaces):
     space = deepcopy(spaces[0])
