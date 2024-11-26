@@ -4,6 +4,7 @@ from .Block import (
     mine_block_boundary_action_v2,
     test_mine_block_boundary_action,
     mine_block_boundary_action_v3,
+    do_not_use_print_hello,
 )
 from .Conversions import (
     test_quai_conversion,
@@ -29,4 +30,5 @@ boundary_action_options = {
     "Mine Block Boundary Action V3": mine_block_boundary_action_v3,
     "Update Population Beta Boundary Action Signal": update_population_beta_boundary_action_signal,
     "DO NOT USE Conversion": do_not_use_conversion,
+    "DO NOT USE Print Hello Boundary Action V1": do_not_use_print_hello,
 }

@@ -160,3 +160,8 @@ def mine_block_boundary_action_v3(state, params, spaces):
     H = list(L.keys())
     space["Locking Times"] = [choice(H) for _ in range(n_blocks)]
     return [space]
+
+
+def do_not_use_print_hello(state, params, spaces):
+    print("HELLO")
+    return []
