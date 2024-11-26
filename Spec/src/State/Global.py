@@ -198,5 +198,12 @@ global_state = {
             "symbol": None,
             "domain": None,
         },
+        {
+            "type": "Hashpower per Second",
+            "name": "Aggregate Hashpower",
+            "description": "The current hashpower per second in the simulation",
+            "symbol": None,
+            "domain": None,
+        },
     ],
 }
