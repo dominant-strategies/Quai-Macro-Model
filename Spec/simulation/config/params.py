@@ -1,4 +1,5 @@
 import numpy as np
+from copy import deepcopy
 
 initial_vesting_allocation = 5000000000
 
@@ -121,3 +122,8 @@ params_base = {
     "FP Mining Payment Policy": "Logistic Probability Payment Policy",
     "FP Beta Estimation Policy": "Rolling Logistic Regression Estimation",
 }
+
+params_my_scenario_1 = deepcopy(params_base)
+
+
+params_my_scenario_1["FP Conversions Boundary Action"] = "TEST Quai Conversion"
