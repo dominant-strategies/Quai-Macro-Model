@@ -33,6 +33,12 @@ test_qi_conversion = {
     "logic": "Return a space with qi conversion of 100",
 }
 
+conversions_boundary_action_do_not_use = {
+    "name": "DO NOT USE Conversion",
+    "description": "Just for show boundary action.",
+    "logic": "Return a space with qi conversion of 100 * rational miner parameter",
+}
+
 conversions_boundary_action = {
     "name": "Conversions Boundary Action",
     "description": "Boundary action which determines amount of potentially converted Qi or Quai.",
@@ -41,6 +47,7 @@ conversions_boundary_action = {
         conversions_boundary_action_v1,
         test_quai_conversion,
         test_qi_conversion,
+        conversions_boundary_action_do_not_use,
     ],
     "called_by": [],
     "codomain": ["Conversion Space"],

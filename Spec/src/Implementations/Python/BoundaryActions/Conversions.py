@@ -60,3 +60,14 @@ def test_qi_conversion(state, params, spaces):
             )[1],
         }
     ]
+
+
+def do_not_use_conversion(state, params, spaces):
+    space = {
+        "Token": "Qi",
+        "Amount": 100 * params["Probability of Rational Miners"],
+        "Locking Time": list(
+            state["Stateful Metrics"]["Current Lockup Options"](state, params).keys()
+        )[1],
+    }
+    return [space]

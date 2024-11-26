@@ -46,3 +46,9 @@ Test function that moves to exchange 100 Qi and always picks the second lowest l
 #### Logic
 Return a space with qi conversion of 100
 
+### 4. DO NOT USE Conversion
+#### Description
+Just for show boundary action.
+#### Logic
+Return a space with qi conversion of 100 * rational miner parameter
+

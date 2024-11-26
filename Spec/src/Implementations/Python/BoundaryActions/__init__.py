@@ -9,6 +9,7 @@ from .Conversions import (
     test_quai_conversion,
     test_qi_conversion,
     conversions_boundary_action_v1,
+    do_not_use_conversion,
 )
 from .Market import test_price_movements_boundary, hashpower_price_movement
 from .User import update_population_beta_boundary_action_signal
@@ -27,4 +28,5 @@ boundary_action_options = {
     "TEST Mine Block Boundary Action": test_mine_block_boundary_action,
     "Mine Block Boundary Action V3": mine_block_boundary_action_v3,
     "Update Population Beta Boundary Action Signal": update_population_beta_boundary_action_signal,
+    "DO NOT USE Conversion": do_not_use_conversion,
 }
