@@ -34,6 +34,7 @@ cssclasses:
 │   │   ├──[[Global State-Estimated Mining Beta Vector\|Estimated Mining Beta Vector]]
 │   │   ├──[[Global State-Logistic Classifier\|Logistic Classifier]]
 │   │   ├──[[Global State-Mining Log\|Mining Log]]
+│   │   ├──[[Global State-Aggregate Hashpower\|Aggregate Hashpower]]
 ├──**Stateful Metrics**
 │   ├──Circulating Stateful Metrics
 │   │   ├──[[Circulating Quai Supply]]
@@ -137,11 +138,13 @@ cssclasses:
 │   │   ├──[[Difficulty Adjustment Period]]
 │   │   ├──[[Difficulty Randomness Sigma]]
 │   │   ├──[[Difficulty Randomness Mu]]
+│   │   ├──[[Probability of Rational Miners]]
 │   ├──Vesting Parameter Set
 │   │   ├──[[Initial Vesting Schedule]]
 │   │   ├──[[Lockup Options]]
 ├──**Boundary Actions**
 │   ├──[[Mine Block Boundary Action]]
+│   ├──[[DO NOT USE Print Hello Boundary Action]]
 │   ├──[[Conversions Boundary Action]]
 │   ├──[[Price Movements Boundary Action]]
 │   ├──[[Update Population Beta Boundary Action]]

@@ -58,7 +58,16 @@ mining_parameter_set = {
             "domain": None,
             "parameter_class": "System",
         },
+        {
+            "variable_type": "Float Type",
+            "name": "Probability of Rational Miners",
+            "description": "The probability that a given miner is going to act rationally.",
+            "symbol": None,
+            "domain": "[0, 1]",
+            "parameter_class": "Behavioral",
+        },
     ],
 }
+
 
 block_parameter_sets = [mining_parameter_set]

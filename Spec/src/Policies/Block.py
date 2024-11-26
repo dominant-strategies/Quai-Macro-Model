@@ -128,7 +128,7 @@ mining_payment_policy = {
         "Mined Blocks Space 2",
         "Block Difficulty Space",
     ],
-    "parameters_used": [],
+    "parameters_used": ["Probability of Rational Miners"],
     "metrics_used": ["Qi to Hash Metric", "Quai to Hash Metric"],
 }
 

@@ -30,6 +30,7 @@
 |[[Global State-Estimated Mining Beta Vector\|Estimated Mining Beta Vector]]|The controllers current estimation of the beta vector|[[Mining Beta Vector Type]]|||
 |[[Global State-Logistic Classifier\|Logistic Classifier]]|The logistic classifier used for beta estimation|[[Logistic Classifier Type]]|||
 |[[Global State-Mining Log\|Mining Log]]|The log of mined blocks|[[Simulation History Log Type]]|||
+|[[Global State-Aggregate Hashpower\|Aggregate Hashpower]]|The current hashpower per second in the simulation|[[Hashpower per Second]]|||
 
 
 ## Updated By

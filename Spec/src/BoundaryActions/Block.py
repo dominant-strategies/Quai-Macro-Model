@@ -53,4 +53,22 @@ mine_block_boundary_action = {
     ],
 }
 
-block_boundary_actions = [mine_block_boundary_action]
+
+print_hello_option1 = {
+    "name": "DO NOT USE Print Hello Boundary Action V1",
+    "description": "Just prints hello.",
+    "logic": """""",
+}
+print_hello = {
+    "name": "DO NOT USE Print Hello Boundary Action",
+    "description": "Print hello.",
+    "constraints": [],
+    "boundary_action_options": [print_hello_option1],
+    "called_by": [],
+    "codomain": [],
+    "parameters_used": [],
+    "metrics_used": [],
+}
+
+
+block_boundary_actions = [mine_block_boundary_action, print_hello]

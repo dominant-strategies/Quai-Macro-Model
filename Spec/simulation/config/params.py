@@ -1,4 +1,5 @@
 import numpy as np
+from copy import deepcopy
 
 initial_vesting_allocation = 5000000000
 
@@ -114,6 +115,7 @@ params_base = {
     "Minimum K Qi": 0,
     "Minimum K Quai": 0,
     "Maximum Conversion Rate": 10,
+    "Probability of Rational Miners": 0.8,
     "FP Controller Update Policy": "Reward Ratio Gain KQuai",
     "FP Conversions Boundary Action": "Conversions Boundary Action V1",
     "FP Mine Block Boundary Action": "Mine Block Boundary Action V3",
@@ -121,3 +123,8 @@ params_base = {
     "FP Mining Payment Policy": "Logistic Probability Payment Policy",
     "FP Beta Estimation Policy": "Rolling Logistic Regression Estimation",
 }
+
+params_my_scenario_1 = deepcopy(params_base)
+
+
+params_my_scenario_1["FP Conversions Boundary Action"] = "TEST Quai Conversion"

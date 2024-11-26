@@ -1,6 +1,7 @@
 import numpy as np
 from random import choice
 
+
 def create_block_hashes_v1(state, params):
 
     # Get the baseline block difficulties without randomness
@@ -79,6 +80,7 @@ def test_mine_block_boundary_action(state, params, spaces):
     ]
     return [space]
 
+
 def update_aggregate_hashpower(state, params, spaces):
     block_number = state["Block Number"]
     aggregate_mined_percent = 0
@@ -86,7 +88,7 @@ def update_aggregate_hashpower(state, params, spaces):
     # get the number of samples
     number_samples = 30
 
-    for i in range(min(block_number-number_samples,0), block_number) :
+    for i in range(min(block_number - number_samples, 0), block_number):
         if len(state["Historical Mined Ratio"]) > 0:
             temp = state["Mining Log"][-1]["Quai Taken"]
             mined_block_percent = sum([x > 0 for x in temp]) / len(temp)
@@ -94,22 +96,21 @@ def update_aggregate_hashpower(state, params, spaces):
             mined_block_percent = 0.5
         aggregate_mined_percent += mined_block_percent
 
-    avg_mined_percent = aggregate_mined_percent/max(block_number, number_samples)
+    avg_mined_percent = aggregate_mined_percent / max(block_number, number_samples)
 
     print("avg mined percent", avg_mined_percent)
 
-    err = (0.5 - avg_mined_percent)/0.5
+    err = (0.5 - avg_mined_percent) / 0.5
 
     prev_block_number = block_number - 1
     if prev_block_number < 0:
         prev_block_number = 0
 
-    prev_hashpower = params["Aggregate Hashpower Series"][
-        prev_block_number
-    ]
+    prev_hashpower = state["Aggregate Hashpower"]
     new_hash_power = prev_hashpower - 0.01 * err * prev_hashpower
     # update the hash power series to update the hash power to be used for this epoch
-    params["Aggregate Hashpower Series"][state["Block Number"]] = new_hash_power
+    state["Aggregate Hashpower"] = new_hash_power
+
 
 def mine_block_boundary_action_v3(state, params, spaces):
     space = {}
@@ -129,19 +130,38 @@ def mine_block_boundary_action_v3(state, params, spaces):
     for _ in range(n_blocks):
 
         # calculate the new lambda for the new new block sample
-        lam = block_difficulty/space["Aggregate Hashpower"]
+        lam = block_difficulty / space["Aggregate Hashpower"]
         time_to_find_block = np.random.poisson(lam=lam, size=1)
 
         target_time = params["Target Mining Time"]
 
-        new_difficulty = block_difficulty + 0.001 * ((target_time - time_to_find_block[0])/target_time) * block_difficulty
-        print("new difficulty", new_difficulty, "block difficulty", block_difficulty, "time to find block", time_to_find_block, "target time", target_time)
+        new_difficulty = (
+            block_difficulty
+            + 0.001
+            * ((target_time - time_to_find_block[0]) / target_time)
+            * block_difficulty
+        )
+        print(
+            "new difficulty",
+            new_difficulty,
+            "block difficulty",
+            block_difficulty,
+            "time to find block",
+            time_to_find_block,
+            "target time",
+            target_time,
+        )
         # update the block difficulty variable to the newly calculated block difficulty
         block_difficulty = new_difficulty
 
-        space["Blocks to Mine"].append({"Difficulty":block_difficulty})
-        
+        space["Blocks to Mine"].append({"Difficulty": block_difficulty})
+
     L = state["Stateful Metrics"]["Current Lockup Options"](state, params)
     H = list(L.keys())
     space["Locking Times"] = [choice(H) for _ in range(n_blocks)]
     return [space]
+
+
+def do_not_use_print_hello(state, params, spaces):
+    print("HELLO")
+    return []
