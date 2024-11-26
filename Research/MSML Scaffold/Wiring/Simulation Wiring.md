@@ -373,11 +373,12 @@ The wiring of the entire simulation
 16. [[PID Parameterization]]
 17. [[Population Beta Signal]]
 18. [[Price EWMA Lambda]]
-19. [[Qi Price Movemement Sigma]]
-20. [[Quai Price Movemement Sigma]]
-21. [[Quai Reward Base Parameter]]
-22. [[Speculator Percentage]]
-23. [[State Update Skipping Parameter]]
+19. [[Probability of Rational Miners]]
+20. [[Qi Price Movemement Sigma]]
+21. [[Quai Price Movemement Sigma]]
+22. [[Quai Reward Base Parameter]]
+23. [[Speculator Percentage]]
+24. [[State Update Skipping Parameter]]
 
 ## Called By
 

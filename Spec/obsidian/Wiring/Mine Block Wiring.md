@@ -242,8 +242,9 @@ If the demand for Qi is greater than the supply, there should be a profitable op
 7. [[Minimum K Qi]]
 8. [[Minimum K Quai]]
 9. [[PID Parameterization]]
-10. [[Quai Reward Base Parameter]]
-11. [[State Update Skipping Parameter]]
+10. [[Probability of Rational Miners]]
+11. [[Quai Reward Base Parameter]]
+12. [[State Update Skipping Parameter]]
 
 ## Called By
 

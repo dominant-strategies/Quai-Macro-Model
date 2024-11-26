@@ -115,6 +115,7 @@ params_base = {
     "Minimum K Qi": 0,
     "Minimum K Quai": 0,
     "Maximum Conversion Rate": 10,
+    "Probability of Rational Miners": 0.8,
     "FP Controller Update Policy": "Reward Ratio Gain KQuai",
     "FP Conversions Boundary Action": "Conversions Boundary Action V1",
     "FP Mine Block Boundary Action": "Mine Block Boundary Action V3",

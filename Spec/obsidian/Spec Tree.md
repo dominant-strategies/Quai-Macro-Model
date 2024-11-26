@@ -138,6 +138,7 @@ cssclasses:
 │   │   ├──[[Difficulty Adjustment Period]]
 │   │   ├──[[Difficulty Randomness Sigma]]
 │   │   ├──[[Difficulty Randomness Mu]]
+│   │   ├──[[Probability of Rational Miners]]
 │   ├──Vesting Parameter Set
 │   │   ├──[[Initial Vesting Schedule]]
 │   │   ├──[[Lockup Options]]

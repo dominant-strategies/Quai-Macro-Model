@@ -30,6 +30,7 @@ Policy which determines what amount of Quai vs. Qi is taken as payment.
 12. [[Block Difficulty Space]]
 ## Constraints
 ## Parameters Used
+1. [[Probability of Rational Miners]]
 ## Metrics Used
 1. [[Qi to Hash Metric]]
 2. [[Quai to Hash Metric]]
