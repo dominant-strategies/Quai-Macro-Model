@@ -49,7 +49,7 @@ EES20(["Time"])
 EES20 --- EE0
 end
 
-subgraph X66["Simulation Wiring"]
+subgraph X61["Simulation Wiring"]
 direction TB
 subgraph X4["Price Movements Wiring"]
 direction TB
@@ -265,26 +265,11 @@ X57--"Beta Vector Space"--->X58
 end
 X60["Log Simulation Data Mechanism"]
 X60 --> EES19
-subgraph X65["DO NOT USE Unlock Tokens Wiring"]
-direction TB
-X61["Unlock Tokens Control Action"]
-X62["Unlock Tokens Policy"]
-X63["Unlock Tokens Mechanism"]
-X63 --> EES10
-X63 --> EES9
-X63 --> EES18
-X63 --> EES15
-X64["DO NOT USE Print Hello Boundary Action"]
-X61--->X62
-X62--"Unlock Tokens Space"--->X63
-X63--->X64
-end
 X4--->X19
 X19--->X51
 X51--->X55
 X55--->X59
 X59--->X60
-X60--->X65
 end
 ```
 
@@ -299,7 +284,6 @@ The wiring of the entire simulation
 4. [[Unlock Tokens Wiring]]
 5. [[Update Population Beta Wiring]]
 6. [[Log Simulation Data Mechanism]]
-7. [[DO NOT USE Unlock Tokens Wiring]]
 
 ## All Blocks
 1. [[Append to Unlock Schedule Mechanism]]
@@ -310,36 +294,35 @@ The wiring of the entire simulation
 6. [[Controller Update Policy]]
 7. [[Conversions Boundary Action]]
 8. [[Conversions Policy]]
-9. [[DO NOT USE Print Hello Boundary Action]]
-10. [[Increment Block Number Mechanism]]
-11. [[Increment Time Mechanism]]
-12. [[Log Mined Blocks Mechanism]]
-13. [[Log Simulation Data Mechanism]]
-14. [[Mezzanine Wiring Passthrough]]
-15. [[Mine Block Boundary Action]]
-16. [[Mining Payment Policy]]
-17. [[Mining Policy]]
-18. [[Mint Qi Tokens Mechanism]]
-19. [[Mint Quai Tokens Mechanism]]
-20. [[Price Movements Boundary Action]]
-21. [[Price Movements Policy]]
-22. [[Set Estimated Beta Vector Mechanism]]
-23. [[Set K Mechanism]]
-24. [[Unlock Tokens Control Action]]
-25. [[Unlock Tokens Mechanism]]
-26. [[Unlock Tokens Policy]]
-27. [[Update Block Difficulty Mechanism]]
-28. [[Update Historical Converted Qi Mechanism]]
-29. [[Update Historical Converted Quai Mechanism]]
-30. [[Update Historical Mined Ratio Mechanism]]
-31. [[Update Historical Qi Hash Mechanism]]
-32. [[Update Historical Quai Hash Mechanism]]
-33. [[Update Locked Qi Mechanism]]
-34. [[Update Locked Quai Mechanism]]
-35. [[Update Population Beta Boundary Action]]
-36. [[Update Population Beta Mechanism]]
-37. [[Update Population Beta Policy]]
-38. [[Update Prices Mechanism]]
+9. [[Increment Block Number Mechanism]]
+10. [[Increment Time Mechanism]]
+11. [[Log Mined Blocks Mechanism]]
+12. [[Log Simulation Data Mechanism]]
+13. [[Mezzanine Wiring Passthrough]]
+14. [[Mine Block Boundary Action]]
+15. [[Mining Payment Policy]]
+16. [[Mining Policy]]
+17. [[Mint Qi Tokens Mechanism]]
+18. [[Mint Quai Tokens Mechanism]]
+19. [[Price Movements Boundary Action]]
+20. [[Price Movements Policy]]
+21. [[Set Estimated Beta Vector Mechanism]]
+22. [[Set K Mechanism]]
+23. [[Unlock Tokens Control Action]]
+24. [[Unlock Tokens Mechanism]]
+25. [[Unlock Tokens Policy]]
+26. [[Update Block Difficulty Mechanism]]
+27. [[Update Historical Converted Qi Mechanism]]
+28. [[Update Historical Converted Quai Mechanism]]
+29. [[Update Historical Mined Ratio Mechanism]]
+30. [[Update Historical Qi Hash Mechanism]]
+31. [[Update Historical Quai Hash Mechanism]]
+32. [[Update Locked Qi Mechanism]]
+33. [[Update Locked Quai Mechanism]]
+34. [[Update Population Beta Boundary Action]]
+35. [[Update Population Beta Mechanism]]
+36. [[Update Population Beta Policy]]
+37. [[Update Prices Mechanism]]
 
 ## Constraints
 
@@ -347,7 +330,7 @@ The wiring of the entire simulation
 1. [[Empty Space]]
 
 ## Codomain Spaces
-1. [[Empty Space]]
+1. [[Terminating Space]]
 
 ## All Spaces Used
 1. [[Beta Vector Space]]

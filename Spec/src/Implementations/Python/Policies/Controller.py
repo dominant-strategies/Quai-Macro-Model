@@ -94,3 +94,6 @@ def rolling_logistic_regression_estimation(state, params, spaces):
         # print("Classifier did not converge, using default values of zero coefficients for beta")
         betas = np.array([-0.001, 0.001])
     return [spaces[0], {"Beta": betas}]
+
+def logistic_regression_goquai(state, params, spaces):
+    return [spaces[0], {"Beta": np.array([int[0], int[0]])}]

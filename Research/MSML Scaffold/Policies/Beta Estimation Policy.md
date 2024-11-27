@@ -31,3 +31,9 @@ Rolling window of the last 1000 observations used for training the logistic regr
 #### Logic
 
 
+### 3. Go-Quai implementation of the logistic regression
+#### Description
+Go-Quai implementation of the logistic regression
+#### Logic
+
+

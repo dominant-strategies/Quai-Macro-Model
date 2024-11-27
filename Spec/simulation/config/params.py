@@ -124,7 +124,5 @@ params_base = {
     "FP Beta Estimation Policy": "Rolling Logistic Regression Estimation",
 }
 
-params_my_scenario_1 = deepcopy(params_base)
-
-
-params_my_scenario_1["FP Conversions Boundary Action"] = "TEST Quai Conversion"
+params_goquai_test = deepcopy(params_base)
+params_goquai_test["FP Beta Estimation Policy"] = "Go-Quai implementation of the logistic regression"

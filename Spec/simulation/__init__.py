@@ -1,4 +1,4 @@
-from .config import state_base, params_base, params_my_scenario_1
+from .config import state_base, params_base, params_goquai_test
 from .preprocessing import vesting_schedule_translate, build_logistic_classifier
 from .analytics import (
     plot_betas,
