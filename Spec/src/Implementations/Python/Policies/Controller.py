@@ -100,7 +100,7 @@ def rolling_logistic_regression_estimation(state, params, spaces):
 def logistic_regression_goquai(state, params, spaces):
 
     # Resolve library path
-    library_name = "logistic/logistic.so"
+    library_name = "../logistic/logistic.so"
     library_path = os.path.abspath(library_name)
 
     # Check if the library exists
