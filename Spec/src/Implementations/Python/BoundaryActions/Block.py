@@ -141,16 +141,7 @@ def mine_block_boundary_action_v3(state, params, spaces):
             * ((target_time - time_to_find_block[0]) / target_time)
             * block_difficulty
         )
-        print(
-            "new difficulty",
-            new_difficulty,
-            "block difficulty",
-            block_difficulty,
-            "time to find block",
-            time_to_find_block,
-            "target time",
-            target_time,
-        )
+
         # update the block difficulty variable to the newly calculated block difficulty
         block_difficulty = new_difficulty
 

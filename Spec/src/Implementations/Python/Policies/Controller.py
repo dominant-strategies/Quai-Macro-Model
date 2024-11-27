@@ -1,4 +1,6 @@
 from math import log
+import os
+import ctypes
 import numpy as np
 from sklearn.preprocessing import StandardScaler
 
@@ -96,4 +98,74 @@ def rolling_logistic_regression_estimation(state, params, spaces):
     return [spaces[0], {"Beta": betas}]
 
 def logistic_regression_goquai(state, params, spaces):
-    return [spaces[0], {"Beta": np.array([int[0], int[0]])}]
+
+    # Resolve library path
+    library_name = "logistic/logistic.so"
+    library_path = os.path.abspath(library_name)
+
+    # Check if the library exists
+    if not os.path.exists(library_path):
+        raise FileNotFoundError(f"Shared library not found at {library_path}")
+
+    # Load the shared library
+    logistic = ctypes.CDLL(library_path)
+
+    # Define the Train function's argument and return types
+    logistic.Train.argtypes = [ctypes.POINTER(ctypes.c_int), ctypes.POINTER(ctypes.c_int), ctypes.c_int, ctypes.POINTER(ctypes.c_double), ctypes.POINTER(ctypes.c_double)]
+
+    scaler = StandardScaler()
+
+    X = [
+        [x / log(x, params["Quai Reward Base Parameter"])]
+        for x in spaces[0]["Block Difficulty"]
+    ]
+
+    Y = [x > 0 for x in spaces[0]["Qi Taken"]]
+
+    state["Logistic Classifier Queue X"].extend(X)
+    state["Logistic Classifier Queue Y"].extend(Y)
+
+    state["Logistic Classifier Queue X"] = state["Logistic Classifier Queue X"][-1000:]
+    state["Logistic Classifier Queue Y"] = state["Logistic Classifier Queue Y"][-1000:]
+
+    X_transformed = scaler.fit_transform(
+        state["Logistic Classifier Queue X"], state["Logistic Classifier Queue Y"]
+    )
+
+    # Initialize the betas
+    b0 = 0
+    b1 = 0
+
+    if len(set(state["Logistic Classifier Queue Y"])) > 1:
+
+        # Create sample data
+        x = np.array(X_transformed, dtype=np.int32)
+        y = np.array(state["Logistic Classifier Queue Y"], dtype=np.int32)
+        n = len(x)
+
+        # Call the Train function
+        x_ptr = x.ctypes.data_as(ctypes.POINTER(ctypes.c_int))
+        y_ptr = y.ctypes.data_as(ctypes.POINTER(ctypes.c_int))
+
+        b0 = ctypes.c_double()
+        b1 = ctypes.c_double()
+
+        logistic.Train(x_ptr, y_ptr, ctypes.c_int(n), ctypes.byref(b0), ctypes.byref(b1))
+
+    try:
+        # transform coefficients after scaling to proper values
+
+        scaled_beta = b0
+        scaled_int = b1
+
+        beta = scaled_beta / scaler.scale_
+        int = scaled_int - scaled_beta * (scaler.mean_ / scaler.scale_)
+
+        betas = np.array([int[0], beta[0]])
+
+    except Exception as e:
+        # print(e)
+        # print("Classifier did not converge, using default values of zero coefficients for beta")
+        betas = np.array([-0.001, 0.001])
+
+    return [spaces[0], {"Beta": betas}]

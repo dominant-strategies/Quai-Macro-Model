@@ -10,8 +10,11 @@ def build_logistic_classifier(state, params):
         )
         state["Logistic Classifier Queue X"] = []
         state["Logistic Classifier Queue Y"] = []
-    else:
+    elif params["FP Beta Estimation Policy"] == "SGD Logistic Classifier Training":
         state["Logistic Classifier"] = SGDClassifier(
             loss="log_loss", penalty=None, fit_intercept=False
         )
+    else:
+        state["Logistic Classifier Queue X"] = []
+        state["Logistic Classifier Queue Y"] = []
     return state
