@@ -40,9 +40,11 @@ def log_simulation_data_mechanism(state, params, spaces):
 
         temp = state["Mining Log"][-1]["Quai Taken"]
         log["Mined Ratio (Block Percent)"] = sum([x > 0 for x in temp]) / len(temp)
+        log["Quai Taken"] = int(temp[0] > 0)
     else:
         log["Mined Ratio"] = None
         log["Mined Ratio (Block Percent)"] = None
+        log["Quai Taken"] = None
 
     log["Block Reward Ratio"] = state["Metrics"]["Current Block Reward Ratio Metric"](
         state, params, []

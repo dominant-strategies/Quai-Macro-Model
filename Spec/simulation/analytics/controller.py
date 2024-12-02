@@ -87,18 +87,16 @@ def difficulty_mining_scatter(df):
     plt.show()
 
 def plot_mined_choice_vs_difficulty(df):
-    X = []
-    Y = []
+
     lower_bound = 1900
     upper_bound = 2000
-    # Extract data for the specified range of blocks
-    for entry in df["Mining Log"][lower_bound:upper_bound]:
-        Y.extend([int(a > 0) for a in entry["Quai Taken"]])
-        X.extend(entry["Block Difficulty"])
+    
+    X = df["Block Difficulty"].iloc[-100:]
+    Y = df["Quai Taken"].iloc[-100:]
 
     beta0 = df["Estimate Beta0"].iloc[-1]
     beta1 = df["Estimate Beta1"].iloc[-1]
-
+    
     x2 = np.linspace(min(X), max(X), 100)
     l = 1 / (1 + np.exp(-(beta0 + beta1 * x2 / np.log2(x2))))
 

@@ -98,8 +98,6 @@ def update_aggregate_hashpower(state, params, spaces):
 
     avg_mined_percent = aggregate_mined_percent / max(block_number, number_samples)
 
-    print("avg mined percent", avg_mined_percent)
-
     err = (0.5 - avg_mined_percent) / 0.5
 
     prev_block_number = block_number - 1
