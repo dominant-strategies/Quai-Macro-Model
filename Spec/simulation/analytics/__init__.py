@@ -7,4 +7,5 @@ from .controller import (
     plot_block_difficulty,
     plot_kqi_ratio,
     difficulty_mining_scatter,
+    plot_mined_choice_vs_difficulty,
 )

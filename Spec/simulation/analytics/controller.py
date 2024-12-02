@@ -85,3 +85,33 @@ def difficulty_mining_scatter(df):
     plt.ylabel("Percentage of Blocks Quai Taken")
     plt.title("Difficulty vs. Quai Taken")
     plt.show()
+
+def plot_mined_choice_vs_difficulty(df):
+    X = []
+    Y = []
+    lower_bound = 1900
+    upper_bound = 2000
+    # Extract data for the specified range of blocks
+    for entry in df["Mining Log"][lower_bound:upper_bound]:
+        Y.extend([int(a > 0) for a in entry["Quai Taken"]])
+        X.extend(entry["Block Difficulty"])
+
+    beta0 = df["Estimate Beta0"].iloc[-1]
+    beta1 = df["Estimate Beta1"].iloc[-1]
+
+    x2 = np.linspace(min(X), max(X), 100)
+    l = 1 / (1 + np.exp(-(beta0 + beta1 * x2 / np.log2(x2))))
+
+    # Restrict the plot range to blocks lower_bound to upper_bound
+    filtered_df = df[(df["Block Number"] >= lower_bound) & (df["Block Number"] < upper_bound)]
+
+    # Plot only the filtered range of blocks
+    filtered_df.set_index("Block Number")["K Qi / K Quai"].plot(kind="line", label="K Qi / K Quai")
+    plt.scatter(X, Y, s=1, label="Scatter Data") 
+    plt.plot(x2, l, label="Logistic Fit", color="red")
+    plt.xlabel("Block Difficulty")
+    plt.ylabel("Y / K Qi / K Quai")
+    plt.title("Analysis for Blocks 900-1000")
+    plt.xlim(min(X), max(X))
+    plt.legend()
+    plt.show()
