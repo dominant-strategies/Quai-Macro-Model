@@ -26,6 +26,7 @@ state_base = {
     "Qi Unlock Schedule": None,  # Set in state preperation functions
     "Population Mining Beta Vector": np.array([-0.0001, 0.0001]),
     "Estimated Mining Beta Vector": [None, None],
+    "Estimated Scaled Mining Beta Vector": [None, None],
     "Logistic Classifier": None,  # Set in state preperation functions
     "Mining Log": None,  # Set in state preperation functions
     "Aggregate Hashpower": 2e8,

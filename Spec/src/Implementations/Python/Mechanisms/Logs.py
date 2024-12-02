@@ -14,6 +14,9 @@ def log_simulation_data_mechanism(state, params, spaces):
     log["Estimate Beta0"] = state["Estimated Mining Beta Vector"][0]
     log["Estimate Beta1"] = state["Estimated Mining Beta Vector"][1]
 
+    log["Estimate Scaled Beta0"] = state["Estimated Scaled Mining Beta Vector"][0]
+    log["Estimate Scaled Beta1"] = state["Estimated Scaled Mining Beta Vector"][1]
+
     log["Population Beta0"] = state["Population Mining Beta Vector"][0]
     log["Population Beta1"] = state["Population Mining Beta Vector"][1]
 

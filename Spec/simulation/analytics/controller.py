@@ -19,6 +19,23 @@ def plot_betas(df):
     plt.title("Population vs. Estimate of Beta1")
     plt.show()
 
+def plot_scaled_betas(df):
+    df.set_index("Block Number")[["Population Beta0", "Estimate Scaled Beta0"]].plot(
+        kind="line"
+    )
+    plt.xlabel("Prime Block Number")
+    plt.ylabel("Beta Value")
+    plt.title("Population vs. Estimate of Scaled Beta0")
+    plt.show()
+
+    df.set_index("Block Number")[["Population Beta1", "Estimate Scaled Beta1"]].plot(
+        kind="line"
+    )
+    plt.xlabel("Prime Block Number")
+    plt.ylabel("Beta Value")
+    plt.title("Population vs. Estimate of Scaled Beta1")
+    plt.show()
+    
 def plot_boxplot_betas(df):
     df.set_index("Block Number")[["Estimate Beta0"]].boxplot(
     )

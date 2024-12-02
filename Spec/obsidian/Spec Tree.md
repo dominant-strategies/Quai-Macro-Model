@@ -32,6 +32,7 @@ cssclasses:
 │   │   ├──[[Global State-Qi Unlock Schedule\|Qi Unlock Schedule]]
 │   │   ├──[[Global State-Population Mining Beta Vector\|Population Mining Beta Vector]]
 │   │   ├──[[Global State-Estimated Mining Beta Vector\|Estimated Mining Beta Vector]]
+│   │   ├──[[Global State-Estimated Scaled Mining Beta Vector\|Estimated Scaled Mining Beta Vector]]
 │   │   ├──[[Global State-Logistic Classifier\|Logistic Classifier]]
 │   │   ├──[[Global State-Mining Log\|Mining Log]]
 │   │   ├──[[Global State-Aggregate Hashpower\|Aggregate Hashpower]]

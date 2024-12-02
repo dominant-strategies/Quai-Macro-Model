@@ -27,7 +27,7 @@ set_estimated_beta_vector_mechanism = {
     ],
     "parameters_used": [],
     "updates": [
-        ("Global", "Estimated Mining Beta Vector", False),
+        ("Global", "Estimated Mining Beta Vector", "Estimated Scaled Mining Beta Vector", False),
     ],
 }
 

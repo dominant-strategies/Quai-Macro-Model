@@ -89,6 +89,7 @@ def rolling_logistic_regression_estimation(state, params, spaces):
         scaled_int = state["Logistic Classifier"].intercept_[0]
 
         print("scaled", scaled_beta, scaled_int)
+        scaled_betas = np.array([scaled_int, scaled_beta])
 
         beta = scaled_beta / scaler.scale_
         int = scaled_int - scaled_beta * (scaler.mean_ / scaler.scale_)
@@ -99,7 +100,9 @@ def rolling_logistic_regression_estimation(state, params, spaces):
         # print(e)
         # print("Classifier did not converge, using default values of zero coefficients for beta")
         betas = np.array([-0.001, 0.001])
-    return [spaces[0], {"Beta": betas}]
+        scaled_betas = np.array([-0.001, 0.001])
+
+    return [spaces[0], {"Beta": betas, "Scaled Beta": scaled_betas}]
 
 def logistic_regression_goquai(state, params, spaces):
 

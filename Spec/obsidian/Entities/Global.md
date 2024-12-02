@@ -31,6 +31,7 @@
 |[[Global State-Qi Unlock Schedule\|Qi Unlock Schedule]]|The schedule of Qi token unlocks that will happen in the future|[[Unlock Schedule Type]]|||
 |[[Global State-Population Mining Beta Vector\|Population Mining Beta Vector]]|The population betas, not known to the controller|[[Mining Beta Vector Type]]|||
 |[[Global State-Estimated Mining Beta Vector\|Estimated Mining Beta Vector]]|The controllers current estimation of the beta vector|[[Mining Beta Vector Type]]|||
+|[[Global State-Estimated Scaled Mining Beta Vector\|Estimated Scaled Mining Beta Vector]]|The controllers current scaled estimation of the beta vector|[[Mining Beta Vector Type]]|||
 |[[Global State-Logistic Classifier\|Logistic Classifier]]|The logistic classifier used for beta estimation|[[Logistic Classifier Type]]|||
 |[[Global State-Mining Log\|Mining Log]]|The log of mined blocks|[[Simulation History Log Type]]|||
 |[[Global State-Aggregate Hashpower\|Aggregate Hashpower]]|The current hashpower per second in the simulation|[[Hashpower per Second]]|||

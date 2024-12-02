@@ -184,6 +184,13 @@ global_state = {
             "symbol": None,
             "domain": None,
         },
+                {
+            "type": "Mining Beta Vector Type",
+            "name": "Estimated Scaled Mining Beta Vector",
+            "description": "The controllers current scaled estimation of the beta vector",
+            "symbol": None,
+            "domain": None,
+        },
         {
             "type": "Logistic Classifier Type",
             "name": "Logistic Classifier",
