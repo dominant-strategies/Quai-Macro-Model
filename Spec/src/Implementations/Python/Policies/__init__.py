@@ -34,6 +34,7 @@ policies = {
     "Update Population Beta Policy Passthrough": update_population_beta_policy_passthrough,
     "Rolling Logistic Regression Estimation": rolling_logistic_regression_estimation,
     "Go-Quai implementation of the logistic regression": logistic_regression_goquai,
+    "Fixed B1 logistic Regression": rolling_logistic_regression_estimation,
     "Reward Ratio Gain KQuai": reward_ratio_gain_kquai,
     "Logistic Probability Payment Policy V2": logistic_probability_payment_policy2,
     "Logistic Probability Payment Policy V3": logistic_probability_payment_policy3,

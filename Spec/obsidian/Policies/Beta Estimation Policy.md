@@ -37,3 +37,9 @@ Go-Quai implementation of the logistic regression
 #### Logic
 
 
+### 4. Fixed B1 logistic Regression
+#### Description
+Logistic Regression with fixed Beta1
+#### Logic
+
+

@@ -174,11 +174,17 @@ beta_estimation_policy_option3 = {
     "logic": """""",
 }
 
+beta_estimation_policy_option4 = {
+    "name": "Fixed B1 logistic Regression",
+    "description": "Logistic Regression with fixed Beta1",
+    "logic": """""",
+}
+
 beta_estimation_policy = {
     "name": "Beta Estimation Policy",
     "description": "The policy which determines the update to beta vector estimates.",
     "constraints": [],
-    "policy_options": [beta_estimation_policy_option1, beta_estimation_policy_option2, beta_estimation_policy_option3],
+    "policy_options": [beta_estimation_policy_option1, beta_estimation_policy_option2, beta_estimation_policy_option3, beta_estimation_policy_option4],
     "domain": [
         "Mined Blocks Space 2",
     ],

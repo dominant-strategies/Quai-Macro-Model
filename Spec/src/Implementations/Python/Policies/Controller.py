@@ -68,8 +68,8 @@ def rolling_logistic_regression_estimation(state, params, spaces):
     state["Logistic Classifier Queue X"].extend(X)
     state["Logistic Classifier Queue Y"].extend(Y)
 
-    state["Logistic Classifier Queue X"] = state["Logistic Classifier Queue X"][-1000:]
-    state["Logistic Classifier Queue Y"] = state["Logistic Classifier Queue Y"][-1000:]
+    state["Logistic Classifier Queue X"] = state["Logistic Classifier Queue X"][-100:]
+    state["Logistic Classifier Queue Y"] = state["Logistic Classifier Queue Y"][-100:]
 
     X_transformed = scaler.fit_transform(
         state["Logistic Classifier Queue X"], state["Logistic Classifier Queue Y"]
@@ -77,14 +77,18 @@ def rolling_logistic_regression_estimation(state, params, spaces):
 
     if len(set(state["Logistic Classifier Queue Y"])) > 1:
         state["Logistic Classifier"].fit(
+            0,
             X_transformed,
             state["Logistic Classifier Queue Y"],
         )
     try:
         # transform coefficients after scaling to proper values
 
+        print("trying to get the beta from the model")
         scaled_beta = state["Logistic Classifier"].coef_[0][0]
         scaled_int = state["Logistic Classifier"].intercept_[0]
+
+        print("scaled", scaled_beta, scaled_int)
 
         beta = scaled_beta / scaler.scale_
         int = scaled_int - scaled_beta * (scaler.mean_ / scaler.scale_)
