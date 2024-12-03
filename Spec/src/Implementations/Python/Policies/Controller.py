@@ -171,7 +171,10 @@ def sample_estimation_betas(state, params, spaces):
     print("Best x value:", best_x)
     print("Best score:", best_score/100)
 
-    return [spaces[0], {"Beta": np.array([-best_x[0]/2, 0.5]), "Scaled Beta": np.array([-best_x[0]/2, 0.5])}]
+    ewma = 0.97 * state["Mu"] + 0.03 * best_x[0]
+    state["Mu"] =  ewma
+
+    return [spaces[0], {"Beta": np.array([-ewma/2, 0.5]), "Scaled Beta": np.array([-ewma/2, 0.5])}]
 
 def logistic_regression_goquai(state, params, spaces):
 

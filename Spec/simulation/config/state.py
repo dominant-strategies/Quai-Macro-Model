@@ -27,6 +27,7 @@ state_base = {
     "Population Mining Beta Vector": np.array([-0.0001, 0.0001]),
     "Estimated Mining Beta Vector": [None, None],
     "Estimated Scaled Mining Beta Vector": [None, None],
+    "Mu": 433000,
     "Logistic Classifier": None,  # Set in state preperation functions
     "Mining Log": None,  # Set in state preperation functions
     "Aggregate Hashpower": 2e8,

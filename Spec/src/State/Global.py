@@ -212,5 +212,12 @@ global_state = {
             "symbol": None,
             "domain": None,
         },
+        {
+            "type": "Gain Type",
+            "name": "Mu",
+            "description": "EWMA of the best diff over log diff",
+            "symbol": None,
+            "domain": None,
+        },
     ],
 }
