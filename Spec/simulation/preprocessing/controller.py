@@ -27,7 +27,7 @@ def build_logistic_classifier(state, params):
     return state
 
 class FixedB1LogisticRegression:
-    def __init__(self, learning_rate=0.01, max_iter=1000):
+    def __init__(self, learning_rate=100, max_iter=100):
         self.learning_rate = learning_rate
         self.max_iter = max_iter
         self.b0 = None  # Intercept

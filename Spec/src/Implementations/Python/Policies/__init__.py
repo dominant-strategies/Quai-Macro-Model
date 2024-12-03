@@ -14,6 +14,7 @@ from .Controller import (
     reward_ratio_gain,
     mezzanine_wiring_passthrough,
     rolling_logistic_regression_estimation,
+    sample_estimation_betas,
     logistic_regression_goquai,
     reward_ratio_gain_kquai,
 )
@@ -33,6 +34,7 @@ policies = {
     "Mezzanine Wiring Passthrough": mezzanine_wiring_passthrough,
     "Update Population Beta Policy Passthrough": update_population_beta_policy_passthrough,
     "Rolling Logistic Regression Estimation": rolling_logistic_regression_estimation,
+    "Sample Estimation of Betas": sample_estimation_betas,
     "Go-Quai implementation of the logistic regression": logistic_regression_goquai,
     "Fixed B1 logistic Regression": rolling_logistic_regression_estimation,
     "Reward Ratio Gain KQuai": reward_ratio_gain_kquai,

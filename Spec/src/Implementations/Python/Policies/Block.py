@@ -237,8 +237,9 @@ def logistic_probability_payment_policy(state, params, spaces, x_schema="V1"):
             )
         else:
             assert False
-        p = 1 / (1 + np.exp(-state["Population Mining Beta Vector"].dot(x)))
 
+        dot_values = -state["Population Mining Beta Vector"].dot(x)
+        p = 1 / (1 + np.exp(dot_values))
         qi_chosen = random() <= p
         if qi_chosen:
             mined_qi += qi_rew

@@ -1,4 +1,4 @@
-from .config import state_base, params_base, params_goquai_test, params_fixed_beta
+from .config import state_base, params_base, params_goquai_test, params_fixed_beta, params_sample_estimation
 from .preprocessing import vesting_schedule_translate, build_logistic_classifier
 from .analytics import (
     plot_betas,

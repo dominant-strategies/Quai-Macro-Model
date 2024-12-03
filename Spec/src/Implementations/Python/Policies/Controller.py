@@ -3,6 +3,7 @@ import os
 import ctypes
 import numpy as np
 from sklearn.preprocessing import StandardScaler
+import matplotlib.pyplot as plt
 
 
 def sgd_logistic_classifier_training(state, params, spaces):
@@ -75,7 +76,7 @@ def rolling_logistic_regression_estimation(state, params, spaces):
         state["Logistic Classifier Queue X"], state["Logistic Classifier Queue Y"]
     )
 
-    prev_beta0 = 0
+    prev_beta0 = -2e2
     if state["Estimated Scaled Mining Beta Vector"][0] is not None:
         prev_beta0 = state["Estimated Scaled Mining Beta Vector"][0]
 
@@ -89,11 +90,9 @@ def rolling_logistic_regression_estimation(state, params, spaces):
     try:
         # transform coefficients after scaling to proper values
 
-        print("trying to get the beta from the model")
         scaled_beta = state["Logistic Classifier"].coef_[0][0]
         scaled_int = state["Logistic Classifier"].intercept_[0]
 
-        print("scaled", scaled_beta, scaled_int)
         scaled_betas = np.array([scaled_int, scaled_beta])
 
         beta = scaled_beta / scaler.scale_
@@ -108,6 +107,71 @@ def rolling_logistic_regression_estimation(state, params, spaces):
         scaled_betas = np.array([-0.001, 0.001])
 
     return [spaces[0], {"Beta": betas, "Scaled Beta": scaled_betas}]
+
+def sample_estimation_betas(state, params, spaces):
+    
+    X = [
+        [x / log(x, params["Quai Reward Base Parameter"])]
+        for x in spaces[0]["Block Difficulty"]
+    ]
+
+    Y = [x > 0 for x in spaces[0]["Qi Taken"]]
+
+    state["Logistic Classifier Queue X"].extend(X)
+    state["Logistic Classifier Queue Y"].extend(Y)
+
+    state["Logistic Classifier Queue X"] = state["Logistic Classifier Queue X"][-100:]
+    state["Logistic Classifier Queue Y"] = state["Logistic Classifier Queue Y"][-100:]
+
+    # Combine and sort by x values
+    data = sorted(zip(state["Logistic Classifier Queue X"], state["Logistic Classifier Queue Y"]))  # Sorted by x
+    x_sorted, y_sorted = zip(*data)
+
+    # Initialize counters
+    total_zeros = y_sorted.count(0)
+    total_ones = y_sorted.count(1)
+
+    left_zeros = 0
+    right_zeros = 0
+    left_ones = 0
+    right_ones = 0
+
+    best_score = -10000
+    best_x = None
+
+    scores = []
+
+    # Iterate through sorted x values
+    for i in range(len(x_sorted)):
+        if y_sorted[i] == 0:
+            left_zeros += 1  # Add a 0 to the left
+        else:
+            right_ones -= 1  # Remove a 1 from the right
+
+        left_ones = total_ones - right_ones
+        right_zeros = total_zeros - left_zeros
+
+        # Calculate score
+        score = left_zeros - right_zeros + right_ones - left_ones
+
+        # Update best score and x value
+        if score > best_score:
+            best_score = score
+            best_x = x_sorted[i]
+        
+        scores.append(score)
+
+    if state["Block Number"] % 100 == 0:
+        print("Block Number", state["Block Number"])
+        plt.scatter(x_sorted, scores, s=1)
+        plt.xlabel("Prime Block Number")
+        plt.ylabel("Scores")
+        plt.show()
+    
+    print("Best x value:", best_x)
+    print("Best score:", best_score/100)
+
+    return [spaces[0], {"Beta": np.array([-best_x[0]/2, 0.5]), "Scaled Beta": np.array([-best_x[0]/2, 0.5])}]
 
 def logistic_regression_goquai(state, params, spaces):
 

@@ -129,3 +129,6 @@ params_goquai_test["FP Beta Estimation Policy"] = "Go-Quai implementation of the
 
 params_fixed_beta = deepcopy(params_base)
 params_fixed_beta["FP Beta Estimation Policy"] = "Fixed B1 logistic Regression"
+
+params_sample_estimation = deepcopy(params_base)
+params_sample_estimation["FP Beta Estimation Policy"] = "Sample Estimation of Betas"
