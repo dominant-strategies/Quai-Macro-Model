@@ -75,9 +75,14 @@ def rolling_logistic_regression_estimation(state, params, spaces):
         state["Logistic Classifier Queue X"], state["Logistic Classifier Queue Y"]
     )
 
+    prev_beta0 = 0
+    if state["Estimated Scaled Mining Beta Vector"][0] is not None:
+        prev_beta0 = state["Estimated Scaled Mining Beta Vector"][0]
+
+
     if len(set(state["Logistic Classifier Queue Y"])) > 1:
         state["Logistic Classifier"].fit(
-            0,
+            prev_beta0,
             X_transformed,
             state["Logistic Classifier Queue Y"],
         )
