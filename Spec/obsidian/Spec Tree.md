@@ -36,6 +36,7 @@ cssclasses:
 │   │   ├──[[Global State-Logistic Classifier\|Logistic Classifier]]
 │   │   ├──[[Global State-Mining Log\|Mining Log]]
 │   │   ├──[[Global State-Aggregate Hashpower\|Aggregate Hashpower]]
+│   │   ├──[[Global State-Mu\|Mu]]
 ├──**Stateful Metrics**
 │   ├──Circulating Stateful Metrics
 │   │   ├──[[Circulating Quai Supply]]

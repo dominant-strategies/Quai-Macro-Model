@@ -43,3 +43,9 @@ Logistic Regression with fixed Beta1
 #### Logic
 
 
+### 5. Sample Estimation of Betas
+#### Description
+Estimating the Betas using a sample 
+#### Logic
+
+

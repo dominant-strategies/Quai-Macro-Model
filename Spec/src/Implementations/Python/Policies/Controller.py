@@ -171,10 +171,34 @@ def sample_estimation_betas(state, params, spaces):
     print("Best x value:", best_x)
     print("Best score:", best_score/100)
 
-    ewma = 0.97 * state["Mu"] + 0.03 * best_x[0]
-    state["Mu"] =  ewma
+    update_aggregate_hashpower(state, params, [best_x[0]])
 
-    return [spaces[0], {"Beta": np.array([-ewma/2, 0.5]), "Scaled Beta": np.array([-ewma/2, 0.5])}]
+    return [spaces[0], {"Beta": np.array([-state["Mu"]/2, 0.5]), "Scaled Beta": np.array([-state["Mu"]/2, 0.5])}]
+
+def update_aggregate_hashpower(state, params, spaces):
+    block_number = state["Block Number"]
+
+    prev_hashpower = state["Aggregate Hashpower"]
+
+    normalized_prev_hashpower_to_diff_over_diff = prev_hashpower * 5 /np.log(prev_hashpower * 5)
+
+    # To normalize the error to difficulty, multiply the err with the time period
+    err_in_hash_power = normalized_prev_hashpower_to_diff_over_diff - spaces[0]
+
+    r = prev_hashpower / state["Mu"]
+
+    print("r value", r)
+
+    # update the hash power series to update the hash power to be used for this epoch
+    state["Aggregate Hashpower"] = prev_hashpower - r * 0.001 * (err_in_hash_power * np.log(prev_hashpower * 5) / 5) 
+    print("prev mu", state["Mu"])
+    state["Mu"] = state["Mu"] + 0.001 * err_in_hash_power / 2
+    print("prev hash power", prev_hashpower)
+    print("normalized hash power", normalized_prev_hashpower_to_diff_over_diff)
+    print("error in hash power", err_in_hash_power)
+    print("adjustment for hash power", (err_in_hash_power * np.log(prev_hashpower * 5) / 5) )
+    print("Aggregate Hash", state["Aggregate Hashpower"], "Mu", state["Mu"])
+
 
 def logistic_regression_goquai(state, params, spaces):
 
