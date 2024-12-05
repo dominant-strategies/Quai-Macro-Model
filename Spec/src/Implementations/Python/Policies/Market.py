@@ -4,31 +4,35 @@ def block_reward_ratio_conversion_policy(state, params, spaces):
         spaces[0]["Locking Time"]
     ]
 
-    asset = spaces[0]["Token"]
-    amount = spaces[0]["Amount"]
-    assert asset in ["Quai", "Qi"], "{} is not a valid asset".format(asset)
-    assert amount >= 0, "Amount must be positive"
-    conversion_rate = state["Metrics"]["Conversion Rate Metric"](state, params, [])
-    if asset == "Quai":
-        if amount < params["Minimum Quai Conversion Amount"]:
-            quai = 0
-            qi = 0
-        elif amount >= state["Quai Supply"]:
-            quai = 0
-            qi = 0
+    assets = spaces[0]["Token"]
+    amounts = spaces[0]["Amount"]
+
+    for i in range(0, len(assets)):
+        asset = assets[i]
+        amount = amounts[i]
+        assert asset in ["Quai", "Qi"], "{} is not a valid asset".format(asset)
+        assert amount >= 0, "Amount must be positive"
+        conversion_rate = state["Metrics"]["Conversion Rate Metric"](state, params, [])
+        if asset == "Quai":
+            if amount < params["Minimum Quai Conversion Amount"]:
+                quai = 0
+                qi = 0
+            elif amount >= state["Quai Supply"]:
+                quai = 0
+                qi = 0
+            else:
+                quai = -amount
+                qi = amount / conversion_rate * lockup_return
         else:
-            quai = -amount
-            qi = amount / conversion_rate * lockup_return
-    else:
-        if amount < params["Minimum Qi Conversion Amount"]:
-            quai = 0
-            qi = 0
-        elif amount >= state["Qi Supply"]:
-            quai = 0
-            qi = 0
-        else:
-            qi = -amount
-            quai = amount * conversion_rate * lockup_return
+            if amount < params["Minimum Qi Conversion Amount"]:
+                quai = 0
+                qi = 0
+            elif amount >= state["Qi Supply"]:
+                quai = 0
+                qi = 0
+            else:
+                qi = -amount
+                quai = amount * conversion_rate * lockup_return
 
     # Minting Spaces
     space1 = {"Qi": max(0, qi)}

@@ -9,6 +9,14 @@ def conversions_boundary_action_v1(state, params, spaces):
     print("k quai", state["K Quai"], "k qi", state["K Qi"])
     print("market exchange rate", market_exchange_rate, "protocol exchange rate", protocol_exchange_rate)
 
+    # TODO: If needed this can be made a state variable or params that gets
+    # adjusted for more dynamic testing
+    number_total_conversions = 100
+    p_quai_conversion = 0.05
+    p_qi_conversion = 0.05
+
+    tokens = []
+    amounts = []
     # If the protocol exchange rate is greater than the market exchange rate 
     # Quai is at a discount relative to Qi, so rational speculators would 
     # convert Qi to Quai
@@ -35,9 +43,20 @@ def conversions_boundary_action_v1(state, params, spaces):
         ),
         0,
     )
+
+    tokens.append(q)
+    amounts.append(C)
+
+    # default conversions, this is just the initial version, 
+    # more logic needs to come here to make it more sophisticated
+    tokens.append("Qi")
+    amounts.append(10)
+    tokens.append("Quai")
+    amounts.append(10)
+
     L = state["Stateful Metrics"]["Current Lockup Options"](state, params)
     H = choice(list(L.keys()))
-    space = {"Token": q, "Amount": C, "Locking Time": H}
+    space = {"Token": tokens, "Amount": amounts, "Locking Time": H}
 
     print("converted ", space)
     return [space]
