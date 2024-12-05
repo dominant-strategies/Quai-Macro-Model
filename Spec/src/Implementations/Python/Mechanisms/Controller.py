@@ -15,6 +15,8 @@ def set_k_mechanism(state, params, spaces):
             )
         )
         spaces[0]["K Qi"] = 1e-10
+    
+    print("updating k quai and k qi", spaces[0]["K Quai"], spaces[0]["K Qi"])
     state["K Quai"] = spaces[0]["K Quai"]
     state["K Qi"] = max(spaces[0]["K Qi"], params["Minimum K Qi"])
     state["K Quai"] = max(spaces[0]["K Quai"], params["Minimum K Quai"])

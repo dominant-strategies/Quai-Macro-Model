@@ -3,20 +3,27 @@ import numpy as np
 
 
 def conversions_boundary_action_v1(state, params, spaces):
-    if len(state["Historical Mined Ratio"]) > 0:
-        quai_probability = state["Historical Mined Ratio"][-1]["Ratio"]
-    else:
-        quai_probability = 0.5
-    if random() < quai_probability:
+    market_exchange_rate = state["Quai Price"]/state["Qi Price"]
+    protocol_exchange_rate = state["K Quai"] 
+
+    print("k quai", state["K Quai"], "k qi", state["K Qi"])
+    print("market exchange rate", market_exchange_rate, "protocol exchange rate", protocol_exchange_rate)
+
+    # If the protocol exchange rate is greater than the market exchange rate 
+    # Quai is at a discount relative to Qi, so rational speculators would 
+    # convert Qi to Quai
+    if protocol_exchange_rate > market_exchange_rate:
         q = "Quai"
     else:
         q = "Qi"
+
     if q == "Quai":
         circulating = state["Stateful Metrics"]["Circulating Quai Supply"](
             state, params
         )
     else:
         circulating = state["Stateful Metrics"]["Circulating Qi Supply"](state, params)
+
     T = circulating * params["Speculator Percentage"]
     C = T * max(
         min(
