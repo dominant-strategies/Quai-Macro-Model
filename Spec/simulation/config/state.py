@@ -5,7 +5,7 @@ state_base = {
     "Quai Supply": None,  # Set in state preperation function
     "Locked Qi Supply": None,  # Set in state preperation function
     "Locked Quai Supply": None,  # Set in state preperation function
-    "Ratio of Miners not Mining": 0.1,
+    "Ratio of Miners not Mining": 0.01,
     "Block Number": 0,
     "Block Difficulty": 1000000000,
     "Number of Regions": 2,

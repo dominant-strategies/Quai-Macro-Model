@@ -43,4 +43,4 @@ def update_hashrate_mechanism(state, params, spaces):
     prev_hashpower = state["Aggregate Hashpower"]
     # use the percentage of miners that are not mining and update the aggregate
     # hashpower
-    state["Aggregate Hashpower"] = prev_hashpower * (1 - state["Ratio of Miners not Mining"])
+    state["Aggregate Hashpower"] = (prev_hashpower + 0.01 * prev_hashpower) *  (1 - state["Ratio of Miners not Mining"])
