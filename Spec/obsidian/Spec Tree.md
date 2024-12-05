@@ -170,6 +170,7 @@ cssclasses:
 │   ├──[[Update Block Difficulty Mechanism]]
 │   ├──[[Increment Time Mechanism]]
 │   ├──[[Log Mined Blocks Mechanism]]
+│   ├──[[Update Hash Rate Mechanism]]
 │   ├──[[Update Historical Mined Ratio Mechanism]]
 │   ├──[[Update Historical Qi Hash Mechanism]]
 │   ├──[[Update Historical Quai Hash Mechanism]]

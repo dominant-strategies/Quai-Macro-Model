@@ -16,6 +16,7 @@ from .Logs import (
 from .Vesting import unlock_tokens_mechanism
 from .Block import (
     update_block_difficulty_mechanism,
+    update_hashrate_mechanism,
     append_to_unlock_schedule_mechanism,
     update_historical_mined_ratio_mechanism,
     update_historical_qi_hash_mechanism,
@@ -53,5 +54,6 @@ mechanisms = {
     "Log Simulation Data Mechanism": log_simulation_data_mechanism,
     "Increment Time Mechanism": increment_time_mechanism,
     "Log Mined Blocks Mechanism": log_mined_blocks_mechanism,
+    "Update Hash Rate Mechanism": update_hashrate_mechanism,
     "Update Population Beta Mechanism": update_population_beta_mechanism,
 }

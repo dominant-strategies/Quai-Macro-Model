@@ -5,37 +5,39 @@ graph TB
 
 subgraph SVS["State Variables"]
 EE0[("Global")]
-EES0(["Block Difficulty"])
+EES0(["Aggregate Hashpower"])
 EES0 --- EE0
-EES1(["Block Number"])
+EES1(["Block Difficulty"])
 EES1 --- EE0
-EES2(["Estimated Mining Beta Vector"])
+EES2(["Block Number"])
 EES2 --- EE0
-EES3(["Historical Mined Ratio"])
+EES3(["Estimated Mining Beta Vector"])
 EES3 --- EE0
-EES4(["Historical Qi Hash"])
+EES4(["Historical Mined Ratio"])
 EES4 --- EE0
-EES5(["K Qi"])
+EES5(["Historical Qi Hash"])
 EES5 --- EE0
-EES6(["K Quai"])
+EES6(["K Qi"])
 EES6 --- EE0
-EES7(["Locked Qi Supply"])
+EES7(["K Quai"])
 EES7 --- EE0
-EES8(["Mining Log"])
+EES8(["Locked Qi Supply"])
 EES8 --- EE0
-EES9(["Qi Supply"])
+EES9(["Mining Log"])
 EES9 --- EE0
-EES10(["Qi Unlock Schedule"])
+EES10(["Qi Supply"])
 EES10 --- EE0
-EES11(["Quai Supply"])
+EES11(["Qi Unlock Schedule"])
 EES11 --- EE0
-EES12(["Quai Unlock Schedule"])
+EES12(["Quai Supply"])
 EES12 --- EE0
-EES13(["Time"])
+EES13(["Quai Unlock Schedule"])
 EES13 --- EE0
+EES14(["Time"])
+EES14 --- EE0
 end
 
-subgraph X32["Mine Block Wiring"]
+subgraph X33["Mine Block Wiring"]
 direction TB
 X1["Mine Block Boundary Action"]
 X2["Mining Policy"]
@@ -50,10 +52,10 @@ X6["Controller Update Policy"]
 subgraph X11["Controller Mechanisms"]
 direction TB
 X7["Set K Mechanism"]
+X7 --> EES7
 X7 --> EES6
-X7 --> EES5
 X8["Set Estimated Beta Vector Mechanism"]
-X8 --> EES2
+X8 --> EES3
 X9[Domain]
 
 direction LR
@@ -95,49 +97,52 @@ Mined Blocks Space 2
 Mined Blocks Space 2
 Block Difficulty Space"--> X15
 end
-subgraph X31["Mining Mechanisms"]
+subgraph X32["Mining Mechanisms"]
 direction TB
 X17["Increment Block Number Mechanism"]
-X17 --> EES1
+X17 --> EES2
 X18["Mint Qi Tokens Mechanism"]
-X18 --> EES9
+X18 --> EES10
 X19["Mint Quai Tokens Mechanism"]
-X19 --> EES11
+X19 --> EES12
 X20["Update Historical Mined Ratio Mechanism"]
-X20 --> EES3
+X20 --> EES4
 X21["Update Historical Qi Hash Mechanism"]
-X21 --> EES4
+X21 --> EES5
 X22["Update Historical Quai Hash Mechanism"]
-X22 --> EES4
+X22 --> EES5
 X23["Update Locked Qi Mechanism"]
-X23 --> EES7
+X23 --> EES8
 X24["Update Locked Quai Mechanism"]
-X24 --> EES7
+X24 --> EES8
 X25["Append to Unlock Schedule Mechanism"]
-X25 --> EES12
-X25 --> EES10
+X25 --> EES13
+X25 --> EES11
 X26["Increment Time Mechanism"]
-X26 --> EES13
+X26 --> EES14
 X27["Log Mined Blocks Mechanism"]
-X27 --> EES8
-X28["Update Block Difficulty Mechanism"]
+X27 --> EES9
+X28["Update Hash Rate Mechanism"]
 X28 --> EES0
-X29[Domain]
+X29["Update Block Difficulty Mechanism"]
+X29 --> EES1
+X30[Domain]
 
 direction LR
 direction TB
-X29 --> X17
-X29 --"Qi Space"--> X18
-X29 --"Quai Space"--> X19
-X29 --"Mined Ratio Space"--> X20
-X29 --"Qi Hash Space"--> X21
-X29 --"Quai Hash Space"--> X22
-X29 --"Qi Space"--> X23
-X29 --"Quai Space"--> X24
-X29 --"Unlock Schedule Entry Space"--> X25
-X29 --"Mined Blocks Space 2"--> X26
-X29 --"Mined Blocks Space 2"--> X27
-X29 --"Block Difficulty Space"--> X28
+X30 --> X17
+X30 --"Qi Space"--> X18
+X30 --"Quai Space"--> X19
+X30 --"Mined Ratio Space"--> X20
+X30 --"Qi Hash Space"--> X21
+X30 --"Quai Hash Space"--> X22
+X30 --"Qi Space"--> X23
+X30 --"Quai Space"--> X24
+X30 --"Unlock Schedule Entry Space"--> X25
+X30 --"Mined Blocks Space 2"--> X26
+X30 --"Mined Blocks Space 2"--> X27
+X30 --> X28
+X30 --"Block Difficulty Space"--> X29
 end
 X1--"Pre-Mining Space"--->X2
 X2--"Mined Blocks Space"--->X3
@@ -164,7 +169,7 @@ Quai Space
 Unlock Schedule Entry Space
 Mined Blocks Space 2
 Mined Blocks Space 2
-Block Difficulty Space"------------->X31
+Block Difficulty Space"------------->X32
 end
 ```
 
@@ -201,11 +206,12 @@ If the demand for Qi is greater than the supply, there should be a profitable op
 14. [[Set Estimated Beta Vector Mechanism]]
 15. [[Set K Mechanism]]
 16. [[Update Block Difficulty Mechanism]]
-17. [[Update Historical Mined Ratio Mechanism]]
-18. [[Update Historical Qi Hash Mechanism]]
-19. [[Update Historical Quai Hash Mechanism]]
-20. [[Update Locked Qi Mechanism]]
-21. [[Update Locked Quai Mechanism]]
+17. [[Update Hash Rate Mechanism]]
+18. [[Update Historical Mined Ratio Mechanism]]
+19. [[Update Historical Qi Hash Mechanism]]
+20. [[Update Historical Quai Hash Mechanism]]
+21. [[Update Locked Qi Mechanism]]
+22. [[Update Locked Quai Mechanism]]
 
 ## Constraints
 
@@ -251,18 +257,19 @@ If the demand for Qi is greater than the supply, there should be a profitable op
 ## Calls
 
 ## All State Updates
-1. [[Global]].[[Global State-Block Difficulty|Block Difficulty]]
-2. [[Global]].[[Global State-Block Number|Block Number]]
-3. [[Global]].[[Global State-Estimated Mining Beta Vector|Estimated Mining Beta Vector]]
-4. [[Global]].[[Global State-Historical Mined Ratio|Historical Mined Ratio]]
-5. [[Global]].[[Global State-Historical Qi Hash|Historical Qi Hash]]
-6. [[Global]].[[Global State-K Qi|K Qi]]
-7. [[Global]].[[Global State-K Quai|K Quai]]
-8. [[Global]].[[Global State-Locked Qi Supply|Locked Qi Supply]]
-9. [[Global]].[[Global State-Mining Log|Mining Log]]
-10. [[Global]].[[Global State-Qi Supply|Qi Supply]]
-11. [[Global]].[[Global State-Qi Unlock Schedule|Qi Unlock Schedule]]
-12. [[Global]].[[Global State-Quai Supply|Quai Supply]]
-13. [[Global]].[[Global State-Quai Unlock Schedule|Quai Unlock Schedule]]
-14. [[Global]].[[Global State-Time|Time]]
+1. [[Global]].[[Global State-Aggregate Hashpower|Aggregate Hashpower]]
+2. [[Global]].[[Global State-Block Difficulty|Block Difficulty]]
+3. [[Global]].[[Global State-Block Number|Block Number]]
+4. [[Global]].[[Global State-Estimated Mining Beta Vector|Estimated Mining Beta Vector]]
+5. [[Global]].[[Global State-Historical Mined Ratio|Historical Mined Ratio]]
+6. [[Global]].[[Global State-Historical Qi Hash|Historical Qi Hash]]
+7. [[Global]].[[Global State-K Qi|K Qi]]
+8. [[Global]].[[Global State-K Quai|K Quai]]
+9. [[Global]].[[Global State-Locked Qi Supply|Locked Qi Supply]]
+10. [[Global]].[[Global State-Mining Log|Mining Log]]
+11. [[Global]].[[Global State-Qi Supply|Qi Supply]]
+12. [[Global]].[[Global State-Qi Unlock Schedule|Qi Unlock Schedule]]
+13. [[Global]].[[Global State-Quai Supply|Quai Supply]]
+14. [[Global]].[[Global State-Quai Unlock Schedule|Quai Unlock Schedule]]
+15. [[Global]].[[Global State-Time|Time]]
 
