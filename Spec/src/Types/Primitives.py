@@ -16,6 +16,12 @@ QuaiType = {
     "notes": "",
 }
 
+RatioType = {
+    "name": "Ratio Type",
+    "type": "QuaiType",
+    "notes": "variable to represent generic ratios between [0, 1]",
+}
+
 QiType = {
     "name": "Qi Type",
     "type": "QiType",

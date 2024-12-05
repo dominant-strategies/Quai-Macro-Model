@@ -38,6 +38,13 @@ global_state = {
             "domain": None,
         },
         {
+            "type": "Ratio Type",
+            "name": "Ratio of Miners not Mining",
+            "description": "ratio of the miners in the network that are not mining",
+            "symbol": None,
+            "domain": None,
+        },
+        {
             "type": "Block Number Type",
             "name": "Block Number",
             "description": "The current block that the system is on",
