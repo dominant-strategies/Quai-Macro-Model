@@ -11,6 +11,8 @@ from .analytics import (
     plot_kqi_ratio,
     difficulty_mining_scatter,
     plot_mined_choice_vs_difficulty,
+    plot_quai_price,
+    plot_qi_price,
 )
 from .postprocessing import (
     post_processing_function,

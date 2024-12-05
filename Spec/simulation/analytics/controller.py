@@ -95,6 +95,20 @@ def plot_kqi_ratio(df):
     plt.title("Ratio of K Qi to K Quai")
     plt.show()
 
+def plot_quai_price(df):
+    df.set_index("Block Number")["Quai Price"].plot(kind="line")
+    plt.xlabel("Prime Block Number")
+    plt.ylabel("Quai Price")
+    plt.title("Quai Price over prime blocks")
+    plt.show()
+
+def plot_qi_price(df):
+    df.set_index("Block Number")["Qi Price"].plot(kind="line")
+    plt.xlabel("Prime Block Number")
+    plt.ylabel("Qi Price")
+    plt.title("Qi Price over prime blocks")
+    plt.show()
+
 
 def difficulty_mining_scatter(df):
     df.plot(kind="scatter", x="Block Difficulty", y="Mined Ratio (Block Percent)")
