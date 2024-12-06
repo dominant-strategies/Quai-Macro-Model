@@ -111,6 +111,7 @@ params_base = {
     "Controller Alpha Parameter": 0.0001,
     "Difficulty Randomness Sigma": 0.2,
     "Difficulty Randomness Mu": 1,
+    "Speculator Rationality Ratio": 0.5,
     "State Update Skipping Parameter": [],
     "Population Beta Signal": [np.array([-300000, 0.5])] * 10000,
     "Minimum K Qi": 0,

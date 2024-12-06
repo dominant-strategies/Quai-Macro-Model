@@ -60,6 +60,14 @@ mining_parameter_set = {
         },
         {
             "variable_type": "Float Type",
+            "name": "Speculator Rationality Ratio",
+            "description": "Speculator rationality ratio",
+            "symbol": None,
+            "domain": None,
+            "parameter_class": "System",
+        },
+        {
+            "variable_type": "Float Type",
             "name": "Probability of Rational Miners",
             "description": "The probability that a given miner is going to act rationally.",
             "symbol": None,
