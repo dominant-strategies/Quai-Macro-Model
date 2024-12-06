@@ -41,20 +41,9 @@ log_mined_blocks_mechanism = {
     "updates": [("Global", "Mining Log", False)],
 }
 
-update_hashrate_mechanism = {
-    "name": "Update Hash Rate Mechanism",
-    "description": "A mechanism updates the hash rate of the system",
-    "constraints": [],
-    "logic": "Update the Hash Rate by looking at the ratio of miners that chose to not mine",
-    "domain": [],
-    "parameters_used": [],
-    "updates": [("Global", "Aggregate Hashpower", False)],
-}
-
 block_mechanisms = [
     increment_block_number_mechanism,
     update_block_difficulty,
     increment_time_mechanism,
     log_mined_blocks_mechanism,
-    update_hashrate_mechanism,
 ]

@@ -50,7 +50,6 @@ block_wiring.append(
             "Append to Unlock Schedule Mechanism",
             "Increment Time Mechanism",
             "Log Mined Blocks Mechanism",
-            "Update Hash Rate Mechanism",
             "Update Block Difficulty Mechanism",
         ],
         "description": "The mechanisms associated with mining a block",

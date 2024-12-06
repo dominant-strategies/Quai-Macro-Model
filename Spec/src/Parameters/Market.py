@@ -44,6 +44,14 @@ market_parameter_set = {
         },
         {
             "variable_type": "Float Type",
+            "name": "Hashpower Cost Series Sigma",
+            "description": "sigma for the hash rate cost normal distribution per block",
+            "symbol": None,
+            "domain": None,
+            "parameter_class": "Behavioral",
+        },
+        {
+            "variable_type": "Float Type",
             "name": "Qi Price Movemement Sigma",
             "description": "The standard deviation of qi price movements",
             "symbol": None,

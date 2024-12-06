@@ -36,8 +36,8 @@ cssclasses:
 │   │   ├──[[Global State-Estimated Scaled Mining Beta Vector\|Estimated Scaled Mining Beta Vector]]
 │   │   ├──[[Global State-Logistic Classifier\|Logistic Classifier]]
 │   │   ├──[[Global State-Mining Log\|Mining Log]]
-│   │   ├──[[Global State-Aggregate Hashpower\|Aggregate Hashpower]]
 │   │   ├──[[Global State-Mu\|Mu]]
+│   │   ├──[[Global State-Population Mining Hashrate\|Population Mining Hashrate]]
 ├──**Stateful Metrics**
 │   ├──Circulating Stateful Metrics
 │   │   ├──[[Circulating Quai Supply]]
@@ -119,6 +119,7 @@ cssclasses:
 │   │   ├──[[Asset Return Parameterization]]
 │   │   ├──[[Price EWMA Lambda]]
 │   │   ├──[[Hashpower Cost Series]]
+│   │   ├──[[Hashpower Cost Series Sigma]]
 │   │   ├──[[Qi Price Movemement Sigma]]
 │   │   ├──[[Quai Price Movemement Sigma]]
 │   │   ├──[[Speculator Percentage]]
@@ -170,7 +171,6 @@ cssclasses:
 │   ├──[[Update Block Difficulty Mechanism]]
 │   ├──[[Increment Time Mechanism]]
 │   ├──[[Log Mined Blocks Mechanism]]
-│   ├──[[Update Hash Rate Mechanism]]
 │   ├──[[Update Historical Mined Ratio Mechanism]]
 │   ├──[[Update Historical Qi Hash Mechanism]]
 │   ├──[[Update Historical Quai Hash Mechanism]]

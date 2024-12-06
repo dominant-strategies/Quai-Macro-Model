@@ -93,19 +93,13 @@ def mining_policy_v1(state, params, spaces):
 
     space["Locking Times"] = deepcopy(spaces[0]["Locking Times"])
 
+    spaces["Quai Reward"] = deepcopy(spaces[0]["Quai Reward"])
+    spaces["Qi Reward"] = deepcopy(spaces[0]["Qi Reward"])
+
     return [space]
 
 def block_reward_policy_v1(state, params, spaces):
     space = deepcopy(spaces[0])
-    space["Quai Reward Offered"] = [
-        state["Metrics"]["Hash to Quai Metric"](state, params, [{"Hash": x}])
-        for x in space["Block Difficulty"]
-    ]
-    space["Qi Reward Offered"] = [
-        state["Metrics"]["Hash to Qi Metric"](state, params, [{"Hash": x}])
-        for x in space["Block Difficulty"]
-    ]
-
     return [space]
 
 
@@ -120,20 +114,15 @@ def deterministic_mining_payment_policy(state, params, spaces):
 
     bd_l, quai_rew_l, qi_reward_l = (
         spaces[0]["Block Difficulty"],
-        spaces[0]["Quai Reward Offered"],
-        spaces[0]["Qi Reward Offered"],
+        spaces[0]["Quai Reward"],
+        spaces[0]["Qi Reward"],
     )
     for bd, quai_rew, qi_rew in zip(bd_l, quai_rew_l, qi_reward_l):
-        if quai_rew * state["Quai Price"] >= qi_rew * state["Qi Price"]:
-            mined_quai += quai_rew
-            quai_hash += bd
-            space0["Quai Taken"].append(quai_rew)
-            space0["Qi Taken"].append(0)
-        else:
-            mined_qi += qi_rew
-            qi_hash += bd
-            space0["Quai Taken"].append(0)
-            space0["Qi Taken"].append(qi_rew)
+        mined_quai += quai_rew
+        mined_qi += qi_rew
+        space0["Quai Taken"].append(quai_rew)
+        space0["Qi Taken"].append(qi_rew)
+
 
     space1 = {"Qi": mined_qi}
     space2 = {"Quai": mined_quai}

@@ -32,8 +32,8 @@
 |[[Global State-Estimated Scaled Mining Beta Vector\|Estimated Scaled Mining Beta Vector]]|The controllers current scaled estimation of the beta vector|[[Mining Beta Vector Type]]|||
 |[[Global State-Logistic Classifier\|Logistic Classifier]]|The logistic classifier used for beta estimation|[[Logistic Classifier Type]]|||
 |[[Global State-Mining Log\|Mining Log]]|The log of mined blocks|[[Simulation History Log Type]]|||
-|[[Global State-Aggregate Hashpower\|Aggregate Hashpower]]|The current hashpower per second in the simulation|[[Hashpower per Second]]|||
 |[[Global State-Mu\|Mu]]|EWMA of the best diff over log diff|[[Gain Type]]|||
+|[[Global State-Population Mining Hashrate\|Population Mining Hashrate]]|Hash Rate of the population|[[Gain Type]]|||
 
 
 ## Updated By
@@ -41,7 +41,6 @@
 ### [[Update Block Difficulty Mechanism]]
 ### [[Increment Time Mechanism]]
 ### [[Log Mined Blocks Mechanism]]
-### [[Update Hash Rate Mechanism]]
 ### [[Update Historical Mined Ratio Mechanism]]
 ### [[Update Historical Qi Hash Mechanism]]
 ### [[Update Historical Quai Hash Mechanism]]

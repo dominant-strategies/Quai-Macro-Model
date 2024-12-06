@@ -95,6 +95,7 @@ params_base = {
     "Difficulty Adjustment Period": 700 / 16,  # Adjusting prime blocks into zone blocks
     "Price EWMA Lambda": 0.05,
     "Hashpower Cost Series": [1 for x in range(1, 10002)],
+    "Hashpower Cost Series Sigma": 0.01,
     "Qi Price Movemement Sigma": 0.01,
     "Quai Price Movemement Sigma": 0.01,
     "Lockup Options": {

@@ -5,65 +5,60 @@ graph TB
 
 subgraph SVS["State Variables"]
 EE0[("Global")]
-EES0(["Aggregate Hashpower"])
+EES0(["Historical Converted Qi"])
 EES0 --- EE0
-EES1(["Historical Converted Qi"])
+EES1(["Historical Converted Quai"])
 EES1 --- EE0
-EES2(["Historical Converted Quai"])
+EES2(["Locked Qi Supply"])
 EES2 --- EE0
-EES3(["Locked Qi Supply"])
+EES3(["Qi Supply"])
 EES3 --- EE0
-EES4(["Qi Supply"])
+EES4(["Qi Unlock Schedule"])
 EES4 --- EE0
-EES5(["Qi Unlock Schedule"])
+EES5(["Quai Supply"])
 EES5 --- EE0
-EES6(["Quai Supply"])
+EES6(["Quai Unlock Schedule"])
 EES6 --- EE0
-EES7(["Quai Unlock Schedule"])
-EES7 --- EE0
 end
 
-subgraph X16["Conversions Wiring"]
+subgraph X15["Conversions Wiring"]
 direction TB
 X1["Conversions Boundary Action"]
 X2["Conversions Policy"]
-subgraph X15["Conversions Mechanisms Wiring"]
+subgraph X14["Conversions Mechanisms Wiring"]
 direction TB
-X3["Update Hash Rate Mechanism"]
-X3 --> EES0
-X4["Mint Qi Tokens Mechanism"]
-X4 --> EES4
-X5["Mint Quai Tokens Mechanism"]
-X5 --> EES6
-X6["Burn Qi Tokens Mechanism"]
-X6 --> EES4
-X7["Burn Quai Tokens Mechanism"]
-X7 --> EES6
-X8["Update Historical Converted Qi Mechanism"]
+X3["Mint Qi Tokens Mechanism"]
+X3 --> EES3
+X4["Mint Quai Tokens Mechanism"]
+X4 --> EES5
+X5["Burn Qi Tokens Mechanism"]
+X5 --> EES3
+X6["Burn Quai Tokens Mechanism"]
+X6 --> EES5
+X7["Update Historical Converted Qi Mechanism"]
+X7 --> EES0
+X8["Update Historical Converted Quai Mechanism"]
 X8 --> EES1
-X9["Update Historical Converted Quai Mechanism"]
+X9["Update Locked Qi Mechanism"]
 X9 --> EES2
-X10["Update Locked Qi Mechanism"]
-X10 --> EES3
-X11["Update Locked Quai Mechanism"]
-X11 --> EES3
-X12["Append to Unlock Schedule Mechanism"]
-X12 --> EES7
-X12 --> EES5
-X13[Domain]
+X10["Update Locked Quai Mechanism"]
+X10 --> EES2
+X11["Append to Unlock Schedule Mechanism"]
+X11 --> EES6
+X11 --> EES4
+X12[Domain]
 
 direction LR
 direction TB
-X13 --> X3
-X13 --"Qi Space"--> X4
-X13 --"Quai Space"--> X5
-X13 --"Qi Space"--> X6
-X13 --"Quai Space"--> X7
-X13 --"Conversion Log Space"--> X8
-X13 --"Conversion Log Space"--> X9
-X13 --"Qi Space"--> X10
-X13 --"Quai Space"--> X11
-X13 --"Unlock Schedule Entry Space"--> X12
+X12 --"Qi Space"--> X3
+X12 --"Quai Space"--> X4
+X12 --"Qi Space"--> X5
+X12 --"Quai Space"--> X6
+X12 --"Conversion Log Space"--> X7
+X12 --"Conversion Log Space"--> X8
+X12 --"Qi Space"--> X9
+X12 --"Quai Space"--> X10
+X12 --"Unlock Schedule Entry Space"--> X11
 end
 X1--"Conversion Space"--->X2
 X2--"Qi Space
@@ -74,7 +69,7 @@ Conversion Log Space
 Conversion Log Space
 Qi Space
 Quai Space
-Unlock Schedule Entry Space"----------->X15
+Unlock Schedule Entry Space"----------->X14
 end
 ```
 
@@ -99,11 +94,10 @@ This mechanism allows for greater responsiveness in the [[Qi Supply Metric|suppl
 5. [[Conversions Policy]]
 6. [[Mint Qi Tokens Mechanism]]
 7. [[Mint Quai Tokens Mechanism]]
-8. [[Update Hash Rate Mechanism]]
-9. [[Update Historical Converted Qi Mechanism]]
-10. [[Update Historical Converted Quai Mechanism]]
-11. [[Update Locked Qi Mechanism]]
-12. [[Update Locked Quai Mechanism]]
+8. [[Update Historical Converted Qi Mechanism]]
+9. [[Update Historical Converted Quai Mechanism]]
+10. [[Update Locked Qi Mechanism]]
+11. [[Update Locked Quai Mechanism]]
 
 ## Constraints
 
@@ -135,12 +129,11 @@ This mechanism allows for greater responsiveness in the [[Qi Supply Metric|suppl
 ## Calls
 
 ## All State Updates
-1. [[Global]].[[Global State-Aggregate Hashpower|Aggregate Hashpower]]
-2. [[Global]].[[Global State-Historical Converted Qi|Historical Converted Qi]]
-3. [[Global]].[[Global State-Historical Converted Quai|Historical Converted Quai]]
-4. [[Global]].[[Global State-Locked Qi Supply|Locked Qi Supply]]
-5. [[Global]].[[Global State-Qi Supply|Qi Supply]]
-6. [[Global]].[[Global State-Qi Unlock Schedule|Qi Unlock Schedule]]
-7. [[Global]].[[Global State-Quai Supply|Quai Supply]]
-8. [[Global]].[[Global State-Quai Unlock Schedule|Quai Unlock Schedule]]
+1. [[Global]].[[Global State-Historical Converted Qi|Historical Converted Qi]]
+2. [[Global]].[[Global State-Historical Converted Quai|Historical Converted Quai]]
+3. [[Global]].[[Global State-Locked Qi Supply|Locked Qi Supply]]
+4. [[Global]].[[Global State-Qi Supply|Qi Supply]]
+5. [[Global]].[[Global State-Qi Unlock Schedule|Qi Unlock Schedule]]
+6. [[Global]].[[Global State-Quai Supply|Quai Supply]]
+7. [[Global]].[[Global State-Quai Unlock Schedule|Quai Unlock Schedule]]
 

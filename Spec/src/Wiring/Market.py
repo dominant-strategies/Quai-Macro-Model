@@ -36,7 +36,6 @@ market_wiring.append(
     {
         "name": "Conversions Mechanisms Wiring",
         "components": [
-            "Update Hash Rate Mechanism",
             "Mint Qi Tokens Mechanism",
             "Mint Quai Tokens Mechanism",
             "Burn Qi Tokens Mechanism",

@@ -82,11 +82,13 @@ def test_mine_block_boundary_action(state, params, spaces):
 
 def mine_block_boundary_action_v3(state, params, spaces):
     space = {}
-    space["Aggregate Hashpower"] = state["Aggregate Hashpower"]
 
     n_blocks = state["Number of Regions"] ** 2 * state["Zones per Region"] ** 2
 
     space["Blocks to Mine"] = []
+
+    space["Quai Reward"] = []
+    space["Qi Reward"] = []
 
     # set the block difficulty to the difficulty of the last block from the
     # previous epoch
@@ -94,8 +96,35 @@ def mine_block_boundary_action_v3(state, params, spaces):
 
     for _ in range(n_blocks):
 
+        quai_reward = state["Metrics"]["Hash to Quai Metric"](state, params, [{"Hash": block_difficulty}])
+        qi_reward = state["Metrics"]["Hash to Qi Metric"](state, params, [{"Hash": block_difficulty}])
+
+        reward = 0
+        # Make the miner decision of what to mine
+        if quai_reward * state["Quai Price"] > qi_reward * state["Qi Price"]:
+            space["Quai Reward"].append(quai_reward)
+            space["Qi Reward"].append(0)
+            reward = quai_reward / (state["K Quai"] * new_difficulty) # Qi per Hash Unit
+        else:
+            space["Quai Reward"].append(0)
+            space["Qi Reward"].append(qi_reward)
+            reward = qi_reward / new_difficulty # Qi per Hash Unit
+        
+        z_value_for_cost = (params["Hashpower Cost Series"] - reward)/params["Hashpower Cost Series Sigma"]
+
+        percent_interested_in_mining = np.cdf(z_value_for_cost) * 100
+
+        # If the percent interested in mining is significantly greater than 50 increase the
+        # population hash rate that is mining by a 0.1, otherwise decrease
+        # it by 0.1 percent
+        if percent_interested_in_mining > 75:
+            state["Population Mining Hashrate"] = state["Population Mining Hashrate"] * 1.001
+        elif percent_interested_in_mining < 25:
+            state["Population Mining Hashrate"] = state["Population Mining Hashrate"] * 0.999
+
+
         # calculate the new lambda for the new new block sample
-        lam = block_difficulty / space["Aggregate Hashpower"]
+        lam = block_difficulty / (state["Population Mining Hashrate"] * percent_interested_in_mining)
         time_to_find_block = np.random.poisson(lam=lam, size=1)
 
         target_time = params["Target Mining Time"]

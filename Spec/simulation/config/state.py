@@ -29,7 +29,7 @@ state_base = {
     "Estimated Mining Beta Vector": [None, None],
     "Estimated Scaled Mining Beta Vector": [None, None],
     "Mu": 433000,
+    "Population Mining Hashrate": 2e6,
     "Logistic Classifier": None,  # Set in state preperation functions
     "Mining Log": None,  # Set in state preperation functions
-    "Aggregate Hashpower": 2e8,
 }
