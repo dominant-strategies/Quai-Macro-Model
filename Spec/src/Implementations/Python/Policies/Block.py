@@ -93,8 +93,8 @@ def mining_policy_v1(state, params, spaces):
 
     space["Locking Times"] = deepcopy(spaces[0]["Locking Times"])
 
-    spaces["Quai Reward"] = deepcopy(spaces[0]["Quai Reward"])
-    spaces["Qi Reward"] = deepcopy(spaces[0]["Qi Reward"])
+    space["Quai Reward"] = deepcopy(spaces[0]["Quai Reward"])
+    space["Qi Reward"] = deepcopy(spaces[0]["Qi Reward"])
 
     return [space]
 
@@ -139,16 +139,18 @@ def deterministic_mining_payment_policy(state, params, spaces):
         "Hash Value": quai_hash,
     }
     space6 = deepcopy(space1)
-    space7 = deepcopy(space1)
+    space7 = deepcopy(space2)
 
-    space9 = deepcopy(spaces[0])
-    space10 = deepcopy(spaces[0])
+    space9 = deepcopy(space0)
+    space10 = deepcopy(space0)
+
+    space11 = {"Block Difficulty": spaces[0]["New Difficulty"]}
 
     a = []
     b = []
     print(spaces[0])
     for l, qi, quai in zip(
-        spaces[0]["Locking Times"], spaces[0]["Qi Taken"], spaces[0]["Quai Taken"]
+        spaces[0]["Locking Times"], space0["Qi Taken"], space0["Quai Taken"]
     ):
 
         t = l * 365 + state["Time"]
@@ -171,6 +173,7 @@ def deterministic_mining_payment_policy(state, params, spaces):
         space8,
         space9,
         space10,
+        space11,
     ]
 
 

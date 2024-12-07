@@ -1,5 +1,6 @@
 import numpy as np
 from random import choice
+from scipy.stats import norm
 
 
 def create_block_hashes_v1(state, params):
@@ -104,15 +105,15 @@ def mine_block_boundary_action_v3(state, params, spaces):
         if quai_reward * state["Quai Price"] > qi_reward * state["Qi Price"]:
             space["Quai Reward"].append(quai_reward)
             space["Qi Reward"].append(0)
-            reward = quai_reward / (state["K Quai"] * new_difficulty) # Qi per Hash Unit
+            reward = quai_reward / (state["K Quai"] * block_difficulty) # Qi per Hash Unit
         else:
             space["Quai Reward"].append(0)
             space["Qi Reward"].append(qi_reward)
-            reward = qi_reward / new_difficulty # Qi per Hash Unit
+            reward = qi_reward / block_difficulty # Qi per Hash Unit
         
-        z_value_for_cost = (params["Hashpower Cost Series"] - reward)/params["Hashpower Cost Series Sigma"]
+        z_value_for_cost = (params["Hashpower Cost Series"][state["Block Number"]] - reward)/params["Hashpower Cost Series Sigma"]
 
-        percent_interested_in_mining = np.cdf(z_value_for_cost) * 100
+        percent_interested_in_mining = norm.cdf(z_value_for_cost) * 100
 
         # If the percent interested in mining is significantly greater than 50 increase the
         # population hash rate that is mining by a 0.1, otherwise decrease
@@ -140,6 +141,8 @@ def mine_block_boundary_action_v3(state, params, spaces):
         block_difficulty = new_difficulty
 
         space["Blocks to Mine"].append({"Difficulty": block_difficulty})
+    
+    space["Aggregate Hashpower"] = state["Population Mining Hashrate"]
 
     L = state["Stateful Metrics"]["Current Lockup Options"](state, params)
     H = list(L.keys())

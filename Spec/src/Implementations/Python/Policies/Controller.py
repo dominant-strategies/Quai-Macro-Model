@@ -120,6 +120,43 @@ def sample_estimation_betas(state, params, spaces):
     state["Logistic Classifier Queue X"].extend(X)
     state["Logistic Classifier Queue Y"].extend(Y)
 
+    # Normalizing the Total Quai converted into the number of miner choices by
+    # dividing the value by the block reward
+    quai_reward = state["Metrics"]["Hash to Quai Metric"](state, params, [{"Hash": state["Block Difficulty"]}])
+
+    n_quai = 0
+    if len(state["Historical Converted Quai"]) > 0:
+        # The historical converted value keeps the value is negative amount,
+        # TODO: clean this but requires changing of the conversion mechanism
+        # changes
+        converted_quai = -state["Historical Converted Quai"][state["Block Number"]]["Quai"]
+        n_quai = converted_quai/quai_reward
+
+    converted_quai_x = np.repeat(state["Block Difficulty"], n_quai)
+    converted_quai_y = np.repeat(0, n_quai)
+        
+    state["Logistic Classifier Queue X"].extend(converted_quai_x)
+    state["Logistic Classifier Queue Y"].extend(converted_quai_y)
+
+    # Normalizing the Total Qi converted into the number of miner choices by
+    # dividing the value by the block reward
+    qi_reward = state["Metrics"]["Hash to Qi Metric"](state, params, [{"Hash": state["Block Difficulty"]}])
+
+    n_qi = 0
+    if len(state["Historical Converted Qi"]) > 0:
+        # The historical converted value keeps the value is negative amount,
+        # TODO: clean this but requires changing of the conversion mechanism
+        # changes
+        converted_qi = -state["Historical Converted Qi"][state["Block Number"]]["Qi"]
+        n_qi = converted_qi/qi_reward
+
+
+    converted_qi_x = np.repeat(state["Block Difficulty"], n_qi)
+    converted_qi_y = np.repeat(1, n_qi)
+        
+    state["Logistic Classifier Queue X"].extend(converted_qi_x)
+    state["Logistic Classifier Queue Y"].extend(converted_qi_y)
+
     state["Logistic Classifier Queue X"] = state["Logistic Classifier Queue X"][-100:]
     state["Logistic Classifier Queue Y"] = state["Logistic Classifier Queue Y"][-100:]
 
@@ -141,8 +178,9 @@ def sample_estimation_betas(state, params, spaces):
 
     scores = []
 
+    x_sorted_flat = [x[0] if isinstance(x, (list, tuple, np.ndarray)) else x for x in x_sorted]
     # Iterate through sorted x values
-    for i in range(len(x_sorted)):
+    for i in range(len(x_sorted_flat)):
         if y_sorted[i] == 0:
             left_zeros += 1  # Add a 0 to the left
         else:
@@ -163,7 +201,8 @@ def sample_estimation_betas(state, params, spaces):
 
     if state["Block Number"] % 100 == 0:
         print("Block Number", state["Block Number"])
-        plt.scatter(x_sorted, scores, s=1)
+        print("x sorted", x_sorted_flat[:i], "scores", scores[:i])
+        plt.scatter(x_sorted_flat[:i], scores[:i], s=1)
         plt.xlabel("Prime Block Number")
         plt.ylabel("Scores")
         plt.show()
@@ -173,7 +212,10 @@ def sample_estimation_betas(state, params, spaces):
 
     # update the mu value of the diff over log diff
     prev_mu = state["Mu"]
-    state["Mu"] = 0.97 * prev_mu + 0.03 * best_x[0]
+    if type(best_x) == list:
+        best_x = best_x[0]
+
+    state["Mu"] = 0.97 * prev_mu + 0.03 * best_x
 
     return [spaces[0], {"Beta": np.array([-state["Mu"]/2, 0.5]), "Scaled Beta": np.array([-state["Mu"]/2, 0.5])}]
 

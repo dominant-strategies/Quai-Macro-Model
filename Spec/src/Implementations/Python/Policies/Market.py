@@ -7,6 +7,10 @@ def block_reward_ratio_conversion_policy(state, params, spaces):
     assets = spaces[0]["Token"]
     amounts = spaces[0]["Amount"]
 
+    # Initialize the qi and quai values so that conversion amounts can be adjusted
+    quai = 0
+    qi = 0
+
     for i in range(0, len(assets)):
         asset = assets[i]
         amount = amounts[i]
@@ -15,24 +19,24 @@ def block_reward_ratio_conversion_policy(state, params, spaces):
         conversion_rate = state["Metrics"]["Conversion Rate Metric"](state, params, [])
         if asset == "Quai":
             if amount < params["Minimum Quai Conversion Amount"]:
-                quai = 0
-                qi = 0
+                quai += 0
+                qi += 0
             elif amount >= state["Quai Supply"]:
-                quai = 0
-                qi = 0
+                quai += 0
+                qi += 0
             else:
-                quai = -amount
-                qi = amount / conversion_rate * lockup_return
+                quai += -amount
+                qi += amount / conversion_rate * lockup_return
         else:
             if amount < params["Minimum Qi Conversion Amount"]:
-                quai = 0
-                qi = 0
+                quai += 0
+                qi += 0
             elif amount >= state["Qi Supply"]:
-                quai = 0
-                qi = 0
+                quai += 0
+                qi += 0
             else:
-                qi = -amount
-                quai = amount * conversion_rate * lockup_return
+                qi += -amount
+                quai += amount * conversion_rate * lockup_return
 
     # Minting Spaces
     space1 = {"Qi": max(0, qi)}
@@ -48,10 +52,10 @@ def block_reward_ratio_conversion_policy(state, params, spaces):
     elif quai < 0:
         space5 = None
         space6 = {"Qi": qi, "Quai": quai, "Time": state["Time"]}
-
     else:
         space5 = None
         space6 = None
+
     space7 = space1
     space8 = space2
 

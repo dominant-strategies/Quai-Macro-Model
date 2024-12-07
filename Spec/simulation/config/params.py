@@ -105,7 +105,7 @@ params_base = {
         4: {2 / 52: 1, 3 / 12: 1.004375, 6 / 12: 1.0125, 1: 1.03125},
         5: {2 / 52: 1, 3 / 12: 1.002188, 6 / 12: 1.00625, 1: 1.015625},
     },
-    "Speculator Percentage": 0.1,
+    "Speculator Percentage": 0.01,
     "Conversion Percentage Mu": 0.01,
     "Conversion Percentage Sigma": 0.001,
     "Controller Alpha Parameter": 0.0001,
@@ -122,7 +122,7 @@ params_base = {
     "FP Conversions Boundary Action": "Conversions Boundary Action V1",
     "FP Mine Block Boundary Action": "Mine Block Boundary Action V3",
     "FP Price Movements Boundary Action": "Hashpower Price Movement",
-    "FP Mining Payment Policy": "Logistic Probability Payment Policy",
+    "FP Mining Payment Policy": "Deterministic Mining Payment Policy",
     "FP Beta Estimation Policy": "Rolling Logistic Regression Estimation",
 }
 

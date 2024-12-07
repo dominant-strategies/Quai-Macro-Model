@@ -17,13 +17,16 @@ def conversions_boundary_action_v1(state, params, spaces):
 
     tokens = []
     amounts = []
+
     # If the protocol exchange rate is greater than the market exchange rate 
     # Quai is at a discount relative to Qi, so rational speculators would 
     # convert Qi to Quai
+    # q value here is the token that is getting converted, in the next policy
+    # the supply adjustment is handled
     if protocol_exchange_rate > market_exchange_rate:
-        q = "Quai"
-    else:
         q = "Qi"
+    else:
+        q = "Quai"
 
     if q == "Quai":
         circulating = state["Stateful Metrics"]["Circulating Quai Supply"](
@@ -32,7 +35,7 @@ def conversions_boundary_action_v1(state, params, spaces):
     else:
         circulating = state["Stateful Metrics"]["Circulating Qi Supply"](state, params)
 
-    T = circulating * params["Speculator Percentage"]
+    T = circulating * params["Speculator Percentage"] * params["Speculator Rationality Ratio"]
     C = T * max(
         min(
             1,
@@ -47,12 +50,13 @@ def conversions_boundary_action_v1(state, params, spaces):
     tokens.append(q)
     amounts.append(C)
 
-    # default conversions, this is just the initial version, 
-    # more logic needs to come here to make it more sophisticated
+    random_allocation = random()
+
     tokens.append("Qi")
-    amounts.append(10)
+    amounts.append(state["Stateful Metrics"]["Circulating Qi Supply"](state, params) * random_allocation * (1 - params["Speculator Rationality Ratio"]))
+
     tokens.append("Quai")
-    amounts.append(10)
+    amounts.append(state["Stateful Metrics"]["Circulating Quai Supply"](state, params) * (1 - random_allocation) * (1 - params["Speculator Rationality Ratio"]))
 
     L = state["Stateful Metrics"]["Current Lockup Options"](state, params)
     H = choice(list(L.keys()))
