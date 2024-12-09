@@ -140,44 +140,53 @@ def sample_estimation_betas(state, params, spaces):
         # Normalizing the Total Quai converted into the number of miner choices by
         # dividing the value by the block reward
         quai_reward = state["Metrics"]["Hash to Quai Metric"](state, params, [{"Hash": difficulty}])
-
-        n_quai = 0
-        if len(state["Historical Converted Quai"]) > 0:
-            # The historical converted value keeps the value is negative amount,
-            # TODO: clean this but requires changing of the conversion mechanism
-            # changes
-            converted_quai = -state["Historical Converted Quai"][state["Block Number"]-i]["Quai"]
-            n_quai = converted_quai/quai_reward
-
-        converted_quai_x = difficulty/log(difficulty, params["Quai Reward Base Parameter"])
-        converted_quai_y = n_quai
-        print("converted x", converted_quai_x)
-        print("converted y", converted_quai_y)
-            
-        # Accumulate the logistic classifier queue x with the conversion outpoints 
-        regression_x.append(converted_quai_x)
-        regression_y.append(converted_quai_y)
-
         # Normalizing the Total Qi converted into the number of miner choices by
         # dividing the value by the block reward
         qi_reward = state["Metrics"]["Hash to Qi Metric"](state, params, [{"Hash": difficulty}])
-
-        n_qi = 0
-        if len(state["Historical Converted Qi"]) > 0:
-            # The historical converted value keeps the value is negative amount,
-            # TODO: clean this but requires changing of the conversion mechanism
-            # changes
-            converted_qi = -state["Historical Converted Qi"][state["Block Number"]-i]["Qi"]
-            n_qi = converted_qi/qi_reward
-
-
-        converted_qi_x = difficulty/log(difficulty, params["Quai Reward Base Parameter"])
-        converted_qi_y = -n_qi
         
-        regression_x.append(converted_qi_x)
-        regression_y.append(converted_qi_y)
+        n_quai = 0
+        n_qi = 0
+        if len(state["Historical Converted Quai"]) > 0 and len(state["Historical Converted Qi"]) > 0:
+            # If the amount of Qi converted is more than the amount of Quai conveted
+            # the historical converted Qi will have the Quai value that was conveted
+            if state["Historical Converted Qi"][state["Block Number"]-i]["Qi"] < 0: # More Qi was burned
+                # doing an assertion to check the impossible case, Quai also cannot be burned in net
+                assert state["Historical Converted Qi"][state["Block Number"]-i]["Quai"] > 0
+                assert state["Historical Converted Quai"][state["Block Number"]-i]["Quai"] == 0
+                assert state["Historical Converted Quai"][state["Block Number"]-i]["Qi"] == 0
 
-    
+                # Historical Converted Quai stores the amount of Qi the Quai was
+                # converted to if more Quai was converted to Qi. Otherwise it stores
+                # 0. 
+                converted_quai = state["Historical Converted Qi"][state["Block Number"]-i]["Quai"]
+                n_quai = converted_quai/quai_reward
+
+            elif state["Historical Converted Quai"][state["Block Number"]-i]["Quai"] < 0: # More Qi was created
+                # doing an assertion to check the impossible case, More Quai
+                # also cannot be created at the same time
+                assert state["Historical Converted Quai"][state["Block Number"]-i]["Qi"] > 0
+                assert state["Historical Converted Qi"][state["Block Number"]-i]["Quai"] == 0
+                assert state["Historical Converted Qi"][state["Block Number"]-i]["Qi"] == 0
+
+                converted_qi = state["Historical Converted Quai"][state["Block Number"]-i]["Qi"]
+                n_qi = converted_qi/qi_reward
+            else: # No conversion happened
+                assert state["Historical Converted Quai"][state["Block Number"]-i]["Quai"] == 0
+                assert state["Historical Converted Quai"][state["Block Number"]-i]["Qi"] == 0
+                assert state["Historical Converted Qi"][state["Block Number"]-i]["Qi"] == 0
+                assert state["Historical Converted Qi"][state["Block Number"]-i]["Quai"] == 0
+
+            converted_x = difficulty/log(difficulty, params["Quai Reward Base Parameter"])
+            # Accumulate the logistic classifier queue x with the conversion outpoints 
+            regression_x.append(converted_x)
+            
+            print("n quai", n_quai, "n qi", n_qi)
+
+            if n_quai > 0:
+                regression_y.append(-n_quai)                
+            elif n_qi > 0:
+                regression_y.append(n_qi)                
+
     # Need to flatten the regression_x list because some of the values in the
     # list are list themselves TODO: check why the above is happening
     regression_x = [x[0] if isinstance(x, (list, tuple, np.ndarray)) else x for x in regression_x]
@@ -203,10 +212,14 @@ def sample_estimation_betas(state, params, spaces):
     x_sorted_flat = [x[0] if isinstance(x, (list, tuple, np.ndarray)) else x for x in x_sorted]
     # Iterate through sorted x values
     for i in range(len(x_sorted_flat)):
-        if y_sorted[i] <= 0:
-            left_zeros += y_sorted[i]  # Add a 0 to the left
-        else:
-            right_ones -= y_sorted[i]  # Remove a 1 from the right
+        if y_sorted[i] == 0: # Mining choice Quai
+            left_zeros += 1
+        elif y_sorted[i] == 1: # Mining choice Qi
+            right_ones += 1  
+        elif y_sorted[i] > 0: # Conversion from Quai to Qi
+            right_ones += y_sorted[i]  
+        else: # Conversion from Qi to Quai
+            left_zeros += -y_sorted[i]
 
         left_ones = total_ones - right_ones
         right_zeros = total_zeros - left_zeros
