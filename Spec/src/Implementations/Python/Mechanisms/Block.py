@@ -1,6 +1,6 @@
 def update_block_difficulty_mechanism(state, params, spaces):
     state["Block Difficulty"] = spaces[0]["Block Difficulty"]
-
+    state["Historical Block Difficulty"].append(spaces[0]["Block Difficulty"])
 
 def append_to_unlock_schedule_mechanism(state, params, spaces):
     state["Quai Unlock Schedule"].extend(spaces[0]["Quai Schedule Entry"])

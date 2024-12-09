@@ -120,60 +120,82 @@ def sample_estimation_betas(state, params, spaces):
     state["Logistic Classifier Queue X"].extend(X)
     state["Logistic Classifier Queue Y"].extend(Y)
 
-    # Normalizing the Total Quai converted into the number of miner choices by
-    # dividing the value by the block reward
-    quai_reward = state["Metrics"]["Hash to Quai Metric"](state, params, [{"Hash": state["Block Difficulty"]}])
+    # Start with the past miner choices and then add the conversion choices just
+    # in time
+    regression_x = state["Logistic Classifier Queue X"][-1000:]
+    regression_y = state["Logistic Classifier Queue Y"][-1000:]
+    
+    state["Logistic Classifier Queue X"] = state["Logistic Classifier Queue X"][-1000:]
+    state["Logistic Classifier Queue Y"] = state["Logistic Classifier Queue Y"][-1000:]
 
-    n_quai = 0
-    if len(state["Historical Converted Quai"]) > 0:
-        # The historical converted value keeps the value is negative amount,
-        # TODO: clean this but requires changing of the conversion mechanism
-        # changes
-        converted_quai = -state["Historical Converted Quai"][state["Block Number"]]["Quai"]
-        n_quai = converted_quai/quai_reward
+    # Have to go through the conversions that have happened in the past 100
+    # blocks Since the Historical Converted Quai represents the total number of
+    # Quai converted and its stored per blocks basis.     
+    num_blocks = len(state["Historical Block Difficulty"])
+    if num_blocks > 100:
+        num_blocks = 100
 
-    converted_quai_x = np.repeat(state["Block Difficulty"], n_quai)
-    converted_quai_y = np.repeat(0, n_quai)
+    for i in range (0, num_blocks):
+        difficulty = state["Historical Block Difficulty"][state["Block Number"]-i]
+        # Normalizing the Total Quai converted into the number of miner choices by
+        # dividing the value by the block reward
+        quai_reward = state["Metrics"]["Hash to Quai Metric"](state, params, [{"Hash": difficulty}])
+
+        n_quai = 0
+        if len(state["Historical Converted Quai"]) > 0:
+            # The historical converted value keeps the value is negative amount,
+            # TODO: clean this but requires changing of the conversion mechanism
+            # changes
+            converted_quai = -state["Historical Converted Quai"][state["Block Number"]-i]["Quai"]
+            n_quai = converted_quai/quai_reward
+
+        converted_quai_x = difficulty/log(difficulty, params["Quai Reward Base Parameter"])
+        converted_quai_y = n_quai
+        print("converted x", converted_quai_x)
+        print("converted y", converted_quai_y)
+            
+        # Accumulate the logistic classifier queue x with the conversion outpoints 
+        regression_x.append(converted_quai_x)
+        regression_y.append(converted_quai_y)
+
+        # Normalizing the Total Qi converted into the number of miner choices by
+        # dividing the value by the block reward
+        qi_reward = state["Metrics"]["Hash to Qi Metric"](state, params, [{"Hash": difficulty}])
+
+        n_qi = 0
+        if len(state["Historical Converted Qi"]) > 0:
+            # The historical converted value keeps the value is negative amount,
+            # TODO: clean this but requires changing of the conversion mechanism
+            # changes
+            converted_qi = -state["Historical Converted Qi"][state["Block Number"]-i]["Qi"]
+            n_qi = converted_qi/qi_reward
+
+
+        converted_qi_x = difficulty/log(difficulty, params["Quai Reward Base Parameter"])
+        converted_qi_y = -n_qi
         
-    state["Logistic Classifier Queue X"].extend(converted_quai_x)
-    state["Logistic Classifier Queue Y"].extend(converted_quai_y)
+        regression_x.append(converted_qi_x)
+        regression_y.append(converted_qi_y)
 
-    # Normalizing the Total Qi converted into the number of miner choices by
-    # dividing the value by the block reward
-    qi_reward = state["Metrics"]["Hash to Qi Metric"](state, params, [{"Hash": state["Block Difficulty"]}])
-
-    n_qi = 0
-    if len(state["Historical Converted Qi"]) > 0:
-        # The historical converted value keeps the value is negative amount,
-        # TODO: clean this but requires changing of the conversion mechanism
-        # changes
-        converted_qi = -state["Historical Converted Qi"][state["Block Number"]]["Qi"]
-        n_qi = converted_qi/qi_reward
-
-
-    converted_qi_x = np.repeat(state["Block Difficulty"], n_qi)
-    converted_qi_y = np.repeat(1, n_qi)
-        
-    state["Logistic Classifier Queue X"].extend(converted_qi_x)
-    state["Logistic Classifier Queue Y"].extend(converted_qi_y)
-
-    state["Logistic Classifier Queue X"] = state["Logistic Classifier Queue X"][-100:]
-    state["Logistic Classifier Queue Y"] = state["Logistic Classifier Queue Y"][-100:]
+    
+    # Need to flatten the regression_x list because some of the values in the
+    # list are list themselves TODO: check why the above is happening
+    regression_x = [x[0] if isinstance(x, (list, tuple, np.ndarray)) else x for x in regression_x]
 
     # Combine and sort by x values
-    data = sorted(zip(state["Logistic Classifier Queue X"], state["Logistic Classifier Queue Y"]))  # Sorted by x
+    data = sorted(zip(regression_x, regression_y))  # Sorted by x
     x_sorted, y_sorted = zip(*data)
 
     # Initialize counters
-    total_zeros = y_sorted.count(0)
-    total_ones = y_sorted.count(1)
+    total_zeros =  total = sum(num for num in y_sorted if num <= 0)
+    total_ones = total = sum(num for num in y_sorted if num > 0)
 
     left_zeros = 0
     right_zeros = 0
     left_ones = 0
     right_ones = 0
 
-    best_score = -10000
+    best_score = -1000000000
     best_x = None
 
     scores = []
@@ -181,10 +203,10 @@ def sample_estimation_betas(state, params, spaces):
     x_sorted_flat = [x[0] if isinstance(x, (list, tuple, np.ndarray)) else x for x in x_sorted]
     # Iterate through sorted x values
     for i in range(len(x_sorted_flat)):
-        if y_sorted[i] == 0:
-            left_zeros += 1  # Add a 0 to the left
+        if y_sorted[i] <= 0:
+            left_zeros += y_sorted[i]  # Add a 0 to the left
         else:
-            right_ones -= 1  # Remove a 1 from the right
+            right_ones -= y_sorted[i]  # Remove a 1 from the right
 
         left_ones = total_ones - right_ones
         right_zeros = total_zeros - left_zeros

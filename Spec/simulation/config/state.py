@@ -8,6 +8,7 @@ state_base = {
     "Ratio of Miners not Mining": 0.01,
     "Block Number": 0,
     "Block Difficulty": 1000000000,
+    "Historical Block Difficulty": [1000000000],
     "Number of Regions": 2,
     "Zones per Region": 2,
     "Historical Converted Qi": [],

@@ -132,7 +132,7 @@ def mine_block_boundary_action_v3(state, params, spaces):
 
         new_difficulty = (
             block_difficulty
-            + 0.01
+            + 0.001
             * ((target_time - time_to_find_block[0]) / target_time)
             * block_difficulty
         )

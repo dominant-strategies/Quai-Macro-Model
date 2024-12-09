@@ -58,6 +58,13 @@ global_state = {
             "symbol": None,
             "domain": None,
         },
+        {
+            "type": "Hash Array Type",
+            "name": "Historical Block Difficulty",
+            "description": "Historical block difficulty values",
+            "symbol": None,
+            "domain": None,
+        },
         # {
         #     "type": "Hash Type",
         #     "name": "Current Hash Difference",
