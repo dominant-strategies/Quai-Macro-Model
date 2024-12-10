@@ -39,6 +39,7 @@ def log_simulation_data_mechanism(state, params, spaces):
         "Qi Price",
         "Time",
         "Delta Time",
+        "Population Mining Hashrate",
     ]:
         log[x] = state[x]
 

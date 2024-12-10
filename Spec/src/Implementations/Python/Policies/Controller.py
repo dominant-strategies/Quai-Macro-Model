@@ -244,7 +244,7 @@ def sample_estimation_betas(state, params, spaces):
         print("Block Number", state["Block Number"])
         print("x sorted", x_sorted_flat[:i], "scores", scores[:i])
         plt.scatter(x_sorted_flat[:i], scores[:i], s=1)
-        plt.xlabel("Prime Block Number")
+        plt.xlabel("Block Difficulty")
         plt.ylabel("Scores")
         plt.show()
     

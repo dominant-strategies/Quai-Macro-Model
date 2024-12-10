@@ -13,6 +13,7 @@ from .analytics import (
     plot_mined_choice_vs_difficulty,
     plot_quai_price,
     plot_qi_price,
+    plot_population_mining_hashrate,
 )
 from .postprocessing import (
     post_processing_function,

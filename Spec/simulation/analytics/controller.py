@@ -109,6 +109,13 @@ def plot_qi_price(df):
     plt.title("Qi Price over prime blocks")
     plt.show()
 
+def plot_population_mining_hashrate(df):
+    df.set_index("Block Number")["Population Mining Hashrate"].plot(kind="line")
+    plt.xlabel("Prime Block Number")
+    plt.ylabel("Population Mining Hashrate")
+    plt.title("Population mining Hashrate over prime blocks")
+    plt.show()
+
 
 def difficulty_mining_scatter(df):
     df.plot(kind="scatter", x="Block Difficulty", y="Mined Ratio (Block Percent)")
