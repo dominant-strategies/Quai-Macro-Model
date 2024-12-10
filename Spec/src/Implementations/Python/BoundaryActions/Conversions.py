@@ -17,7 +17,7 @@ def conversions_boundary_action_v1(state, params, spaces):
 
     tokens = []
     amounts = []
-
+    
     # If the protocol exchange rate is greater than the market exchange rate 
     # Quai is at a discount relative to Qi, so rational speculators would 
     # convert Qi to Quai

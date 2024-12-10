@@ -100,6 +100,8 @@ def mine_block_boundary_action_v3(state, params, spaces):
         quai_reward = state["Metrics"]["Hash to Quai Metric"](state, params, [{"Hash": block_difficulty}])
         qi_reward = state["Metrics"]["Hash to Qi Metric"](state, params, [{"Hash": block_difficulty}])
 
+        print("quai reward", quai_reward, "quai price", state["Quai Price"], "qi reward", qi_reward, "qi price", state["Qi Price"])
+
         reward = 0
         # Make the miner decision of what to mine
         if quai_reward * state["Quai Price"] > qi_reward * state["Qi Price"]:
@@ -111,16 +113,20 @@ def mine_block_boundary_action_v3(state, params, spaces):
             space["Qi Reward"].append(qi_reward)
             reward = qi_reward / block_difficulty # Qi per Hash Unit
         
+        print("hashpower cost series", params["Hashpower Cost Series"][state["Block Number"]], "reward", reward)
+        
         z_value_for_cost = (params["Hashpower Cost Series"][state["Block Number"]] - reward)/params["Hashpower Cost Series Sigma"]
 
         percent_interested_in_mining = norm.cdf(z_value_for_cost) * 100
+        
+        print("percentage of miners interested in mining",percent_interested_in_mining)
 
         # If the percent interested in mining is significantly greater than 50 increase the
         # population hash rate that is mining by a 0.1, otherwise decrease
         # it by 0.1 percent
-        if percent_interested_in_mining > 75:
+        if percent_interested_in_mining > 90:
             state["Population Mining Hashrate"] = state["Population Mining Hashrate"] * 1.001
-        elif percent_interested_in_mining < 25:
+        elif percent_interested_in_mining < 10:
             state["Population Mining Hashrate"] = state["Population Mining Hashrate"] * 0.999
 
 

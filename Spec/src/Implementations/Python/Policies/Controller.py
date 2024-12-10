@@ -42,6 +42,7 @@ def reward_ratio_gain_kquai(state, params, spaces):
     x_d = d1 / d2
     x_b_star = -spaces[1]["Beta"][0] / spaces[1]["Beta"][1]
     k_quai += alpha * (x_b_star / x_d - 1) * k_quai
+    print("old kquai", state["K Quai"], "new kquai", k_quai)
     spaces = [{"K Qi": state["K Qi"], "K Quai": k_quai}, spaces[1]]
     return spaces
 
