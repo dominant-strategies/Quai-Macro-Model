@@ -196,8 +196,14 @@ def sample_estimation_betas(state, params, spaces):
     x_sorted, y_sorted = zip(*data)
 
     # Initialize counters
-    total_zeros =  total = sum(num for num in y_sorted if num <= 0)
-    total_ones = total = sum(num for num in y_sorted if num > 0)
+    total_ones, total_zeros = 0, 0
+    for i in range(0, len(y_sorted)):
+        if y_sorted[i] < 0:
+            total_zeros += -y_sorted[i]  
+        elif y_sorted[i] == 0:
+            total_zeros += 1
+        elif y_sorted[i] > 0:
+            total_ones += y_sorted[i]
 
     left_zeros = 0
     right_zeros = 0

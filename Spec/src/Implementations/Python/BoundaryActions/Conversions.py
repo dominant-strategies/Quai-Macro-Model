@@ -51,6 +51,8 @@ def conversions_boundary_action_v1(state, params, spaces):
     amounts.append(C)
 
     random_allocation = random()
+    
+    print("Qi supply", state["Stateful Metrics"]["Circulating Qi Supply"](state, params))
 
     tokens.append("Qi")
     amounts.append(state["Stateful Metrics"]["Circulating Qi Supply"](state, params) * random_allocation * (1 - params["Speculator Rationality Ratio"]))
