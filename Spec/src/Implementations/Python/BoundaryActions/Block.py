@@ -107,7 +107,10 @@ def mine_block_boundary_action_v3(state, params, spaces):
         if quai_reward * state["Quai Price"] > qi_reward * state["Qi Price"]:
             space["Quai Reward"].append(quai_reward)
             space["Qi Reward"].append(0)
-            reward = quai_reward / (state["K Quai"] * block_difficulty) # Qi per Hash Unit
+            # Convert Quai to Qi equivalent
+            quai_in_qi = quai_reward * (state["Quai Price"] / state["Qi Price"])
+            # Qi per hash
+            reward = quai_in_qi / block_difficulty # Qi per Hash Unit
         else:
             space["Quai Reward"].append(0)
             space["Qi Reward"].append(qi_reward)
@@ -124,17 +127,21 @@ def mine_block_boundary_action_v3(state, params, spaces):
         # If the percent interested in mining is significantly greater than 50 increase the
         # population hash rate that is mining by a 0.1, otherwise decrease
         # it by 0.1 percent
-        if percent_interested_in_mining > 90:
+        if percent_interested_in_mining > 75:
             state["Population Mining Hashrate"] = state["Population Mining Hashrate"] * 1.001
-        elif percent_interested_in_mining < 10:
+        elif percent_interested_in_mining < 25:
             state["Population Mining Hashrate"] = state["Population Mining Hashrate"] * 0.999
 
 
-        # calculate the new lambda for the new new block sample
-        lam = block_difficulty / (state["Population Mining Hashrate"] * percent_interested_in_mining)
+        # calculate the new lambda for the new new block sample, assuming that
+        # at any point atleast 50% of the miners are interested in mining
+        lam = block_difficulty * 100 / (state["Population Mining Hashrate"] * max(percent_interested_in_mining, 50))
+
         time_to_find_block = np.random.poisson(lam=lam, size=1)
 
         target_time = params["Target Mining Time"]
+
+        print("time to find the block", time_to_find_block, "target time", target_time)
 
         new_difficulty = (
             block_difficulty
@@ -144,7 +151,8 @@ def mine_block_boundary_action_v3(state, params, spaces):
         )
 
         # update the block difficulty variable to the newly calculated block difficulty
-        block_difficulty = new_difficulty
+        # assuming that the protocol min difficulty is atleast 1e5
+        block_difficulty = max(new_difficulty, 1e5)
 
         space["Blocks to Mine"].append({"Difficulty": block_difficulty})
     

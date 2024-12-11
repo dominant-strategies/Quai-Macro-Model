@@ -4,7 +4,7 @@ import numpy as np
 
 def conversions_boundary_action_v1(state, params, spaces):
     market_exchange_rate = state["Quai Price"]/state["Qi Price"]
-    protocol_exchange_rate = state["K Quai"] 
+    protocol_exchange_rate = state["K Quai"] * np.log2(state["Block Difficulty"])/(state["K Qi"] * state["Block Difficulty"])
 
     print("k quai", state["K Quai"], "k qi", state["K Qi"])
     print("market exchange rate", market_exchange_rate, "protocol exchange rate", protocol_exchange_rate)

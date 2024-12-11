@@ -211,7 +211,7 @@ def sample_estimation_betas(state, params, spaces):
     left_ones = 0
     right_ones = 0
 
-    best_score = -1000000000
+    best_score = -10000000000000000
     best_x = None
 
     scores = []
