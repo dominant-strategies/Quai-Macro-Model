@@ -127,15 +127,15 @@ def mine_block_boundary_action_v3(state, params, spaces):
         # If the percent interested in mining is significantly greater than 50 increase the
         # population hash rate that is mining by a 0.1, otherwise decrease
         # it by 0.1 percent
-        if percent_interested_in_mining > 75:
+        if percent_interested_in_mining > 50.5:
             state["Population Mining Hashrate"] = state["Population Mining Hashrate"] * 1.001
-        elif percent_interested_in_mining < 25:
+        elif percent_interested_in_mining < 49.5:
             state["Population Mining Hashrate"] = state["Population Mining Hashrate"] * 0.999
 
 
         # calculate the new lambda for the new new block sample, assuming that
         # at any point atleast 50% of the miners are interested in mining
-        lam = block_difficulty * 100 / (state["Population Mining Hashrate"] * max(percent_interested_in_mining, 50))
+        lam = block_difficulty * 100 / (state["Population Mining Hashrate"] * percent_interested_in_mining)
 
         time_to_find_block = np.random.poisson(lam=lam, size=1)
 
@@ -145,7 +145,7 @@ def mine_block_boundary_action_v3(state, params, spaces):
 
         new_difficulty = (
             block_difficulty
-            + 0.001
+            + 0.01
             * ((target_time - time_to_find_block[0]) / target_time)
             * block_difficulty
         )

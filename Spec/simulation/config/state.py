@@ -1,8 +1,8 @@
 import numpy as np
 
 state_base = {
-    "Qi Supply": None,  # Set in state preperation function
-    "Quai Supply": None,  # Set in state preperation function
+    "Qi Supply": 1000000,  # Set in state preperation function
+    "Quai Supply": 1000000,  # Set in state preperation function
     "Locked Qi Supply": None,  # Set in state preperation function
     "Locked Quai Supply": None,  # Set in state preperation function
     "Ratio of Miners not Mining": 0.01,
@@ -17,7 +17,7 @@ state_base = {
     "Historical Qi Hash": [],
     "Historical Quai Hash": [],
     "K Qi": 2.98e-8,
-    "K Quai": 1,
+    "K Quai": 0.019,
     "Quai Price": 1,
     "Qi Price": 1,
     "Simulation History Log": [],

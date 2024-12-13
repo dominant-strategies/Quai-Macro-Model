@@ -8,7 +8,7 @@ def test_price_movements_boundary(state, params, spaces):
 
 def hashpower_price_movement(state, params, spaces):
     ewm_lambda = params["Price EWMA Lambda"]
-    # c = state["Metrics"]["Conversion Rate Metric"](state, params, [])
+    c = state["Metrics"]["Conversion Rate Metric"](state, params, [])
     p_quai = state["Quai Price"]
     p_qi = state["Qi Price"]
     hashpower_cost = params["Hashpower Cost Series"][state["Block Number"]]
@@ -22,7 +22,7 @@ def hashpower_price_movement(state, params, spaces):
     )
 
     p_quai_new = (
-        ewm_lambda * 10 * p_qi
+        ewm_lambda * c * p_qi
         + (1 - ewm_lambda) * p_quai
         + np.random.normal(0, quai_sigma) * p_quai
     )

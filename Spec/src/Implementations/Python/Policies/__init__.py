@@ -11,7 +11,6 @@ from .Market import block_reward_ratio_conversion_policy, price_movements_policy
 from .Vesting import unlock_tokens_policy_v1
 from .Controller import (
     sgd_logistic_classifier_training,
-    reward_ratio_gain,
     mezzanine_wiring_passthrough,
     rolling_logistic_regression_estimation,
     sample_estimation_betas,
@@ -30,7 +29,6 @@ policies = {
     "Unlock Tokens Policy V1": unlock_tokens_policy_v1,
     "Logistic Probability Payment Policy": logistic_probability_payment_policy,
     "SGD Logistic Classifier Training": sgd_logistic_classifier_training,
-    "Reward Ratio Gain": reward_ratio_gain,
     "Mezzanine Wiring Passthrough": mezzanine_wiring_passthrough,
     "Update Population Beta Policy Passthrough": update_population_beta_policy_passthrough,
     "Rolling Logistic Regression Estimation": rolling_logistic_regression_estimation,
