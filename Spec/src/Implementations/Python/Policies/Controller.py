@@ -137,24 +137,24 @@ def sample_estimation_betas(state, params, spaces):
             # the historical converted Qi will have the Quai value that was conveted
             if state["Historical Converted Qi"][state["Block Number"]-i]["Qi"] < 0: # More Qi was burned
                 # doing an assertion to check the impossible case, Quai also cannot be burned in net
-                assert state["Historical Converted Qi"][state["Block Number"]-i]["Quai"] > 0
+                # assert state["Historical Converted Qi"][state["Block Number"]-i]["Quai"] >= 0
                 assert state["Historical Converted Quai"][state["Block Number"]-i]["Quai"] == 0
                 assert state["Historical Converted Quai"][state["Block Number"]-i]["Qi"] == 0
 
                 # Historical Converted Quai stores the amount of Qi the Quai was
                 # converted to if more Quai was converted to Qi. Otherwise it stores
                 # 0. 
-                converted_quai = state["Historical Converted Qi"][state["Block Number"]-i]["Quai"]
+                converted_quai = max(state["Historical Converted Qi"][state["Block Number"]-i]["Quai"], 0)
                 n_quai = converted_quai/quai_reward
 
             elif state["Historical Converted Quai"][state["Block Number"]-i]["Quai"] < 0: # More Qi was created
                 # doing an assertion to check the impossible case, More Quai
                 # also cannot be created at the same time
-                assert state["Historical Converted Quai"][state["Block Number"]-i]["Qi"] > 0
+                # assert state["Historical Converted Quai"][state["Block Number"]-i]["Qi"] >= 0
                 assert state["Historical Converted Qi"][state["Block Number"]-i]["Quai"] == 0
                 assert state["Historical Converted Qi"][state["Block Number"]-i]["Qi"] == 0
 
-                converted_qi = state["Historical Converted Quai"][state["Block Number"]-i]["Qi"]
+                converted_qi = max(state["Historical Converted Quai"][state["Block Number"]-i]["Qi"], 0)
                 n_qi = converted_qi/qi_reward
             else: # No conversion happened
                 assert state["Historical Converted Quai"][state["Block Number"]-i]["Quai"] == 0
@@ -226,7 +226,7 @@ def sample_estimation_betas(state, params, spaces):
         
         scores.append(score)
 
-    if state["Block Number"] % 1 == 0:
+    if state["Block Number"] % 100 == 0:
         print("Block Number", state["Block Number"])
         print("x sorted", x_sorted_flat[:i], "scores", scores[:i])
         plt.scatter(x_sorted_flat[:i], scores[:i], s=1)

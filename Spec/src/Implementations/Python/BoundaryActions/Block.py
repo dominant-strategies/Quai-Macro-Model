@@ -136,6 +136,8 @@ def mine_block_boundary_action_v3(state, params, spaces):
         # calculate the new lambda for the new new block sample, assuming that
         # at any point atleast 50% of the miners are interested in mining
         lam = block_difficulty * 100 / (state["Population Mining Hashrate"] * percent_interested_in_mining)
+        # setting the max of lambda to 100
+        lam = min(lam, 100)
 
         time_to_find_block = np.random.poisson(lam=lam, size=1)
 

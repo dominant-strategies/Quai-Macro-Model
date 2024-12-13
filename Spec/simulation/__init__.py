@@ -11,6 +11,7 @@ from .analytics import (
     plot_kqi_ratio,
     difficulty_mining_scatter,
     plot_mined_choice_vs_difficulty,
+    plot_exchange_rate,
     plot_quai_price,
     plot_qi_price,
     plot_population_mining_hashrate,

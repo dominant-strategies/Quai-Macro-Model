@@ -124,6 +124,13 @@ def difficulty_mining_scatter(df):
     plt.title("Difficulty vs. Quai Taken")
     plt.show()
 
+def plot_exchange_rate(df):
+    df.set_index("Block Number")[["Protocol Exchange Rate", "Market Exchange Rate"]].plot(kind="line")
+    plt.xlabel("Block Number")
+    plt.ylabel("Exchange rate in Quai/Qi")
+    plt.title("Protocol vs Market Exchange Rate")
+    plt.show()
+
 def plot_mined_choice_vs_difficulty(df):
 
     lower_bound = 1900

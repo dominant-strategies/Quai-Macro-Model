@@ -1,3 +1,5 @@
+import numpy as np
+
 def update_historical_converted_qi_mechanism(state, params, spaces):
     if spaces[0] is None:
         state["Historical Converted Qi"].append({"Qi": 0, "Quai": 0})
@@ -61,5 +63,8 @@ def log_simulation_data_mechanism(state, params, spaces):
         state, params, []
     )
     log["K Qi / K Quai"] = state["K Qi"] / state["K Quai"]
+
+    log["Protocol Exchange Rate"] = state["K Quai"] * np.log2(state["Block Difficulty"])/(state["K Qi"] * state["Block Difficulty"]) 
+    log["Market Exchange Rate"] = state["Quai Price"]/state["Qi Price"]
 
     state["Simulation History Log"].append(log)
