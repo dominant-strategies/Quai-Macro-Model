@@ -26,7 +26,9 @@ def block_reward_ratio_conversion_policy(state, params, spaces):
                 qi += 0
             else:
                 quai += -amount
-                qi += amount / conversion_rate * lockup_return
+                qi_value = amount / conversion_rate * lockup_return 
+                # Taking a 5% fee on the qi that the speculator gets after conversion
+                qi += qi_value * 0.95
         else:
             if amount < params["Minimum Qi Conversion Amount"]:
                 quai += 0
@@ -36,7 +38,9 @@ def block_reward_ratio_conversion_policy(state, params, spaces):
                 qi += 0
             else:
                 qi += -amount
-                quai += amount * conversion_rate * lockup_return
+                quai_value = amount * conversion_rate * lockup_return 
+                # Taking a 5% fee on the quai that the speculator gets after conversion
+                quai += 0.95 * quai_value
 
     # Minting Spaces
     space1 = {"Qi": max(0, qi)}

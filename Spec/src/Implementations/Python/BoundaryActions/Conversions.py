@@ -32,8 +32,12 @@ def conversions_boundary_action_v1(state, params, spaces):
         circulating = state["Stateful Metrics"]["Circulating Quai Supply"](
             state, params
         )
+        # If the supply is more than 1000, limit it to 1000
+        circulating = min(1000, circulating)
     else:
         circulating = state["Stateful Metrics"]["Circulating Qi Supply"](state, params)
+        # If the supply is more than 1000, limit it to 1000
+        circulating = min(1000, circulating)
 
     T = circulating * params["Speculator Percentage"] * params["Speculator Rationality Ratio"]
     C = T * max(
@@ -46,19 +50,21 @@ def conversions_boundary_action_v1(state, params, spaces):
         ),
         0,
     )
+    print("Speculators are trying to convert", q)
 
     tokens.append(q)
     amounts.append(C)
 
     random_allocation = random()
     
+    print("Quai supply", state["Stateful Metrics"]["Circulating Quai Supply"](state, params))
     print("Qi supply", state["Stateful Metrics"]["Circulating Qi Supply"](state, params))
 
     tokens.append("Qi")
-    amounts.append(state["Stateful Metrics"]["Circulating Qi Supply"](state, params) * random_allocation * (1 - params["Speculator Rationality Ratio"]))
+    amounts.append(min(state["Stateful Metrics"]["Circulating Qi Supply"](state, params), 1000) * random_allocation * (1 - params["Speculator Rationality Ratio"]))
 
     tokens.append("Quai")
-    amounts.append(state["Stateful Metrics"]["Circulating Quai Supply"](state, params) * (1 - random_allocation) * (1 - params["Speculator Rationality Ratio"]))
+    amounts.append(min(state["Stateful Metrics"]["Circulating Quai Supply"](state, params), 1000) * (1 - random_allocation) * (1 - params["Speculator Rationality Ratio"]))
 
     L = state["Stateful Metrics"]["Current Lockup Options"](state, params)
     H = choice(list(L.keys()))
