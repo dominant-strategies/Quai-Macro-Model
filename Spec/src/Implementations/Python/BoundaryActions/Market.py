@@ -15,6 +15,10 @@ def hashpower_price_movement(state, params, spaces):
     qi_sigma = params["Qi Price Movemement Sigma"]
     quai_sigma = params["Quai Price Movemement Sigma"]
 
+    print("price of Quai before the demand adjustment", p_quai)
+    p_quai = p_quai * state["Market Quai Supply Demand"] / state["Stateful Metrics"]["Circulating Quai Supply"](state, params)
+    print("price of Quai after the demand adjustment", p_quai)
+
     print("price of Qi before the demand adjustment", p_qi)
     p_qi = p_qi * state["Market Qi Supply Demand"] / state["Stateful Metrics"]["Circulating Qi Supply"](state, params)
     print("price of Qi after the demand adjustment", p_qi)

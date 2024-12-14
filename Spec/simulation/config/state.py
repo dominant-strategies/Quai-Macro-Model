@@ -32,6 +32,7 @@ state_base = {
     "Mu": 433000,
     "Population Mining Hashrate": 2e6,
     "Market Qi Supply Demand": 1e6,
+    "Market Quai Supply Demand": 1e6,
     "Logistic Classifier": None,  # Set in state preperation functions
     "Mining Log": None,  # Set in state preperation functions
 }
