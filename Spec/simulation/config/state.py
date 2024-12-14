@@ -7,8 +7,8 @@ state_base = {
     "Locked Quai Supply": None,  # Set in state preperation function
     "Ratio of Miners not Mining": 0.01,
     "Block Number": 0,
-    "Block Difficulty": 1000000000,
-    "Historical Block Difficulty": [1000000000],
+    "Block Difficulty": 1e7,
+    "Historical Block Difficulty": [1e7],
     "Number of Regions": 2,
     "Zones per Region": 2,
     "Historical Converted Qi": [],

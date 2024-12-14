@@ -123,6 +123,7 @@ def sample_estimation_betas(state, params, spaces):
 
     for i in range (0, num_blocks):
         difficulty = state["Historical Block Difficulty"][state["Block Number"]-i]
+        print("difficulty", difficulty)
         # Normalizing the Total Quai converted into the number of miner choices by
         # dividing the value by the block reward
         quai_reward = state["Metrics"]["Hash to Quai Metric"](state, params, [{"Hash": difficulty}])
@@ -220,9 +221,9 @@ def sample_estimation_betas(state, params, spaces):
         score = left_zeros - right_zeros + right_ones - left_ones
 
         # Update best score and x value
-        if score > best_score:
+        if score > best_score or i == 0:
             best_score = score
-            best_x = x_sorted[i]
+            best_x = x_sorted_flat[i]
         
         scores.append(score)
 
@@ -236,6 +237,7 @@ def sample_estimation_betas(state, params, spaces):
     
     print("Best x value:", best_x)
     print("Best score:", best_score/100)
+    print("x sorted flat", x_sorted_flat)
 
     # update the mu value of the diff over log diff
     prev_mu = state["Mu"]
@@ -244,7 +246,7 @@ def sample_estimation_betas(state, params, spaces):
 
     state["Mu"] = best_x
 
-    return [spaces[0], {"Beta": np.array([-state["Mu"], 0.5]), "Scaled Beta": np.array([-state["Mu"], 0.5])}]
+    return [spaces[0], {"Beta": np.array([-state["Mu"]/2, 0.5]), "Scaled Beta": np.array([-state["Mu"]/2, 0.5])}]
 
 def logistic_regression_goquai(state, params, spaces):
 
