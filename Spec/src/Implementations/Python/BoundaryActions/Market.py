@@ -15,17 +15,14 @@ def hashpower_price_movement(state, params, spaces):
     qi_sigma = params["Qi Price Movemement Sigma"]
     quai_sigma = params["Quai Price Movemement Sigma"]
 
+    # This makes the market price an independent variable, decouples from hash
     p_qi_new = (
-        ewm_lambda * hashpower_cost
-        + (1 - ewm_lambda) * p_qi
-        + np.random.normal(0, qi_sigma) * p_qi
+        (1 - ewm_lambda) * p_qi + np.random.normal(1, qi_sigma) * p_qi * ewm_lambda
     )
 
     p_quai_new = (
-        ewm_lambda * 10 * p_qi
-        + (1 - ewm_lambda) * p_quai
-        + np.random.normal(0, quai_sigma) * p_quai
-    )
+        (1 - ewm_lambda) * p_quai + np.random.normal(1, quai_sigma) * p_quai * ewm_lambda
+    ) * 0.99
 
     space = {
         "Qi Return": max(p_qi_new / p_qi - 1, -0.99),
