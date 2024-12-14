@@ -130,9 +130,9 @@ def mine_block_boundary_action_v3(state, params, spaces):
         # population hash rate that is mining by a 0.1, otherwise decrease
         # it by 0.1 percent
         if percent_interested_in_mining > 75:
-            state["Population Mining Hashrate"] = state["Population Mining Hashrate"] * 1.01
+            state["Population Mining Hashrate"] = state["Population Mining Hashrate"] * 1.001
         elif percent_interested_in_mining < 25:
-            state["Population Mining Hashrate"] = state["Population Mining Hashrate"] * 0.99
+            state["Population Mining Hashrate"] = state["Population Mining Hashrate"] * 0.999
 
 
         # calculate the new lambda for the new new block sample, assuming that
