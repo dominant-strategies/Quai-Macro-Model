@@ -233,5 +233,12 @@ global_state = {
             "symbol": None,
             "domain": None,
         },
+        {
+            "type": "Gain Type",
+            "name": "Market Qi Supply Demand",
+            "description": "Total Qi supply in the market after which a price is taxed proportional to this value",
+            "symbol": None,
+            "domain": None,
+        },
     ],
 }

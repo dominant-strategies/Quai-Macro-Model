@@ -1,7 +1,7 @@
 import numpy as np
 
 state_base = {
-    "Qi Supply": 1000000,  # Set in state preperation function
+    "Qi Supply": 1e6,  # Set in state preperation function
     "Quai Supply": 1000000,  # Set in state preperation function
     "Locked Qi Supply": None,  # Set in state preperation function
     "Locked Quai Supply": None,  # Set in state preperation function
@@ -31,6 +31,7 @@ state_base = {
     "Estimated Scaled Mining Beta Vector": [None, None],
     "Mu": 433000,
     "Population Mining Hashrate": 2e6,
+    "Market Qi Supply Demand": 1e6,
     "Logistic Classifier": None,  # Set in state preperation functions
     "Mining Log": None,  # Set in state preperation functions
 }

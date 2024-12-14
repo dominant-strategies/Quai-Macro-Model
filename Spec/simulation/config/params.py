@@ -109,7 +109,7 @@ params_base = {
     "Speculator Percentage": 0.0001,
     "Conversion Percentage Mu": 0.01,
     "Conversion Percentage Sigma": 0.001,
-    "Controller Alpha Parameter": 0.01,
+    "Controller Alpha Parameter": 0.05,
     "Difficulty Randomness Sigma": 0.2,
     "Difficulty Randomness Mu": 1,
     "Speculator Rationality Ratio": 0.5,
