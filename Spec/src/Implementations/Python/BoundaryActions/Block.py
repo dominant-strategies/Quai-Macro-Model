@@ -118,7 +118,9 @@ def mine_block_boundary_action_v3(state, params, spaces):
         
         print("hashpower cost series", params["Hashpower Cost Series"][state["Block Number"]], "reward", reward)
         
-        z_value_for_cost = (params["Hashpower Cost Series"][state["Block Number"]] - reward)/params["Hashpower Cost Series Sigma"]
+        z_value_for_cost = (reward - params["Hashpower Cost Series"][state["Block Number"]])/params["Hashpower Cost Series Sigma"]
+
+        print("z value", z_value_for_cost)
 
         percent_interested_in_mining = norm.cdf(z_value_for_cost) * 100
         
@@ -127,9 +129,9 @@ def mine_block_boundary_action_v3(state, params, spaces):
         # If the percent interested in mining is significantly greater than 50 increase the
         # population hash rate that is mining by a 0.1, otherwise decrease
         # it by 0.1 percent
-        if percent_interested_in_mining > 50.5:
+        if percent_interested_in_mining > 75:
             state["Population Mining Hashrate"] = state["Population Mining Hashrate"] * 1.001
-        elif percent_interested_in_mining < 49.5:
+        elif percent_interested_in_mining < 25:
             state["Population Mining Hashrate"] = state["Population Mining Hashrate"] * 0.999
 
 

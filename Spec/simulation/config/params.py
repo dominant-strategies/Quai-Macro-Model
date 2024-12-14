@@ -93,9 +93,9 @@ params_base = {
     ],
     "Aggregate Hashpower Series": [2.5e8 for _ in range(1, 10002)],
     "Difficulty Adjustment Period": 700 / 16,  # Adjusting prime blocks into zone blocks
-    "Price EWMA Lambda": 0.05,
+    "Price EWMA Lambda": 0.1,
     "Hashpower Cost Series": [2.8e-8 for x in range(1, 10002)],
-    "Hashpower Cost Series Sigma": 0.01,
+    "Hashpower Cost Series Sigma": 2.8e-10,
     "Qi Price Movemement Sigma": 0.01,
     "Quai Price Movemement Sigma": 0.01,
     "Lockup Options": {
@@ -117,7 +117,7 @@ params_base = {
     "Population Beta Signal": [np.array([-300000, 0.5])] * 10000,
     "Minimum K Qi": 0,
     "Minimum K Quai": 0,
-    "Maximum Conversion Rate": 10,
+    "Maximum Conversion Rate": 1000,
     "Probability of Rational Miners": 0.8,
     "FP Controller Update Policy": "Reward Ratio Gain KQuai",
     "FP Conversions Boundary Action": "Conversions Boundary Action V1",

@@ -33,11 +33,11 @@ def conversions_boundary_action_v1(state, params, spaces):
             state, params
         )
         # If the supply is more than 1000, limit it to 1000
-        circulating = min(1000, circulating)
+        # circulating = min(1000, circulating)
     else:
         circulating = state["Stateful Metrics"]["Circulating Qi Supply"](state, params)
         # If the supply is more than 1000, limit it to 1000
-        circulating = min(1000, circulating)
+        # circulating = min(1000, circulating)
 
     T = circulating * params["Speculator Percentage"] * params["Speculator Rationality Ratio"]
     C = T * max(
