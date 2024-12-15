@@ -247,5 +247,19 @@ global_state = {
             "symbol": None,
             "domain": None,
         },
+        {
+            "type": "Conversions Array Type",
+            "name": "Circulating Quai Supply",
+            "description": "circulating quai supply at block level",
+            "symbol": None,
+            "domain": None,
+        },
+        {
+            "type": "Conversions Array Type",
+            "name": "Circulating Qi Supply",
+            "description": "circulating qi supply at block level",
+            "symbol": None,
+            "domain": None,
+        },
     ],
 }

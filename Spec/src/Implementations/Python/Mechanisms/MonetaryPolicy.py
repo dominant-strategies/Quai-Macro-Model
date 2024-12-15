@@ -9,6 +9,7 @@ def mint_qi_tokens_mechanism(state, params, spaces):
     state["Qi Supply"] += amount
 
 
+
 def mint_quai_token_mechanism(state, params, spaces):
     amount = spaces[0]["Quai"]
     if amount == 0:
@@ -41,6 +42,11 @@ def update_prices_mechanism(state, params, spaces):
 def update_locked_qi_mechanism(state, params, spaces):
     state["Locked Qi Supply"] += spaces[0]["Qi"]
 
+    # Save the circulating Qi supply
+    state["Circulating Qi Supply"].append(state["Qi Supply"]-state["Locked Qi Supply"])
 
 def update_locked_quai_mechanism(state, params, spaces):
     state["Locked Quai Supply"] += spaces[0]["Quai"]
+
+    # Save the circulating Quai supply
+    state["Circulating Quai Supply"].append(state["Quai Supply"]-state["Locked Quai Supply"])
