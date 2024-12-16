@@ -3,7 +3,7 @@ import numpy as np
 
 
 def conversions_boundary_action_v1(state, params, spaces):
-    market_exchange_rate = state["Quai Price"]/state["Qi Price"]
+    market_exchange_rate = state["Qi Price"]/state["Quai Price"]
     protocol_exchange_rate = state["K Quai"] * np.log2(state["Block Difficulty"])/(state["K Qi"] * state["Block Difficulty"])
 
     print("k quai", state["K Quai"], "k qi", state["K Qi"])
@@ -35,7 +35,7 @@ def conversions_boundary_action_v1(state, params, spaces):
         # If the supply is more than 1000, limit it to 1000
         # circulating = min(1000, circulating)
     else:
-        circulating = state["Stateful Metrics"]["Circulating Qi Supply"](state, params)
+        circulating = 100 * state["Stateful Metrics"]["Circulating Qi Supply"](state, params)
         # If the supply is more than 1000, limit it to 1000
         # circulating = min(1000, circulating)
 

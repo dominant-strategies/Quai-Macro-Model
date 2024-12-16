@@ -65,7 +65,7 @@ def log_simulation_data_mechanism(state, params, spaces):
     log["K Qi / K Quai"] = state["K Qi"] / state["K Quai"]
 
     log["Protocol Exchange Rate"] = state["K Quai"] * np.log2(state["Block Difficulty"])/(state["K Qi"] * state["Block Difficulty"]) 
-    log["Market Exchange Rate"] = state["Quai Price"]/state["Qi Price"]
+    log["Market Exchange Rate"] = state["Qi Price"]/state["Quai Price"]
 
     log["Exchange Rate Error"] = (log["Market Exchange Rate"] - log["Protocol Exchange Rate"])/log["Market Exchange Rate"]
 

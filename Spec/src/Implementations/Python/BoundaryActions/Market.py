@@ -16,8 +16,10 @@ def hashpower_price_movement(state, params, spaces):
     quai_sigma = params["Quai Price Movemement Sigma"]
 
     # Getting the previous p_quai value
-    p_quai = p_quai * state["Circulating Quai Supply"][state["Block Number"]-1] / state["Market Quai Supply Demand"]
+    if state["Block Number"] > 1:
+        p_quai = p_quai * state["Circulating Quai Supply"][state["Block Number"]-1] / state["Market Quai Supply Demand"]
 
+    print("block number", state["Block Number"]-1)
     print("Circulating Quai supply n-2", state["Circulating Quai Supply"][state["Block Number"]-1])
     print("Circulating Quai supply n-1", state["Stateful Metrics"]["Circulating Quai Supply"](state, params))
 
@@ -26,7 +28,8 @@ def hashpower_price_movement(state, params, spaces):
     print("price of Quai after the demand adjustment", p_quai)
 
     # Getting the previous p_qi value
-    p_qi = p_qi * state["Circulating Qi Supply"][state["Block Number"]-1] / state["Market Qi Supply Demand"]
+    if state["Block Number"] > 1:
+        p_qi = p_qi * state["Circulating Qi Supply"][state["Block Number"]-1] / state["Market Qi Supply Demand"]
 
     print("Circulating Qi supply n-2", state["Circulating Qi Supply"][state["Block Number"]-1])
     print("Circulating Qi supply n-1", state["Stateful Metrics"]["Circulating Qi Supply"](state, params))

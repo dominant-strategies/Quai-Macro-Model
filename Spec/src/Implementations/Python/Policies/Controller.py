@@ -227,7 +227,7 @@ def sample_estimation_betas(state, params, spaces):
         
         scores.append(score)
 
-    if state["Block Number"] % 10 == 0:
+    if state["Block Number"] % 100 == 0:
         print("Block Number", state["Block Number"])
         print("x sorted", x_sorted_flat[:i], "scores", scores[:i])
         plt.scatter(x_sorted_flat[:i], scores[:i], s=1)
