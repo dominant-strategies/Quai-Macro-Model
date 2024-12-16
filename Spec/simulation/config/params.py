@@ -107,6 +107,8 @@ params_base = {
         5: {2 / 52: 1, 3 / 12: 1.002188, 6 / 12: 1.00625, 1: 1.015625},
     },
     "Speculator Percentage": 0.05,
+    "Quai Demand Ratio": 10,
+    "Quai Demand Elasticity": 1,
     "Conversion Percentage Mu": 0.01,
     "Conversion Percentage Sigma": 0.001,
     "Controller Alpha Parameter": 0.05,

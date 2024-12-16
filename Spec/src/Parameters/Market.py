@@ -75,6 +75,22 @@ market_parameter_set = {
             "parameter_class": "Behavioral",
         },
         {
+            "variable_type": "Decimal Type",
+            "name": "Quai Demand Ratio",
+            "description": "Relative demand between Quai and Qi",
+            "symbol": None,
+            "domain": None,
+            "parameter_class": "Behavioral",
+        },
+        {
+            "variable_type": "Decimal Type",
+            "name": "Quai Demand Elasticity",
+            "description": "Elasticity of the demand based on the Changes in the Quai Supply",
+            "symbol": None,
+            "domain": None,
+            "parameter_class": "Behavioral",
+        },
+        {
             "variable_type": "Float Type",
             "name": "Conversion Percentage Mu",
             "description": "The avergage percentage for conversions of tradeable capital",

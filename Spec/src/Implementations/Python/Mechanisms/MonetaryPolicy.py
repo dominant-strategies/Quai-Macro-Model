@@ -8,14 +8,14 @@ def mint_qi_tokens_mechanism(state, params, spaces):
     )
     state["Qi Supply"] += amount
 
-
-
 def mint_quai_token_mechanism(state, params, spaces):
     amount = spaces[0]["Quai"]
     if amount == 0:
         return
     assert amount > 0, "Amount must be positive"
     state["Quai Supply"] += amount
+
+    state["Market Quai Supply Demand"] += params["Quai Demand Elasticity"] * amount
 
 
 def burn_qi_tokens_mechanism(state, params, spaces):
@@ -24,6 +24,8 @@ def burn_qi_tokens_mechanism(state, params, spaces):
         return
     assert amount > 0, "Amount must be positive"
     state["Qi Supply"] -= amount
+
+    state["Market Quai Supply Demand"] -= params["Quai Demand Elasticity"] * amount
 
 
 def burn_quai_tokens_mechanism(state, params, spaces):

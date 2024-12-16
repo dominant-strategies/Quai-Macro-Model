@@ -32,12 +32,8 @@ def conversions_boundary_action_v1(state, params, spaces):
         circulating = state["Stateful Metrics"]["Circulating Quai Supply"](
             state, params
         )
-        # If the supply is more than 1000, limit it to 1000
-        # circulating = min(1000, circulating)
     else:
-        circulating = 100 * state["Stateful Metrics"]["Circulating Qi Supply"](state, params)
-        # If the supply is more than 1000, limit it to 1000
-        # circulating = min(1000, circulating)
+        circulating = state["Stateful Metrics"]["Circulating Qi Supply"](state, params)
 
     T = circulating * params["Speculator Percentage"] * params["Speculator Rationality Ratio"]
     C = T * max(
@@ -65,6 +61,9 @@ def conversions_boundary_action_v1(state, params, spaces):
 
     tokens.append("Quai")
     amounts.append(min(state["Stateful Metrics"]["Circulating Quai Supply"](state, params), 1000) * (1 - random_allocation) * (1 - params["Speculator Rationality Ratio"]))
+    
+    # update the Qi supply demand based on the exchange rate and the demand ratio
+    state["Market Qi Supply Demand"] = state["Market Quai Supply Demand"] / (market_exchange_rate * params["Quai Demand Ratio"])
 
     L = state["Stateful Metrics"]["Current Lockup Options"](state, params)
     H = choice(list(L.keys()))
