@@ -208,13 +208,13 @@ def sample_estimation_betas(state, params, spaces):
         if y_sorted[i] == 0: # Mining choice Quai
             left_zeros += 1
         elif y_sorted[i] == 1: # Mining choice Qi
-            right_ones += 1  
+            left_ones += 1  
         elif y_sorted[i] > 0: # Conversion from Quai to Qi
-            right_ones += y_sorted[i]  
+            left_ones += y_sorted[i]  
         else: # Conversion from Qi to Quai
             left_zeros += -y_sorted[i]
 
-        left_ones = total_ones - right_ones
+        right_ones = total_ones - left_ones
         right_zeros = total_zeros - left_zeros
 
         # Calculate score

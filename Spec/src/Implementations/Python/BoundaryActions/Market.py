@@ -22,7 +22,7 @@ def hashpower_price_movement(state, params, spaces):
     print("block number", state["Block Number"]-1)
     print("Circulating Quai supply n-2", state["Circulating Quai Supply"][state["Block Number"]-1])
     print("Circulating Quai supply n-1", state["Stateful Metrics"]["Circulating Quai Supply"](state, params))
-    print("Market Qi Supply Demand", state["Market Qi Supply Demand"])
+    print("Market Quai Supply Demand", state["Market Quai Supply Demand"])
 
     print("price of Quai before the demand adjustment", p_quai)
     p_quai = p_quai * state["Market Quai Supply Demand"] / state["Stateful Metrics"]["Circulating Quai Supply"](state, params)
@@ -34,7 +34,8 @@ def hashpower_price_movement(state, params, spaces):
 
     print("Circulating Qi supply n-2", state["Circulating Qi Supply"][state["Block Number"]-1])
     print("Circulating Qi supply n-1", state["Stateful Metrics"]["Circulating Qi Supply"](state, params))
-
+    print("Market Qi Supply Demand", state["Market Qi Supply Demand"])
+    
     print("price of Qi before the demand adjustment", p_qi)
     p_qi = p_qi * state["Market Qi Supply Demand"] / state["Stateful Metrics"]["Circulating Qi Supply"](state, params)
     print("price of Qi after the demand adjustment", p_qi)
@@ -47,7 +48,7 @@ def hashpower_price_movement(state, params, spaces):
 
     p_quai_new = (
         (1 - ewm_lambda) * p_quai + np.random.normal(1, quai_sigma) * p_quai * ewm_lambda
-    ) * 0.999
+    ) * 0.99999
 
     space = {
         "Qi Return": p_qi_new,
