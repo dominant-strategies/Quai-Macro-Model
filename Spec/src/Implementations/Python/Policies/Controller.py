@@ -235,6 +235,15 @@ def sample_estimation_betas(state, params, spaces):
         plt.ylabel("Scores")
         plt.show()
     
+        if state["Block Number"] > 100:
+            x_array = list(range(state["Block Number"] - 100, state["Block Number"]))
+            y_array = state["Historical Block Difficulty"][state["Block Number"] - 100 : state["Block Number"]]
+            plt.scatter(x_array, y_array, s=1)
+            plt.xlabel("Block Number")
+            plt.ylabel("Block Difficulty")
+            plt.title("Historical Block Difficulty")
+            plt.show()
+    
     print("Best x value:", best_x)
     print("Best score:", best_score/100)
     print("x sorted flat", x_sorted_flat)

@@ -95,7 +95,7 @@ params_base = {
     "Difficulty Adjustment Period": 700 / 16,  # Adjusting prime blocks into zone blocks
     "Price EWMA Lambda": 0.1,
     "Hashpower Cost Series": [2.8e-8 for x in range(1, 10002)],
-    "Hashpower Cost Series Sigma": 2.8e-10,
+    "Hashpower Cost Series Sigma": 2.8e-9,
     "Qi Price Movemement Sigma": 0.01,
     "Quai Price Movemement Sigma": 0.01,
     "Lockup Options": {
@@ -106,7 +106,7 @@ params_base = {
         4: {2 / 52: 1, 3 / 12: 1.004375, 6 / 12: 1.0125, 1: 1.03125},
         5: {2 / 52: 1, 3 / 12: 1.002188, 6 / 12: 1.00625, 1: 1.015625},
     },
-    "Speculator Percentage": 0.05,
+    "Speculator Percentage": 0.01,
     "Quai Demand Ratio": 10,
     "Quai Demand Elasticity": 1,
     "Conversion Percentage Mu": 0.01,
