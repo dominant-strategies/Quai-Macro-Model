@@ -106,7 +106,7 @@ params_base = {
         4: {2 / 52: 1, 3 / 12: 1.004375, 6 / 12: 1.0125, 1: 1.03125},
         5: {2 / 52: 1, 3 / 12: 1.002188, 6 / 12: 1.00625, 1: 1.015625},
     },
-    "Speculator Percentage": 0.01,
+    "Speculator Percentage": 0.1,
     "Quai Demand Ratio": 10,
     "Quai Demand Elasticity": 1,
     "Conversion Percentage Mu": 0.01,

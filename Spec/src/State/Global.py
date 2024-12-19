@@ -261,5 +261,12 @@ global_state = {
             "symbol": None,
             "domain": None,
         },
+        {
+            "type": "Decimal Type",
+            "name": "Conversion Flow Amount",
+            "description": "ewma of the average conversion amount",
+            "symbol": None,
+            "domain": None,
+        },
     ],
 }

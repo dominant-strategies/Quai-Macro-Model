@@ -35,6 +35,7 @@ state_base = {
     "Market Quai Supply Demand": 1e9,
     "Circulating Quai Supply": [],
     "Circulating Qi Supply": [1e6],
+    "Conversion Flow Amount": 50000e9,    
     "Logistic Classifier": None,  # Set in state preperation functions
     "Mining Log": None,  # Set in state preperation functions
 }

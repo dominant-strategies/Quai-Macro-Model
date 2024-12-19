@@ -1,3 +1,13 @@
+def quadratic_discount(value: float, average: float) -> float:
+    if value <= average:
+        return value * 0.99
+    elif value >= 10 * average:
+        return 0
+    else:
+        normalized_value = value / (10 * average)
+        discount_factor = 1 - (normalized_value ** 2)/2
+        return max(0, value * discount_factor)
+
 def block_reward_ratio_conversion_policy(state, params, spaces):
 
     lockup_return = state["Stateful Metrics"]["Current Lockup Options"](state, params)[
@@ -26,9 +36,7 @@ def block_reward_ratio_conversion_policy(state, params, spaces):
                 qi += 0
             else:
                 quai += -amount
-                qi_value = amount / conversion_rate * lockup_return 
-                # Taking a 5% fee on the qi that the speculator gets after conversion
-                qi += qi_value * 0.95
+                qi = amount / conversion_rate * lockup_return 
         else:
             if amount < params["Minimum Qi Conversion Amount"]:
                 quai += 0
@@ -38,9 +46,31 @@ def block_reward_ratio_conversion_policy(state, params, spaces):
                 qi += 0
             else:
                 qi += -amount
-                quai_value = amount * conversion_rate * lockup_return 
-                # Taking a 5% fee on the quai that the speculator gets after conversion
-                quai += 0.95 * quai_value
+                quai = amount * conversion_rate * lockup_return 
+
+    discounted_hash_amount = 0
+    # Calculate the slip of the amount of the Quai/Qi converted based on a
+    # x^2/2, and if more than 10x the conversion amount, total loss
+    if qi < 0:
+        # If net qi was burnt, convert the quai amount that is about to be
+        # minted into hash
+        hash_amount_converted = state["Metrics"]["Quai to Hash Metric"](state, params, [{"Quai": quai}]) 
+        discounted_hash_amount = quadratic_discount(hash_amount_converted, state["Conversion Flow Amount"])
+        
+        # convert the discounted hash amount into quai
+        quai = state["Metrics"]["Hash to Quai Metric"](state, params, [{"Hash": discounted_hash_amount}]) 
+
+    elif quai < 0:
+        # If net quai was burnt, convert the qi amount that is about to be
+        # minted into hash
+        hash_amount_converted = state["Metrics"]["Qi to Hash Metric"](state, params, [{"Qi": qi}]) 
+        discounted_hash_amount = quadratic_discount(hash_amount_converted, state["Conversion Flow Amount"])
+        
+        # convert the discounted hash amount into Qi 
+        qi = state["Metrics"]["Hash to Qi Metric"](state, params, [{"Hash": discounted_hash_amount}]) 
+
+    # update the conversion flow amount based on the discounted hash amount
+    state["Conversion Flow Amount"] = 0.99 * state["Conversion Flow Amount"] + 0.01 * discounted_hash_amount
 
     # Minting Spaces
     space1 = {"Qi": max(0, qi)}

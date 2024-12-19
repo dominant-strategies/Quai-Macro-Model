@@ -29,13 +29,11 @@ def conversions_boundary_action_v1(state, params, spaces):
         q = "Quai"
 
     if q == "Quai":
-        circulating = state["Stateful Metrics"]["Circulating Quai Supply"](
-            state, params
-        )
+        conversion_amount = state["Metrics"]["Hash to Quai Metric"](state, params, [{"Hash": state["Conversion Flow Amount"]}]) 
     else:
-        circulating = state["Stateful Metrics"]["Circulating Qi Supply"](state, params)
+        conversion_amount = state["Metrics"]["Hash to Qi Metric"](state, params, [{"Hash": state["Conversion Flow Amount"]}]) 
 
-    T = circulating * params["Speculator Percentage"] * params["Speculator Rationality Ratio"]
+    T = conversion_amount
     C = T * max(
         min(
             1,
@@ -46,7 +44,7 @@ def conversions_boundary_action_v1(state, params, spaces):
         ),
         0,
     )
-    print("Speculators are trying to convert", q)
+    print("Speculators are trying to convert", q, "amount", C)
 
     tokens.append(q)
     amounts.append(C)
