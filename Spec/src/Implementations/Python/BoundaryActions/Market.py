@@ -48,7 +48,7 @@ def hashpower_price_movement(state, params, spaces):
 
     p_quai_new = (
         (1 - ewm_lambda) * p_quai + np.random.normal(1, quai_sigma) * p_quai * ewm_lambda
-    ) * 0.99999
+    ) * 1.001
 
     space = {
         "Qi Return": p_qi_new,

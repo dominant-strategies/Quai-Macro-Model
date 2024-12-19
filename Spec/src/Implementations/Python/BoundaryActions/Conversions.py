@@ -63,7 +63,7 @@ def conversions_boundary_action_v1(state, params, spaces):
     amounts.append(min(state["Stateful Metrics"]["Circulating Quai Supply"](state, params), 1000) * (1 - random_allocation) * (1 - params["Speculator Rationality Ratio"]))
     
     # update the Qi supply demand based on the exchange rate and the demand ratio
-    state["Market Qi Supply Demand"] = state["Market Quai Supply Demand"] / (market_exchange_rate * params["Quai Demand Ratio"])
+    #state["Market Qi Supply Demand"] = state["Market Quai Supply Demand"] / (market_exchange_rate * params["Quai Demand Ratio"])
 
     L = state["Stateful Metrics"]["Current Lockup Options"](state, params)
     H = choice(list(L.keys()))

@@ -126,9 +126,9 @@ def mine_block_boundary_action_v3(state, params, spaces):
         # If the percent interested in mining is significantly greater than 50 increase the
         # population hash rate that is mining by a 0.1, otherwise decrease
         # it by 0.1 percent
-        if percent_interested_in_mining > 75:
+        if percent_interested_in_mining > 95:
             state["Population Mining Hashrate"] = state["Population Mining Hashrate"] * 1.001
-        elif percent_interested_in_mining < 25:
+        elif percent_interested_in_mining < 80:
             state["Population Mining Hashrate"] = state["Population Mining Hashrate"] * 0.999
 
 
