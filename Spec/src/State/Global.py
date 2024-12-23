@@ -108,6 +108,13 @@ global_state = {
             "domain": None,
         },
         {
+            "type": "Hash Array Type",
+            "name": "Slip Adjusted Difficulty",
+            "description": "An array of the slip adjusted difficulty for conversions.",
+            "symbol": None,
+            "domain": None,
+        },
+        {
             "type": "Gain Type",
             "name": "K Qi",
             "description": "The controller coeffecient for Qi.",

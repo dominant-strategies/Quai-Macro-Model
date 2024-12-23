@@ -16,6 +16,7 @@ state_base = {
     "Historical Mined Ratio": [],
     "Historical Qi Hash": [],
     "Historical Quai Hash": [],
+    "Slip Adjusted Difficulty": [],
     "K Qi": 2.98e-8,
     "K Quai": 0.019,
     "Quai Price": 1,

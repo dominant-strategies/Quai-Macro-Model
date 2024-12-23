@@ -164,15 +164,24 @@ def sample_estimation_betas(state, params, spaces):
                 assert state["Historical Converted Qi"][state["Block Number"]-i]["Quai"] == 0
 
             converted_x = difficulty/log(difficulty, params["Quai Reward Base Parameter"])
-            # Accumulate the logistic classifier queue x with the conversion outpoints 
-            regression_x.append(converted_x)
-            
-            print("n quai", n_quai, "n qi", n_qi)
 
-            if n_quai > 0:
-                regression_y.append(-n_quai)                
-            elif n_qi > 0:
-                regression_y.append(n_qi)                
+            # Calculate the incremental x value for the conversion
+            print("adjusted diff", state["Slip Adjusted Difficulty"][state["Block Number"]-i])
+            x_increment = state["Slip Adjusted Difficulty"][state["Block Number"]-i]/log(state["Slip Adjusted Difficulty"][state["Block Number"]-i], params["Quai Reward Base Parameter"])/10
+
+            # For each conversion make 10 smeared data points
+            for j in range(0, 10):
+
+                # Accumulate the logistic classifier queue x with the conversion outpoints 
+                
+                print("n quai", n_quai, "n qi", n_qi)
+
+                if n_quai > 0:
+                    regression_y.append(-n_quai/10)                
+                    regression_x.append(converted_x - x_increment * j)
+                elif n_qi > 0:
+                    regression_y.append(n_qi/10)                
+                    regression_x.append(converted_x + x_increment * j)
 
     # Need to flatten the regression_x list because some of the values in the
     # list are list themselves TODO: check why the above is happening
@@ -227,7 +236,7 @@ def sample_estimation_betas(state, params, spaces):
         
         scores.append(score)
 
-    if state["Block Number"] % 100 == 0:
+    if state["Block Number"] % 1000 == 0:
         print("Block Number", state["Block Number"])
         print("x sorted", x_sorted_flat[:i], "scores", scores[:i])
         plt.scatter(x_sorted_flat[:i], scores[:i], s=1)

@@ -48,7 +48,9 @@ def block_reward_ratio_conversion_policy(state, params, spaces):
                 qi += -amount
                 quai = amount * conversion_rate * lockup_return 
 
-    discounted_hash_amount = 0
+    discounted_hash_amount = 1
+    hash_amount_converted = 1
+
     # Calculate the slip of the amount of the Quai/Qi converted based on a
     # x^2/2, and if more than 10x the conversion amount, total loss
     if qi < 0:
@@ -69,8 +71,10 @@ def block_reward_ratio_conversion_policy(state, params, spaces):
         # convert the discounted hash amount into Qi 
         qi = state["Metrics"]["Hash to Qi Metric"](state, params, [{"Hash": discounted_hash_amount}]) 
 
+    state["Slip Adjusted Difficulty"].append(state["Block Difficulty"]*discounted_hash_amount/hash_amount_converted)
+
     # update the conversion flow amount based on the discounted hash amount
-    state["Conversion Flow Amount"] = 0.99 * state["Conversion Flow Amount"] + 0.01 * discounted_hash_amount
+    state["Conversion Flow Amount"] = 0.99 * state["Conversion Flow Amount"] + 0.01 * hash_amount_converted
 
     # Minting Spaces
     space1 = {"Qi": max(0, qi)}
